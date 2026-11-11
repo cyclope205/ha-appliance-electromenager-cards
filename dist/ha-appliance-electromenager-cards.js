@@ -45703,7 +45703,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         <div class="head"><div class="title" id="nstitle"></div><div class="badge" id="nsbadge"></div></div>
         ${SVG(this._c.name || this._t('name'), modelOf(this._c))}
         <div class="alert" id="nsalert"></div><div class="info" id="nsinfo"></div>
-        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${esc(k)}"><div class="l"><ha-icon icon="${esc(ic)}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div><div class="tile hide" id="reboot-btn"><div class="l"><ha-icon icon="mdi:restart"></ha-icon><span class="lbl">Redémarrer</span></div></div>
+        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${esc(k)}"><div class="l"><ha-icon icon="${esc(ic)}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}<div class="tile hide" id="reboot-btn"><div class="l"><ha-icon icon="mdi:restart"></ha-icon><span class="lbl">Redémarrer</span></div></div></div>
       </ha-card>`;
       const svg = root.querySelector('svg');
       // clic sur une baie : fiche du disque ; ailleurs : action de l'illustration

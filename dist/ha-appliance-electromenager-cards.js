@@ -8,7 +8,7 @@
  */
 (() => {
 "use strict";
-const VERSION = "1.113.0";
+const VERSION = "1.124.0";
 
 /* ------------------------------------------------------------------ */
 /* i18n — strings live in src/i18n/<lang>.json, inlined by build.js    */
@@ -114,6 +114,10 @@ const STRINGS = {
     "f_show_temperature": "Show temperature",
     "lamp": "Lamp",
     "picture_mode": "Picture",
+    "source_active": "Active source",
+    "sound_mode": "Current audio mode",
+    "sound_mode_next": "Next audio mode",
+    "f_show_sound_mode": "Show the audio mode",
     "source_next": "Next source",
     "f_warm_threshold": "Keep-warm / ready above (W)",
     "fridge": "Refrigerator",
@@ -171,6 +175,7 @@ const STRINGS = {
     "f_bed_temperature": "Bed temperature sensor",
     "f_filament_color": "Filament color (CSS)",
     "f_image": "Image URL (e.g. /local/my-device.png)",
+    "f_image_min": "Min photo brightness when the light is on (%)",
     "f_image_max": "Max photo brightness (% of the light level)",
     "f_glow_max": "Max glow (% of the light level)",
     "f_nozzle_temperatures": "Nozzle temperature sensors (T0, T1…)",
@@ -429,6 +434,15 @@ const STRINGS = {
     "presence_off": "Nobody",
     "low_water": "Low water level",
     "f_switch_ph_plus": "pH+ dosing pump (on/off)",
+    "dose_interval": "Interval",
+    "dose_timer": "Timer",
+    "dose_volume": "Dose",
+    "dose_time": "Time",
+    "day_short": "d",
+    "f_dose_interval": "Dosing interval (days: number, input_number or sensor)",
+    "f_dose_timer": "Dosing timer (switch: on = doses at the planned interval)",
+    "f_dose_volume": "Volume per dose (sensor, mL)",
+    "f_dose_time": "Dosing time (sensor with the schedule, e.g. 10:00)",
     "f_switch_ph_minus": "pH- dosing pump (on/off)",
     "f_switch_electrolysis": "Electrolysis (on/off)",
     "f_switch_heat_pump": "Pool heat pump (on/off)",
@@ -828,6 +842,444 @@ const STRINGS = {
     "f_hide_delay": "Ponechat viditelné po skončení (min)",
     "f_cycle_gap": "Pauza počítaná do stejného cyklu (min)",
     "f_hide_zero_power": "Skrýt výkon, když je 0"
+  },
+  "da": {
+    "washer": "Vaskemaskine",
+    "dryer": "Tørretumbler",
+    "dishwasher": "Opvaskemaskine",
+    "water_heater": "Vandvarmer",
+    "oven": "Ovn",
+    "microwave": "Mikrobølgeovn",
+    "air_fryer": "Airfryer",
+    "coffee_maker": "Kaffemaskine",
+    "f_printer_model": "Printer",
+    "printer_drawing": "Tegning (generisk)",
+    "thermomix": "Thermomix",
+    "cookeo": "Cookeo multikoger",
+    "mixing": "Blander",
+    "turbo": "Turbo",
+    "f_thermomix_model": "Model",
+    "f_cookeo_style": "Visning",
+    "smart_speaker": "Smart højttaler",
+    "f_speaker_model": "Højttalermodel",
+    "f_speaker_finish": "Højttalerfarve (Devialet, HomePod)",
+    "f_show_controls": "Vis afspilningsknapper",
+    "f_show_media": "Vis nummeret der afspilles",
+    "f_volume_step": "Lydstyrketrin (0,05 = 5 %)",
+    "volume": "Lydstyrke",
+    "source": "Kilde",
+    "volume_up": "Skru op",
+    "volume_down": "Skru ned",
+    "play": "Afspil",
+    "pause": "Pause",
+    "mute": "Slå lyd fra",
+    "f_turbo_threshold": "Turbo over (W)",
+    "f_heat_threshold": "Opvarmning over (W)",
+    "f_show_energy": "Vis energi",
+    "f_show_cost": "Vis pris",
+    "f_show_toggle": "Vis tænd/sluk-knap",
+    "tv": "TV",
+    "range_hood": "Emhætte",
+    "beer_tap": "Ølanlæg",
+    "av_receiver": "Hjemmebiografforstærker",
+    "fan": "Ventilator",
+    "ceiling_fan": "Loftventilator",
+    "generic": "Generisk apparat (eget billede)",
+    "towel_dryer": "Håndklædetørrer",
+    "server_rack": "Serverrack (homelab)",
+    "desktop_pc": "Stationær PC",
+    "laptop": "Bærbar",
+    "tool_charger": "Batterilader til værktøj",
+    "charging": "Oplader",
+    "charged": "Opladet",
+    "battery": "Batteri",
+    "f_battery_level": "Batteriniveausensor (%)",
+    "f_standby_threshold": "Opladet (vedligeholdelse) over (W)",
+    "online": "Online",
+    "f_max_power_rack": "Maks. belastning (W)",
+    "f_power_solar": "Sensor for solcelleoverskud, effekt (W)",
+    "f_energy_solar": "Sensor for solcelleoverskud, energi (kWh)",
+    "solar_surplus": "Solcelleoverskud",
+    "mode_off": "Slukket",
+    "wine_cooler": "Vinkøleskab",
+    "f_max_temperature_wine": "Alarm over (°C)",
+    "f_fridge_style": "Køleskabets indretning",
+    "f_fridge_finish": "Køleskabets finish",
+    "zone_top": "Øverste zone",
+    "zone_bottom": "Nederste zone",
+    "f_zone2_temperature": "Temperatursensor, nederste zone (to zoner)",
+    "f_max_temperature_2": "Alarm for nederste zone over (°C)",
+    "f_show_modes": "Vis tilstandsknapper",
+    "f_show_power": "Vis effekt",
+    "f_usage_time": "Sensor for brugstid i dag (valgfri)",
+    "f_show_usage_time": "Vis brugstid i dag",
+    "usage_today": "Brugt i dag",
+    "grid": "Elnet",
+    "energy_grid": "Energi fra elnettet",
+    "energy_solar": "Solenergi",
+    "ac_split": "Aircondition (indedel)",
+    "heat_pump": "Varmepumpe (udedel)",
+    "ac_dry": "Affugter",
+    "ac_fan": "Kun ventilator",
+    "at_target": "Mål nået",
+    "defrost": "Afrimer",
+    "f_hvac": "Tilstand uden klima-entitet",
+    "screen_on": "Tændt",
+    "lights": "Kun lys",
+    "f_light": "Lys-entitet (valgfri)",
+    "brewing": "Brygger",
+    "keep_warm": "Holder varm",
+    "f_style": "Kaffemaskinetype",
+    "f_tv_style": "TV-stander",
+    "f_tv_model": "TV eller projektor",
+    "f_lamp_hours": "Sensor for lampe-/lasertimer (projektor)",
+    "f_picture_mode": "Entitet for billedtilstand",
+    "f_show_controls_tv": "Vis betjeningsknapper (projektor: slået til som standard)",
+    "f_show_media_tv": "Vis app / program",
+    "f_show_source": "Vis kilde (projektor: slået til som standard)",
+    "f_show_volume": "Vis lydstyrke (projektor: slået til som standard)",
+    "f_show_lamp": "Vis lampetimer",
+    "f_show_picture_mode": "Vis billedtilstand",
+    "f_show_temperature": "Vis temperatur",
+    "lamp": "Lampe",
+    "picture_mode": "Billede",
+    "source_next": "Næste kilde",
+    "f_warm_threshold": "Hold varm / klar over (W)",
+    "fridge": "Køleskab",
+    "pellet_stove": "Pillebrændeovn",
+    "pool_pump": "Poolpumpe",
+    "printer_3d": "3D-printer",
+    "chest_freezer": "Kummefryser",
+    "drawer_freezer": "Skabsfryser",
+    "solar": "Solceller",
+    "vmc": "Udsugningsventilator",
+    "hob": "Kogeplade",
+    "radiator": "Elradiator",
+    "comfort": "Komfort",
+    "comfort_1": "Komfort -1",
+    "comfort_2": "Komfort -2",
+    "eco": "Eco",
+    "frost": "Frostbeskyttelse",
+    "mode_drying": "Tørring",
+    "boost": "Boost",
+    "program": "Program",
+    "mode_none": "Ingen",
+    "window_open": "Vindue åbent",
+    "f_mode": "Tilstandsentitet (pilot wire, select…)",
+    "f_window": "Vinduessensor",
+    "f_max_power_rad": "Radiatoreffekt (W)",
+    "cooking": "Laver mad",
+    "residual": "Restvarme",
+    "zones": "Aktive zoner",
+    "f_zone_power": "Effekt for én zone (W)",
+    "f_zone_1": "Zone forrest til venstre (niveau eller W)",
+    "f_zone_2": "Zone forrest til højre",
+    "f_zone_3": "Zone bagerst til venstre",
+    "f_zone_4": "Zone bagerst til højre",
+    "f_residual_minutes": "Visning af restvarme (min)",
+    "speed1": "Lav hastighed",
+    "speed2": "Høj hastighed",
+    "humid": "Høj luftfugtighed",
+    "humidity": "Luftfugtighed",
+    "f_humidity": "Fugtsensor (%)",
+    "f_high_threshold": "Høj hastighed over (W)",
+    "f_humidity_max": "Fugtalarm over (%)",
+    "producing": "Producerer",
+    "low": "Lav produktion",
+    "night": "Nat",
+    "production": "Produktion",
+    "savings": "Besparelse",
+    "f_sun_entity": "Sol-entitet",
+    "f_max_power_solar": "Spidseffekt (Wp)",
+    "printing": "Printer",
+    "paused": "På pause",
+    "failed": "Fejlet",
+    "progress": "Fremskridt",
+    "nozzle": "Dyse",
+    "bed": "Plade",
+    "f_bed_temperature": "Sensor for pladetemperatur",
+    "f_filament_color": "Filamentfarve (CSS)",
+    "f_image": "Billed-URL (fx /local/min-enhed.png)",
+    "f_image_min": "Min. lysstyrke på foto når lyset er tændt (%)",
+    "f_image_max": "Maks. lysstyrke på foto (% af lysniveauet)",
+    "f_glow_max": "Maks. glød (% af lysniveauet)",
+    "f_nozzle_temperatures": "Sensorer for dysetemperatur (T0, T1…)",
+    "filtering": "Filtrerer",
+    "water": "Vand",
+    "today": "I dag",
+    "speed": "Hastighed",
+    "f_runtime": "Sensor for filtreringstid i dag",
+    "ph": "pH",
+    "orp": "ORP",
+    "pressure": "Tryk",
+    "tds": "TDS",
+    "salt": "Salt",
+    "chlorine": "Klor",
+    "f_ph": "pH-sensor",
+    "f_orp": "ORP-sensor (mV)",
+    "f_pressure": "Sensor for filtertryk",
+    "f_tds": "TDS-sensor",
+    "f_salt": "Saltsensor",
+    "f_chlorine": "Sensor for klorniveau",
+    "f_show_ph": "Vis pH",
+    "f_show_orp": "Vis ORP",
+    "f_show_pressure": "Vis tryk",
+    "f_show_tds": "Vis TDS",
+    "f_show_salt": "Vis salt",
+    "f_show_chlorine": "Vis klor",
+    "f_speed": "Hastighedssensor (o/min eller %)",
+    "f_max_power": "Maks. effekt ved fuld hastighed (W)",
+    "ignition": "Tænder",
+    "extinguishing": "Slukker",
+    "alarm": "Alarm",
+    "pellets": "Træpiller",
+    "pellets_low": "Lavt træpilleniveau",
+    "level": "Niveau",
+    "f_power_level": "Sensor for varmeniveau (1-5)",
+    "f_pellet_level": "Sensor for pilleniveau (%)",
+    "f_ignition_threshold": "Tænding over (W)",
+    "f_pellet_alert": "Alarm for få piller under (%)",
+    "off": "Slukket",
+    "idle": "Inaktiv",
+    "standby": "Standby",
+    "running": "Kører",
+    "finished": "Færdig",
+    "heating": "Varmer",
+    "ready": "Klar",
+    "preheating": "Forvarmer",
+    "cooling": "Køler",
+    "door_open": "Dør åben",
+    "unavailable": "Utilgængelig",
+    "too_warm": "For varm",
+    "ph_wash": "Vask",
+    "ph_rinse": "Skyl",
+    "ph_spin": "Centrifugering",
+    "ph_dry": "Tørring",
+    "ph_cool": "Afkøling",
+    "power": "Effekt",
+    "energy": "Energi",
+    "cost": "Pris",
+    "remaining": "Tilbage",
+    "temperature": "Temperatur",
+    "target": "Mål",
+    "fridge_temp": "Køl",
+    "freezer_temp": "Frys",
+    "ends_at": "Færdig kl.",
+    "ends_at_est": "Forventet færdig",
+    "almost_done": "Næsten færdig",
+    "toggle": "Tænd/sluk",
+    "confirm_off": "Program kører – klik igen for at afbryde strømmen",
+    "confirm_off_pc": "Computeren er tændt – klik igen for at afbryde strømmen",
+    "f_name": "Navn",
+    "f_labels": "Egne flisetekster (nøgle: tekst)",
+    "f_entity": "Status-entitet (switch, sensor, input_select…)",
+    "f_power": "Effektsensor (W)",
+    "f_energy": "Energisensor (kWh)",
+    "f_cost": "Prissensor",
+    "f_remaining": "Sensor for resterende tid",
+    "f_progress": "Fremskridtssensor (%)",
+    "f_program": "Sensor for program / fase",
+    "f_door": "Dørsensor",
+    "f_switch": "Kontakt der skal tændes/slukkes (valgfri)",
+    "f_threshold": "Tærskel for drift (W)",
+    "f_temperature": "Temperatursensor",
+    "f_target_temperature": "Sensor for måltemperatur",
+    "f_freezer_temperature": "Temperatursensor for fryser",
+    "f_freezer_door": "Dørsensor for fryser",
+    "f_max_temperature": "Alarm for køleskab over (°C)",
+    "f_temperature_unit": "Temperaturenhed (tom: automatisk)",
+    "f_freezer_max_temperature": "Alarm for fryser over (°C)",
+    "f_color": "Accentfarve (CSS)",
+    "f_animations": "Animationer",
+    "f_confirm_off": "Bekræft før strømmen afbrydes",
+    "err_need_entity": "Angiv mindst én af `entity`, `power`, `switch` eller `temperature`.",
+    "of_peak": "af spidseffekt",
+    "lcd_night": "NAT",
+    "lcd_ignition": "TÆND",
+    "lcd_extinguishing": "KØL",
+    "lcd_brewing": "BRYG",
+    "lcd_ready": "KLAR",
+    "pouring": "Tapper",
+    "playing": "Afspiller",
+    "muted": "Lyd slået fra",
+    "keg": "Fad",
+    "keg_low": "Fadet er næsten tomt",
+    "f_keg_level": "Sensor for fadniveau (%)",
+    "f_hot_water_level": "Resterende varmt vand (%)",
+    "f_hot_water_volume": "Resterende varmt vand (L)",
+    "f_tank_volume": "Tankkapacitet (L)",
+    "f_pouring": "Sensor for tapning (valgfri)",
+    "fan_1": "Hastighed 1",
+    "fan_2": "Hastighed 2",
+    "fan_3": "Hastighed 3",
+    "f_oscillating": "Svingning",
+    "f_mid_threshold": "Hastighed 2 over (W)",
+    "ph_heat": "Opvarmning",
+    "f_heating_power": "Tærskel for opvarmningsfase (W)",
+    "f_spin_power": "Tærskel for centrifugeringsfase (W)",
+    "f_images": "Billeder efter tilstand (liste: billede + above / below / state)",
+    "energy_none": "Ingen",
+    "energy_day": "I dag",
+    "energy_week": "Denne uge",
+    "energy_month": "Denne måned",
+    "cost_day": "Pris i dag",
+    "cost_week": "Pris denne uge",
+    "cost_month": "Pris denne måned",
+    "energy_24h": "Seneste 24 timer",
+    "energy_7d": "Seneste 7 dage",
+    "energy_30d": "Seneste 30 dage",
+    "cost_24h": "Pris seneste 24 t",
+    "cost_7d": "Pris seneste 7 dage",
+    "cost_30d": "Pris seneste 30 dage",
+    "f_display": "Forbrug vist som (kWh, pris eller begge)",
+    "f_tap_action": "Handling ved tryk (illustration)",
+    "f_hold_action": "Handling ved langt tryk (illustration)",
+    "ps5": "PlayStation 5",
+    "ps_rest": "Hviletilstand",
+    "ps_gaming": "Spiller",
+    "confirm_off_console": "Konsollen er tændt – klik igen for at afbryde strømmen",
+    "confirm_off_always": "Klik igen for at afbryde strømmen",
+    "f_confirm_always": "Bekræft altid før strømmen afbrydes (stik tændt)",
+    "f_standby_threshold_ps5": "Hviletilstand over (W)",
+    "f_gaming_threshold": "Spiller over (W)",
+    "f_energy_period": "Viste energi (tæller eller periode)",
+    "flex_temp": "Flex-zone",
+    "f_flex_temperature": "Temperatursensor for flex-zone",
+    "f_flex_max_temperature": "Alarm for flex-zone over (°C)",
+    "f_illustration_size": "Illustrationsstørrelse",
+    "f_transparent": "Gennemsigtig baggrund",
+    "monitor": "Skærm",
+    "monitors": "Skærme",
+    "monitor_on": "Tændt",
+    "monitors_on": "Tændt",
+    "pc_tower": "Stationær computer",
+    "f_screens": "Antal skærme",
+    "f_pc_style": "Illustration",
+    "f_standby_threshold_monitor": "Standby over (W)",
+    "kettle": "Elkedel",
+    "toaster": "Brødrister",
+    "boiling": "Koger",
+    "hot_water": "Varmt vand",
+    "toasting": "Rister",
+    "toast_ready": "Brødet er klar!",
+    "f_hot_minutes": "Vis \"varmt vand\" i (min)",
+    "f_ready_minutes": "Vis \"brødet er klar\" i (min)",
+    "power_strip": "Stikdåse",
+    "phone_charger": "Telefonoplader",
+    "piano": "Digitalt klaver",
+    "smart_plug": "Smart stik",
+    "f_icon": "Ikon for den tilsluttede enhed (mdi:...)",
+    "f_indicators": "Statusindikatorer",
+    "ind_led": "LED",
+    "ind_bolt": "Lyn",
+    "ind_ring": "Ring om stikket",
+    "ind_glow": "Glød",
+    "ind_flow": "Strøm i kablet",
+    "f_plug_type": "Stiktype",
+    "plug_eu": "Europa (type E / F)",
+    "plug_us": "Nordamerika (type A / B)",
+    "printer": "Printer / scanner",
+    "scanning": "Scanner",
+    "ink_low": "Lavt blækniveau",
+    "ink_black": "Sort",
+    "ink_cyan": "Cyan",
+    "ink_magenta": "Magenta",
+    "ink_yellow": "Gul",
+    "f_ink_black": "Sort blækniveau",
+    "f_ink_cyan": "Cyan blækniveau",
+    "f_ink_magenta": "Magenta blækniveau",
+    "f_ink_yellow": "Gul blækniveau",
+    "f_status_message": "Printerbesked (fx Lidt papir)",
+    "f_ink_low": "Lavt blækniveau under (%)",
+    "f_scan_threshold": "Scanning over (W)",
+    "garland": "LED-lyskæde",
+    "powered": "Tændt",
+    "lit": "Lyser",
+    "outlets": "Udtag",
+    "effect": "Effekt",
+    "f_outlets": "Styrede udtag (kontakter)",
+    "f_sockets": "Antal udtag",
+    "f_multicolor": "Flerfarvet (regnbue)",
+    "dehumidifier": "Affugter",
+    "air_purifier": "Luftrenser",
+    "pm25": "PM2.5",
+    "air_poor": "Dårlig luftkvalitet",
+    "filter": "Filter",
+    "replace_filter": "Skift filteret",
+    "replace_short": "Skift",
+    "f_pm25": "PM2.5-sensor (µg/m³)",
+    "f_filter": "Filter (% levetid tilbage, eller sensor for filterskift)",
+    "f_pm25_max": "Alarm for luftkvalitet over (µg/m³)",
+    "f_filter_alert": "Filteralarm under (%)",
+    "drying": "Affugter",
+    "tank_full": "Tanken er fuld",
+    "empty_tank": "Tøm tanken",
+    "tank": "Tank",
+    "tank_full_short": "Fuld",
+    "tank_ok": "OK",
+    "fan_speed": "Ventilator",
+    "mode": "Tilstand",
+    "f_target_humidity": "Målfugtighed (sensor, number eller humidifier)",
+    "f_tank_full": "Sensor for fuld tank",
+    "f_fan_speed": "Entitet for ventilatorhastighed (select, number, fan…)",
+    "last_cycle": "Seneste program",
+    "cycle_duration": "Programvarighed",
+    "cycle_energy": "Energi for programmet",
+    "cycle_cost": "Pris for programmet",
+    "yesterday": "i går",
+    "f_last_cycle": "Vis seneste program (start, slut, varighed, energi, pris)",
+    "f_estimate": "Anslå resterende tid og fremskridt (uden sensor)",
+    "f_price_per_kwh": "Pris pr. kWh (tal eller entitet, til priser)",
+    "wet_vacuum": "Våd- og tørstøvsuger",
+    "wv_cleaning": "Gør rent",
+    "wv_selfclean": "Selvrensning",
+    "wv_drying": "Tørrer",
+    "clean_water_empty": "Rentvandstanken er tom",
+    "dirty_water_full": "Spildevandstanken er fuld",
+    "battery_low": "Lavt batteri",
+    "error": "Fejl",
+    "clean_water": "Rent vand",
+    "dirty_water": "Spildevand",
+    "tank_empty_short": "Tom",
+    "f_clean_water": "Rentvandstank (% eller binær sensor)",
+    "f_dirty_water": "Spildevandstank (% eller binær sensor)",
+    "f_selfclean_threshold": "Selvrensning over (W, stik til dockingstation)",
+    "f_battery_low": "Lavt batteri under (%)",
+    "f_hide_when_inactive": "Skjul når inaktiv (intet program, ingen alarm)",
+    "f_hide_delay": "Bliv vist efter afslutning (min)",
+    "f_cycle_gap": "Pause der tælles med i samme program (min)",
+    "f_hide_zero_power": "Skjul effekt når den er 0",
+    "pool_ph_plus": "pH+ pumpe",
+    "pool_ph_minus": "pH- pumpe",
+    "electrolysis": "Elektrolyse",
+    "pool_heat_pump": "Poolvarmepumpe",
+    "shower": "Bruser",
+    "presence": "Tilstedeværelse",
+    "presence_on": "Nogen",
+    "presence_off": "Ingen",
+    "low_water": "Lavt vandniveau",
+    "f_switch_ph_plus": "pH+ doseringspumpe (tænd/sluk)",
+    "f_switch_ph_minus": "pH- doseringspumpe (tænd/sluk)",
+    "f_switch_electrolysis": "Elektrolyse (tænd/sluk)",
+    "f_switch_heat_pump": "Poolvarmepumpe (tænd/sluk)",
+    "f_switch_shower": "Bruser (tænd/sluk, status)",
+    "f_presence": "Tilstedeværelsessensor (nogen i eller omkring poolen)",
+    "f_low_water": "Alarm for lavt vand (sensor, dørsensor...)",
+    "dosing_pump": "Doseringspumpe (pH+ / pH-)",
+    "dosing": "Doserer",
+    "elliptical": "Crosstrainer",
+    "exercise_bike": "Motionscykel",
+    "rowing_machine": "Romaskine",
+    "in_use": "I brug",
+    "cadence": "Kadence",
+    "stroke_rate": "Tagfrekvens",
+    "distance": "Distance",
+    "heart_rate": "Puls",
+    "calories": "Kalorier",
+    "f_cadence": "Kadencesensor (o/min, eller tag/min for romaskinen)",
+    "f_distance": "Distancesensor",
+    "f_heart_rate": "Pulssensor",
+    "f_calories": "Kaloriesensor"
   },
   "de": {
     "washer": "Waschmaschine",
@@ -1391,6 +1843,7 @@ const STRINGS = {
     "f_bed_temperature": "Sensor de temperatura de la cama",
     "f_filament_color": "Color del filamento (CSS)",
     "f_image": "URL de la imagen (p. ej. /local/mi-aparato.png)",
+    "f_image_min": "Brillo mínimo de la foto con la luz encendida (%)",
     "f_image_max": "Brillo máximo de la foto (% del nivel de luz)",
     "f_glow_max": "Resplandor máximo (% del nivel de luz)",
     "f_nozzle_temperatures": "Sensores de temperatura de boquillas (T0, T1…)",
@@ -1771,6 +2224,10 @@ const STRINGS = {
     "f_show_temperature": "Afficher la température",
     "lamp": "Lampe",
     "picture_mode": "Image",
+    "source_active": "Source active",
+    "sound_mode": "Mode audio actuel",
+    "sound_mode_next": "Mode audio suivant",
+    "f_show_sound_mode": "Afficher le mode audio",
     "source_next": "Source suivante",
     "f_warm_threshold": "Maintien au chaud / prête au-dessus de (W)",
     "fridge": "Réfrigérateur",
@@ -1828,6 +2285,7 @@ const STRINGS = {
     "f_bed_temperature": "Capteur de température du plateau",
     "f_filament_color": "Couleur du filament (CSS)",
     "f_image": "URL de l'image (ex. /local/mon-appareil.png)",
+    "f_image_min": "Éclairage min de la photo quand la lampe est allumée (%)",
     "f_image_max": "Éclairage max de la photo (% du niveau de la lampe)",
     "f_glow_max": "Lueur max (% du niveau de la lampe)",
     "f_nozzle_temperatures": "Capteurs de température des buses (T0, T1…)",
@@ -2086,6 +2544,15 @@ const STRINGS = {
     "presence_off": "Personne",
     "low_water": "Niveau d'eau bas",
     "f_switch_ph_plus": "Pompe doseuse pH+ (marche / arrêt)",
+    "dose_interval": "Intervalle",
+    "dose_timer": "Timer",
+    "dose_volume": "Dose",
+    "dose_time": "Heure",
+    "day_short": "j",
+    "f_dose_interval": "Intervalle de distribution (jours : number, input_number ou capteur)",
+    "f_dose_timer": "Timer de distribution (interrupteur : actif = distribue selon l'intervalle)",
+    "f_dose_volume": "Volume par dose (capteur, mL)",
+    "f_dose_time": "Heure de distribution (capteur du planning, ex. 10:00)",
     "f_switch_ph_minus": "Pompe doseuse pH- (marche / arrêt)",
     "f_switch_electrolysis": "Électrolyse (marche / arrêt)",
     "f_switch_heat_pump": "PAC de piscine (marche / arrêt)",
@@ -2265,6 +2732,7 @@ const STRINGS = {
     "f_bed_temperature": "Ágy hőmérséklet szenzor",
     "f_filament_color": "Filament szín (CSS)",
     "f_image": "Kép URL (pl. /local/eszkozom.png)",
+    "f_image_min": "Min. fotófényesség bekapcsolt fénynél (%)",
     "f_image_max": "Max fotófényesség (% a fény szintjéből)",
     "f_glow_max": "Max izzás (% a fény szintjéből)",
     "f_nozzle_temperatures": "Fúvóka hőmérséklet szenzorok (T0, T1…)",
@@ -4969,7 +5437,10 @@ const STRINGS = {
     "f_bed_temperature": "Сензор температуре подлоге",
     "f_filament_color": "Боја филамента (CSS)",
     "f_image": "URL слике (нпр. /local/my-device.png)",
-    "f_nozzle_temperatures": "Сензори температуре млазнице (T0, T1…)",
+    "f_image_min": "Мин. осветљеност фотографије када је светло укључено (%)",
+    "f_image_max": "Макс. осветљеност фотографије (% нивоа светлости)",
+    "f_glow_max": "Макс. сјај (% нивоа светлости)",
+    "f_nozzle_temperatures": "Сензори температуре дизне (T0, T1…)",
     "filtering": "Филтрирање",
     "water": "Вода",
     "today": "Данас",
@@ -5116,24 +5587,49 @@ const STRINGS = {
     "f_transparent": "Провидна позадина",
     "monitor": "Монитор",
     "monitors": "Монитори",
-    "monitor_on": "Укључен",
-    "monitors_on": "Укључени",
+    "monitor_on": "Укључено",
+    "monitors_on": "Укључено",
     "pc_tower": "Кућиште рачунара",
     "f_screens": "Број екрана",
     "f_pc_style": "Илустрација",
     "f_standby_threshold_monitor": "Приправност изнад (W)",
-    "kettle": "Кетлер (Кувало)",
+    "kettle": "Кувало за воду",
     "toaster": "Тостер",
     "boiling": "Кување",
     "hot_water": "Врућа вода",
-    "toasting": "Печење тоста",
-    "toast_ready": "Тост је спреман!",
-    "f_hot_minutes": "Прикажи „врућа вода“ током (мин)",
-    "f_ready_minutes": "Прикажи „тост спреман“ током (мин)",
+    "toasting": "Тостирање",
+    "toast_ready": "Тост је готов!",
+    "f_hot_minutes": "Прикажи \"врућа вода\" током (мин)",
+    "f_ready_minutes": "Прикажи \"тост је готов\" током (мин)",
     "power_strip": "Продужни кабл",
     "phone_charger": "Пуњач за телефон",
-    "piano": "Дигитални пијано",
-    "garland": "LED новогодишње лампице",
+    "piano": "Дигитални клавир",
+    "smart_plug": "Паметна утичница",
+    "f_icon": "Иконица повезаног уређаја (mdi:...)",
+    "f_indicators": "Индикатори статуса",
+    "ind_led": "ЛЕД",
+    "ind_bolt": "Муња",
+    "ind_ring": "Прстен око утичнице",
+    "ind_glow": "Сјај",
+    "ind_flow": "Струја у каблу",
+    "f_plug_type": "Тип утичнице",
+    "plug_eu": "Европа (тип E / F)",
+    "plug_us": "Северна Америка (тип A / B)",
+    "printer": "Штампач / скенер",
+    "scanning": "Скенирање",
+    "ink_low": "Мало мастила",
+    "ink_black": "Црна",
+    "ink_cyan": "Цијан",
+    "ink_magenta": "Магента",
+    "ink_yellow": "Жута",
+    "f_ink_black": "Ниво црног мастила",
+    "f_ink_cyan": "Ниво цијан мастила",
+    "f_ink_magenta": "Ниво магента мастила",
+    "f_ink_yellow": "Ниво жутог мастила",
+    "f_status_message": "Порука штампача (нпр. Мало папира)",
+    "f_ink_low": "Мало мастила испод (%)",
+    "f_scan_threshold": "Скенирање изнад (W)",
+    "garland": "ЛЕД лампице",
     "powered": "Укључено",
     "lit": "Светли",
     "outlets": "Утичнице",
@@ -5189,7 +5685,38 @@ const STRINGS = {
     "f_hide_when_inactive": "Сакриј када је неактивно (нема циклуса, нема аларма)",
     "f_hide_delay": "Задржи видљиво након завршетка (мин)",
     "f_cycle_gap": "Пауза која се задржава у истом циклусу (мин)",
-    "f_hide_zero_power": "Сакриј снагу када је 0"
+    "f_hide_zero_power": "Сакриј снагу када је 0",
+    "pool_ph_plus": "pH+ пумпа",
+    "pool_ph_minus": "pH- пумпа",
+    "electrolysis": "Електролиза",
+    "pool_heat_pump": "Топлотна пумпа за базен",
+    "shower": "Туш",
+    "presence": "Присуство",
+    "presence_on": "Неко је ту",
+    "presence_off": "Нема никога",
+    "low_water": "Низак ниво воде",
+    "f_switch_ph_plus": "pH+ дозирна пумпа (укљ./искљ.)",
+    "f_switch_ph_minus": "pH- дозирна пумпа (укљ./искљ.)",
+    "f_switch_electrolysis": "Електролиза (укљ./искљ.)",
+    "f_switch_heat_pump": "Топлотна пумпа за базен (укљ./искљ.)",
+    "f_switch_shower": "Туш (укљ./искљ., статус)",
+    "f_presence": "Детектор присуства (неко у базену или око њега)",
+    "f_low_water": "Упозорење за низак ниво воде (сензор, сензор врата...)",
+    "dosing_pump": "Дозирна пумпа (pH+ / pH-)",
+    "dosing": "Дозирање",
+    "elliptical": "Елиптични тренажер",
+    "exercise_bike": "Собни бицикл",
+    "rowing_machine": "Справа за веслање",
+    "in_use": "У употреби",
+    "cadence": "Каденца",
+    "stroke_rate": "Брзина завеслаја",
+    "distance": "Раздаљина",
+    "heart_rate": "Откуцаји срца",
+    "calories": "Калорије",
+    "f_cadence": "Сензор каденце (обр./мин, или завеслаја/мин за веслање)",
+    "f_distance": "Сензор раздаљине",
+    "f_heart_rate": "Сензор откуцаја срца",
+    "f_calories": "Сензор калорија"
   },
   "sr-Latn": {
     "washer": "Veš mašina",
@@ -5348,6 +5875,9 @@ const STRINGS = {
     "f_bed_temperature": "Senzor temperature podloge",
     "f_filament_color": "Boja filamenta (CSS)",
     "f_image": "URL slike (npr. /local/my-device.png)",
+    "f_image_min": "Min. osvetljenost fotografije kada je svetlo uključeno (%)",
+    "f_image_max": "Maks. osvetljenost fotografije (% nivoa svetlosti)",
+    "f_glow_max": "Maks. sjaj (% nivoa svetlosti)",
     "f_nozzle_temperatures": "Senzori temperature mlaznice (T0, T1…)",
     "filtering": "Filtriranje",
     "water": "Voda",
@@ -5495,24 +6025,49 @@ const STRINGS = {
     "f_transparent": "Providna pozadina",
     "monitor": "Monitor",
     "monitors": "Monitori",
-    "monitor_on": "Uključen",
-    "monitors_on": "Uključeni",
+    "monitor_on": "Uključeno",
+    "monitors_on": "Uključeno",
     "pc_tower": "Kućište računara",
     "f_screens": "Broj ekrana",
     "f_pc_style": "Ilustracija",
     "f_standby_threshold_monitor": "Pripravnost iznad (W)",
-    "kettle": "Ketler (Kuvalo)",
+    "kettle": "Kuvalo za vodu",
     "toaster": "Toster",
     "boiling": "Kuvanje",
     "hot_water": "Vruća voda",
-    "toasting": "Pečenje tosta",
-    "toast_ready": "Tost je spreman!",
-    "f_hot_minutes": "Prikaži „vruća voda“ tokom (min)",
-    "f_ready_minutes": "Prikaži „tost spreman“ tokom (min)",
+    "toasting": "Tostiranje",
+    "toast_ready": "Tost je gotov!",
+    "f_hot_minutes": "Prikaži \"vruća voda\" tokom (min)",
+    "f_ready_minutes": "Prikaži \"tost je gotov\" tokom (min)",
     "power_strip": "Produžni kabl",
     "phone_charger": "Punjač za telefon",
-    "piano": "Digitalni pijano",
-    "garland": "LED novogodišnje lampice",
+    "piano": "Digitalni klavir",
+    "smart_plug": "Pametna utičnica",
+    "f_icon": "Ikonica povezanog uređaja (mdi:...)",
+    "f_indicators": "Indikatori statusa",
+    "ind_led": "LED",
+    "ind_bolt": "Munja",
+    "ind_ring": "Prsten oko utičnice",
+    "ind_glow": "Sjaj",
+    "ind_flow": "Struja u kablu",
+    "f_plug_type": "Tip utičnice",
+    "plug_eu": "Evropa (tip E / F)",
+    "plug_us": "Severna Amerika (tip A / B)",
+    "printer": "Štampač / skener",
+    "scanning": "Skeniranje",
+    "ink_low": "Malo mastila",
+    "ink_black": "Crna",
+    "ink_cyan": "Cijan",
+    "ink_magenta": "Magenta",
+    "ink_yellow": "Žuta",
+    "f_ink_black": "Nivo crnog mastila",
+    "f_ink_cyan": "Nivo cijan mastila",
+    "f_ink_magenta": "Nivo magenta mastila",
+    "f_ink_yellow": "Nivo žutog mastila",
+    "f_status_message": "Poruka štampača (npr. Malo papira)",
+    "f_ink_low": "Malo mastila ispod (%)",
+    "f_scan_threshold": "Skeniranje iznad (W)",
+    "garland": "LED lampice",
     "powered": "Uključeno",
     "lit": "Svetli",
     "outlets": "Utičnice",
@@ -5568,7 +6123,38 @@ const STRINGS = {
     "f_hide_when_inactive": "Sakrij kada je neaktivno (nema ciklusa, nema alarma)",
     "f_hide_delay": "Zadrži vidljivo nakon završetka (min)",
     "f_cycle_gap": "Pauza koja se zadržava u istom ciklusu (min)",
-    "f_hide_zero_power": "Sakrij snagu kada je 0"
+    "f_hide_zero_power": "Sakrij snagu kada je 0",
+    "pool_ph_plus": "pH+ pumpa",
+    "pool_ph_minus": "pH- pumpa",
+    "electrolysis": "Elektroliza",
+    "pool_heat_pump": "Toplotna pumpa za bazen",
+    "shower": "Tuš",
+    "presence": "Prisustvo",
+    "presence_on": "Neko je tu",
+    "presence_off": "Nema nikoga",
+    "low_water": "Nizak nivo vode",
+    "f_switch_ph_plus": "pH+ dozirna pumpa (uklj./isklj.)",
+    "f_switch_ph_minus": "pH- dozirna pumpa (uklj./isklj.)",
+    "f_switch_electrolysis": "Elektroliza (uklj./isklj.)",
+    "f_switch_heat_pump": "Toplotna pumpa za bazen (uklj./isklj.)",
+    "f_switch_shower": "Tuš (uklj./isklj., status)",
+    "f_presence": "Detektor prisustva (neko u bazenu ili oko njega)",
+    "f_low_water": "Upozorenje za nizak nivo vode (senzor, senzor vrata...)",
+    "dosing_pump": "Dozirna pumpa (pH+ / pH-)",
+    "dosing": "Doziranje",
+    "elliptical": "Eliptični trenažer",
+    "exercise_bike": "Sobni bicikl",
+    "rowing_machine": "Sprava za veslanje",
+    "in_use": "U upotrebi",
+    "cadence": "Kadenca",
+    "stroke_rate": "Brzina zaveslaja",
+    "distance": "Razdaljina",
+    "heart_rate": "Otkucaji srca",
+    "calories": "Kalorije",
+    "f_cadence": "Senzor kadence (obr./min, ili zaveslaja/min za veslanje)",
+    "f_distance": "Senzor razdaljine",
+    "f_heart_rate": "Senzor otkucaja srca",
+    "f_calories": "Senzor kalorija"
   }
 };
 const lang = (hass) => {
@@ -5659,12 +6245,12 @@ SVG.ac_split = () => `
 <path d="M10 70h100" stroke="#fff" stroke-opacity=".9" stroke-width="1"/>
 <rect class="ac-slot" x="12" y="73.5" width="96" height="5" rx="2.5" fill="#2a2f35"/>
 <g class="ac-flap"><path d="M12 74.5h96q0 4.5-4 5h-88q-4-.5-4-5z" fill="#f2f4f6" stroke="#aab2ba" stroke-width=".5"/></g>
-<rect x="84" y="58" width="22" height="9" rx="2" fill="#0c1720" opacity=".9"/>
-<text class="lcd" x="95" y="64.6" text-anchor="middle">OFF</text>
-<g class="ac-ico ico-cool" stroke="#4fc3f7" stroke-width=".9" stroke-linecap="round"><path d="M78 59v8M74.5 61l7 4M74.5 65l7-4"/></g>
-<g class="ac-ico ico-heat"><circle cx="78" cy="63" r="2" fill="#ff8a3d"/><path d="M78 58.6v1.2M78 66.2v1.2M73.6 63h1.2M81.2 63h1.2M74.9 59.9l.8.8M80.3 65.3l.8.8M74.9 66.1l.8-.8M80.3 60.7l.8-.8" stroke="#ff8a3d" stroke-width=".8" stroke-linecap="round"/></g>
-<g class="ac-ico ico-dry"><path d="M78 59q-3 4-3 5.6a3 3 0 0 0 6 0q0-1.6-3-5.6z" fill="#7fd6c0"/></g>
-<g class="ac-ico ico-fan" stroke="#cfd6dd" stroke-width="1" stroke-linecap="round" fill="none"><path d="M78 63q-3-4 0-4.5M78 63q4-1 3.5 2.4M78 63q-1 4-4 2"/></g>
+<rect x="80" y="56" width="30" height="14" rx="2.5" fill="#0c1720" opacity=".9"/>
+<text class="lcd" x="95" y="63.4" text-anchor="middle">OFF</text>
+<g class="ac-ico ico-cool" transform="translate(-9 3)" stroke="#4fc3f7" stroke-width=".9" stroke-linecap="round"><path d="M78 59v8M74.5 61l7 4M74.5 65l7-4"/></g>
+<g class="ac-ico ico-heat" transform="translate(-9 3)"><circle cx="78" cy="63" r="2" fill="#ff8a3d"/><path d="M78 58.6v1.2M78 66.2v1.2M73.6 63h1.2M81.2 63h1.2M74.9 59.9l.8.8M80.3 65.3l.8.8M74.9 66.1l.8-.8M80.3 60.7l.8-.8" stroke="#ff8a3d" stroke-width=".8" stroke-linecap="round"/></g>
+<g class="ac-ico ico-dry" transform="translate(-9 3)"><path d="M78 59q-3 4-3 5.6a3 3 0 0 0 6 0q0-1.6-3-5.6z" fill="#7fd6c0"/></g>
+<g class="ac-ico ico-fan" transform="translate(-9 3)" stroke="#cfd6dd" stroke-width="1" stroke-linecap="round" fill="none"><path d="M78 63q-3-4 0-4.5M78 63q4-1 3.5 2.4M78 63q-1 4-4 2"/></g>
 <circle class="led l1" cx="18" cy="64" r="1.1"/>`;
 
 SVG.air_fryer = () => `
@@ -5758,6 +6344,7 @@ SVG.air_purifier = () => `
 <g class="ap-knob"><circle cx="74" cy="30" r="4.2" fill="url(#ID-apknob)" stroke="#8b949d" stroke-width=".4"/>
   <path d="M74 30v-3.4" stroke="#3a424b" stroke-width="1.1" stroke-linecap="round"/></g>
 <g class="ap-ticks" fill="#6c757e"><circle cx="68.8" cy="32" r=".55"/><circle cx="69.6" cy="27" r=".55"/><circle cx="74" cy="24.4" r=".55"/><circle cx="78.4" cy="27" r=".55"/></g>
+${lcd(45, 102, 30, 11)}
 <rect x="34" y="124" width="52" height="5" rx="2" fill="#3a3f45"/>`;
 
 SVG.av_receiver = () => `
@@ -6280,11 +6867,11 @@ SVG.dishwasher = () => `
 /* Pompe doseuse péristaltique (pH+ / pH-) : boîtier bleu, tête transparente, rotor à galets qui tourne, tuyau beige, raccords noirs */
 SVG.dosing_pump = () => `
 <defs>${DEFS}
-<linearGradient id="ID-dpblue" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3b86e0"/><stop offset="1" stop-color="#1b55a6"/></linearGradient>
+<linearGradient id="ID-dpblue" x1="0" x2="1" y1="0" y2="1"><stop offset="0" style="stop-color:var(--dp-color,#3b86e0)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--dp-color,#3b86e0) 62%,#000)"/></linearGradient>
 <linearGradient id="ID-dpwin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#cfd8e2"/></linearGradient>
 <clipPath id="ID-dpclip"><rect x="26" y="40" width="68" height="58" rx="8"/></clipPath></defs>
 <ellipse cx="60" cy="126" rx="44" ry="4" fill="url(#ID-shadow)"/>
-<rect x="18" y="4" width="84" height="108" rx="10" fill="url(#ID-dpblue)" stroke="#143f7c" stroke-width="1"/>
+<rect x="18" y="4" width="84" height="108" rx="10" fill="url(#ID-dpblue)" style="stroke:color-mix(in srgb,var(--dp-color,#3b86e0) 40%,#000)" stroke-width="1"/>
 <rect x="26" y="10" width="68" height="26" rx="6" fill="#eef1f5" stroke="#c4ccd6" stroke-width=".8"/>
 <circle cx="37" cy="23" r="6" fill="#fff" stroke="#c4ccd6" stroke-width=".8"/><circle cx="83" cy="23" r="6" fill="#fff" stroke="#c4ccd6" stroke-width=".8"/>
 ${[0, 1, 2, 3, 4].map((k) => `<circle class="dp-led${k === 2 ? " dp-on" : ""}" cx="${48 + k * 6}" cy="20" r="1.7"/>`).join("")}
@@ -6755,8 +7342,9 @@ SVG.heat_pump = () => `
 <path d="M10 37h100" stroke="#fff" stroke-width="1.2"/>
 <path d="M84 40v72" stroke="#b9c0c7" stroke-width=".7"/>
 <g stroke="#bfc6cd" stroke-width=".6"><path d="M88 46h20M88 50h20M88 54h20M88 58h20M88 62h20M88 66h20"/></g>
-<rect x="88" y="84" width="20" height="18" rx="1.5" fill="#e3e7eb" stroke="#aab2ba" stroke-width=".5"/>
-<circle cx="98" cy="93" r="1.3" fill="#9aa2ab"/>
+<rect x="86" y="84" width="24" height="22" rx="1.5" fill="#e3e7eb" stroke="#aab2ba" stroke-width=".5"/>
+${lcd(87.5, 86, 21, 12)}
+<circle cx="98" cy="102" r="1.3" fill="#9aa2ab"/>
 <circle class="hp-led" cx="104" cy="75" r="1.2"/>
 <circle cx="46" cy="75" r="31" fill="#d4d9de" stroke="#aab2ba" stroke-width=".6"/>
 <circle cx="46" cy="75" r="28" fill="url(#ID-grill)"/>
@@ -8664,7 +9252,7 @@ const DEF = {
     keys: ["piscine", "pool", "filtration", "pompe"] },
   // pompe doseuse péristaltique (pH+ / pH-) sur prise ou interrupteur : tourne quand elle injecte
   dosing_pump: { accent: "active", threshold: 3,
-    fields: ["entity", "power", "energy", "cost", "ph", "switch"],
+    fields: ["entity", "power", "energy", "cost", "ph", "switch", "dose_interval", "dose_timer", "dose_volume", "dose_time"],
     keys: ["doseuse", "dosing", "peristaltique", "ph_plus", "ph_moins", "ph_minus"] },
   chest_freezer: { accent: "cold", threshold: 20,
     fields: ["entity", "power", "energy", "cost", "temperature", "door", "switch"],
@@ -8973,7 +9561,7 @@ class ApplianceCardBase extends HTMLElement {
   _ids() {
     const c = this._config;
     return ["entity", "power", "power_solar", "energy_solar", "energy", "cost", "remaining", "progress", "program", "door", "switch",
-      "switch_low", "switch_high", "switch_ph_plus", "switch_ph_minus", "switch_electrolysis", "switch_heat_pump", "switch_shower", "presence", "low_water", "power_level", "pellet_level", "ph", "orp", "pressure", "tds", "salt", "chlorine", "runtime", "usage_time", "speed", "bed_temperature", "humidity", "light", "keg_level", "pouring", "battery_level", "zone2_temperature", "zone_1", "zone_2", "zone_3", "zone_4", "mode", "window", "temperature", "target_temperature", "freezer_temperature", "flex_temperature", "freezer_door", "target_humidity", "tank_full", "fan_speed", "clean_water", "dirty_water", "hot_water_level", "hot_water_volume", "pm25", "filter"].map((k) => c[k]).concat(typeof c.tank_volume === "string" ? [c.tank_volume] : []).filter(Boolean).concat(this._nozzles()).concat(Array.isArray(c.outlets) ? c.outlets.filter((i) => typeof i === "string" && i) : [])
+      "switch_low", "switch_high", "switch_ph_plus", "switch_ph_minus", "switch_electrolysis", "switch_heat_pump", "switch_shower", "presence", "low_water", "power_level", "pellet_level", "ph", "orp", "dose_interval", "dose_timer", "dose_volume", "dose_time", "pressure", "tds", "salt", "chlorine", "runtime", "usage_time", "speed", "bed_temperature", "humidity", "light", "keg_level", "pouring", "battery_level", "zone2_temperature", "zone_1", "zone_2", "zone_3", "zone_4", "mode", "window", "temperature", "target_temperature", "freezer_temperature", "flex_temperature", "freezer_door", "target_humidity", "tank_full", "fan_speed", "clean_water", "dirty_water", "hot_water_level", "hot_water_volume", "pm25", "filter"].map((k) => c[k]).concat(typeof c.tank_volume === "string" ? [c.tank_volume] : []).filter(Boolean).concat(this._nozzles()).concat(Array.isArray(c.outlets) ? c.outlets.filter((i) => typeof i === "string" && i) : [])
       .concat(Array.isArray(c.images) ? c.images.map((i) => i && typeof i.entity === "string" && i.entity).filter(Boolean) : []);
   }
 
@@ -9874,6 +10462,11 @@ class ApplianceCardBase extends HTMLElement {
       const list = Array.isArray(a.source_list) ? a.source_list : [];
       if (list.length) call("select_source", { source: list[(list.indexOf(a.source) + 1) % list.length] });
     }
+    else if (key === "sound_mode") {
+      // mode audio suivant dans sound_mode_list (DTS Surround → Dolby → Stéréo → …)
+      const list = Array.isArray(a.sound_mode_list) ? a.sound_mode_list : [];
+      if (list.length) call("select_sound_mode", { sound_mode: list[(list.indexOf(a.sound_mode) + 1) % list.length] });
+    }
     else if (key === "mute") call("volume_mute", { is_volume_muted: !a.is_volume_muted });
     else {
       const v = Number(a.volume_level), up = key === "vol_up";
@@ -9884,14 +10477,16 @@ class ApplianceCardBase extends HTMLElement {
 
   /* ---------------- rendering ---------------- */
   _lcdText(m) {
-    const hass = this._hass, kind = this._kind;
+    const hass = this._hass, kind = this._kind, c = this._config;
+    // lcd_value : « current » affiche la température actuelle plutôt que la consigne (radiateur, sèche-serviettes, clim)
+    const lcdT = () => (c.lcd_value === "current" ? m.tempVal ?? m.targetVal : m.targetVal ?? m.tempVal);
     const active = ["running", "heating", "preheating", "cooling", "ignition", "filtering", "dosing", "in_use", "printing", "scanning", "producing", "low", "speed1", "speed2", "cooking", "brewing", "keep_warm", "screen_on", "online", "ac_dry", "ac_fan", "defrost", "pouring", "playing", "muted", "fan_1", "fan_2", "fan_3", "charging", "drying", "boiling", "toasting", "powered", "lit", "wv_cleaning", "wv_selfclean", "wv_drying", "ps_gaming", "mixing", "turbo"].includes(m.status);
     if (m.status === "unavailable") return "- - -";
     if (["fridge", "wine_cooler", "chest_freezer", "drawer_freezer"].includes(kind)) return m.tempVal != null ? `${fmtNum(hass, m.tempVal, 0)}°` : "--°";
     if (kind === "towel_dryer") {
       if (m.status === "off") return "OFF";
       if (m.radMode === "frost") return "H-G";
-      const v = m.targetVal ?? m.tempVal;
+      const v = lcdT();
       return v != null ? `${Math.round(v)}°` : "ON";
     }
     if (kind === "server_rack") {
@@ -9902,7 +10497,7 @@ class ApplianceCardBase extends HTMLElement {
     if (kind === "radiator") {
       if (m.status === "off") return "OFF";
       if (m.radMode === "frost") return "H-G";
-      const v = m.targetVal ?? m.tempVal;
+      const v = lcdT();
       return v != null ? `${Math.round(v)}°` : "ON";
     }
     if (kind === "solar") {
@@ -9964,8 +10559,15 @@ class ApplianceCardBase extends HTMLElement {
     }
     if (kind === "ac_split") {
       if (m.status === "off" || m.status === "unavailable") return "";
-      return m.targetVal != null ? `${Math.round(m.targetVal)}°` : m.tempVal != null ? `${Math.round(m.tempVal)}°` : "ON";
+      const v = lcdT();
+      return v != null ? `${Math.round(v)}°` : "ON";
     }
+    if (kind === "heat_pump") {
+      if (m.status === "off") return "OFF";
+      if (m.watts == null) return "ON";
+      return m.watts >= 1000 ? `${(m.watts / 1000).toFixed(m.watts >= 10000 ? 0 : 1)}kW` : `${Math.round(m.watts)}W`;
+    }
+    if (kind === "air_purifier") return m.pm != null ? `PM ${Math.round(m.pm)}` : m.status === "off" ? "OFF" : "PM --";
     if (kind === "coffee_maker") {
       if (m.status === "brewing") return tr(hass, "lcd_brewing");
       if (m.status === "ready") return tr(hass, "lcd_ready");
@@ -10005,6 +10607,8 @@ class ApplianceCardBase extends HTMLElement {
     // illustration dynamic parts
     if (kind === "av_receiver") $("wrap").style.setProperty("--amp", (m.amp ?? .6).toFixed(2));
     if (kind === "smart_speaker") $("wrap").style.setProperty("--amp", (m.amp ?? .5).toFixed(2));
+    // dosing_pump : color = couleur du boîtier (n'importe quelle couleur CSS), pour repérer chaque produit (pH+, fer, potassium…)
+    if (kind === "dosing_pump") { if (c.color) $("wrap").style.setProperty("--dp-color", String(c.color)); else $("wrap").style.removeProperty("--dp-color"); }
     if (kind === "beer_tap") $("wrap").style.setProperty("--keg", ((m.keg ?? 70) / 100).toFixed(2));
     if (kind === "power_strip") {
       // fiche branchée : prises commandées (outlets), sinon toutes sauf la dernière ; LED allumée si la prise est active
@@ -10061,6 +10665,21 @@ class ApplianceCardBase extends HTMLElement {
     const sr = this.shadowRoot;
     const lcdEl = sr.querySelector(".lcd");
     if (lcdEl) lcdEl.textContent = this._lcdText(m);
+    // lcd_big : grande valeur lisible (icône + température) posée sur le dessin ; icône thermomètre = actuelle, cible = consigne (lcd_value)
+    if (c.lcd_big === true && ["radiator", "towel_dryer", "ac_split"].includes(kind)) {
+      const sv = sr.querySelector(".illus svg");
+      let bg = sv && sv.querySelector(".bigval");
+      if (sv && !bg) { bg = document.createElementNS("http://www.w3.org/2000/svg", "g"); bg.setAttribute("class", "bigval"); sv.appendChild(bg); }
+      if (bg) {
+        const raw = this._lcdText(m), num = /^-?\d+°$/.test(raw), txt = num ? `${raw.slice(0, -1)}${m.tempUnit || "°C"}` : raw;
+        const [cx, cy] = { radiator: [50, 64], towel_dryer: [60, 66], ac_split: [46, 60] }[kind];
+        const ico = c.lcd_value === "current"
+          ? `<g fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round"><path d="M-0.1 -4V1.2"/><circle cx="-0.1" cy="2.7" r="2" fill="#fff"/><path d="M-1.4 -3a1.3 1.3 0 0 1 2.6 0V1.4" /></g>`
+          : `<g fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"><circle r="3.4"/><circle r=".8" fill="#fff"/><path d="M0 -5.4V-3.6M0 3.6V5.4M-5.4 0H-3.6M3.6 0H5.4"/></g>`;
+        const slot = num ? 14 : 0, w = txt.length * 8.6 + slot, x0 = cx - w / 2;
+        bg.innerHTML = `${num ? `<g transform="translate(${(x0 + 5.5).toFixed(1)} ${cy}) scale(1.25)">${ico}</g>` : ""}<text x="${(x0 + slot + (w - slot) / 2).toFixed(1)}" y="${cy}">${esc(txt)}</text>`;
+      }
+    }
     const lcd3 = sr.querySelector(".lcd3");
     if (lcd3) lcd3.textContent = m.status === "unavailable" || m.flexVal == null ? "--°" : `${fmtNum(hass, m.flexVal, 0)}°`;
     const lcd2 = sr.querySelector(".lcd2");
@@ -10338,6 +10957,25 @@ class ApplianceCardBase extends HTMLElement {
         return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
       }).join("");
       modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
+    } else if (kind === "av_receiver" && c.show_controls !== false && domainOf(c.entity) === "media_player" && hass.states[c.entity]) {
+      // ampli : marche / arrêt, sourdine, volume −, volume +, source suivante, mode audio suivant (selon les fonctions annoncées par l'entité)
+      const a = hass.states[c.entity].attributes || {}, sf = Number(a.supported_features);
+      // MediaPlayerEntityFeature : VOLUME_SET 4, VOLUME_MUTE 8, TURN_ON 128, TURN_OFF 256, VOLUME_STEP 1024, SELECT_SOURCE 2048
+      const has = (bit) => !Number.isFinite(sf) || (sf & bit) !== 0;
+      const off = ["off", "standby", "unavailable"].includes(m.status), muted = m.status === "muted" || !!a.is_volume_muted, vol = has(4) || has(1024);
+      const btns = [
+        has(8) ? ["mute", muted ? "mdi:volume-off" : "mdi:volume-high", "mute", muted] : null,
+        vol ? ["vol_down", "mdi:volume-minus", "volume_down", null] : null,
+        vol ? ["vol_up", "mdi:volume-plus", "volume_up", null] : null,
+        has(128) || has(256) ? ["power", "mdi:power", "toggle", !off] : null,
+        has(2048) && Array.isArray(a.source_list) && a.source_list.length > 1 ? ["source", "mdi:import", "source_next", null] : null,
+        Array.isArray(a.sound_mode_list) && a.sound_mode_list.length > 1 ? ["sound_mode", "mdi:surround-sound", "sound_mode_next", null] : null,
+      ].filter(Boolean);
+      modesEl.innerHTML = btns.map(([k, icon, lbl, on]) => {
+        const dis = m.status === "unavailable" || (off && k !== "power");
+        return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
+      }).join("");
+      modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
     } else if (kind === "tv" && (c.show_controls ?? tvProjector(c)) && domainOf(c.entity) === "media_player" && hass.states[c.entity]) {
       // télé / vidéoprojecteur : marche / arrêt, source suivante, volume −, lecture / pause, volume +, sourdine
       const a = hass.states[c.entity].attributes || {}, sf = Number(a.supported_features);
@@ -10357,6 +10995,15 @@ class ApplianceCardBase extends HTMLElement {
         return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
       }).join("");
       modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
+    } else if (kind === "dosing_pump" && c.dose_timer) {
+      // doseuse programmée (aquarium) : bouton Timer, clic = bascule, allumé = distribue selon l'intervalle prévu
+      const id = c.dose_timer, st = hass.states[id], on = isOn(st), name = tr(hass, "dose_timer");
+      modesEl.innerHTML = `<button class="mode-btn outlet-btn ${on ? "on" : ""}" data-outlet="${esc(id)}" title="${esc(name)}" aria-label="${esc(name)}" aria-pressed="${on}" ${!st || st.state === "unavailable" ? "disabled" : ""}><ha-icon icon="mdi:timer-outline"></ha-icon>${esc(name)}</button>`;
+      modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => {
+        ev.stopPropagation();
+        const dom = domainOf(b.dataset.outlet);
+        hass.callService(["switch", "input_boolean", "light", "fan"].includes(dom) ? dom : "homeassistant", "toggle", { entity_id: b.dataset.outlet });
+      }; });
     } else if (kind === "pool_pump" && POOL_CTL.some(([k]) => c[k])) {
       // piscine : un bouton par équipement commandé (doseuses pH+ / pH-, électrolyse, PAC, douche), clic = bascule, bouton allumé = en marche
       modesEl.innerHTML = POOL_CTL.filter(([k]) => c[k]).map(([k, icon, lbl]) => {
@@ -10468,6 +11115,11 @@ class ApplianceCardBase extends HTMLElement {
       if (m.picMode && c.show_picture_mode !== false && !BAD.includes(String(m.picMode.state).toLowerCase()))
         tile("mdi:palette", stateText(hass, m.picMode), lb("picture_mode"), c.picture_mode);
       if (m.tempVal != null && c.show_temperature !== false) tile("mdi:thermometer", `${fmtNum(hass, m.tempVal, 0)} ${m.tempUnit}`, lb("temperature"), tEntity);
+    } else if (kind === "av_receiver") {
+      // ampli : source active et mode audio actuel (attributs `source` et `sound_mode` du media_player)
+      const a = m.main && domainOf(c.entity) === "media_player" ? m.main.attributes || {} : {}, up = !["off", "standby", "unavailable"].includes(m.status);
+      if (up && a.source && c.show_source !== false) tile("mdi:import", String(a.source), lb("source_active"), c.entity);
+      if (up && a.sound_mode && c.show_sound_mode !== false) tile("mdi:surround-sound", String(a.sound_mode), lb("sound_mode"), c.entity);
     } else if (kind === "smart_speaker") {
       if (m.vol != null && !["off", "standby", "unavailable"].includes(m.status)) tile(m.muted ? "mdi:volume-off" : "mdi:volume-high", `${Math.round(m.vol * 100)} %`, lb("volume"), c.entity, m.muted ? "warn" : "");
       if (spOn && m.app) tile("mdi:music-box-outline", m.app, lb("source"), c.entity);
@@ -10480,6 +11132,16 @@ class ApplianceCardBase extends HTMLElement {
       if (f.kcal) tile("mdi:fire", fmtUnit(hass, f.kcal, 0), lb("calories"), c.calories);
     } else if (kind === "dosing_pump") {
       if (m.pool && m.pool.ph) tile("mdi:ph", fmtUnit(hass, m.pool.ph, 2), lb("ph"), c.ph);
+      // aquarium (doseuse Jebao…) : intervalle en jours, volume par dose, heure de distribution
+      const dst = (k) => { const s = c[k] && hass.states[c[k]]; return s && !BAD.includes(String(s.state).toLowerCase()) ? s : null; };
+      const dInt = dst("dose_interval"), dVol = dst("dose_volume"), dTime = dst("dose_time");
+      if (dInt && num(dInt) != null) tile("mdi:calendar-refresh-outline", `${fmtNum(hass, num(dInt), 0)} ${tr(hass, "day_short")}`, lb("dose_interval"), c.dose_interval);
+      if (dVol) tile("mdi:cup-water", fmtUnit(hass, dVol, 1), lb("dose_volume"), c.dose_volume);
+      if (dTime) {
+        const sched = Array.isArray(dTime.attributes.schedule) && dTime.attributes.schedule[0] && dTime.attributes.schedule[0].time;
+        const t = /^\d{1,2}:\d{2}/.test(String(dTime.state)) ? String(dTime.state).slice(0, 5) : sched ? String(sched).slice(0, 5) : String(dTime.state);
+        tile("mdi:clock-outline", t, lb("dose_time"), c.dose_time);
+      }
     } else if (kind === "pool_pump") {
       if (m.tempVal != null && c.show_temperature !== false) tile("mdi:thermometer-water", `${fmtNum(hass, m.tempVal, 1)} ${m.tempUnit}`, lb("water"), tEntity);
       // analyses de l'eau : [clé, icône, décimales] ; chaque mesure se masque avec show_<clé>: false
@@ -10586,6 +11248,10 @@ const SEL = {
   switch: { entity: { domain: ["switch", "input_boolean", "light"] } },
   switch_low: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_high: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
+  dose_interval: { entity: { domain: ["number", "input_number", "sensor"] } },
+  dose_timer: { entity: { domain: ["switch", "input_boolean"] } },
+  dose_volume: { entity: { domain: ["sensor", "number", "input_number"] } },
+  dose_time: { entity: { domain: ["sensor", "input_datetime"] } },
   switch_ph_plus: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_ph_minus: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_electrolysis: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
@@ -10699,6 +11365,7 @@ function buildForm(kind) {
           ] : []),
           { name: "illustration_size", selector: { number: { min: 30, max: 300, step: 5, mode: "slider", unit_of_measurement: "%" } } },
           { name: "transparent", selector: { boolean: {} } },
+          ...window.applianceTileFields(),
           { name: "animations", selector: { boolean: {} }, default: true },
           { name: "hide_when_inactive", selector: { boolean: {} } },
           { name: "hide_delay", selector: { number: { min: 0, max: 1440, step: 1, mode: "box", unit_of_measurement: "min" } } },
@@ -10711,6 +11378,11 @@ function buildForm(kind) {
               { value: "h2d", label: "Bambu Lab H2D (photo)" }, { value: "h2d_svg", label: "Bambu Lab H2D (SVG)" }] } } },
             { name: "nozzle_temperatures", selector: { entity: { multiple: true, domain: "sensor" } } },
             { name: "filament_color", selector: { text: {} } },
+          ] : []),
+          ...(["radiator", "towel_dryer", "ac_split"].includes(kind) ? [
+            { name: "lcd_value", selector: { select: { mode: "dropdown", options: [
+              { value: "target", label: tr(null, "lcd_value_target") }, { value: "current", label: tr(null, "lcd_value_current") }] } } },
+            { name: "lcd_big", selector: { boolean: {} }, default: false },
           ] : []),
           ...(["ac_split", "heat_pump"].includes(kind) ? [
             { name: "hvac", selector: { select: { mode: "dropdown", options: [
@@ -10736,6 +11408,10 @@ function buildForm(kind) {
           ] : []),
           ...(kind === "av_receiver" ? [
             { name: "max_power", selector: { number: { min: 50, max: 2000, step: 10, mode: "box", unit_of_measurement: "W" } } },
+            { name: "show_controls", selector: { boolean: {} }, default: true },
+            { name: "show_source", selector: { boolean: {} }, default: true },
+            { name: "show_sound_mode", selector: { boolean: {} }, default: true },
+            { name: "volume_step", selector: { number: { min: 0.01, max: 0.2, step: 0.01, mode: "box" } } },
           ] : []),
           ...(kind === "smart_speaker" ? [
             // model : photo de l'enceinte (vide = devinée depuis l'entité : Sonos, Google Nest, sinon Echo Dot)
@@ -11026,8 +11702,10 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 /* hide_when_inactive en mode édition : la carte serait masquée, elle reste visible en transparence */
 .wrap.would-hide { opacity: .45; }
-.tile { display: flex; flex-direction: column; padding: 6px 9px; border-radius: 10px; min-width: 0; background: rgba(127,127,127,.09); }
-.tile:hover { background: rgba(127,127,127,.16); }
+.tile { display: flex; flex-direction: column; padding: 6px 9px; border-radius: 10px; min-width: 0; background: var(--ac-tile-bg, rgba(127,127,127,.09)); }
+/* tile_order: name → nom au-dessus de la valeur (ordre historique de ces cartes : valeur au-dessus) */
+:host([tile-order="name"]) .tile { flex-direction: column-reverse; }
+.tile:hover { background: var(--ac-tile-bg, rgba(127,127,127,.16)); filter: brightness(.96); }
 .val { font-size: 14px; font-weight: 600; color: var(--primary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lbl { display: flex; align-items: center; gap: 3px; font-size: 11px; color: var(--secondary-text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lbl ha-icon { --mdc-icon-size: 13px; flex: none; }
@@ -11199,6 +11877,25 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
   line-height: 1 !important;
   margin-top: 1.5px !important;
 }
+
+/* tile_order: name → titre et état en ligne du haut, au-dessus du dessin (comme les cartes récentes) ; sans l'option, disposition historique.
+   Rien ne change pour la disposition « split ». */
+:host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head head" "illus stats"; }
+:host([tile-order="name"]) .wrap:not(.layout-split) .stats { align-self: center; }
+@container (max-width: 400px) {
+  :host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head head" "illus illus" "stats stats"; }
+  :host([tile-order="name"]) .wrap:not(.layout-split) .illus { justify-self: center; }
+}
+@container (max-width: 280px) {
+  :host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head" "illus" "stats"; }
+}
+@container (max-width: 320px) {
+  :host([tile-order="name"][illus-big]) .wrap:not(.layout-split) .top { grid-template-areas: "head" "illus" "stats"; }
+}
+
+/* lcd_big : grande valeur posée sur le dessin (contour sombre pour rester lisible sur toutes les teintes) */
+.bigval { filter: drop-shadow(0 0 1.2px rgba(0, 0, 0, .85)); pointer-events: none; }
+.bigval text { fill: #fff; stroke: rgba(20, 22, 28, .75); stroke-width: 2.4px; paint-order: stroke; stroke-linejoin: round; font: 700 16px var(--paper-font-body1_-_font-family, Roboto, sans-serif); text-anchor: middle; dominant-baseline: central; }
 
 ﻿/* ---------- illustration: shared ---------- */
 .lcd { font: 700 8.5px ui-monospace, "Courier New", monospace; letter-spacing: .25px; fill: #7ec8e3 !important; font-weight: 700; dominant-baseline: central; transition: fill .3s; }
@@ -11722,6 +12419,7 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .k-ac_split.st-ac_dry .ico-dry, .k-ac_split.st-ac_fan .ico-fan { opacity: 1; }
 .k-ac_split.st-off .ac-ico, .k-ac_split.st-unavailable .ac-ico { opacity: 0 !important; }
 .k-ac_split .lcd { fill: transparent; }
+.wrap.k-ac_split svg text.lcd, .wrap.k-ac_split .lcd { font-size: 10.5px !important; }
 .k-ac_split:not(.st-off):not(.st-unavailable) .lcd { fill: var(--acc); }
 .k-ac_split:not(.st-off):not(.st-unavailable) .l1 { fill: #3ddc84; }
 .ac-warm { opacity: 0; transition: opacity 1.2s; }
@@ -11749,6 +12447,9 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .k-heat_pump.st-cooling .hp-led, .k-heat_pump.st-heating .hp-led, .k-heat_pump.st-ac_dry .hp-led, .k-heat_pump.st-defrost .hp-led { fill: #3ddc84; }
 .k-heat_pump.st-at_target .hp-led, .k-heat_pump.st-ac_fan .hp-led { fill: #ffd76a; }
 @keyframes hp-wave { 0% { opacity: .8; transform: scale(1); } 100% { opacity: 0; transform: scale(1.55); } }
+
+/* écran : puissance */
+.wrap.k-heat_pump svg text.lcd, .wrap.k-heat_pump .lcd { font-size: 6px !important; letter-spacing: 0 !important; }
 
 /* ---------- towel dryer ---------- */
 .td-glow { opacity: 0; transition: opacity .8s; }
@@ -12189,6 +12890,9 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .k-air_purifier.filter-bad .ap-knob circle { stroke: var(--ac-heat); stroke-width: 1; filter: drop-shadow(0 0 1.4px var(--ac-heat)); }
 @keyframes ap-dust { 0% { opacity: 0; transform: translateX(0); } 20% { opacity: .9; } 80% { opacity: .6; } 100% { opacity: 0; transform: translateX(26px); } }
 @keyframes ap-up { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -20; } }
+
+/* écran : PM2.5 */
+.wrap.k-air_purifier svg text.lcd, .wrap.k-air_purifier .lcd { font-size: 7.5px !important; letter-spacing: 0 !important; }
 
 /* ---------- écrans PC ---------- */
 .mn-screen { opacity: 0; transition: opacity .5s; }
@@ -12712,6 +13416,18 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
   if (window.applianceEditorLabel) return;
   const L = {
     "en": {
+      "surface": "Installation (floor or wall)",
+      "food_low": "Low hopper alert (%)",
+      "hopper_capacity": "Hopper capacity (g)",
+      "daily_consumption": "Food eaten per day (g, optional)",
+      "show_autonomy": "Show the autonomy",
+      "entity_pump": "Well pump",
+      "entity_master": "Auto watering (on = enabled)",
+      "entity_soil": "Soil moisture",
+      "entity_next": "Next run",
+      "block_on_rain": "Block manual start when it rains",
+      "show_soil": "Show the soil moisture",
+      "show_pump": "Show the pump",
       "extra_tiles": "Extra tiles (list: entity, name, icon)",
       "animations": "Animations",
       "battery_low": "Low battery (%)",
@@ -12789,7 +13505,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_target_temp": "Target temperature",
       "entity_tariff": "Current tariff",
       "entity_temp": "Temperature",
-      "entity_temperature": "Temperature",
+      "entity_temperature": "Room temperature",
       "entity_time": "Remaining time",
       "entity_water_level": "Water level",
       "entity_water_temp": "Water temperature",
@@ -12808,6 +13524,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "indexes": "Meter indexes",
       "invert": "Invert state",
       "invert_position": "Invert position (open ↔ closed)",
+      "invert_buttons": "Invert the buttons (Open ↔ Close commands)",
       "invert_power": "Invert power sign",
       "jets_threshold": "Jets threshold (W)",
       "language": "Language",
@@ -12847,7 +13564,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_cost": "Show cost",
       "show_duration": "Show duration",
       "show_energy": "Show energy",
-      "show_fan": "Show fan speed",
+      "show_fan": "Fan tile",
       "show_filter": "Show filter",
       "show_floor": "Show floor temperature",
       "show_flow": "Show flow",
@@ -12877,7 +13594,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_status_tile": "Show status tile",
       "show_tariff": "Show tariff",
       "show_temp": "Show temperature",
-      "show_temperature": "Show temperature",
+      "show_temperature": "Temperature tile",
       "show_temps": "Show temperatures",
       "show_time": "Show time",
       "show_voltage": "Show voltages",
@@ -12909,8 +13626,30 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_slider": "Show sliders",
       "show_tilt": "Show tilt",
       "image": "Your own image (URL)",
+      "zones": "Zones (valves)",
+      "zone_entity": "Entity",
+      "zone_name": "Name",
+      "zone_icon": "Icon",
+      "zone_x": "Position X on the image (%, from the left)",
+      "zone_y": "Position Y on the image (%, from the top)",
+      "marker_names": "Show valve names on the image",
       "illustration_size": "Illustration size",
+      "shape": "Shape",
+      "color2": "Second colour (TV light bars)",
+      "shape_strip": "Flexible strip",
+      "shape_bars": "TV light bars",
       "transparent": "Transparent background",
+      "tile_background": "Tile background",
+      "tile_bg_transparent": "Transparent (default)",
+      "tile_bg_theme": "Theme colour",
+      "tile_order": "Tile order",
+      "tile_order_name": "Name above, value below",
+      "tile_order_value": "Value above, name below",
+      "lcd_big": "Large value on the drawing",
+      "f_lcd_big": "Large value on the drawing",
+      "lcd_value": "Value on the display",
+      "lcd_value_target": "Target temperature (default)",
+      "lcd_value_current": "Current temperature",
       "entity_wind": "Wind speed sensor",
       "show_rain": "Show rain",
       "show_wind": "Show wind",
@@ -13009,21 +13748,21 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Show window",
       "spot_count": "Number of spotlights",
       "brightness_slider": "Brightness slider",
-      "entity_cpu": "CPU usage",
+      "entity_cpu": "CPU load sensor (%)",
       "entity_cpu_temp": "CPU temperature",
       "entity_ram": "Memory usage (%)",
       "entity_disk": "Disk usage (%)",
       "entity_net_down": "Download rate",
       "entity_net_up": "Upload rate",
-      "entity_uptime": "Uptime or last boot",
+      "entity_uptime": "Uptime sensor",
       "cpu_busy": "Busy threshold (CPU %)",
       "ram_max": "Memory alert (%)",
       "disk_max": "Disk alert (%)",
-      "show_cpu": "Show CPU",
+      "show_cpu": "CPU tile",
       "show_ram": "Show memory",
       "show_disk": "Show disk",
       "show_network": "Show network",
-      "show_uptime": "Show uptime",
+      "show_uptime": "Uptime tile",
       "entity_volume": "Volume status",
       "entity_volume_used": "Volume used (%)",
       "entity_volume_free": "Volume free space (GB, TB)",
@@ -13078,6 +13817,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_btn_prev": "Previous button",
       "show_btn_play_pause": "Play / pause button",
       "show_btn_next": "Next button",
+      "show_btn_source": "Source button (next source)",
       "show_btn_vol_down": "Volume − button",
       "show_btn_mute": "Mute button",
       "show_btn_vol_up": "Volume + button",
@@ -13106,13 +13846,13 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_clean": "Show cleaning",
       "entity_locked_in": "Lock \"In only\" (Sure Petcare)",
       "entity_locked_out": "Lock \"Out only\" (Sure Petcare)",
-      "entity_target": "Target temperature",
+      "entity_target": "Target temperature (number)",
       "entity_reserve": "Hot water reserve (%)",
       "entity_temp_bottom": "Bottom temperature entity",
       "boost_above": "Boost above (W)",
       "running_above": "Running above (W)",
       "green_above": "Eco (green) above (W)",
-      "show_target": "Show target",
+      "show_target": "Target tile",
       "show_reserve": "Show hot water",
       "nas_model": "NAS model",
       "mini_pc_model": "Model",
@@ -13160,10 +13900,10 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_error": "Error",
       "entity_heater": "Heater",
       "entity_jets": "Jets",
-      "entity_timer": "Timer (remaining)",
+      "entity_timer": "Timer",
       "show_chlorine": "Show chlorine",
       "show_cover": "Show cover",
-      "show_timer": "Show timer",
+      "show_timer": "Timer tile",
       "switch_low": "Low speed switch",
       "switch_high": "High speed switch",
       "entity_state": "Open/closed sensor (contact)",
@@ -13183,7 +13923,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "water_low": "Low water below (%)",
       "low_water": "Low water alert (binary sensor)",
       "target_step": "Target step (%)",
-      "show_tank": "Show water tank",
+      "show_tank": "Tank tile",
       "target_humidity": "Target humidity",
       "fan_speed": "Fan speed (select)",
       "water_level": "Water level (%)",
@@ -13203,6 +13943,17 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_upload": "Upload tile",
       "show_devices": "Devices tile",
       "show_wifi": "Wi-Fi tile",
+      "entity_ping": "Ping sensor (ms)",
+      "entity_wan_ip": "WAN IP sensor",
+      "entity_memory": "Memory use sensor (%)",
+      "entity_wifi_24": "Wi-Fi 2.4 GHz switch",
+      "entity_wifi_5": "Wi-Fi 5 GHz switch",
+      "entity_wifi_6": "Wi-Fi 6 GHz switch",
+      "entity_wifi_guest": "Guest Wi-Fi switch",
+      "entity_wifi_iot": "IoT Wi-Fi switch",
+      "show_ping": "Ping tile",
+      "show_wan_ip": "WAN IP tile",
+      "show_memory": "Memory tile",
       "pet_feeder_model": "Feeder model",
       "entity_feed": "Feed (select / button)",
       "feed_option": "Feed option (select, default: start)",
@@ -13228,7 +13979,12 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_room": "Show room",
       "entity_backwash": "Backwash (on = running)",
       "entity_brine": "Brine draw (on = running)",
-      "entity_rinse": "Rinse (on = running)"
+      "entity_refill": "Water return (on = running)",
+      "entity_service": "Service (on = running)",
+      "entity_rinse": "Rinse (on = running)",
+      "entity_fan": "Fan speed",
+      "entity_tank": "Water tank (full / level)",
+      "temp_step": "Temperature step"
     },
     "cs": {
       "animations": "Animace",
@@ -13422,6 +14178,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Vlastní obrázek (URL)",
       "illustration_size": "Velikost ilustrace",
       "transparent": "Průhledné pozadí",
+      "tile_background": "Pozadí dlaždic",
+      "tile_bg_transparent": "Průhledné (výchozí)",
+      "tile_bg_theme": "Barva motivu",
+      "tile_order": "Pořadí v dlaždicích",
+      "tile_order_name": "Název nahoře, hodnota dole",
+      "tile_order_value": "Hodnota nahoře, název dole",
+      "lcd_value": "Hodnota na displeji",
+      "lcd_value_target": "Cílová teplota (výchozí)",
+      "lcd_value_current": "Aktuální teplota",
       "entity_wind": "Senzor rychlosti větru",
       "show_rain": "Zobrazit déšť",
       "show_wind": "Zobrazit vítr",
@@ -13595,6 +14360,534 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "wind_max": "Hranice silného větru (km/h)",
       "show_lux": "Zobrazit osvětlení",
       "fabric_color": "Barva plátna"
+    },
+    "da": {
+      "extra_tiles": "Ekstra fliser (liste: entitet, navn, ikon)",
+      "animations": "Animationer",
+      "battery_low": "Lavt batteri (%)",
+      "buffer_tank": "Buffertank",
+      "capacity_kwh": "Kapacitet (kWh)",
+      "car_color": "Bilens farve",
+      "compressor_threshold": "Tærskel for kompressor (W)",
+      "entity": "Hovedentitet",
+      "entity_active_power": "Aktiv effekt",
+      "entity_area": "Rengjort areal",
+      "entity_battery": "Batteri",
+      "entity_blade": "Kniv",
+      "entity_brush": "Børste",
+      "entity_buffer_temp": "Temperatur i buffertank",
+      "entity_car_soc": "Bilens batteriniveau",
+      "entity_charge": "Batteriopladning",
+      "entity_compressor": "Kompressor",
+      "entity_control": "Styring (knap / kontakt)",
+      "entity_pedestrian": "Åbning for gående (knap / script)",
+      "entity_cop": "COP",
+      "entity_cost": "Pris",
+      "entity_energy": "Energi",
+      "entity_fault": "Fejlsensor",
+      "entity_filter": "Filter",
+      "entity_flame": "Flamme",
+      "entity_float": "Flyder for højt niveau",
+      "entity_floor_temp": "Gulvtemperatur",
+      "entity_flow": "Flow (L/min, m³/h…)",
+      "entity_flow_rate": "Flowhastighed",
+      "entity_flow_temp": "Fremløbstemperatur",
+      "entity_flue_temp": "Røggastemperatur",
+      "entity_fuel_level": "Brændstofniveau",
+      "entity_fuel_used": "Brugt brændstof",
+      "entity_gas": "Gasforbrug",
+      "entity_hc": "Indeks lavlast",
+      "entity_heat_energy": "Varmeenergi",
+      "entity_heat_power": "Varmeydelse",
+      "entity_hp": "Indeks spidslast",
+      "entity_humidity": "Luftfugtighed",
+      "entity_injection": "Indeks eksport",
+      "entity_input_voltage": "Indgangsspænding",
+      "entity_battery_voltage": "Batterispænding",
+      "entity_nominal_power": "Mærkeeffekt (nominel)",
+      "entity_beeper": "Tilstand for summer",
+      "show_battery_voltage": "Vis batterispænding",
+      "show_nominal_power": "Vis mærkeeffekt",
+      "show_beeper": "Vis summer",
+      "entity_level": "Niveau (%)",
+      "entity_light": "Lys",
+      "entity_load": "Belastning",
+      "entity_mode": "Tilstand (manuel / tidsplan)",
+      "entity_modulation": "Modulering",
+      "entity_next_start": "Næste start",
+      "entity_output_voltage": "Udgangsspænding",
+      "entity_pellet_level": "Pilleniveau",
+      "entity_ph": "pH",
+      "entity_power": "Effekt",
+      "entity_power_injection": "Eksporteffekt",
+      "entity_power_l1": "Effekt L1",
+      "entity_power_l2": "Effekt L2",
+      "entity_power_l3": "Effekt L3",
+      "entity_pressure": "Tryk",
+      "entity_rain": "Regnsensor",
+      "entity_return_temp": "Returtemperatur",
+      "entity_runtime": "Driftstid",
+      "entity_scop": "SCOP",
+      "entity_session_energy": "Energi for session",
+      "entity_soc": "Opladningsniveau",
+      "entity_source_in_temp": "Temperatur, kilde ind",
+      "entity_source_out_temp": "Temperatur, kilde ud",
+      "entity_source_pump": "Kildepumpe",
+      "entity_starts": "Antal starter",
+      "entity_status": "Statussensor",
+      "entity_switch": "Smart stik / kontakt",
+      "entity_target_temp": "Måltemperatur",
+      "entity_tariff": "Aktuel tarif",
+      "entity_temp": "Temperatur",
+      "entity_temperature": "Temperatur",
+      "entity_time": "Resterende tid",
+      "entity_water_level": "Vandniveau",
+      "entity_water_temp": "Vandtemperatur",
+      "filter_alert": "Filteralarm (%)",
+      "filter_threshold": "Tærskel for filteralarm",
+      "floor_max": "Maks. gulvtemperatur",
+      "flow_temp_max": "Maks. fremløbstemperatur",
+      "fluid_color": "Væskens farve",
+      "fuel_alert": "Brændstofalarm (%)",
+      "hc_ranges": "Lavlasttimer (fx 22:00-06:00)",
+      "heat_threshold": "Tærskel for opvarmning (W)",
+      "heater_threshold": "Tærskel for varmelegeme (W)",
+      "heating_delay": "Forsinkelse for opvarmning",
+      "heating_type": "Varmetype (vand / el)",
+      "ignition_threshold": "Tærskel for tænding (W)",
+      "indexes": "Målerindeks",
+      "invert": "Vend tilstand om",
+      "invert_position": "Vend position om (åben ↔ lukket)",
+      "invert_power": "Vend fortegn på effekt",
+      "jets_threshold": "Tærskel for dyser (W)",
+      "language": "Sprog",
+      "layout": "Layout",
+      "leaves": "Antal fløje",
+      "level_max": "Alarm for højt niveau (%)",
+      "level_min": "Alarm for lavt niveau (%)",
+      "load_max": "Overbelastning over (%)",
+      "low_threshold": "Lav tærskel",
+      "mains_min": "Strømsvigt under (V)",
+      "max_flow": "Maks. flow (L/min)",
+      "max_power": "Maks. effekt (W)",
+      "max_pressure": "Manometerskala (bar)",
+      "moving_threshold": "Tærskel for motor i bevægelse (W)",
+      "name": "Navn",
+      "off_threshold": "Tærskel for slukket (W)",
+      "pellet_alert": "Pillealarm (%)",
+      "ph_max": "pH maks.",
+      "ph_min": "pH min.",
+      "phase_gauge": "Fasemåler",
+      "power_max": "Maks. effekt",
+      "pressure_max": "Alarm for overtryk (bar)",
+      "price_per_kwh": "Pris pr. kWh",
+      "price_per_liter": "Pris pr. liter",
+      "price_per_unit": "Pris pr. enhed",
+      "ready_margin": "Margin for klar",
+      "run_threshold": "Tærskel for drift (W)",
+      "show_area": "Vis areal",
+      "show_battery": "Vis batteri",
+      "show_blade": "Vis kniv",
+      "compact": "Kompakt layout",
+      "show_button_labels": "Vis knaptekster",
+      "show_buttons": "Vis knapper",
+      "show_charge": "Vis batteriopladning",
+      "show_consumables": "Vis forbrugsdele",
+      "show_controls": "Vis knapper",
+      "show_cost": "Vis pris",
+      "show_duration": "Vis varighed",
+      "show_energy": "Vis energi",
+      "show_fan": "Vis ventilatorhastighed",
+      "show_filter": "Vis filter",
+      "show_floor": "Vis gulvtemperatur",
+      "show_flow": "Vis flow",
+      "show_fuel": "Vis brændstof",
+      "show_fuel_used": "Vis brugt brændstof",
+      "show_gas": "Vis gas",
+      "show_gauge": "Vis måler",
+      "show_humidity": "Vis luftfugtighed",
+      "show_index": "Vis indeks",
+      "show_injection": "Vis eksport",
+      "show_level": "Vis niveau",
+      "show_load": "Vis belastning",
+      "show_mode": "Flise for tilstand",
+      "show_modulation": "Vis modulering",
+      "show_next": "Vis næste start",
+      "show_pellets": "Vis træpiller",
+      "show_ph": "Vis pH",
+      "show_phases": "Vis faser",
+      "show_position": "Vis position",
+      "show_power": "Vis effekt",
+      "show_pressure": "Vis tryk",
+      "show_runtime": "Vis driftstid",
+      "show_since": "Vis seneste ændring",
+      "show_soc": "Vis opladningsniveau",
+      "show_starts": "Vis starter",
+      "show_status": "Vis status",
+      "show_status_tile": "Vis statusflise",
+      "show_tariff": "Vis tarif",
+      "show_temp": "Vis temperatur",
+      "show_temperature": "Vis temperatur",
+      "show_temps": "Vis temperaturer",
+      "show_time": "Vis tid",
+      "show_voltage": "Vis spændinger",
+      "show_water": "Vis vandtemperatur",
+      "show_water_level": "Vis vandniveau",
+      "show_water_temp": "Vis vandtemperatur",
+      "small": "Kompakt",
+      "source_threshold": "Tærskel for kildepumpe (W)",
+      "status_position": "Placering af status",
+      "subscribed_power": "Abonneret effekt (kVA)",
+      "target_temp": "Måltemperatur",
+      "temp_max": "Maks. temperatur",
+      "temp_min": "Min. temperatur",
+      "temp_scale": "Termometerskala",
+      "temperature_unit": "Temperaturenhed (tom: automatisk)",
+      "threshold": "Effekttærskel (W)",
+      "travel_time": "Køretid (s)",
+      "water_level_full": "Vandniveau ved fuld pool",
+      "water_level_min": "Min. vandniveau",
+      "water_max": "Maks. vandtemperatur",
+      "color": "Lysfarve",
+      "follow_light_color": "Følg pærens farve",
+      "color_cycle": "Farveskift",
+      "multicolor": "Flerfarvet lys",
+      "show_brightness": "Vis lysstyrke",
+      "labels": "Egne flisetekster (nøgle: tekst)",
+      "sun_entity": "Sol-entitet (dag / nat)",
+      "shutter_color": "Farve på skodde",
+      "show_slider": "Vis skydere",
+      "show_tilt": "Vis vinkling",
+      "image": "Eget billede (URL)",
+      "illustration_size": "Illustrationsstørrelse",
+      "transparent": "Gennemsigtig baggrund",
+      "tile_background": "Baggrund på felter",
+      "tile_bg_transparent": "Gennemsigtig (standard)",
+      "tile_bg_theme": "Temafarve",
+      "tile_order": "Rækkefølge i felter",
+      "tile_order_name": "Navn øverst, værdi nederst",
+      "tile_order_value": "Værdi øverst, navn nederst",
+      "lcd_value": "Værdi på displayet",
+      "lcd_value_target": "Måltemperatur (standard)",
+      "lcd_value_current": "Aktuel temperatur",
+      "entity_wind": "Vindhastighedssensor",
+      "show_rain": "Vis regn",
+      "show_wind": "Vis vind",
+      "louvre_color": "Farve på lameller",
+      "entity_index": "Målerindeks (total)",
+      "entity_today": "Dagens forbrug",
+      "entity_leak": "Lækagesensor",
+      "detector": "Sensortype",
+      "entity_valve": "Afspærringsventil",
+      "leak_minutes": "Lækagealarm efter (min med konstant flow)",
+      "freeze_threshold": "Frostgrænse (°C)",
+      "flow_threshold": "Flow regnes som nul under",
+      "show_today": "Vis i dag",
+      "entity_blind": "Udvendig persienne (cover)",
+      "show_blind": "Vis persienne",
+      "entity_outdoor_temperature": "Udetemperatur",
+      "entity_outdoor_humidity": "Udendørs luftfugtighed",
+      "entity_window": "Vinduessensor",
+      "comfort_temp_min": "Komfort: min. temperatur",
+      "comfort_temp_max": "Komfort: maks. temperatur",
+      "humidity_min": "Komfort: min. luftfugtighed (%)",
+      "humidity_max": "Komfort: maks. luftfugtighed (%)",
+      "alert_temp_min": "Alarm under (temperatur)",
+      "alert_temp_max": "Alarm over (temperatur)",
+      "alert_humidity_min": "Alarm under (luftfugtighed %)",
+      "alert_humidity_max": "Alarm over (luftfugtighed %)",
+      "mold_humidity": "Skimmelrisiko fra (luftfugtighed %)",
+      "window_drop": "Vinduesregistrering: fald på 15 min (0 = fra)",
+      "history_days": "Periode i pop-up",
+      "history_mode": "Pop-up viser",
+      "show_outdoor": "Vis udendørs værdier",
+      "show_dew_point": "Vis dugpunkt",
+      "show_advice": "Vis råd og risici",
+      "show_graph": "Vis 24-timers graf",
+      "style": "Stil",
+      "icon": "Rumikon",
+      "lcd_color": "Skærmfarve",
+      "tap_action": "Handling ved tryk",
+      "hold_action": "Handling ved langt tryk",
+      "header": "Overskrift (navn / ikon / begge)",
+      "minimal": "Minimal (kun skive)",
+      "big_value": "Stor værdi (mål / aktuel)",
+      "entity_unlatch": "Knap til at åbne fallen (valgfri)",
+      "entity_lock_n_go": "Lock 'n' Go-knap",
+      "entity_lock_n_go_unlatch": "Lock 'n' Go med knap til fallen",
+      "entity_battery_charging": "Batteri oplader",
+      "entity_battery_critical": "Batteri kritisk",
+      "confirm_open": "Bekræft åbning af fallen (2. klik)",
+      "show_door": "Vis dør",
+      "lock_model": "Låsemodel",
+      "tilt_only": "Kun vinkling (ikke op / ned)",
+      "tilt_from_position": "Vinkling ud fra position (motor på vinklingssnoren)",
+      "tilt_presets": "Forvalgte vinkler (liste, fx [0, 50, 100])",
+      "navigation_path": "Side der skal åbnes (fx /lovelace/climate)",
+      "entity_climate": "Tilknyttet termostat",
+      "color_comfort": "Farve: behagelig",
+      "color_cool": "Farve: kølig",
+      "color_warm": "Farve: varm",
+      "color_humidity": "Farve: fugtig",
+      "color_dry": "Farve: tør",
+      "color_alert": "Farve: alarm",
+      "show_trend": "Vis udvikling (1 t)",
+      "variant": "Stil",
+      "entity_mail": "Postsensor (on, tal eller tekst)",
+      "entity_parcel": "Pakkesensor",
+      "entity_door": "Dørsensor",
+      "entity_door_back": "Sensor for bagerste låge (dobbelt låge)",
+      "show_doors": "Vis lågernes tilstand",
+      "entity_count": "Brevtæller",
+      "entity_reset": "Marker som tømt (knap, hjælper, tæller, script…)",
+      "mail_states": "Ekstra tilstande for post (kommasepareret)",
+      "parcel_states": "Ekstra tilstande for pakker (kommasepareret)",
+      "box_color": "Postkassens farve",
+      "show_count": "Vis antal",
+      "entity_smoke": "Røgsensor",
+      "entity_co": "Kulilte-sensor (CO)",
+      "co_threshold": "Alarmgrænse for CO",
+      "entity_test": "Sensor for testtilstand",
+      "entity_test_button": "Testknap",
+      "entity_silence": "Slå alarm fra (knap, kontakt, sirene…)",
+      "model": "Detektormodel",
+      "show_co": "Vis CO",
+      "entity_siren": "Sirene",
+      "freeze_temp": "Frostalarm under",
+      "show_probes": "Vis sonder",
+      "box_model": "Postkassemodel",
+      "entity_open": "Kommando til åbning (knap / script)",
+      "entity_last_open": "Seneste åbning (et eller flere tidsstempler)",
+      "entity_battery_low": "Lavt batteri",
+      "show_last_open": "Vis seneste åbning",
+      "show_hvac_modes": "Knapper for termostattilstand",
+      "show_fan_modes": "Liste over ventilatortilstande for termostat",
+      "show_preset_modes": "Liste over forvalg for termostat",
+      "entity_valve_position": "Ventilåbning (%)",
+      "show_valve": "Vis ventilåbning",
+      "show_window": "Vis vindue",
+      "spot_count": "Antal spots",
+      "brightness_slider": "Skyder for lysstyrke",
+      "entity_cpu": "CPU-forbrug",
+      "entity_cpu_temp": "CPU-temperatur",
+      "entity_ram": "Hukommelsesforbrug (%)",
+      "entity_disk": "Diskforbrug (%)",
+      "entity_net_down": "Downloadhastighed",
+      "entity_net_up": "Uploadhastighed",
+      "entity_uptime": "Oppetid eller seneste opstart",
+      "cpu_busy": "Tærskel for travl (CPU %)",
+      "ram_max": "Hukommelsesalarm (%)",
+      "disk_max": "Diskalarm (%)",
+      "show_cpu": "Vis CPU",
+      "show_ram": "Vis hukommelse",
+      "show_disk": "Vis disk",
+      "show_network": "Vis netværk",
+      "show_uptime": "Vis oppetid",
+      "entity_volume": "Volumenstatus",
+      "entity_volume_used": "Volumen brugt (%)",
+      "entity_volume_free": "Ledig plads på volumen (GB, TB)",
+      "show_free": "Vis ledig plads",
+      "entity_security": "Sikkerhedsstatus",
+      "entity_update": "DSM-opdatering",
+      "volume_max": "Volumenalarm (%)",
+      "disk_temp_max": "Alarm for disktemperatur",
+      "show_volume": "Vis volumen",
+      "show_disks": "Vis diske",
+      "entity_remote": "Remote-entitet (tænd/sluk)",
+      "volume_step": "Lydstyrketrin",
+      "show_artwork": "Vis cover",
+      "show_app": "Vis app",
+      "tv_model": "Boksmodel",
+      "entity_weight": "Vægt pr. dag",
+      "entity_fat_ratio": "Fedtprocent (%)",
+      "entity_fat_mass": "Fedtmasse",
+      "entity_muscle_mass": "Muskelmasse",
+      "entity_bone_mass": "Knoglemasse",
+      "entity_hydration": "Væskeindhold",
+      "entity_heart_pulse": "Puls",
+      "entity_visceral_fat": "Visceralt fedt",
+      "entity_weight_goal": "Vægtmål",
+      "entity_bmi": "BMI (sensor)",
+      "height": "Højde (til BMI)",
+      "recent_minutes": "Nylig vejning (min)",
+      "trend_days": "Udvikling (dage)",
+      "show_bmi": "Vis BMI",
+      "show_composition": "Vis kropssammensætning",
+      "entity_drive_1": "Disk 1",
+      "entity_drive_1_temp": "Disk 1 temperatur",
+      "entity_drive_2": "Disk 2",
+      "entity_drive_2_temp": "Disk 2 temperatur",
+      "entity_drive_3": "Disk 3",
+      "entity_drive_3_temp": "Disk 3 temperatur",
+      "entity_drive_4": "Disk 4",
+      "entity_drive_4_temp": "Disk 4 temperatur",
+      "show_down": "Vis download",
+      "show_up": "Vis upload",
+      "show_weight": "Flise for vægt",
+      "show_fat": "Vis fedtprocent (%)",
+      "show_fat_mass": "Vis fedtmasse",
+      "show_muscle": "Vis muskelmasse",
+      "show_bone": "Vis knoglemasse",
+      "show_hydration": "Vis væskeindhold",
+      "show_visceral": "Vis visceralt fedt",
+      "show_pulse": "Vis puls",
+      "show_goal": "Vis mål",
+      "show_btn_power": "Tænd/sluk-knap",
+      "show_btn_home": "Hjem-knap",
+      "show_btn_prev": "Forrige-knap",
+      "show_btn_play_pause": "Afspil / pause-knap",
+      "show_btn_next": "Næste-knap",
+      "show_btn_vol_down": "Lydstyrkeknap −",
+      "show_btn_mute": "Lydløs-knap",
+      "show_btn_vol_up": "Lydstyrkeknap +",
+      "override": "Midlertidig tilsidesættelse (Netatmo)",
+      "override_durations": "Varigheder for tilsidesættelse (min)",
+      "pets": "Kæledyr (liste: entitet, navn, billede)",
+      "entity_motion": "Bevægelsessensor for lem",
+      "entity_curfew": "Udgangsforbud",
+      "entity_intruder": "Ukendt dyr registreret",
+      "show_pets": "Vis kæledyr",
+      "show_inside": "Vis inde",
+      "show_outside": "Vis ude",
+      "show_curfew": "Vis udgangsforbud",
+      "entity_low_water": "Alarm for lavt vand",
+      "entity_water_today": "Vand drukket i dag",
+      "entity_drinking": "Sensor for kæledyr der drikker",
+      "entity_last_drink": "Seneste drik",
+      "entity_clean": "Rengøring (forfalden / dage)",
+      "entity_filter_reset": "Knap til nulstilling af filter",
+      "entity_clean_reset": "Knap til nulstilling af rengøring",
+      "capacity": "Tankkapacitet (samme enhed som niveauet, hvis ikke %)",
+      "level_low": "Lavt vandniveau (%)",
+      "filter_low_days": "Filteralarm (dage tilbage)",
+      "filter_low": "Filteralarm (% tilbage)",
+      "show_drink": "Vis seneste drik",
+      "show_clean": "Vis rengøring",
+      "entity_locked_in": "Lås \"Kun ind\" (Sure Petcare)",
+      "entity_locked_out": "Lås \"Kun ud\" (Sure Petcare)",
+      "entity_target": "Måltemperatur",
+      "entity_reserve": "Reserve af varmt vand (%)",
+      "entity_temp_bottom": "Entitet for bundtemperatur",
+      "boost_above": "Boost over (W)",
+      "running_above": "Kører over (W)",
+      "green_above": "Eco (grøn) over (W)",
+      "show_target": "Vis mål",
+      "show_reserve": "Vis varmt vand",
+      "nas_model": "NAS-model",
+      "mini_pc_model": "Model",
+      "entity_parity": "Paritet gyldig (binary_sensor, off = ugyldig)",
+      "entity_flash": "USB-flash helbred (binary_sensor, on = problem)",
+      "show_parity": "Vis paritetsalarm",
+      "show_flash": "Vis flash-alarm",
+      "entity_nvme_1": "SSD 1 (NVMe)",
+      "entity_nvme_1_temp": "SSD 1 temperatur",
+      "entity_nvme_2": "SSD 2 (NVMe)",
+      "entity_nvme_2_temp": "SSD 2 temperatur",
+      "entity_capacity": "Resterende kapacitet",
+      "entity_salt": "Saltniveau",
+      "entity_hardness_in": "Hårdhed ind (råvand)",
+      "entity_hardness_out": "Hårdhed ud (blødgjort)",
+      "entity_regen_days": "Dage til næste regenerering",
+      "salt_low": "Alarm for lavt saltniveau (%)",
+      "show_capacity": "Vis kapacitet",
+      "show_salt": "Vis salt",
+      "show_hardness": "Vis hårdhed",
+      "show_regen": "Vis næste regenerering",
+      "entity_hour": "Regn, seneste time",
+      "entity_day": "Regn i dag (24 t)",
+      "entity_week": "Regn denne uge",
+      "entity_month": "Regn denne måned",
+      "entity_year": "Regn i år",
+      "entity_last": "Seneste regn (dato)",
+      "entity_signal": "Signalstyrke",
+      "show_rate": "Vis intensitet",
+      "show_hour": "Vis seneste time",
+      "show_day": "Vis i dag",
+      "show_week": "Vis uge",
+      "show_month": "Vis måned",
+      "show_year": "Vis år",
+      "show_last": "Vis seneste regn",
+      "show_signal": "Vis signal",
+      "heavy_rate": "Kraftig regn fra (mm/t)",
+      "gauge_max": "Måler fuld ved (mm pr. dag)",
+      "entity_alarm": "Alarm (væltet, overophedning)",
+      "high_threshold": "Højt trin fra",
+      "bubbles_threshold": "Bobler fra",
+      "entity_bubbles": "Bobler (luftpumpe)",
+      "entity_chlorine": "Klor",
+      "entity_cover": "Låg (lukket / åbent)",
+      "entity_error": "Fejl",
+      "entity_heater": "Varmelegeme",
+      "entity_jets": "Dyser",
+      "entity_timer": "Timer (tilbage)",
+      "show_chlorine": "Vis klor",
+      "show_cover": "Vis låg",
+      "show_timer": "Vis timer",
+      "switch_low": "Kontakt for lav hastighed",
+      "switch_high": "Kontakt for høj hastighed",
+      "entity_state": "Sensor for åben/lukket (kontakt)",
+      "entity_position": "Positionssensor (0-100)",
+      "entity_moisture": "Sensor for jordfugtighed",
+      "entity_conductivity": "Sensor for ledningsevne (næring)",
+      "entity_brightness": "Lyssensor (lux)",
+      "entity_rssi": "Signalstyrke (RSSI)",
+      "min_moisture": "Vanding under (%)",
+      "min_temperature": "Kold under (°C)",
+      "min_conductivity": "Gødning under (µS/cm)",
+      "min_brightness": "Mørkt under (lx)",
+      "min_battery": "Lavt batteri under (%)",
+      "show_moisture": "Vis jordfugtighed",
+      "show_conductivity": "Vis ledningsevne",
+      "show_rssi": "Vis signal",
+      "water_low": "Lavt vand under (%)",
+      "low_water": "Alarm for lavt vand (binær sensor)",
+      "target_step": "Måltrin (%)",
+      "show_tank": "Vis vandtank",
+      "target_humidity": "Målfugtighed",
+      "fan_speed": "Ventilatorhastighed (select)",
+      "water_level": "Vandniveau (%)",
+      "entity_lux": "Sensor for lysniveau (lux)",
+      "wind_max": "Tærskel for kraftig vind (km/t)",
+      "show_lux": "Vis lysniveau",
+      "fabric_color": "Stoffets farve",
+      "internet_box_model": "Routermodel",
+      "illustration": "Illustration (foto eller SVG)",
+      "entity_download": "Downloadhastighed",
+      "entity_upload": "Uploadhastighed",
+      "entity_devices": "Tilsluttede enheder",
+      "entity_wifi": "Wi-Fi-kontakt",
+      "entity_reboot": "Genstartsknap",
+      "max_speed": "Referencehastighed (Mb/s)",
+      "show_download": "Flise for download",
+      "show_upload": "Flise for upload",
+      "show_devices": "Flise for enheder",
+      "show_wifi": "Flise for Wi-Fi",
+      "pet_feeder_model": "Model af foderautomat",
+      "entity_feed": "Fodring (select / knap)",
+      "feed_option": "Fodringsvalg (select, standard: start)",
+      "entity_source": "Fodringskilde",
+      "entity_serving": "Portionsstørrelse (portioner)",
+      "entity_portion_weight": "Portionsvægt (g)",
+      "entity_portions": "Portioner pr. dag",
+      "entity_led": "LED-indikator",
+      "entity_child_lock": "Børnesikring",
+      "daily_goal": "Daglige portioner (fylder skålen)",
+      "show_portions": "Flise for portioner",
+      "show_serving": "Flise for portion",
+      "show_source": "Flise for kilde",
+      "entity_close": "Kommando til lukning (knap / script)",
+      "entity_stop": "Kommando til stop (knap / script)",
+      "entity_supply_temp": "Fremløbstemperatur (Tv)",
+      "entity_water_volume": "Samlet vandmængde",
+      "entity_room_temp": "Rumtemperatur",
+      "power_threshold": "Tærskel for opvarmning (kW)",
+      "show_supply": "Vis fremløb",
+      "show_return": "Vis retur",
+      "show_delta": "Vis ΔT",
+      "show_room": "Vis rum",
+      "entity_backwash": "Returskylning (on = kører)",
+      "entity_brine": "Saltlage-indsugning (on = kører)",
+      "entity_rinse": "Skylning (on = kører)"
     },
     "de": {
       "animations": "Animationen",
@@ -13789,6 +15082,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Eigenes Bild (URL)",
       "illustration_size": "Größe der Illustration",
       "transparent": "Transparenter Hintergrund",
+      "tile_background": "Kachelhintergrund",
+      "tile_bg_transparent": "Transparent (Standard)",
+      "tile_bg_theme": "Designfarbe",
+      "tile_order": "Reihenfolge in den Kacheln",
+      "tile_order_name": "Name oben, Wert unten",
+      "tile_order_value": "Wert oben, Name unten",
+      "lcd_value": "Wert auf dem Display",
+      "lcd_value_target": "Solltemperatur (Standard)",
+      "lcd_value_current": "Aktuelle Temperatur",
       "entity_wind": "Windsensor",
       "show_rain": "Regen anzeigen",
       "show_wind": "Wind anzeigen",
@@ -14221,6 +15523,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Tu propia imagen (URL)",
       "illustration_size": "Tamaño de la ilustración",
       "transparent": "Fondo transparente",
+      "tile_background": "Fondo de los recuadros",
+      "tile_bg_transparent": "Transparente (por defecto)",
+      "tile_bg_theme": "Color del tema",
+      "tile_order": "Orden en los recuadros",
+      "tile_order_name": "Nombre arriba, valor abajo",
+      "tile_order_value": "Valor arriba, nombre abajo",
+      "lcd_value": "Valor en la pantalla",
+      "lcd_value_target": "Temperatura objetivo (por defecto)",
+      "lcd_value_current": "Temperatura actual",
       "entity_wind": "Sensor de velocidad del viento",
       "show_rain": "Mostrar lluvia",
       "show_wind": "Mostrar viento",
@@ -14503,6 +15814,18 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "fabric_color": "Color de la tela"
     },
     "fr": {
+      "surface": "Installation (sol ou mur)",
+      "food_low": "Alerte réserve basse (%)",
+      "hopper_capacity": "Capacité du bac (g)",
+      "daily_consumption": "Consommation par jour (g, facultatif)",
+      "show_autonomy": "Afficher l'autonomie",
+      "entity_pump": "Pompe de puits",
+      "entity_master": "Arrosage auto (on = activé)",
+      "entity_soil": "Humidité du sol",
+      "entity_next": "Prochain arrosage",
+      "block_on_rain": "Bloquer le démarrage manuel s'il pleut",
+      "show_soil": "Afficher l'humidité du sol",
+      "show_pump": "Afficher la pompe",
       "animations": "Animations",
       "battery_low": "Batterie faible (%)",
       "buffer_tank": "Ballon tampon",
@@ -14573,7 +15896,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_target_temp": "Température de consigne",
       "entity_tariff": "Tarif en cours",
       "entity_temp": "Température",
-      "entity_temperature": "Température",
+      "entity_temperature": "Température de la pièce",
       "entity_time": "Temps restant",
       "entity_water_level": "Niveau d'eau",
       "entity_water_temp": "Température de l'eau",
@@ -14592,6 +15915,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "indexes": "Index du compteur",
       "invert": "Inverser l'état",
       "invert_position": "Inverser la position (ouvert ↔ fermé)",
+      "invert_buttons": "Inverser les boutons (commandes Ouvrir ↔ Fermer)",
       "invert_power": "Inverser le signe de la puissance",
       "jets_threshold": "Seuil des jets (W)",
       "language": "Langue",
@@ -14631,7 +15955,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_cost": "Afficher le coût",
       "show_duration": "Afficher la durée",
       "show_energy": "Afficher l'énergie",
-      "show_fan": "Afficher la puissance d'aspiration",
+      "show_fan": "Tuile ventilation",
       "show_filter": "Afficher le filtre",
       "show_floor": "Afficher la température du sol",
       "show_flow": "Afficher le débit",
@@ -14661,7 +15985,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_status_tile": "Afficher la tuile d'état",
       "show_tariff": "Afficher le tarif",
       "show_temp": "Afficher la température",
-      "show_temperature": "Afficher la température",
+      "show_temperature": "Tuile température",
       "show_temps": "Afficher les températures",
       "show_time": "Afficher le temps",
       "show_voltage": "Afficher les tensions",
@@ -14693,8 +16017,30 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_slider": "Afficher les curseurs",
       "show_tilt": "Afficher l'inclinaison",
       "image": "Image perso (URL)",
+      "zones": "Zones (vannes)",
+      "zone_entity": "Entité",
+      "zone_name": "Nom",
+      "zone_icon": "Icône",
+      "zone_x": "Position X sur l'image (%, depuis la gauche)",
+      "zone_y": "Position Y sur l'image (%, depuis le haut)",
+      "marker_names": "Afficher le nom des vannes sur l'image",
       "illustration_size": "Taille de l'illustration",
+      "shape": "Forme",
+      "color2": "Seconde couleur (barres TV)",
+      "shape_strip": "Ruban souple",
+      "shape_bars": "Barres lumineuses TV",
       "transparent": "Fond transparent",
+      "tile_background": "Fond des tuiles",
+      "tile_bg_transparent": "Transparent (défaut)",
+      "tile_bg_theme": "Couleur du thème",
+      "tile_order": "Ordre des tuiles",
+      "tile_order_name": "Nom au-dessus, valeur en dessous",
+      "tile_order_value": "Valeur au-dessus, nom en dessous",
+      "lcd_big": "Grande valeur sur le dessin",
+      "f_lcd_big": "Grande valeur sur le dessin",
+      "lcd_value": "Valeur sur l'écran",
+      "lcd_value_target": "Consigne (défaut)",
+      "lcd_value_current": "Température actuelle",
       "entity_wind": "Capteur de vent",
       "show_rain": "Afficher la pluie",
       "show_wind": "Afficher le vent",
@@ -14793,21 +16139,21 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Afficher la fenêtre",
       "spot_count": "Nombre de spots",
       "brightness_slider": "Curseur de luminosité",
-      "entity_cpu": "Utilisation CPU",
+      "entity_cpu": "Capteur de charge processeur (%)",
       "entity_cpu_temp": "Température CPU",
       "entity_ram": "Mémoire utilisée (%)",
       "entity_disk": "Disque utilisé (%)",
       "entity_net_down": "Débit descendant",
       "entity_net_up": "Débit montant",
-      "entity_uptime": "Durée ou dernier démarrage",
+      "entity_uptime": "Capteur de disponibilité (uptime)",
       "cpu_busy": "Seuil « très sollicité » (CPU %)",
       "ram_max": "Alerte mémoire (%)",
       "disk_max": "Alerte disque (%)",
-      "show_cpu": "Afficher le CPU",
+      "show_cpu": "Tuile processeur",
       "show_ram": "Afficher la mémoire",
       "show_disk": "Afficher le disque",
       "show_network": "Afficher le réseau",
-      "show_uptime": "Afficher la durée de marche",
+      "show_uptime": "Tuile disponibilité",
       "entity_volume": "État du volume",
       "entity_volume_used": "Volume utilisé (%)",
       "entity_volume_free": "Espace libre du volume (Go, To)",
@@ -14862,6 +16208,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_btn_prev": "Bouton précédent",
       "show_btn_play_pause": "Bouton lecture / pause",
       "show_btn_next": "Bouton suivant",
+      "show_btn_source": "Bouton source (source suivante)",
       "show_btn_vol_down": "Bouton volume −",
       "show_btn_mute": "Bouton muet",
       "show_btn_vol_up": "Bouton volume +",
@@ -14890,13 +16237,13 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_clean": "Afficher le nettoyage",
       "entity_locked_in": "Lock « Entrée seule » (Sure Petcare)",
       "entity_locked_out": "Lock « Sortie seule » (Sure Petcare)",
-      "entity_target": "Température de consigne",
+      "entity_target": "Consigne (number)",
       "entity_reserve": "Réserve d'eau chaude (%)",
       "entity_temp_bottom": "Température du bas (entité)",
       "boost_above": "Boost au-dessus de (W)",
       "running_above": "En marche au-dessus de (W)",
       "green_above": "Éco (vert) au-dessus de (W)",
-      "show_target": "Afficher la consigne",
+      "show_target": "Tuile consigne",
       "show_reserve": "Afficher l'eau chaude",
       "nas_model": "Modèle de NAS",
       "mini_pc_model": "Modèle",
@@ -14944,10 +16291,10 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_error": "Erreur",
       "entity_heater": "Chauffage",
       "entity_jets": "Jets",
-      "entity_timer": "Minuterie (restant)",
+      "entity_timer": "Minuterie",
       "show_chlorine": "Afficher le chlore",
       "show_cover": "Afficher le couvercle",
-      "show_timer": "Afficher la minuterie",
+      "show_timer": "Tuile minuterie",
       "switch_low": "Interrupteur petite vitesse",
       "switch_high": "Interrupteur grande vitesse",
       "entity_state": "Capteur ouvert / fermé (contact)",
@@ -14967,7 +16314,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "water_low": "Eau basse sous (%)",
       "low_water": "Alerte eau basse (capteur binaire)",
       "target_step": "Pas de l'humidité cible (%)",
-      "show_tank": "Afficher le réservoir",
+      "show_tank": "Tuile réservoir",
       "target_humidity": "Humidité cible",
       "fan_speed": "Vitesse du ventilateur (select)",
       "water_level": "Niveau d'eau (%)",
@@ -14988,6 +16335,17 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_upload": "Tuile montant",
       "show_devices": "Tuile appareils",
       "show_wifi": "Tuile Wi-Fi",
+      "entity_ping": "Capteur de ping (ms)",
+      "entity_wan_ip": "Capteur d'IP WAN",
+      "entity_memory": "Capteur de mémoire utilisée (%)",
+      "entity_wifi_24": "Interrupteur Wi-Fi 2,4 GHz",
+      "entity_wifi_5": "Interrupteur Wi-Fi 5 GHz",
+      "entity_wifi_6": "Interrupteur Wi-Fi 6 GHz",
+      "entity_wifi_guest": "Interrupteur Wi-Fi invités",
+      "entity_wifi_iot": "Interrupteur Wi-Fi objets connectés",
+      "show_ping": "Tuile ping",
+      "show_wan_ip": "Tuile IP WAN",
+      "show_memory": "Tuile mémoire",
       "pet_feeder_model": "Modèle de distributeur",
       "entity_feed": "Distribution (select / bouton)",
       "feed_option": "Option de distribution (select, défaut : start)",
@@ -15013,7 +16371,12 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_room": "Afficher la pièce",
       "entity_backwash": "Contre-lavage (on = en cours)",
       "entity_brine": "Aspiration de saumure (on = en cours)",
-      "entity_rinse": "Rinçage (on = en cours)"
+      "entity_refill": "Renvoi d'eau (on = en cours)",
+      "entity_service": "Service (on = en cours)",
+      "entity_rinse": "Rinçage (on = en cours)",
+      "entity_fan": "Vitesse de ventilation",
+      "entity_tank": "Réservoir (plein / niveau)",
+      "temp_step": "Pas de température"
     },
     "hu": {
       "animations": "Animációk",
@@ -15208,6 +16571,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Your own image (URL)",
       "illustration_size": "Illusztráció mérete",
       "transparent": "Átlátszó háttér",
+      "tile_background": "Csempék háttere",
+      "tile_bg_transparent": "Átlátszó (alapértelmezett)",
+      "tile_bg_theme": "Téma színe",
+      "tile_order": "Sorrend a csempéken",
+      "tile_order_name": "Név felül, érték alul",
+      "tile_order_value": "Érték felül, név alul",
+      "lcd_value": "Kijelzőn megjelenő érték",
+      "lcd_value_target": "Célhőmérséklet (alapértelmezett)",
+      "lcd_value_current": "Aktuális hőmérséklet",
       "entity_wind": "Wind speed szenzor",
       "show_rain": "Megjelenítés: rain",
       "show_wind": "Megjelenítés: wind",
@@ -15661,6 +17033,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Immagine personale (URL)",
       "illustration_size": "Dimensione dell'illustrazione",
       "transparent": "Sfondo trasparente",
+      "tile_background": "Sfondo dei riquadri",
+      "tile_bg_transparent": "Trasparente (predefinito)",
+      "tile_bg_theme": "Colore del tema",
+      "tile_order": "Ordine nei riquadri",
+      "tile_order_name": "Nome sopra, valore sotto",
+      "tile_order_value": "Valore sopra, nome sotto",
+      "lcd_value": "Valore sul display",
+      "lcd_value_target": "Temperatura impostata (predefinito)",
+      "lcd_value_current": "Temperatura attuale",
       "entity_wind": "Sensore velocità del vento",
       "show_rain": "Mostra la pioggia",
       "show_wind": "Mostra il vento",
@@ -15896,6 +17277,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
     "nb": {
       "illustration_size": "Størrelse på illustrasjonen",
       "transparent": "Gjennomsiktig bakgrunn",
+      "tile_background": "Bakgrunn på feltene",
+      "tile_bg_transparent": "Gjennomsiktig (standard)",
+      "tile_bg_theme": "Temafarge",
+      "tile_order": "Rekkefølge i feltene",
+      "tile_order_name": "Navn øverst, verdi nederst",
+      "tile_order_value": "Verdi øverst, navn nederst",
+      "lcd_value": "Verdi på displayet",
+      "lcd_value_target": "Måltemperatur (standard)",
+      "lcd_value_current": "Aktuell temperatur",
       "image": "Eget bilde (URL)",
       "sun_entity": "Sol-entitet (dag / natt)",
       "shutter_color": "Farge på skodden",
@@ -16478,6 +17868,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Eigen afbeelding (URL)",
       "illustration_size": "Grootte van de illustratie",
       "transparent": "Transparante achtergrond",
+      "tile_background": "Achtergrond van de tegels",
+      "tile_bg_transparent": "Transparant (standaard)",
+      "tile_bg_theme": "Themakleur",
+      "tile_order": "Volgorde in de tegels",
+      "tile_order_name": "Naam boven, waarde onder",
+      "tile_order_value": "Waarde boven, naam onder",
+      "lcd_value": "Waarde op het display",
+      "lcd_value_target": "Streeftemperatuur (standaard)",
+      "lcd_value_current": "Huidige temperatuur",
       "entity_wind": "Windsensor",
       "show_rain": "Regen tonen",
       "show_wind": "Wind tonen",
@@ -16903,6 +18302,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Własny obraz (URL)",
       "illustration_size": "Rozmiar ilustracji",
       "transparent": "Przezroczyste tło",
+      "tile_background": "Tło kafelków",
+      "tile_bg_transparent": "Przezroczyste (domyślnie)",
+      "tile_bg_theme": "Kolor motywu",
+      "tile_order": "Kolejność w kafelkach",
+      "tile_order_name": "Nazwa u góry, wartość na dole",
+      "tile_order_value": "Wartość u góry, nazwa na dole",
+      "lcd_value": "Wartość na wyświetlaczu",
+      "lcd_value_target": "Temperatura zadana (domyślnie)",
+      "lcd_value_current": "Temperatura bieżąca",
       "entity_wind": "Czujnik prędkości wiatru",
       "show_rain": "Pokaż deszcz",
       "show_wind": "Pokaż wiatr",
@@ -17312,6 +18720,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Imagine proprie (URL)",
       "illustration_size": "Dimensiunea ilustrației",
       "transparent": "Fundal transparent",
+      "tile_background": "Fundalul casetelor",
+      "tile_bg_transparent": "Transparent (implicit)",
+      "tile_bg_theme": "Culoarea temei",
+      "tile_order": "Ordinea în casete",
+      "tile_order_name": "Nume sus, valoare jos",
+      "tile_order_value": "Valoare sus, nume jos",
+      "lcd_value": "Valoarea de pe afișaj",
+      "lcd_value_target": "Temperatura țintă (implicit)",
+      "lcd_value_current": "Temperatura curentă",
       "entity_wind": "Senzor de vânt",
       "show_rain": "Afișează ploaia",
       "show_wind": "Afișează vântul",
@@ -17681,6 +19098,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Своё изображение (URL)",
       "illustration_size": "Размер иллюстрации",
       "transparent": "Прозрачный фон",
+      "tile_background": "Фон плиток",
+      "tile_bg_transparent": "Прозрачный (по умолчанию)",
+      "tile_bg_theme": "Цвет темы",
+      "tile_order": "Порядок в плитках",
+      "tile_order_name": "Название сверху, значение снизу",
+      "tile_order_value": "Значение сверху, название снизу",
+      "lcd_value": "Значение на дисплее",
+      "lcd_value_target": "Заданная температура (по умолчанию)",
+      "lcd_value_current": "Текущая температура",
       "entity_wind": "Датчик ветра",
       "show_rain": "Показывать дождь",
       "show_wind": "Показывать ветер",
@@ -17859,23 +19285,25 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "fabric_color": "Цвет полотна"
     },
     "sr": {
+      "extra_tiles": "Додатне плочице (листа: ентитет, име, иконица)",
       "animations": "Анимације",
-      "battery_low": "Ниска батерија (%)",
-      "buffer_tank": "Буфер резервоар",
+      "battery_low": "Слаба батерија (%)",
+      "buffer_tank": "Бафер резервоар",
       "capacity_kwh": "Капацитет (kWh)",
       "car_color": "Боја аутомобила",
       "compressor_threshold": "Праг компресора (W)",
-      "entity": "Главни уређај (Ентитет)",
+      "entity": "Главни ентитет",
       "entity_active_power": "Активна снага",
       "entity_area": "Очишћена површина",
       "entity_battery": "Батерија",
       "entity_blade": "Нож",
       "entity_brush": "Четка",
-      "entity_buffer_temp": "Температура буфер резервоара",
+      "entity_buffer_temp": "Температура бафер резервоара",
       "entity_car_soc": "Ниво батерије аутомобила",
       "entity_charge": "Напуњеност батерије",
       "entity_compressor": "Компресор",
       "entity_control": "Контрола (дугме / прекидач)",
+      "entity_pedestrian": "Пешачко отварање (дугме / скрипта)",
       "entity_cop": "COP",
       "entity_cost": "Трошак",
       "entity_energy": "Енергија",
@@ -17896,8 +19324,14 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_heat_power": "Топлотни учинак",
       "entity_hp": "Индекс више тарифе",
       "entity_humidity": "Влажност",
-      "entity_injection": "Индекс извоза",
+      "entity_injection": "Индекс предаје енергије",
       "entity_input_voltage": "Улазни напон",
+      "entity_battery_voltage": "Напон батерије",
+      "entity_nominal_power": "Називна (номинална) снага",
+      "entity_beeper": "Стање зујалице / бипера",
+      "show_battery_voltage": "Прикажи напон батерије",
+      "show_nominal_power": "Прикажи називну снагу",
+      "show_beeper": "Прикажи зујалицу",
       "entity_level": "Ниво (%)",
       "entity_light": "Светло",
       "entity_load": "Оптерећење",
@@ -18050,6 +19484,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Ваша сопствена слика (URL)",
       "illustration_size": "Величина илустрације",
       "transparent": "Провидна позадина",
+      "tile_background": "Позадина плочица",
+      "tile_bg_transparent": "Провидна (подразумевано)",
+      "tile_bg_theme": "Боја теме",
+      "tile_order": "Редослед у плочицама",
+      "tile_order_name": "Назив горе, вредност доле",
+      "tile_order_value": "Вредност горе, назив доле",
+      "lcd_value": "Вредност на екрану",
+      "lcd_value_target": "Циљана температура (подразумевано)",
+      "lcd_value_current": "Тренутна температура",
       "entity_wind": "Сензор брзине ветра",
       "show_rain": "Прикажи кишу",
       "show_wind": "Прикажи ветар",
@@ -18148,23 +19591,25 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Прикажи прозор",
       "spot_count": "Број спотова",
       "brightness_slider": "Клизач осветљености",
-      "entity_cpu": "Искоришћење ЦПУ",
+      "entity_cpu": "Сензор оптерећења CPU (%)",
       "entity_cpu_temp": "Температура ЦПУ",
       "entity_ram": "Искоришћење меморије (%)",
       "entity_disk": "Искоришћење диска (%)",
       "entity_net_down": "Брзина преузимања",
       "entity_net_up": "Брзина отпремања",
-      "entity_uptime": "Време рада или последње покретање",
+      "entity_uptime": "Сензор времена рада",
       "cpu_busy": "Праг оптерећења (ЦПУ %)",
       "ram_max": "Упозорење меморије (%)",
       "disk_max": "Упозорење диска (%)",
-      "show_cpu": "Прикажи ЦПУ",
+      "show_cpu": "CPU плочица",
       "show_ram": "Прикажи меморију",
       "show_disk": "Прикажи диск",
       "show_network": "Прикажи мрежу",
-      "show_uptime": "Прикажи време рада",
+      "show_uptime": "Плочица времена рада",
       "entity_volume": "Стање волумена",
       "entity_volume_used": "Заузет волумен (%)",
+      "entity_volume_free": "Слободан простор волумена (GB, TB)",
+      "show_free": "Прикажи слободан простор",
       "entity_security": "Безбедносни статус",
       "entity_update": "Ажурирање DSM",
       "volume_max": "Упозорење волумена (%)",
@@ -18211,40 +19656,196 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_pulse": "Прикажи пулс",
       "show_goal": "Прикажи циљ",
       "show_btn_power": "Дугме за напајање",
-      "show_btn_home": "Дугме почетна",
-      "show_btn_prev": "Дугме претходно",
-      "show_btn_play_pause": "Дугме пусти / пауза",
-      "show_btn_next": "Дугме следеће",
-      "show_btn_vol_down": "Дугме тише",
-      "show_btn_mute": "Дугме утишај",
-      "show_btn_vol_up": "Дугме гласније",
-      "override": "Привремена измена (Netatmo)",
-      "override_durations": "Трајања (мин)",
-      "entity_state": "Open/closed sensor (contact)",
-      "entity_position": "Position sensor (0-100)",
-      "entity_lux": "Сензор осветљености (лукс)",
+      "show_btn_home": "Почетно дугме",
+      "show_btn_prev": "Дугме за претходно",
+      "show_btn_play_pause": "Дугме за репродукцију / паузу",
+      "show_btn_next": "Дугме за следеће",
+      "show_btn_vol_down": "Дугме за утишавање −",
+      "show_btn_mute": "Дугме за искључивање звука",
+      "show_btn_vol_up": "Дугме за појачавање +",
+      "override": "Привремена промена (Netatmo)",
+      "override_durations": "Трајање привремене промене (мин)",
+      "pets": "Љубимци (листа: ентитет, име, слика)",
+      "entity_motion": "Сензор покрета на вратанцима",
+      "entity_curfew": "Полицијски час",
+      "entity_intruder": "Откривена непозната животиња",
+      "show_pets": "Прикажи љубимце",
+      "show_inside": "Прикажи унутра",
+      "show_outside": "Прикажи напољу",
+      "show_curfew": "Прикажи полицијски час",
+      "entity_low_water": "Упозорење за низак ниво воде",
+      "entity_water_today": "Попијена вода данас",
+      "entity_drinking": "Сензор пијења љубимца",
+      "entity_last_drink": "Последње пијење",
+      "entity_clean": "Чишћење (рок / дани)",
+      "entity_filter_reset": "Дугме за ресетовање филтера",
+      "entity_clean_reset": "Дугме за ресетовање чишћења",
+      "capacity": "Капацитет резервоара (иста јединица као ниво, ако није %)",
+      "level_low": "Низак ниво воде (%)",
+      "filter_low_days": "Упозорење за филтер (преостали дани)",
+      "filter_low": "Упозорење за филтер (преостали %)",
+      "show_drink": "Прикажи последње пијење",
+      "show_clean": "Прикажи чишћење",
+      "entity_locked_in": "Закључавање \"Само улаз\" (Sure Petcare)",
+      "entity_locked_out": "Закључавање \"Само излаз\" (Sure Petcare)",
+      "entity_target": "Циљна температура (број)",
+      "entity_reserve": "Резерва топле воде (%)",
+      "entity_temp_bottom": "Ентитет температуре на дну",
+      "boost_above": "Појачано изнад (W)",
+      "running_above": "У раду изнад (W)",
+      "green_above": "Еко (зелени) изнад (W)",
+      "show_target": "Плочица циљне темп.",
+      "show_reserve": "Прикажи топлу воду",
+      "nas_model": "Модел NAS-а",
+      "mini_pc_model": "Модел",
+      "entity_parity": "Исправност паритета (binary_sensor, off = неисправно)",
+      "entity_flash": "Стање USB флеша (binary_sensor, on = проблем)",
+      "show_parity": "Прикажи упозорење за паритет",
+      "show_flash": "Прикажи упозорење за флеш",
+      "entity_nvme_1": "SSD 1 (NVMe)",
+      "entity_nvme_1_temp": "Температура SSD 1",
+      "entity_nvme_2": "SSD 2 (NVMe)",
+      "entity_nvme_2_temp": "Температура SSD 2",
+      "entity_capacity": "Преостали капацитет",
+      "entity_salt": "Ниво соли",
+      "entity_hardness_in": "Улазна тврдоћа (сирова вода)",
+      "entity_hardness_out": "Излазна тврдоћа (омекшана)",
+      "entity_regen_days": "Дана до следеће регенерације",
+      "salt_low": "Упозорење за мало соли (%)",
+      "show_capacity": "Прикажи капацитет",
+      "show_salt": "Прикажи со",
+      "show_hardness": "Прикажи тврдоћу",
+      "show_regen": "Прикажи следећу регенерацију",
+      "entity_hour": "Киша, последњи сат",
+      "entity_day": "Киша данас (24 h)",
+      "entity_week": "Киша ове недеље",
+      "entity_month": "Киша овог месеца",
+      "entity_year": "Киша ове године",
+      "entity_last": "Последња киша (датум)",
+      "entity_signal": "Јачина сигнала",
+      "show_rate": "Прикажи интензитет",
+      "show_hour": "Прикажи последњи сат",
+      "show_day": "Прикажи данас",
+      "show_week": "Прикажи недељу",
+      "show_month": "Прикажи месец",
+      "show_year": "Прикажи годину",
+      "show_last": "Прикажи последњу кишу",
+      "show_signal": "Прикажи сигнал",
+      "heavy_rate": "Јака киша од (mm/h)",
+      "gauge_max": "Мерач пун на (mm дневно)",
+      "entity_alarm": "Аларм (превртање, прегревање)",
+      "high_threshold": "Јако подешавање од",
+      "bubbles_threshold": "Мехурићи од",
+      "entity_bubbles": "Мехурићи (ваздушна пумпа)",
+      "entity_chlorine": "Хлор",
+      "entity_cover": "Покривач (затворен / отворен)",
+      "entity_error": "Грешка",
+      "entity_heater": "Грејач",
+      "entity_jets": "Млазнице",
+      "entity_timer": "Тајмер",
+      "show_chlorine": "Прикажи хлор",
+      "show_cover": "Прикажи покривач",
+      "show_timer": "Плочица тајмера",
+      "switch_low": "Прекидач за малу брзину",
+      "switch_high": "Прекидач за велику брзину",
+      "entity_state": "Сензор отворено/затворено (контакт)",
+      "entity_position": "Сензор положаја (0-100)",
+      "entity_moisture": "Сензор влажности земљишта",
+      "entity_conductivity": "Сензор проводљивости (плодности)",
+      "entity_brightness": "Сензор осветљења (lux)",
+      "entity_rssi": "Јачина сигнала (RSSI)",
+      "min_moisture": "Залити испод (%)",
+      "min_temperature": "Хладно испод (°C)",
+      "min_conductivity": "Ђубриво испод (µS/cm)",
+      "min_brightness": "Мрачно испод (lx)",
+      "min_battery": "Слаба батерија испод (%)",
+      "show_moisture": "Прикажи влажност земљишта",
+      "show_conductivity": "Прикажи проводљивост",
+      "show_rssi": "Прикажи сигнал",
+      "water_low": "Мало воде испод (%)",
+      "low_water": "Упозорење за мало воде (бинарни сензор)",
+      "target_step": "Циљни корак (%)",
+      "show_tank": "Плочица резервоара",
+      "target_humidity": "Циљна влажност",
+      "fan_speed": "Брзина вентилатора (избор)",
+      "water_level": "Ниво воде (%)",
+      "entity_lux": "Сензор нивоа светлости (lux)",
       "wind_max": "Праг јаког ветра (km/h)",
-      "show_lux": "Прикажи осветљеност",
-      "fabric_color": "Боја платна"
+      "show_lux": "Прикажи ниво светлости",
+      "fabric_color": "Боја тканине",
+      "internet_box_model": "Модел рутера",
+      "illustration": "Илустрација (фотографија или SVG)",
+      "entity_download": "Брзина преузимања",
+      "entity_upload": "Брзина слања",
+      "entity_devices": "Повезани уређаји",
+      "entity_wifi": "Wi-Fi прекидач",
+      "entity_reboot": "Дугме за поновно покретање",
+      "max_speed": "Референтна брзина (Mb/s)",
+      "show_download": "Плочица преузимања",
+      "show_upload": "Плочица слања",
+      "show_devices": "Плочица уређаја",
+      "show_wifi": "Wi-Fi плочица",
+      "entity_ping": "Пинг сензор (ms)",
+      "entity_wan_ip": "WAN IP сензор",
+      "entity_memory": "Сензор заузећа меморије (%)",
+      "entity_wifi_24": "Wi-Fi 2.4 GHz прекидач",
+      "entity_wifi_5": "Wi-Fi 5 GHz прекидач",
+      "entity_wifi_6": "Wi-Fi 6 GHz прекидач",
+      "entity_wifi_guest": "Wi-Fi за госте прекидач",
+      "entity_wifi_iot": "IoT Wi-Fi прекидач",
+      "show_ping": "Пинг плочица",
+      "show_wan_ip": "WAN IP плочица",
+      "show_memory": "Плочица меморије",
+      "pet_feeder_model": "Модел хранилице",
+      "entity_feed": "Храњење (избор / дугме)",
+      "feed_option": "Опција храњења (избор, подразумевано: start)",
+      "entity_source": "Извор храњења",
+      "entity_serving": "Величина сервирања (порције)",
+      "entity_portion_weight": "Тежина порције (g)",
+      "entity_portions": "Порције по дану",
+      "entity_led": "ЛЕД индикатор",
+      "entity_child_lock": "Заштита за децу",
+      "daily_goal": "Дневне порције (пуни посуду)",
+      "show_portions": "Плочица порција",
+      "show_serving": "Плочица сервирања",
+      "show_source": "Плочица извора",
+      "entity_close": "Команда за затварање (дугме / скрипта)",
+      "entity_stop": "Команда за заустављање (дугме / скрипта)",
+      "entity_supply_temp": "Температура полазног вода (Tv)",
+      "entity_water_volume": "Укупна запремина воде",
+      "entity_room_temp": "Собна температура",
+      "power_threshold": "Праг грејања (kW)",
+      "show_supply": "Прикажи полазни вод",
+      "show_return": "Прикажи повратни вод",
+      "show_delta": "Прикажи ΔT",
+      "show_room": "Прикажи просторију",
+      "entity_backwash": "Повратно испирање (on = у току)",
+      "entity_brine": "Усисавање слане воде (on = у току)",
+      "entity_rinse": "Испирање (on = у току)",
+      "entity_fan": "Брзина вентилатора",
+      "entity_tank": "Резервоар за воду (пун / ниво)",
+      "temp_step": "Корак температуре"
     },
     "sr-Latn": {
+      "extra_tiles": "Dodatne pločice (lista: entitet, ime, ikonica)",
       "animations": "Animacije",
-      "battery_low": "Niska baterija (%)",
-      "buffer_tank": "Bufer rezervoar",
+      "battery_low": "Slaba baterija (%)",
+      "buffer_tank": "Bafer rezervoar",
       "capacity_kwh": "Kapacitet (kWh)",
       "car_color": "Boja automobila",
       "compressor_threshold": "Prag kompresora (W)",
-      "entity": "Glavni uređaj (Entitet)",
+      "entity": "Glavni entitet",
       "entity_active_power": "Aktivna snaga",
       "entity_area": "Očišćena površina",
       "entity_battery": "Baterija",
       "entity_blade": "Nož",
       "entity_brush": "Četka",
-      "entity_buffer_temp": "Temperatura bufer rezervoara",
+      "entity_buffer_temp": "Temperatura bafer rezervoara",
       "entity_car_soc": "Nivo baterije automobila",
       "entity_charge": "Napunjenost baterije",
       "entity_compressor": "Kompresor",
       "entity_control": "Kontrola (dugme / prekidač)",
+      "entity_pedestrian": "Pešačko otvaranje (dugme / skripta)",
       "entity_cop": "COP",
       "entity_cost": "Trošak",
       "entity_energy": "Energija",
@@ -18267,6 +19868,12 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_humidity": "Vlažnost",
       "entity_injection": "Indeks izvoza",
       "entity_input_voltage": "Ulazni napon",
+      "entity_battery_voltage": "Napon baterije",
+      "entity_nominal_power": "Nazivna (nominalna) snaga",
+      "entity_beeper": "Stanje zujalice / bipera",
+      "show_battery_voltage": "Prikaži napon baterije",
+      "show_nominal_power": "Prikaži nazivnu snagu",
+      "show_beeper": "Prikaži zujalicu",
       "entity_level": "Nivo (%)",
       "entity_light": "Svetlo",
       "entity_load": "Opterećenje",
@@ -18419,6 +20026,15 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "image": "Vaša sopstvena slika (URL)",
       "illustration_size": "Veličina ilustracije",
       "transparent": "Providna pozadina",
+      "tile_background": "Pozadina pločica",
+      "tile_bg_transparent": "Providna (podrazumevano)",
+      "tile_bg_theme": "Boja teme",
+      "tile_order": "Redosled u pločicama",
+      "tile_order_name": "Naziv gore, vrednost dole",
+      "tile_order_value": "Vrednost gore, naziv dole",
+      "lcd_value": "Vrednost na ekranu",
+      "lcd_value_target": "Ciljana temperatura (podrazumevano)",
+      "lcd_value_current": "Trenutna temperatura",
       "entity_wind": "Senzor brzine vetra",
       "show_rain": "Prikaži kišu",
       "show_wind": "Prikaži vetar",
@@ -18517,23 +20133,25 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Prikaži prozor",
       "spot_count": "Broj spotova",
       "brightness_slider": "Klizač osvetljenosti",
-      "entity_cpu": "Iskorišćenje CPU",
+      "entity_cpu": "Senzor opterećenja CPU (%)",
       "entity_cpu_temp": "Temperatura CPU",
       "entity_ram": "Iskorišćenje memorije (%)",
       "entity_disk": "Iskorišćenje diska (%)",
       "entity_net_down": "Brzina preuzimanja",
       "entity_net_up": "Brzina otpremanja",
-      "entity_uptime": "Vreme rada ili poslednje pokretanje",
+      "entity_uptime": "Senzor vremena rada",
       "cpu_busy": "Prag opterećenja (CPU %)",
       "ram_max": "Upozorenje memorije (%)",
       "disk_max": "Upozorenje diska (%)",
-      "show_cpu": "Prikaži CPU",
+      "show_cpu": "CPU pločica",
       "show_ram": "Prikaži memoriju",
       "show_disk": "Prikaži disk",
       "show_network": "Prikaži mrežu",
-      "show_uptime": "Prikaži vreme rada",
+      "show_uptime": "Pločica vremena rada",
       "entity_volume": "Stanje volumena",
       "entity_volume_used": "Zauzet volumen (%)",
+      "entity_volume_free": "Slobodan prostor volumena (GB, TB)",
+      "show_free": "Prikaži slobodan prostor",
       "entity_security": "Bezbednosni status",
       "entity_update": "Ažuriranje DSM",
       "volume_max": "Upozorenje volumena (%)",
@@ -18580,21 +20198,175 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_pulse": "Prikaži puls",
       "show_goal": "Prikaži cilj",
       "show_btn_power": "Dugme za napajanje",
-      "show_btn_home": "Dugme početna",
-      "show_btn_prev": "Dugme prethodno",
-      "show_btn_play_pause": "Dugme pusti / pauza",
-      "show_btn_next": "Dugme sledeće",
-      "show_btn_vol_down": "Dugme tiše",
-      "show_btn_mute": "Dugme utišaj",
-      "show_btn_vol_up": "Dugme glasnije",
-      "override": "Privremena izmena (Netatmo)",
-      "override_durations": "Trajanja (min)",
-      "entity_state": "Open/closed sensor (contact)",
-      "entity_position": "Position sensor (0-100)",
-      "entity_lux": "Senzor osvetljenosti (luks)",
+      "show_btn_home": "Početno dugme",
+      "show_btn_prev": "Dugme za prethodno",
+      "show_btn_play_pause": "Dugme za reprodukciju / pauzu",
+      "show_btn_next": "Dugme za sledeće",
+      "show_btn_vol_down": "Dugme za utišavanje −",
+      "show_btn_mute": "Dugme za isključivanje zvuka",
+      "show_btn_vol_up": "Dugme za pojačavanje +",
+      "override": "Privremena promena (Netatmo)",
+      "override_durations": "Trajanje privremene promene (min)",
+      "pets": "Ljubimci (lista: entitet, ime, slika)",
+      "entity_motion": "Senzor pokreta na vratancima",
+      "entity_curfew": "Policijski čas",
+      "entity_intruder": "Otkrivena nepoznata životinja",
+      "show_pets": "Prikaži ljubimce",
+      "show_inside": "Prikaži unutra",
+      "show_outside": "Prikaži napolju",
+      "show_curfew": "Prikaži policijski čas",
+      "entity_low_water": "Upozorenje za nizak nivo vode",
+      "entity_water_today": "Popijena voda danas",
+      "entity_drinking": "Senzor pijenja ljubimca",
+      "entity_last_drink": "Poslednje pijenje",
+      "entity_clean": "Čišćenje (rok / dani)",
+      "entity_filter_reset": "Dugme za resetovanje filtera",
+      "entity_clean_reset": "Dugme za resetovanje čišćenja",
+      "capacity": "Kapacitet rezervoara (ista jedinica kao nivo, ako nije %)",
+      "level_low": "Nizak nivo vode (%)",
+      "filter_low_days": "Upozorenje za filter (preostali dani)",
+      "filter_low": "Upozorenje za filter (preostali %)",
+      "show_drink": "Prikaži poslednje pijenje",
+      "show_clean": "Prikaži čišćenje",
+      "entity_locked_in": "Zaključavanje \"Samo ulaz\" (Sure Petcare)",
+      "entity_locked_out": "Zaključavanje \"Samo izlaz\" (Sure Petcare)",
+      "entity_target": "Ciljna temperatura (broj)",
+      "entity_reserve": "Rezerva tople vode (%)",
+      "entity_temp_bottom": "Entitet temperature na dnu",
+      "boost_above": "Pojačano iznad (W)",
+      "running_above": "U radu iznad (W)",
+      "green_above": "Eko (zeleni) iznad (W)",
+      "show_target": "Pločica ciljne temp.",
+      "show_reserve": "Prikaži toplu vodu",
+      "nas_model": "Model NAS-a",
+      "mini_pc_model": "Model",
+      "entity_parity": "Ispravnost pariteta (binary_sensor, off = neispravno)",
+      "entity_flash": "Stanje USB fleša (binary_sensor, on = problem)",
+      "show_parity": "Prikaži upozorenje za paritet",
+      "show_flash": "Prikaži upozorenje za fleš",
+      "entity_nvme_1": "SSD 1 (NVMe)",
+      "entity_nvme_1_temp": "Temperatura SSD 1",
+      "entity_nvme_2": "SSD 2 (NVMe)",
+      "entity_nvme_2_temp": "Temperatura SSD 2",
+      "entity_capacity": "Preostali kapacitet",
+      "entity_salt": "Nivo soli",
+      "entity_hardness_in": "Ulazna tvrdoća (sirova voda)",
+      "entity_hardness_out": "Izlazna tvrdoća (omekšana)",
+      "entity_regen_days": "Dana do sledeće regeneracije",
+      "salt_low": "Upozorenje za malo soli (%)",
+      "show_capacity": "Prikaži kapacitet",
+      "show_salt": "Prikaži so",
+      "show_hardness": "Prikaži tvrdoću",
+      "show_regen": "Prikaži sledeću regeneraciju",
+      "entity_hour": "Kiša, poslednji sat",
+      "entity_day": "Kiša danas (24 h)",
+      "entity_week": "Kiša ove nedelje",
+      "entity_month": "Kiša ovog meseca",
+      "entity_year": "Kiša ove godine",
+      "entity_last": "Poslednja kiša (datum)",
+      "entity_signal": "Jačina signala",
+      "show_rate": "Prikaži intenzitet",
+      "show_hour": "Prikaži poslednji sat",
+      "show_day": "Prikaži danas",
+      "show_week": "Prikaži nedelju",
+      "show_month": "Prikaži mesec",
+      "show_year": "Prikaži godinu",
+      "show_last": "Prikaži poslednju kišu",
+      "show_signal": "Prikaži signal",
+      "heavy_rate": "Jaka kiša od (mm/h)",
+      "gauge_max": "Merač pun na (mm dnevno)",
+      "entity_alarm": "Alarm (prevrtanje, pregrevanje)",
+      "high_threshold": "Jako podešavanje od",
+      "bubbles_threshold": "Mehurići od",
+      "entity_bubbles": "Mehurići (vazdušna pumpa)",
+      "entity_chlorine": "Hlor",
+      "entity_cover": "Pokrivač (zatvoren / otvoren)",
+      "entity_error": "Greška",
+      "entity_heater": "Grejač",
+      "entity_jets": "Mlaznice",
+      "entity_timer": "Tajmer",
+      "show_chlorine": "Prikaži hlor",
+      "show_cover": "Prikaži pokrivač",
+      "show_timer": "Pločica tajmera",
+      "switch_low": "Prekidač za malu brzinu",
+      "switch_high": "Prekidač za veliku brzinu",
+      "entity_state": "Senzor otvoreno/zatvoreno (kontakt)",
+      "entity_position": "Senzor položaja (0-100)",
+      "entity_moisture": "Senzor vlažnosti zemljišta",
+      "entity_conductivity": "Senzor provodljivosti (plodnosti)",
+      "entity_brightness": "Senzor osvetljenja (lux)",
+      "entity_rssi": "Jačina signala (RSSI)",
+      "min_moisture": "Zaliti ispod (%)",
+      "min_temperature": "Hladno ispod (°C)",
+      "min_conductivity": "Đubrivo ispod (µS/cm)",
+      "min_brightness": "Mračno ispod (lx)",
+      "min_battery": "Slaba baterija ispod (%)",
+      "show_moisture": "Prikaži vlažnost zemljišta",
+      "show_conductivity": "Prikaži provodljivost",
+      "show_rssi": "Prikaži signal",
+      "water_low": "Malo vode ispod (%)",
+      "low_water": "Upozorenje za malo vode (binarni senzor)",
+      "target_step": "Ciljni korak (%)",
+      "show_tank": "Pločica rezervoara",
+      "target_humidity": "Ciljna vlažnost",
+      "fan_speed": "Brzina ventilatora (izbor)",
+      "water_level": "Nivo vode (%)",
+      "entity_lux": "Senzor nivoa svetlosti (lux)",
       "wind_max": "Prag jakog vetra (km/h)",
-      "show_lux": "Prikaži osvetljenost",
-      "fabric_color": "Boja platna"
+      "show_lux": "Prikaži nivo svetlosti",
+      "fabric_color": "Boja tkanine",
+      "internet_box_model": "Model rutera",
+      "illustration": "Ilustracija (fotografija ili SVG)",
+      "entity_download": "Brzina preuzimanja",
+      "entity_upload": "Brzina slanja",
+      "entity_devices": "Povezani uređaji",
+      "entity_wifi": "Wi-Fi prekidač",
+      "entity_reboot": "Dugme za ponovno pokretanje",
+      "max_speed": "Referentna brzina (Mb/s)",
+      "show_download": "Pločica preuzimanja",
+      "show_upload": "Pločica slanja",
+      "show_devices": "Pločica uređaja",
+      "show_wifi": "Wi-Fi pločica",
+      "entity_ping": "Ping senzor (ms)",
+      "entity_wan_ip": "WAN IP senzor",
+      "entity_memory": "Senzor zauzeća memorije (%)",
+      "entity_wifi_24": "Wi-Fi 2.4 GHz prekidač",
+      "entity_wifi_5": "Wi-Fi 5 GHz prekidač",
+      "entity_wifi_6": "Wi-Fi 6 GHz prekidač",
+      "entity_wifi_guest": "Wi-Fi za goste prekidač",
+      "entity_wifi_iot": "IoT Wi-Fi prekidač",
+      "show_ping": "Ping pločica",
+      "show_wan_ip": "WAN IP pločica",
+      "show_memory": "Pločica memorije",
+      "pet_feeder_model": "Model hranilice",
+      "entity_feed": "Hranjenje (izbor / dugme)",
+      "feed_option": "Opcija hranjenja (izbor, podrazumevano: start)",
+      "entity_source": "Izvor hranjenja",
+      "entity_serving": "Veličina serviranja (porcije)",
+      "entity_portion_weight": "Težina porcije (g)",
+      "entity_portions": "Porcije po danu",
+      "entity_led": "LED indikator",
+      "entity_child_lock": "Zaštita za decu",
+      "daily_goal": "Dnevne porcije (puni posudu)",
+      "show_portions": "Pločica porcija",
+      "show_serving": "Pločica serviranja",
+      "show_source": "Pločica izvora",
+      "entity_close": "Komanda za zatvaranje (dugme / skripta)",
+      "entity_stop": "Komanda za zaustavljanje (dugme / skripta)",
+      "entity_supply_temp": "Temperatura polaznog voda (Tv)",
+      "entity_water_volume": "Ukupna zapremina vode",
+      "entity_room_temp": "Sobna temperatura",
+      "power_threshold": "Prag grejanja (kW)",
+      "show_supply": "Prikaži polazni vod",
+      "show_return": "Prikaži povratni vod",
+      "show_delta": "Prikaži ΔT",
+      "show_room": "Prikaži prostoriju",
+      "entity_backwash": "Povratno ispiranje (on = u toku)",
+      "entity_brine": "Usisavanje slane vode (on = u toku)",
+      "entity_rinse": "Ispiranje (on = u toku)",
+      "entity_fan": "Brzina ventilatora",
+      "entity_tank": "Rezervoar za vodu (pun / nivo)",
+      "temp_step": "Korak temperature"
     }
   };
   const lang = (hass) => {
@@ -18614,6 +20386,12 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
     // transparent : la carte laisse voir le fond du tableau de bord (variables de ha-card, héritées dans le shadow DOM)
     const T = { '--ha-card-background': 'transparent', '--ha-card-box-shadow': 'none', '--ha-card-border-width': '0' };
     for (const [k, v] of Object.entries(T)) { if (cfg && cfg.transparent) el.style.setProperty(k, v); else el.style.removeProperty(k); }
+    // tile_background : « transparent » (défaut, léger voile gris) ou « theme » (fond secondaire du thème HA) → --ac-tile-bg, lue par les tuiles
+    if (cfg && cfg.tile_background === 'theme') el.style.setProperty('--ac-tile-bg', 'var(--secondary-background-color, rgba(127,127,127,.12))');
+    else el.style.removeProperty('--ac-tile-bg');
+    // tile_order : « name » (nom au-dessus) ou « value » (valeur au-dessus) → attribut tile-order sur la carte ; absent = ordre historique de la carte
+    if (cfg && (cfg.tile_order === 'name' || cfg.tile_order === 'value')) el.setAttribute('tile-order', cfg.tile_order);
+    else el.removeAttribute('tile-order');
   };
   // Températures (multi-pays) : unité d'affichage = option temperature_unit (C / F), sinon celle de Home Assistant, sinon °C.
   // conv() convertit la valeur d'une entité depuis son unit_of_measurement (à défaut l'unité de HA : climate / water_heater
@@ -18645,6 +20423,13 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
   };
   // champ « Unité de température » des éditeurs (vide : automatique)
   window.applianceTempField = { name: 'temperature_unit', selector: { select: { mode: 'dropdown', options: [{ value: 'C', label: '°C' }, { value: 'F', label: '°F' }] } } };
+  // Champs d'éditeur communs : fond et ordre des tuiles (vide = comportement historique de la carte)
+  window.applianceTileFields = (hass) => [
+    { name: 'tile_background', selector: { select: { mode: 'dropdown', options: [
+      { value: 'transparent', label: window.applianceEditorLabel('tile_bg_transparent', hass) }, { value: 'theme', label: window.applianceEditorLabel('tile_bg_theme', hass) }] } } },
+    { name: 'tile_order', selector: { select: { mode: 'dropdown', options: [
+      { value: 'name', label: window.applianceEditorLabel('tile_order_name', hass) }, { value: 'value', label: window.applianceEditorLabel('tile_order_value', hass) }] } } },
+  ];
   // Fiche d'une entité (more-info de Home Assistant)
   window.applianceMore = (el, id) => { if (id) el.dispatchEvent(new CustomEvent('hass-more-info', { detail: { entityId: id }, bubbles: true, composed: true })); };
   // Tuile cliquable : attributs à ajouter à une tuile liée à une entité (rien sans entité)
@@ -18737,6 +20522,15 @@ const I18N_AQUARIUM = {
     "name": "Akvárium",
     "alert": "Teplota mimo rozsah",
     "unavailable": "Nedostupné"
+  },
+  "da": {
+    "power": "Effekt",
+    "energy": "Energi",
+    "temp": "Vand",
+    "cost": "Pris",
+    "name": "Akvarium",
+    "alert": "Temperatur uden for området",
+    "unavailable": "Utilgængelig"
   },
   "de": {
     "power": "Leistung",
@@ -18870,6 +20664,7 @@ class ApplianceAquariumCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_power', selector: { entity: { domain: 'sensor', device_class: 'power' } } },
         { name: 'entity_energy', selector: { entity: { domain: 'sensor', device_class: 'energy' } } },
         { name: 'entity_temperature', selector: { entity: { domain: 'sensor', device_class: 'temperature' } } },
@@ -18967,7 +20762,8 @@ class ApplianceAquariumCard extends HTMLElement {
       .fish { animation:swim var(--dur) linear infinite; animation-delay:var(--delay); }
       .tail { transform-origin:2px 0; animation:wag calc(.5s / var(--speed,1)) ease-in-out infinite alternate; }
       .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(70px,1fr)); gap:8px; margin-top:10px; }
-      .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
+      .stat { text-align:center; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:6px 4px; }
+      :host([tile-order="name"]) .stat { flex-direction:column-reverse; }
       .stat.link { cursor:pointer; } .stat.link:hover { background:rgba(127,127,127,.2); }
       svg { cursor:pointer; }
       .stat .v { font-weight:700; font-size:1.05em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
@@ -19135,6 +20931,25 @@ const I18N_LINKY = {
     "injection": "STAV DODÁVKY",
     "injection_power": "DODÁVKA",
     "prod": "dodávka"
+  },
+  "da": {
+    "power": "EFFEKT",
+    "hp": "INDEKS SPIDSLAST",
+    "hc": "INDEKS LAVLAST",
+    "tariff": "PERIODE",
+    "cost": "PRIS I DAG",
+    "subscribed": "Abonneret",
+    "name": "Linky",
+    "conso": "forbrug",
+    "alert": "Overbelastning",
+    "active": "AKTIV EFFEKT",
+    "active_short": "Aktiv",
+    "per_phase": "pr. fase",
+    "peak": "SPIDSLAST",
+    "offpeak": "LAVLAST",
+    "injection": "INDEKS EKSPORT",
+    "injection_power": "EKSPORT",
+    "prod": "eksport"
   },
   "de": {
     "power": "LEISTUNG",
@@ -19437,12 +21252,7 @@ class ApplianceLinkyCard extends HTMLElement {
     // Sans `language` dans la config, on suit la langue de Home Assistant (reconstruit si elle change)
     const l = this._config && (this._config.language || lang(hass));
     if (l && l !== this._lng) { this._lng = l; this._hass = hass; this._built = false; this._build(); }
-    this._hass = hass;
-    if (Array.isArray(this._config.costs) && this._config.costs.length && (!this._costStatsFetchedAt || (Date.now() - this._costStatsFetchedAt) > 60000)) {
-      this._costStatsFetchedAt = Date.now();
-      this._refreshCostStats();
-    }
-    if (window.applianceChanged(this, hass, this._config)) this._update(); }
+    this._hass = hass; if (window.applianceChanged(this, hass, this._config)) this._update(); }
   getCardSize() { return 5; }
   getGridOptions() { return { columns: 12, min_columns: 3, rows: 'auto', min_rows: 1 }; }
   _t(k) { return (I18N_LINKY[this._config.language || lang(this._hass)] || I18N_LINKY.en)[k] ?? I18N_LINKY.en[k] ?? k; }
@@ -19451,17 +21261,13 @@ class ApplianceLinkyCard extends HTMLElement {
 
   connectedCallback() {
     // Défilement des pages de l'écran LCD toutes les 3 s (et des phases, en mode jauge « cycle »)
-    this._startCycle = () => {
-      clearInterval(this._timer);
-      this._timer = setInterval(() => {
-        this._page = (this._page || 0) + 1; this._renderLcd();
-        this._cycle = (this._cycle || 0) + 1;
-        if (this._tri && this._config.phase_gauge === 'cycle') this._update();
-        const b = this.shadowRoot && this.shadowRoot.getElementById('b2');
-        if (b) { b.classList.add('press'); setTimeout(() => b.classList.remove('press'), 250); }
-      }, 3000);
-    };
-    this._startCycle();
+    this._timer = setInterval(() => {
+      this._page = (this._page || 0) + 1; this._renderLcd();
+      this._cycle = (this._cycle || 0) + 1;
+      if (this._tri && this._config.phase_gauge === 'cycle') this._update();
+      const b = this.shadowRoot && this.shadowRoot.getElementById('b2');
+      if (b) { b.classList.add('press'); setTimeout(() => b.classList.remove('press'), 250); }
+    }, 3000);
   }
   disconnectedCallback() { clearInterval(this._timer); }
 
@@ -19548,7 +21354,7 @@ class ApplianceLinkyCard extends HTMLElement {
         </div>
       </div>
     </ha-card>`;
-    const flip = (d) => () => { this._page = (this._page || 0) + d; this._renderLcd(); if (this._startCycle) this._startCycle(); };
+    const flip = (d) => () => { this._page = (this._page || 0) + d; this._renderLcd(); };
     this.shadowRoot.getElementById('b1').onclick = flip(-1);
     this.shadowRoot.getElementById('b2').onclick = flip(1);
     // clic : écran → entité de la page affichée, jauge → puissance, barre de phase → puissance de la phase
@@ -19597,46 +21403,6 @@ class ApplianceLinkyCard extends HTMLElement {
     return [[this._l('hp'), this._kwh(c.entity_hp), c.entity_hp], [this._l('hc'), this._kwh(c.entity_hc), c.entity_hc]];
   }
 
-  
-  _refreshCostStats() {
-    const c = this._config;
-    if (!Array.isArray(c.costs) || !c.costs.length || !this._hass || !this._hass.callWS) return;
-    const ids = c.costs.map((it) => (typeof it === 'string' ? it : it.entity)).filter(Boolean);
-    if (!ids.length) return;
-    const now = new Date();
-    const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    this._hass.callWS({
-      type: 'recorder/statistics_during_period',
-      start_time: startOfDay.toISOString(),
-      end_time: now.toISOString(),
-      statistic_ids: ids,
-      period: 'day',
-      types: ['change'],
-    }).then((result) => {
-      this._costStats = this._costStats || {};
-      ids.forEach((id) => {
-        const arr = result && result[id];
-        if (arr && arr.length) this._costStats[id] = arr[arr.length - 1].change;
-      });
-      this._renderLcd();
-    }).catch(() => {});
-  }
-
-  _costs() {
-    const c = this._config;
-    if (Array.isArray(c.costs) && c.costs.length) {
-      this._costStats = this._costStats || {};
-      return c.costs.map((it) => {
-        const id = typeof it === 'string' ? it : it.entity, st = id ? this._hass.states[id] : null;
-        const name = (it.name) || (st && st.attributes.friendly_name) || id || '';
-        const statVal = id ? this._costStats[id] : null;
-        const val = (statVal !== undefined && statVal !== null) ? statVal : this._num(id);
-        return [String(name).toUpperCase(), val, id];
-      });
-    }
-    return null;
-  }
-
   // Heures creuses : entité tarif si fournie, sinon plages "HH:MM-HH:MM,..."
   _isHC() {
     const c = this._config;
@@ -19664,7 +21430,6 @@ class ApplianceLinkyCard extends HTMLElement {
       if (c.entity_injection) pages.push([this._l('injection'), kwh(d.injection), c.entity_injection]);
     }
     if (c.show_tariff) pages.push([this._l('tariff'), this._t(d.hcNow ? 'offpeak' : 'peak'), c.entity_tariff]);
-    if (d.costsArr) d.costsArr.forEach(([lab, v, id]) => pages.push([lab, (v==null?'—':`${v.toFixed(2)} €`), id]));
     if (c.show_cost && d.cost !== null) pages.push([this._l('cost'), `${d.cost.toFixed(2)} €`, c.entity_cost]);
     const p = pages[(this._page || 0) % pages.length];
     this._pageId = p[2]; // entité de la page affichée : ouverte par un clic sur l'écran
@@ -19684,7 +21449,6 @@ class ApplianceLinkyCard extends HTMLElement {
     let power = this._num(c.entity_power);
     const indexes = this._indexes();
     const hcNow = this._isHC();
-    const costsArr = this._costs();
     let cost = this._num(c.entity_cost);
     const active = this._power(c.entity_active_power);
     const injPower = this._power(c.entity_power_injection), injection = this._kwh(c.entity_injection);
@@ -19713,7 +21477,7 @@ class ApplianceLinkyCard extends HTMLElement {
       ratio = alertRatio = Math.min(base / max, 1);
       gtxt = power === null ? '—' : `${Math.round(base)} ${gaugeUnit}`;
     }
-    this._data = { power, unit, active, indexes, hcNow, cost, costsArr, injPower, injection };
+    this._data = { power, unit, active, indexes, hcNow, cost, injPower, injection };
     const colorOf = (r) => (r > 0.9 ? '#e53935' : r > 0.65 ? '#fb8c00' : '#43a047');
     const needles = tri && mode === 'needles';
     root.getElementById('arc').style.strokeDashoffset = 251.3 * (1 - ratio);
@@ -19798,6 +21562,19 @@ const I18N_BAT = {
     "full": "Plná za",
     "empty": "Prázdná za",
     "low": "Slabá baterie"
+  },
+  "da": {
+    "name": "Solcellebatteri",
+    "soc": "Opladning",
+    "power": "Effekt",
+    "energy": "Energi",
+    "temp": "Temperatur",
+    "charging": "Oplader",
+    "discharging": "Aflader",
+    "idle": "Inaktiv",
+    "full": "Fuld om",
+    "empty": "Tom om",
+    "low": "Lavt batteri"
   },
   "de": {
     "name": "Solarbatterie",
@@ -19972,6 +21749,7 @@ class ApplianceBatteryCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_soc', selector: { entity: { domain: 'sensor', device_class: 'battery' } } },
         { name: 'entity_power', selector: { entity: { domain: 'sensor', device_class: 'power' } } },
         { name: 'invert_power', selector: { boolean: {} } },
@@ -20080,7 +21858,8 @@ class ApplianceBatteryCard extends HTMLElement {
       .bolt { fill:#ffb300; opacity:0; } .charging .bolt { opacity:1; animation:blink 1.2s infinite; }
       .arrow { fill:#00acc1; opacity:0; } .discharging .arrow { opacity:1; animation:blink 1.2s infinite; }
       .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(78px,1fr)); gap:8px; margin-top:6px; }
-      .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
+      .stat { text-align:center; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:6px 4px; }
+      :host([tile-order="name"]) .stat { flex-direction:column-reverse; }
       .stat .v { font-weight:700; font-size:1.05em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
       @keyframes dash { to { stroke-dashoffset:-11; } } @keyframes blink { 50% { opacity:.35; } }
       @keyframes wave { from { transform:translate(-12px, var(--wy,0px)); } to { transform:translate(8px, var(--wy,0px)); } }
@@ -20196,6 +21975,19 @@ const I18N_EV = {
     "plugged": "Připojeno",
     "done": "Dokončeno",
     "disconnected": "Odpojeno"
+  },
+  "da": {
+    "name": "Elbillader",
+    "power": "Effekt",
+    "energy": "Session",
+    "soc": "Batteri",
+    "status": "Status",
+    "duration": "Varighed",
+    "cost": "Pris",
+    "charging": "Oplader",
+    "plugged": "Tilsluttet",
+    "done": "Færdig",
+    "disconnected": "Frakoblet"
   },
   "de": {
     "name": "Wallbox",
@@ -20371,6 +22163,7 @@ class ApplianceEvChargerCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_power', selector: { entity: { domain: 'sensor', device_class: 'power' } } },
         { name: 'entity_session_energy', selector: { entity: { domain: 'sensor', device_class: 'energy' } } },
         { name: 'entity_car_soc', selector: { entity: { domain: 'sensor' } } },
@@ -20440,7 +22233,8 @@ class ApplianceEvChargerCard extends HTMLElement {
       .charging .gfill { animation:breathe 2s ease-in-out infinite; }
       .gtxt { fill:#fff; font:800 10px system-ui,sans-serif; text-anchor:middle; text-shadow:0 1px 2px rgba(0,0,0,.6); }
       .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(78px,1fr)); gap:8px; margin-top:6px; }
-      .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
+      .stat { text-align:center; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:6px 4px; }
+      :host([tile-order="name"]) .stat { flex-direction:column-reverse; }
       .stat .v { font-weight:700; font-size:1.05em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
       @keyframes dash { to { stroke-dashoffset:-11; } }
       @keyframes breathe { 50% { opacity:.45; } }
@@ -20627,6 +22421,27 @@ const I18N_VAC = {
     "idle": "Nečinný",
     "error": "Chyba",
     "emptying": "Vyprazdňuje"
+  },
+  "da": {
+    "name": "Robotstøvsuger",
+    "battery": "Batteri",
+    "area": "Areal",
+    "time": "Tid",
+    "fan": "Sugeevne",
+    "status": "Status",
+    "filter": "Filter",
+    "brush": "Børste",
+    "start": "Start",
+    "pause": "Pause",
+    "dock": "Dock",
+    "cleaning": "Gør rent",
+    "docked": "I dock",
+    "charging": "Oplader",
+    "returning": "Vender hjem",
+    "paused": "På pause",
+    "idle": "Inaktiv",
+    "error": "Fejl",
+    "emptying": "Tømmer"
   },
   "de": {
     "name": "Saugroboter",
@@ -20901,6 +22716,7 @@ class ApplianceRobotVacuumCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_battery', selector: { entity: { domain: 'sensor', device_class: 'battery' } } },
         { name: 'entity_area', selector: { entity: { domain: 'sensor' } } },
         { name: 'entity_time', selector: { entity: { domain: 'sensor' } } },
@@ -21020,7 +22836,8 @@ const COMMON_CSS_VAC = `
   .btn:active { transform:scale(.95); } .btn svg { width:18px; height:18px; fill:currentColor; }
   .btn.on { background:var(--primary-color,#03a9f4); color:#fff; }
   .stats { display:grid; gap:8px; margin-top:8px; }
-  .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
+  .stat { text-align:center; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:6px 4px; }
+  :host([tile-order="name"]) .stat { flex-direction:column-reverse; }
   .stat .v { font-weight:700; font-size:1.02em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
   @keyframes blink { 50% { opacity:.3 } } @keyframes breathe { 50% { opacity:.4 } }
   /* format compact : vignette à gauche, nom + état, tuiles, boutons dessous */
@@ -21038,7 +22855,8 @@ const COMMON_CSS_VAC = `
   .compact[data-st=returning] .dot { background:#3fa9ff; } .compact[data-st=paused] .dot { background:#ffb300; } .compact[data-st=error] .dot { background:#e53935; }
   .compact .badge { align-self:flex-start; }
   .compact .stats { grid-area:stats; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin-top:0; }
-  .compact .tile { display:flex; flex-direction:column; padding:6px 9px; border-radius:10px; min-width:0; background:rgba(127,127,127,.09); }
+  .compact .tile { display:flex; flex-direction:column; padding:6px 9px; border-radius:10px; min-width:0; background:var(--ac-tile-bg, rgba(127,127,127,.09)); }
+  :host([tile-order=\"name\"]) .compact .tile { flex-direction:column-reverse; }
   .compact .val { font-size:14px; font-weight:600; color:var(--primary-text-color); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .compact .lbl { font-size:11px; color:var(--secondary-text-color); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .compact .btns { margin-top:10px; } .compact .btn { border-radius:10px; }
@@ -21191,6 +23009,26 @@ const I18N_MOW = {
     "paused": "Pozastaveno",
     "idle": "Nečinná",
     "error": "Chyba"
+  },
+  "da": {
+    "name": "Robotplæneklipper",
+    "battery": "Batteri",
+    "area": "Areal",
+    "time": "Klipning",
+    "next": "Næste start",
+    "status": "Status",
+    "blade": "Kniv",
+    "rain": "Regn",
+    "start": "Klip",
+    "pause": "Pause",
+    "dock": "Dock",
+    "mowing": "Klipper",
+    "docked": "I ladestation",
+    "charging": "Oplader",
+    "returning": "Vender hjem",
+    "paused": "På pause",
+    "idle": "Inaktiv",
+    "error": "Fejl"
   },
   "de": {
     "name": "Mähroboter",
@@ -21453,6 +23291,7 @@ class ApplianceRobotMowerCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_battery', selector: { entity: { domain: 'sensor', device_class: 'battery' } } },
         { name: 'entity_area', selector: { entity: { domain: 'sensor' } } },
         { name: 'entity_time', selector: { entity: { domain: 'sensor' } } },
@@ -21652,7 +23491,8 @@ const COMMON_CSS_MOW = `
   .btn:active { transform:scale(.95); } .btn svg { width:18px; height:18px; fill:currentColor; }
   .btn.on { background:var(--primary-color,#43a047); color:#fff; }
   .stats { display:grid; gap:8px; margin-top:8px; }
-  .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
+  .stat { text-align:center; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:6px 4px; }
+  :host([tile-order="name"]) .stat { flex-direction:column-reverse; }
   .stat .v { font-weight:700; font-size:1.02em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
   @keyframes blink { 50% { opacity:.3 } } @keyframes breathe { 50% { opacity:.4 } }
   /* format compact : vignette à gauche, nom + état, tuiles, boutons dessous */
@@ -21670,7 +23510,8 @@ const COMMON_CSS_MOW = `
   .compact[data-st=returning] .dot { background:#3fa9ff; } .compact[data-st=paused] .dot { background:#ffb300; } .compact[data-st=error] .dot { background:#e53935; }
   .compact .badge { align-self:flex-start; }
   .compact .stats { grid-area:stats; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin-top:0; }
-  .compact .tile { display:flex; flex-direction:column; padding:6px 9px; border-radius:10px; min-width:0; background:rgba(127,127,127,.09); }
+  .compact .tile { display:flex; flex-direction:column; padding:6px 9px; border-radius:10px; min-width:0; background:var(--ac-tile-bg, rgba(127,127,127,.09)); }
+  :host([tile-order=\"name\"]) .compact .tile { flex-direction:column-reverse; }
   .compact .val { font-size:14px; font-weight:600; color:var(--primary-text-color); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .compact .lbl { font-size:11px; color:var(--secondary-text-color); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .compact .btns { margin-top:10px; } .compact .btn { border-radius:10px; }
@@ -21725,6 +23566,22 @@ const I18N_PB = {
     "extinguishing": "Vypínání",
     "alarm": "Alarm",
     "low": "Málo pelet"
+  },
+  "da": {
+    "name": "Pillefyr",
+    "power": "Effekt",
+    "energy": "Energi",
+    "cost": "Pris",
+    "flow": "Fremløb",
+    "ret": "Retur",
+    "pellets": "Træpiller",
+    "status": "Status",
+    "off": "Slukket",
+    "ignition": "Tænder",
+    "heating": "Varmer",
+    "extinguishing": "Slukker",
+    "alarm": "Alarm",
+    "low": "Lavt træpilleniveau"
   },
   "de": {
     "name": "Pelletkessel",
@@ -21937,6 +23794,7 @@ class AppliancePelletBoilerCard extends HTMLElement {
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(),
         { name: 'entity_status', selector: { entity: { domain: ['sensor', 'select', 'climate', 'switch', 'binary_sensor'] } } },
         { name: 'entity_power', selector: { entity: { domain: 'sensor', device_class: 'power' } } },
         { name: 'entity_energy', selector: { entity: { domain: 'sensor', device_class: 'energy' } } },
@@ -22024,13 +23882,15 @@ class AppliancePelletBoilerCard extends HTMLElement {
       .heating .heat path { animation:rise 2.4s ease-in infinite; } .heat path:nth-child(2) { animation-delay:.8s !important; } .heat path:nth-child(3) { animation-delay:1.6s !important; }
       /* Écran */
       .scr { fill:#0d1a24; } .alarm .scr { fill:#4a0d0d; animation:blink .6s infinite; }
-      .scrtxt { fill:#7fe0ff; font:700 7px 'Courier New',monospace; text-anchor:middle; } .scrlab { fill:#7fe0ff; font:5px 'Courier New',monospace; text-anchor:middle; opacity:.8; }
+      .scrtxt { fill:#7fe0ff; font:700 13px 'Courier New',monospace; text-anchor:middle; } .scrlab { fill:#7fe0ff; font:6.5px 'Courier New',monospace; text-anchor:middle; opacity:.8; }
       .off .scrtxt, .off .scrlab { fill:#4f7d8f; }
       .led { fill:#6b6b6b; } .heating .led { fill:#43ff64; } .ignition .led { fill:#ffb300; animation:blink .8s infinite; }
       .extinguishing .led { fill:#3fa9ff; animation:blink 1.2s infinite; } .alarm .led { fill:#ff3b30; animation:blink .4s infinite; }
-      .stats { display:grid; gap:8px; margin-top:6px; }
-      .stat { text-align:center; background:var(--secondary-background-color, rgba(127,127,127,.12)); border-radius:10px; padding:6px 4px; }
-      .stat .v { font-weight:700; font-size:1.02em; } .stat .l { font-size:.7em; opacity:.65; text-transform:uppercase; letter-spacing:.04em; }
+      .stats { display:grid; gap:6px; margin-top:6px; }
+      .tile { box-sizing:border-box; display:flex; flex-direction:column; background:var(--ac-tile-bg, rgba(127,127,127,.09)); border-radius:10px; padding:5px 7px; min-width:0; overflow:hidden; text-align:center; cursor:pointer; }
+      .tile .l { display:flex; align-items:center; justify-content:center; font-size:10px; line-height:14px; color:var(--secondary-text-color); min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      .tile .v { font-size:14px; line-height:18px; font-weight:600; color:var(--primary-text-color); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      :host([tile-order="value"]) .tile { flex-direction:column-reverse; } :host([tile-order="value"]) .tile .v { margin:0 0 2px; }
       @keyframes flick { from { transform:scaleY(.82) scaleX(1.05) } to { transform:scaleY(1.12) scaleX(.94) } }
       @keyframes dash { to { stroke-dashoffset:-14 } } @keyframes dash2 { to { stroke-dashoffset:-18 } }
       @keyframes jig { to { transform:translateY(.8px) } }
@@ -22069,10 +23929,10 @@ class AppliancePelletBoilerCard extends HTMLElement {
         <rect x="244" y="74" width="3" height="16" rx="1.5" fill="#9aa0a6"/><rect x="244" y="150" width="3" height="16" rx="1.5" fill="#9aa0a6"/>
         <rect x="138" y="198" width="10" height="5" fill="#2e3237"/><rect x="236" y="198" width="10" height="5" fill="#2e3237"/>
         <!-- Écran tactile -->
-        <rect x="208" y="55" width="36" height="24" rx="3" fill="#2b2f35"/>
-        <rect class="scr" x="211" y="58" width="30" height="18" rx="2"/>
-        <text class="scrlab" x="226" y="65" id="lab"></text><text class="scrtxt" x="226" y="73" id="val"></text>
-        <circle class="led" cx="214" cy="82" r="1.6"/>
+        <rect x="186" y="53" width="58" height="38" rx="4" fill="#2b2f35"/>
+        <rect class="scr" x="189" y="56" width="52" height="32" rx="2.5"/>
+        <text class="scrlab" x="215" y="65" id="lab"></text><text class="scrtxt" x="215" y="80" id="val"></text>
+        <circle class="led" cx="193" cy="96" r="1.8"/>
         <!-- Hublot de combustion -->
         <circle cx="192" cy="160" r="15" fill="#2b2f35"/>
         <circle cx="192" cy="160" r="11.5" fill="#120a06"/>
@@ -22173,6 +24033,8 @@ class AppliancePelletBoilerCard extends HTMLElement {
     if (st === 'heating') { lab.textContent = this._t('flow').toUpperCase(); val.textContent = dep === null ? 'ON' : `${Math.round(dep)}${tc.unit}`; }
     else if (st === 'off') { lab.textContent = this._t('off').toUpperCase(); val.textContent = dep === null ? '--' : `${Math.round(dep)}${tc.unit}`; }
     else { lab.textContent = ''; val.textContent = this._t(st).toUpperCase().slice(0, 9); }
+    // texte d'état long (ALLUMAGE…) : police réduite pour tenir dans l'écran
+    val.style.fontSize = val.textContent.length > 5 ? '8px' : '';
 
     const f = (v, d, u) => (v === null ? '—' : `${v.toFixed(d)} ${u}`);
     const it = [];
@@ -22185,8 +24047,8 @@ class AppliancePelletBoilerCard extends HTMLElement {
     if (c.show_energy) it.push([this._l('energy'), f(e, 1, 'kWh'), c.entity_energy]);
     if (c.show_cost && cost !== null) it.push([this._l('cost'), f(cost, 2, '€'), c.entity_cost || c.entity_energy]);
     const stats = r.getElementById('stats');
-    stats.style.gridTemplateColumns = `repeat(${it.length > 4 ? Math.ceil(it.length / 2) : it.length}, 1fr)`;
-    stats.innerHTML = it.map(([l, v, id]) => `<div class="stat"${window.applianceTileAttrs(id)}><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('');
+    stats.style.gridTemplateColumns = `repeat(auto-fit, minmax(76px, 1fr))`;
+    stats.innerHTML = it.map(([l, v, id]) => `<div class="tile"${window.applianceTileAttrs(id)}><div class="l">${esc(l)}</div><div class="v">${esc(v)}</div></div>`).join('');
     window.applianceLinkTiles(stats, this);
   }
 }
@@ -22243,6 +24105,26 @@ window.customCards.push({ type: 'appliance-pellet-boiler-card', name: 'Appliance
       "lowp": "Nízký tlak",
       "highp": "Vysoký tlak",
       "hotf": "Výstup příliš horký"
+    },
+    "da": {
+      "name": "Gasfyr",
+      "off": "Slukket",
+      "standby": "Standby",
+      "heating": "Varmer",
+      "dhw": "Varmt vand",
+      "alarm": "Fejl",
+      "power": "El",
+      "energy": "El-energi",
+      "gas": "Gas",
+      "cost": "Pris",
+      "flow": "Fremløb",
+      "ret": "Retur",
+      "pressure": "Tryk",
+      "mod": "Modulering",
+      "delta": "ΔT",
+      "lowp": "Lavt tryk",
+      "highp": "Højt tryk",
+      "hotf": "Fremløb for varmt"
     },
     "de": {
       "name": "Gastherme",
@@ -22501,7 +24383,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--gb-heat:var(--app
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -22778,6 +24661,7 @@ svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_status'), ent('entity_flame', 'binary_sensor'), ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
         ent('entity_gas', 'sensor'), ent('entity_cost', 'sensor'), { name: 'price_per_unit', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
         ent('entity_flow_temp', 'sensor'), ent('entity_return_temp', 'sensor'), ent('entity_pressure', 'sensor'), ent('entity_modulation', 'sensor'),
@@ -22861,6 +24745,28 @@ svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:
       "heat_energy": "Tepelná energie",
       "scop": "SCOP",
       "buffer": "Akumulační nádrž"
+    },
+    "da": {
+      "name": "Væske-vand-varmepumpe",
+      "off": "Slukket",
+      "standby": "Standby",
+      "heating": "Varmer",
+      "dhw": "Varmt vand",
+      "cooling": "Køler",
+      "alarm": "Fejl",
+      "power": "El",
+      "heat": "Varmeydelse",
+      "cop": "COP",
+      "flow": "Fremløb",
+      "ret": "Retur",
+      "delta": "ΔT",
+      "src_in": "Kilde ind",
+      "src_out": "Kilde ud",
+      "rate": "Flow",
+      "energy": "El-energi",
+      "heat_energy": "Varmeenergi",
+      "scop": "SCOP",
+      "buffer": "Buffertank"
     },
     "de": {
       "name": "Wasser/Wasser-Wärmepumpe",
@@ -23141,7 +25047,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--wp-heat:var(--app
 .alarm .badge{background:color-mix(in srgb,var(--wp-alert) 22%,transparent);color:var(--wp-alert)}
 svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -23292,6 +25199,7 @@ svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:
           { name: 'labels', selector: { object: {} } },
           { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
           { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
           ent('entity_status', ['climate', 'sensor', 'select', 'input_select', 'water_heater']),
           { type: 'grid', name: '', schema: [ent('entity_power', 'sensor'), ent('entity_heat_power', 'sensor'), ent('entity_cop', 'sensor')] },
           { type: 'grid', name: '', schema: [ent('entity_flow_temp', 'sensor'), ent('entity_return_temp', 'sensor'), ent('entity_flow_rate', 'sensor')] },
@@ -23544,6 +25452,24 @@ svg{display:block;width:100%;max-width:calc(100% * var(--illus-scale,1));height:
       "lowfuel": "Málo nafty",
       "hotflue": "Spaliny příliš horké"
     },
+    "da": {
+      "name": "Dieselvarmer",
+      "off": "Slukket",
+      "standby": "Standby",
+      "ignition": "Tænder",
+      "heating": "Varmer",
+      "cooldown": "Efterblæsning",
+      "alarm": "Fejl",
+      "power": "El",
+      "energy": "El-energi",
+      "fuel": "Diesel",
+      "used": "Brugt",
+      "cost": "Pris",
+      "temp": "Rum",
+      "flue": "Røggas",
+      "lowfuel": "Lavt dieselniveau",
+      "hotflue": "Røggas for varm"
+    },
     "de": {
       "name": "Dieselheizung",
       "off": "Aus",
@@ -23777,7 +25703,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--dh-heat:var(--app
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(190px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -24087,6 +26014,7 @@ svg{display:block;width:100%;max-width:calc(190px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_status'), ent('entity_flame', 'binary_sensor'), ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
         ent('entity_fuel_level', 'sensor'), ent('entity_fuel_used', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_liter', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
@@ -24165,6 +26093,24 @@ svg{display:block;width:100%;max-width:calc(190px * var(--illus-scale,1));height
       "lowph": "pH příliš nízké",
       "highph": "pH příliš vysoké",
       "hot": "Voda příliš horká"
+    },
+    "da": {
+      "name": "Spabad",
+      "off": "Slukket",
+      "standby": "Standby",
+      "filtering": "Filtrerer",
+      "heating": "Varmer",
+      "jets": "Dyser",
+      "alarm": "Fejl",
+      "power": "El",
+      "energy": "El-energi",
+      "temp": "Vand",
+      "target": "Mål",
+      "ph": "pH",
+      "cost": "Pris",
+      "lowph": "pH for lav",
+      "highph": "pH for høj",
+      "hot": "Vandet er for varmt"
     },
     "de": {
       "name": "Whirlpool",
@@ -24399,7 +26345,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--jz-heat:var(--app
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -24697,6 +26644,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_status'), ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
         ent('entity_temp', ['sensor', 'climate', 'water_heater']), ent('entity_target_temp'), ent('entity_ph', 'sensor'), ent('entity_light'),
@@ -24729,7 +26677,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 })();
 
 /* Carte « Box internet » — custom:appliance-internet-box-card
- * Photos détourées : Freebox Pop (model: freebox_pop) et SFR Box (model: sfr_box), chacune avec son dessin SVG
+ * Photos détourées : Freebox Pop (model: freebox_pop), SFR Box (model: sfr_box), ASUS GT-BE98 (asus_gt_be98), ASUS RT-AC88U
+ * (asus_rt_ac88u), Xiaomi AX3000 NE (xiaomi_ax3000) et routeur générique à antennes dessiné (router), chacune avec son dessin SVG
  * vectoriel (illustration: svg) à la place de la photo.
  * Entités : état de la connexion (binary_sensor connectivity, sensor, device_tracker…), débit descendant / montant,
  * nombre d'appareils connectés, interrupteur Wi-Fi et bouton de redémarrage (tous facultatifs).
@@ -24755,7 +26704,41 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "on": "On",
       "off": "Off",
       "reboot": "Restart",
-      "reboot_confirm": "Restart the box? The internet connection will be cut for a few minutes."
+      "reboot_confirm": "Restart the box? The internet connection will be cut for a few minutes.",
+      "ping": "Ping",
+      "wan_ip": "WAN IP",
+      "uptime": "Uptime",
+      "cpu": "CPU",
+      "memory": "Memory",
+      "wifi_24": "Wi-Fi 2.4 GHz",
+      "wifi_5": "Wi-Fi 5 GHz",
+      "wifi_6": "Wi-Fi 6 GHz",
+      "wifi_guest": "Guest Wi-Fi",
+      "wifi_iot": "IoT Wi-Fi"
+    },
+    "da": {
+      "name": "Router",
+      "online": "Online",
+      "offline": "Offline",
+      "unavailable": "Utilgængelig",
+      "download": "Download",
+      "upload": "Upload",
+      "devices": "Enheder",
+      "wifi": "Wi-Fi",
+      "on": "Til",
+      "off": "Fra",
+      "reboot": "Genstart",
+      "reboot_confirm": "Genstart routeren? Internetforbindelsen afbrydes i nogle minutter.",
+      "ping": "Ping",
+      "wan_ip": "WAN-IP",
+      "uptime": "Oppetid",
+      "cpu": "CPU",
+      "memory": "Hukommelse",
+      "wifi_24": "Wi-Fi 2,4 GHz",
+      "wifi_5": "Wi-Fi 5 GHz",
+      "wifi_6": "Wi-Fi 6 GHz",
+      "wifi_guest": "Gæste-Wi-Fi",
+      "wifi_iot": "IoT-Wi-Fi"
     },
     "fr": {
       "name": "Box internet",
@@ -24769,10 +26752,86 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "on": "Activé",
       "off": "Coupé",
       "reboot": "Redémarrer",
-      "reboot_confirm": "Redémarrer la box ? La connexion internet sera coupée quelques minutes."
+      "reboot_confirm": "Redémarrer la box ? La connexion internet sera coupée quelques minutes.",
+      "ping": "Ping",
+      "wan_ip": "IP WAN",
+      "uptime": "Disponibilité",
+      "cpu": "Processeur",
+      "memory": "Mémoire",
+      "wifi_24": "Wi-Fi 2,4 GHz",
+      "wifi_5": "Wi-Fi 5 GHz",
+      "wifi_6": "Wi-Fi 6 GHz",
+      "wifi_guest": "Wi-Fi invités",
+      "wifi_iot": "Wi-Fi objets connectés"
+    },
+    "sr": {
+      "name": "Интернет рутер",
+      "online": "На мрежи",
+      "offline": "Ван мреже",
+      "unavailable": "Недоступно",
+      "download": "Преузимање",
+      "upload": "Слање",
+      "devices": "Уређаји",
+      "wifi": "Wi-Fi",
+      "on": "Укључено",
+      "off": "Искључено",
+      "reboot": "Поново покрени",
+      "reboot_confirm": "Поново покренути рутер? Интернет веза ће бити прекинута на неколико минута.",
+      "ping": "Пинг",
+      "wan_ip": "WAN IP",
+      "uptime": "Време рада",
+      "cpu": "Процесор",
+      "memory": "Меморија",
+      "wifi_24": "Wi-Fi 2.4 GHz",
+      "wifi_5": "Wi-Fi 5 GHz",
+      "wifi_6": "Wi-Fi 6 GHz",
+      "wifi_guest": "Wi-Fi за госте",
+      "wifi_iot": "IoT Wi-Fi"
+    },
+    "sr-Latn": {
+      "name": "Internet ruter",
+      "online": "Na mreži",
+      "offline": "Van mreže",
+      "unavailable": "Nedostupno",
+      "download": "Preuzimanje",
+      "upload": "Slanje",
+      "devices": "Uređaji",
+      "wifi": "Wi-Fi",
+      "on": "Uključeno",
+      "off": "Isključeno",
+      "reboot": "Ponovo pokreni",
+      "reboot_confirm": "Ponovo pokrenuti ruter? Internet veza će biti prekinuta na nekoliko minuta.",
+      "ping": "Ping",
+      "wan_ip": "WAN IP",
+      "uptime": "Vreme rada",
+      "cpu": "Procesor",
+      "memory": "Memorija",
+      "wifi_24": "Wi-Fi 2.4 GHz",
+      "wifi_5": "Wi-Fi 5 GHz",
+      "wifi_6": "Wi-Fi 6 GHz",
+      "wifi_guest": "Wi-Fi za goste",
+      "wifi_iot": "IoT Wi-Fi"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+
+  /* Routeur générique à antennes : bloc graphite, 4 antennes articulées, voyants à l'avant (repère 300 × 200). */
+  const ROUTER_SVG = `
+        <defs>
+          <linearGradient id="ib-rtbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4f58"/><stop offset=".45" stop-color="#2a2d33"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+          <linearGradient id="ib-rtant" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#15171a"/><stop offset=".35" stop-color="#4b505a"/><stop offset="1" stop-color="#1b1d21"/></linearGradient>
+        </defs>
+        ${[[62, -14], [112, -5], [188, 5], [238, 14]].map(([x, a]) => `<g transform="rotate(${a} ${x} 146)"><rect x="${x - 7}" y="14" width="14" height="136" rx="7" fill="url(#ib-rtant)"/><rect x="${x - 4.5}" y="18" width="3" height="120" rx="1.5" fill="#fff" opacity=".18"/><rect x="${x - 9}" y="138" width="18" height="12" rx="3" fill="#202226"/></g>`).join('')}
+        <path d="M30 156 L48 128 H252 L270 156 V176 Q270 186 258 186 H42 Q30 186 30 176 Z" fill="url(#ib-rtbody)"/>
+        <path d="M48 128 H252 L270 156 H30 Z" fill="#fff" opacity=".08"/>
+        <path d="M30 156 H270" stroke="#000" stroke-opacity=".5" stroke-width="1.2"/>
+        <g stroke="#0c0d0f" stroke-width="2" stroke-linecap="round" opacity=".7"><path d="M92 140 H208"/><path d="M92 146 H208"/></g>
+        <g fill="#7b818c"><circle cx="76" cy="172" r="2.4"/><circle cx="92" cy="172" r="2.4"/><circle cx="108" cy="172" r="2.4"/></g>
+        ${[[30.1, 18, 0], [100.5, 14.5, .45], [199.5, 14.5, .9], [269.9, 18, 1.35]].map(([x, y, d]) => `<circle class="anttip" cx="${x}" cy="${y}" r="3.4" style="animation-delay:${d}s"/>`).join('')}
+        <text x="204" y="176" fill="#9aa0aa" font-family="system-ui,sans-serif" font-size="9" font-weight="600" letter-spacing="1.6">WI-FI</text>`;
+  const ROUTER_LED = `<ellipse class="ledglow" cx="150" cy="172" rx="22" ry="8"/><circle class="led" cx="150" cy="172" r="3.6"/>`;
+  // dessin générique ramené dans le repère d'une photo (pw × ph), pour « illustration: svg » sur les modèles en photo
+  const ROUTER_FOR = (pw, ph) => { const s = Math.min(pw / 300, ph / 200); return `<g transform="translate(${((pw - 300 * s) / 2).toFixed(1)} ${((ph - 200 * s) / 2).toFixed(1)}) scale(${s.toFixed(4)})">${ROUTER_SVG}</g>`; };
 
   /* Chaque modèle : photo (px de la photo = repère du dessin), emplacement dans la carte (box = x, y, w, h sur 300 × 180),
      point d'émission des ondes Wi-Fi, LED, et dessin SVG vectoriel dans le même repère que la photo. */
@@ -24790,6 +26849,33 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         <text x="338" y="98" fill="#e8e8ea" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="30" letter-spacing="1">free</text>
         <circle cx="486" cy="90" r="22" fill="#15161a"/><circle cx="486" cy="90" r="22" fill="none" stroke="#5a5c63" stroke-width="2"/>
         <path d="M478 84 L492 90 L478 96 Z" fill="#8a8d96"/>`,
+    },
+    router: {
+      label: 'Router with antennas (generic)', pw: 300, ph: 200, box: [75, 36, 150, 100], wave: [150, 34], img: null,
+      waves: [[90, 43], [125, 40], [175, 40], [210, 43]],
+      led: ROUTER_LED, svg: ROUTER_SVG,
+    },
+    asus_gt_be98: {
+      label: 'ASUS ROG Rapture GT-BE98', pw: 640, ph: 450, box: [72, 36, 156, 110], wave: [150, 32],
+      waves: [[90, 50], [112, 36], [189, 36], [211, 50]],
+      img: 'data:image/webp;base64,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',
+      // rangée de voyants blancs sur l'avant, et voyant de la prise d'alimentation
+      led: `<ellipse class="rogglow" cx="392" cy="305" rx="78" ry="42"/><ellipse class="ledglow" cx="324" cy="402" rx="50" ry="13"/><circle class="led" cx="361" cy="378" r="3.4"/>`,
+      svg: ROUTER_FOR(640, 450),
+    },
+    asus_rt_ac88u: {
+      label: 'ASUS RT-AC88U', pw: 560, ph: 449, box: [80, 36, 140, 112], wave: [150, 32],
+      waves: [[107, 43], [147, 39], [183, 39], [213, 36]],
+      img: 'data:image/webp;base64,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',
+      led: `<ellipse class="ledglow" cx="150" cy="330" rx="46" ry="11"/><circle class="led" cx="210" cy="342" r="3.4"/>`,
+      svg: ROUTER_FOR(560, 449),
+    },
+    xiaomi_ax3000: {
+      label: 'Xiaomi Mesh System AX3000 NE', pw: 300, ph: 588, box: [118, 30, 64, 125], wave: [150, 26],
+      img: 'data:image/webp;base64,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',
+      // barre lumineuse verticale sur la façade
+      led: `<rect class="ledglow" x="140" y="56" width="22" height="150" rx="11"/><rect class="led" x="147" y="66" width="8" height="128" rx="4"/>`,
+      svg: ROUTER_FOR(300, 588),
     },
     sfr_box: {
       label: 'SFR Box', pw: 139, ph: 205, box: [100, 28, 99, 146], wave: [150, 24],
@@ -24810,7 +26896,24 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         <rect x="27" y="52" width="12" height="3.4" rx="1.7" fill="#d2d4d9" stroke="#b9bbc1" stroke-width=".5"/>`,
     },
   };
-  const ALIAS = { freebox: 'freebox_pop', pop: 'freebox_pop', free: 'freebox_pop', sfr: 'sfr_box', sfrbox: 'sfr_box', box8: 'sfr_box', sfrbox8: 'sfr_box' };
+  // interrupteurs Wi-Fi par bande : [clé = suffixe de l'option entity_…, icône, texte court du bouton, libellé]
+  const BANDS = [['wifi_24', 'mdi:wifi', '2.4', 'wifi_24'], ['wifi_5', 'mdi:wifi', '5', 'wifi_5'], ['wifi_6', 'mdi:wifi', '6', 'wifi_6'], ['wifi_guest', 'mdi:account-multiple', '', 'wifi_guest'], ['wifi_iot', 'mdi:chip', '', 'wifi_iot']];
+  // durée de fonctionnement : capteur en secondes / minutes / heures / jours, ou horodatage du dernier démarrage
+  const uptimeSeconds = (st) => {
+    if (!st || /^(unavailable|unknown|none)$/i.test(String(st.state))) return NaN;
+    const raw = String(st.state), n = parseFloat(raw.replace(',', '.'));
+    if ((st.attributes || {}).device_class === 'timestamp' || (!isFinite(n) && !isNaN(Date.parse(raw)))) { const ms = Date.now() - Date.parse(raw); return ms > 0 ? ms / 1000 : NaN; }
+    if (!isFinite(n)) return NaN;
+    const u = String((st.attributes || {}).unit_of_measurement || 's').toLowerCase();
+    return n * (u === 'd' ? 86400 : u === 'h' ? 3600 : u === 'min' ? 60 : u === 'ms' ? 0.001 : 1);
+  };
+  const fmtUptime = (sec, loc) => {
+    if (!isFinite(sec)) return '--';
+    const f = (v, unit) => new Intl.NumberFormat(loc, { style: 'unit', unit, unitDisplay: 'narrow', maximumFractionDigits: 0 }).format(v);
+    const d = Math.floor(sec / 86400), h = Math.floor((sec % 86400) / 3600), mi = Math.floor((sec % 3600) / 60);
+    return d ? `${f(d, 'day')} ${f(h, 'hour')}` : h ? `${f(h, 'hour')} ${f(mi, 'minute')}` : f(mi, 'minute');
+  };
+  const ALIAS = { generic: 'router', antennas: 'router', routeur: 'router', rog: 'asus_gt_be98', gtbe98: 'asus_gt_be98', rapture: 'asus_gt_be98', ac88u: 'asus_rt_ac88u', rtac88u: 'asus_rt_ac88u', xiaomi: 'xiaomi_ax3000', ax3000: 'xiaomi_ax3000', freebox: 'freebox_pop', pop: 'freebox_pop', free: 'freebox_pop', sfr: 'sfr_box', sfrbox: 'sfr_box', box8: 'sfr_box', sfrbox8: 'sfr_box' };
   const modelKey = (m) => { const k = String(m || '').toLowerCase(); if (MODELS[k]) return k; const n = k.replace(/[^a-z0-9]/g, ''); return ALIAS[n] || 'freebox_pop'; };
 
   const ON_RE = /^(on|online|connected|connect[ée]|home|up|true|ok|available|running|active|1)$/i;
@@ -24826,7 +26929,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .offline .badge{background:color-mix(in srgb,var(--ib-alert) 22%,transparent);color:var(--ib-alert)}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -24840,6 +26944,10 @@ svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height
   background:var(--secondary-background-color,rgba(127,127,127,.18));transition:transform .15s,background .3s,box-shadow .3s;--mdc-icon-size:19px;padding:0}
 .ctrls button:hover{transform:scale(1.08)}.ctrls button:active{transform:scale(.92)}
 .ctrls button.on{background:var(--wifi);color:#fff;box-shadow:0 0 12px color-mix(in srgb,var(--wifi) 60%,transparent)}
+.ctrls button.band{width:auto;min-width:34px;padding:0 10px 0 7px;border-radius:17px;gap:3px;font:600 11px/1 var(--paper-font-body1_-_font-family,inherit)}
+.ctrls button.band ha-icon{--mdc-icon-size:16px}
+.tile[data-k="wan_ip"]{grid-column:span 2}
+.compact .tile[data-k="wan_ip"]{grid-column:auto}.compact .tile[data-k="wan_ip"] .v{font-size:10.5px}
 .ctrls button:disabled{opacity:.35;cursor:default;transform:none}
 
 /* ---- box ---- */
@@ -24859,7 +26967,13 @@ svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height
 @keyframes ibtile{0%,100%{opacity:.1}50%{opacity:.55}}
 .waves path{fill:none;stroke:var(--wifi);stroke-width:1.8;stroke-linecap:round;opacity:0}
 .online.wifion .waves path{animation:ibwave 2.2s ease-out infinite}
-.waves path:nth-child(2){animation-delay:.35s!important}.waves path:nth-child(3){animation-delay:.7s!important}
+.waves path{animation-delay:var(--wd,0s)!important}.waves path:nth-child(2){animation-delay:calc(var(--wd,0s) + .35s)!important}.waves path:nth-child(3){animation-delay:calc(var(--wd,0s) + .7s)!important}
+.anttip{fill:var(--wifi);opacity:0;filter:drop-shadow(0 0 3px var(--wifi))}
+.online.wifion .anttip{animation:ibtip 1.8s ease-in-out infinite}
+@keyframes ibtip{0%,100%{opacity:.15}50%{opacity:1}}
+.rogglow{fill:#ff2a2a;opacity:0;filter:blur(7px)}
+.online .rogglow{animation:ibrog 2.6s ease-in-out infinite}
+@keyframes ibrog{0%,100%{opacity:.05}50%{opacity:.45}}
 @keyframes ibwave{0%{opacity:0;transform:translateY(6px)}25%{opacity:.9}100%{opacity:0;transform:translateY(-8px)}}
 
 /* ---- ligne Internet : nuage, paquets, appareils ---- */
@@ -24893,10 +27007,12 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .compact > svg{flex:1 1 0;min-height:40px;width:calc(100% * min(1, var(--illus-scale,1)));max-width:none;height:auto;margin-top:3px}
 .compact .ctrls{flex:none;gap:2px;margin-top:4px;flex-wrap:nowrap}
 .compact .ctrls button{width:21px;height:21px;--mdc-icon-size:13px}
+.compact .ctrls button.band{width:auto;min-width:21px;padding:0 6px 0 4px;font-size:9px}
 `;
 
   const SVG = (label, m, drawing) => {
-    const [bx, by, bw, bh] = m.box, [wx, wy] = m.wave, k = bw / m.pw;
+    const [bx, by, bw, bh] = m.box, k = bw / m.pw;
+    const pts = m.waves || [m.wave]; // points d'émission des ondes : une par antenne si le modèle en a
     const mid = by + bh * 0.62; // hauteur de la ligne Internet
     return `
 <svg viewBox="0 0 300 180" role="img" aria-label="${esc(label)}">
@@ -24921,7 +27037,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
  </g>
  <g class="box">
   <ellipse class="shadow" cx="${bx + bw / 2}" cy="${by + bh - 1}" rx="${bw * 0.5}" ry="5" fill="url(#ib-shadow)"/>
-  <g class="waves"><path d="M${wx - 7} ${wy} q7 -6 14 0"/><path d="M${wx - 12} ${wy - 5} q12 -11 24 0"/><path d="M${wx - 17} ${wy - 10} q17 -16 34 0"/></g>
+  ${pts.map(([px, py], i) => `<g class="waves" transform="translate(${px} ${py}) scale(${pts.length > 1 ? 0.5 : 1})" style="--wd:${(i * 0.45).toFixed(2)}s"><path d="M-7 0 q7 -6 14 0"/><path d="M-12 -5 q12 -11 24 0"/><path d="M-17 -10 q17 -16 34 0"/></g>`).join('')}
   <g transform="translate(${bx} ${by}) scale(${k.toFixed(5)})">
    ${drawing ? `<g class="photo">${m.svg}</g>` : `<image class="photo" href="${m.img}" x="0" y="0" width="${m.pw}" height="${m.ph}"/>`}
    ${m.led}
@@ -24973,7 +27089,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     _build() {
       const root = this.shadowRoot || this.attachShadow({ mode: 'open' });
       const m = MODELS[modelKey(this._c.model)];
-      const drawing = /^(svg|drawing|dessin)$/i.test(String(this._c.illustration || ''));
+      const drawing = !m.img || /^(svg|drawing|dessin)$/i.test(String(this._c.illustration || ''));
       this._model = m; this._drawing = drawing;
       root.innerHTML = `<style>${CSS}</style><ha-card>
         <div class="head"><div class="title" id="ibtitle"></div><div class="badge" id="ibbadge"></div></div>
@@ -24984,11 +27100,16 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
           <div class="tile hide" data-k="upload"><div class="l"><ha-icon icon="mdi:upload"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="devices"><div class="l"><ha-icon icon="mdi:devices"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="wifi"><div class="l"><ha-icon icon="mdi:wifi"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="ping"><div class="l"><ha-icon icon="mdi:timer-sand"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="wan_ip"><div class="l"><ha-icon icon="mdi:ip-network"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="uptime"><div class="l"><ha-icon icon="mdi:clock-outline"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="cpu"><div class="l"><ha-icon icon="mdi:cpu-64-bit"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="memory"><div class="l"><ha-icon icon="mdi:memory"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
         </div>
       </ha-card>`;
       this._card = root.querySelector('ha-card');
       window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(this._c.entity || this._c.entity_download));
-      const tgt = { download: 'entity_download', upload: 'entity_upload', devices: 'entity_devices', wifi: 'entity_wifi' };
+      const tgt = { download: 'entity_download', upload: 'entity_upload', devices: 'entity_devices', wifi: 'entity_wifi', ping: 'entity_ping', wan_ip: 'entity_wan_ip', uptime: 'entity_uptime', cpu: 'entity_cpu', memory: 'entity_memory' };
       root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(this._c[tgt[el.dataset.k]])));
       root.getElementById('ibctrls').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { e.stopPropagation(); this._cmd(b.dataset.k); } });
       this._root = root; this._built = true;
@@ -25011,13 +27132,14 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     _cmd(k) {
       const c = this._c, hass = this._hass; if (!hass) return;
       if (k === 'wifi' && c.entity_wifi) hass.callService('homeassistant', 'toggle', { entity_id: c.entity_wifi });
+      else if (BANDS.some((b) => b[0] === k) && c['entity_' + k]) hass.callService('homeassistant', 'toggle', { entity_id: c['entity_' + k] });
       else if (k === 'reboot' && c.entity_reboot) {
         if (!window.confirm || window.confirm(this._t('reboot_confirm'))) hass.callService(c.entity_reboot.split('.')[0], c.entity_reboot.startsWith('button.') ? 'press' : 'turn_on', { entity_id: c.entity_reboot });
       }
     }
 
     _render() {
-      if (!this._built || this._model !== MODELS[modelKey(this._c.model)] || this._drawing !== /^(svg|drawing|dessin)$/i.test(String(this._c.illustration || ''))) this._build();
+      if (!this._built || this._model !== MODELS[modelKey(this._c.model)] || this._drawing !== (!MODELS[modelKey(this._c.model)].img || /^(svg|drawing|dessin)$/i.test(String(this._c.illustration || '')))) this._build();
       const c = this._c, r = this._root, card = this._card, m = this._model;
       const st = this._state();
       const wifiS = this._st(c.entity_wifi), wifiOn = !wifiS || String(wifiS.state).toLowerCase() === 'on';
@@ -25040,21 +27162,27 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       const ctr = r.getElementById('ibctrls');
       const btns = [
         ['wifi', wifiOn ? 'mdi:wifi' : 'mdi:wifi-off', 'wifi', wifiOn, !!wifiS],
+        ...BANDS.map(([k, icon, txt]) => { const s = this._st(c['entity_' + k]), on = !!s && String(s.state).toLowerCase() === 'on'; return [k, on || !s || txt ? icon : icon, k, on, !!s, txt]; }),
         ['reboot', 'mdi:restart', 'reboot', null, !!this._st(c.entity_reboot)],
       ].filter((b) => b[4] && c.show_controls !== false);
       ctr.classList.toggle('hide', !btns.length);
       const sig = btns.map((b) => b.join('|')).join(';') + st;
       if (ctr._sig !== sig) {
         ctr._sig = sig;
-        ctr.innerHTML = btns.map(([k, icon, lbl, on]) => `<button class="${on ? 'on' : ''}" data-k="${k}" title="${esc(this._t(lbl))}" aria-label="${esc(this._t(lbl))}"${st === 'unavailable' ? ' disabled' : ''}><ha-icon icon="${icon}"></ha-icon></button>`).join('');
+        ctr.innerHTML = btns.map(([k, icon, lbl, on, , txt]) => `<button class="${on ? 'on' : ''}${txt ? ' band' : ''}" data-k="${k}" title="${esc(this._l(lbl))}" aria-label="${esc(this._l(lbl))}"${st === 'unavailable' ? ' disabled' : ''}><ha-icon icon="${icon}"></ha-icon>${txt ? `<span>${txt}</span>` : ''}</button>`).join('');
       }
 
-      const dv = this._num(c.entity_devices);
+      const dv = this._num(c.entity_devices), pg = this._num(c.entity_ping), cp = this._num(c.entity_cpu), mm = this._num(c.entity_memory);
       const V = {
         download: [!!this._st(c.entity_download) && c.show_download !== false, this._fmt(dn, dn < 10 ? 1 : 0), this._unit(c.entity_download) || 'Mb/s'],
         upload: [!!this._st(c.entity_upload) && c.show_upload !== false, this._fmt(up, up < 10 ? 1 : 0), this._unit(c.entity_upload) || 'Mb/s'],
         devices: [!!this._st(c.entity_devices) && c.show_devices !== false, this._fmt(dv, 0), ''],
         wifi: [!!wifiS && c.show_wifi !== false, this._t(wifiOn ? 'on' : 'off'), ''],
+        ping: [!!this._st(c.entity_ping) && c.show_ping !== false, this._fmt(pg, pg < 10 ? 1 : 0), this._unit(c.entity_ping) || 'ms'],
+        wan_ip: [!!this._st(c.entity_wan_ip) && c.show_wan_ip !== false, /^(unavailable|unknown)$/i.test(String(this._st(c.entity_wan_ip)?.state)) ? '--' : String(this._st(c.entity_wan_ip)?.state ?? '--'), ''],
+        uptime: [!!this._st(c.entity_uptime) && c.show_uptime !== false, fmtUptime(uptimeSeconds(this._st(c.entity_uptime)), window.applianceLocale(this._c, this._hass)), ''],
+        cpu: [!!this._st(c.entity_cpu) && c.show_cpu !== false, this._fmt(cp, 0), this._unit(c.entity_cpu) || '%'],
+        memory: [!!this._st(c.entity_memory) && c.show_memory !== false, this._fmt(mm, 0), this._unit(c.entity_memory) || '%'],
       };
       Object.entries(V).forEach(([k, [show, val, unit]]) => {
         const el = r.querySelector(`.tile[data-k="${k}"]`);
@@ -25091,11 +27219,14 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_download', 'sensor'), ent('entity_upload', 'sensor'), ent('entity_devices', 'sensor'), ent('entity_wifi', 'switch'), ent('entity_reboot'),
+        ent('entity_ping', 'sensor'), ent('entity_wan_ip', 'sensor'), ent('entity_uptime', 'sensor'), ent('entity_cpu', 'sensor'), ent('entity_memory', 'sensor'),
+        ent('entity_wifi_24', 'switch'), ent('entity_wifi_5', 'switch'), ent('entity_wifi_6', 'switch'), ent('entity_wifi_guest', 'switch'), ent('entity_wifi_iot', 'switch'),
         { name: 'max_speed', default: 1000, selector: { number: { min: 10, max: 10000, step: 10, mode: 'box', unit_of_measurement: 'Mb/s' } } },
         ...window.applianceActionFields,
         { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', cs: 'Čeština', hu: 'Magyar', sr: 'Српски', 'sr-Latn': 'Srpski' }[value] || value })) } } },
-        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_download'), bool('show_upload'), bool('show_devices'), bool('show_wifi'), bool('animations')] },
+        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_download'), bool('show_upload'), bool('show_devices'), bool('show_wifi'), bool('show_ping'), bool('show_wan_ip'), bool('show_uptime'), bool('show_cpu'), bool('show_memory'), bool('animations')] },
       ];
       this._form.computeLabel = (s) => window.applianceEditorLabel(s.name === 'model' ? 'internet_box_model' : s.name, this._hass);
     }
@@ -25116,6 +27247,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
  * portions et poids du jour, erreur, indicateur LED, sécurité enfant, mode (manuel / programmé), portions réglées, poids d'une portion.
  * Animations : croquettes qui tombent de la trappe dans la gamelle pendant la distribution, tas de croquettes qui grossit avec les
  * portions du jour, écran qui s'allume, voyant rouge qui clignote en cas d'erreur, cadenas affiché quand la sécurité enfant est active.
+ * Réserve de croquettes (facultatif) : `entity_level` (grammes restants ou %) + `hopper_capacity` → niveau teinté dans la trémie, tuiles Réserve et
+ * Autonomie (jours), alerte sous `food_low` %, bouton Remplir (remet `entity_level` à la capacité).
  * États : ready, feeding, error, unavailable.
  */
 (() => {
@@ -25137,12 +27270,38 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "serving": "Serving",
       "source": "Last feed",
       "mode": "Mode",
+      "level": "Hopper",
+      "autonomy": "Autonomy",
+      "refill": "Refill",
+      "low_food": "Food running low",
+      "days_short": "days",
       "portions_unit": "portions",
       "v_schedule": "Schedule",
       "v_manual": "Manual",
       "v_remote": "Remote",
       "v_unknown": "Unknown",
       "v_none": "None"
+    },
+    "da": {
+      "name": "Foderautomat",
+      "ready": "Klar",
+      "feeding": "Fodrer",
+      "error": "Fejl",
+      "unavailable": "Utilgængelig",
+      "feed": "Fodr",
+      "led": "LED-indikator",
+      "child_lock": "Børnesikring",
+      "portions": "Portioner",
+      "weight": "Vægt",
+      "serving": "Portion",
+      "source": "Seneste fodring",
+      "mode": "Tilstand",
+      "portions_unit": "portioner",
+      "v_schedule": "Tidsplan",
+      "v_manual": "Manuel",
+      "v_remote": "Fjernstyret",
+      "v_unknown": "Ukendt",
+      "v_none": "Ingen"
     },
     "fr": {
       "name": "Distributeur de croquettes",
@@ -25158,12 +27317,59 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "serving": "Portion",
       "source": "Dernière",
       "mode": "Mode",
+      "level": "Réserve",
+      "autonomy": "Autonomie",
+      "refill": "Remplir",
+      "low_food": "Réserve de croquettes basse",
+      "days_short": "jours",
       "portions_unit": "portions",
       "v_schedule": "Programmé",
       "v_manual": "Manuel",
       "v_remote": "À distance",
       "v_unknown": "Inconnu",
       "v_none": "Aucune"
+    },
+    "sr": {
+      "name": "Хранилица за љубимце",
+      "ready": "Спремно",
+      "feeding": "Храњење",
+      "error": "Грешка",
+      "unavailable": "Недоступно",
+      "feed": "Нахрани",
+      "led": "ЛЕД индикатор",
+      "child_lock": "Заштита за децу",
+      "portions": "Порције",
+      "weight": "Тежина",
+      "serving": "Сервирање",
+      "source": "Последње храњење",
+      "mode": "Режим",
+      "portions_unit": "порција",
+      "v_schedule": "Распоред",
+      "v_manual": "Ручно",
+      "v_remote": "Даљински",
+      "v_unknown": "Непознато",
+      "v_none": "Нема"
+    },
+    "sr-Latn": {
+      "name": "Hranilica za ljubimce",
+      "ready": "Spremno",
+      "feeding": "Hranjenje",
+      "error": "Greška",
+      "unavailable": "Nedostupno",
+      "feed": "Nahrani",
+      "led": "LED indikator",
+      "child_lock": "Zaštita za decu",
+      "portions": "Porcije",
+      "weight": "Težina",
+      "serving": "Serviranje",
+      "source": "Poslednje hranjenje",
+      "mode": "Režim",
+      "portions_unit": "porcija",
+      "v_schedule": "Raspored",
+      "v_manual": "Ručno",
+      "v_remote": "Daljinski",
+      "v_unknown": "Nepoznato",
+      "v_none": "Nema"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -25189,10 +27395,11 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .feeding .badge{background:color-mix(in srgb,var(--kib) 28%,transparent);color:var(--kib)}
 .error .badge{background:color-mix(in srgb,var(--pf-alert) 22%,transparent);color:var(--pf-alert)}
 .alert{display:none;margin-top:4px;font-size:11px;color:var(--pf-alert);font-weight:500;text-align:center}
-.error .alert{display:block}
+.error .alert,.lowfood .alert{display:block}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -25231,6 +27438,9 @@ svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height
 .mound.dots{fill:#8b4a17;stroke:none}
 .feeding .mound{animation:pfbump .55s ease-in-out infinite}
 @keyframes pfbump{50%{transform:scale(calc(.3 + var(--fill) * .75)) translateY(-1px)}}
+.level{fill:#c98a4b;opacity:.6;mix-blend-mode:multiply;transition:y .8s,height .8s,fill .4s}
+.lowfood .level{fill:#e0643a;animation:pfblink 1.6s ease-in-out infinite}
+.tile.bad .v{color:var(--pf-alert)}
 .noanim *{animation:none!important;transition:none!important}
 
 /* ---- compact : petits emplacements fixes ---- */
@@ -25254,6 +27464,9 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 <svg viewBox="0 0 300 180" role="img" aria-label="${esc(label)}">
  <g transform="translate(${bx} ${by}) scale(${k.toFixed(5)})">
   <image class="photo" href="${m.img}" x="0" y="0" width="${m.pw}" height="${m.ph}"/>
+  <!-- niveau de croquettes dans la trémie (haut du réservoir, sous le couvercle) -->
+  <clipPath id="pfhop"><rect x="20" y="62" width="316" height="112" rx="30"/></clipPath>
+  <g clip-path="url(#pfhop)"><rect class="level" x="20" y="174" width="316" height="0"/></g>
   <!-- tas de croquettes dans la gamelle -->
   <g class="mounds"><ellipse class="mound" cx="232" cy="378" rx="46" ry="17"/><g class="mound dots"><circle cx="212" cy="368" r="4"/><circle cx="226" cy="362" r="4"/><circle cx="242" cy="364" r="4"/><circle cx="256" cy="370" r="4"/><circle cx="234" cy="372" r="4"/></g></g>
   <!-- croquettes qui tombent de la trappe -->
@@ -25280,7 +27493,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     setConfig(c) {
       if (window.applianceSize) window.applianceSize(this, c);
       if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
-      this._c = { show_status: true, show_controls: true, show_portions: true, show_weight: true, show_source: true, show_serving: true, show_mode: true, daily_goal: 6, ...c };
+      this._c = { show_status: true, show_controls: true, show_portions: true, show_weight: true, show_source: true, show_serving: true, show_mode: true, show_level: true, show_autonomy: true, food_low: 25, daily_goal: 6, ...c };
       this._built = false;
       if (this._hass) this._render();
     }
@@ -25314,11 +27527,13 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
           <div class="tile hide" data-k="serving"><div class="l"><ha-icon icon="mdi:bowl-mix"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="source"><div class="l"><ha-icon icon="mdi:history"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="mode"><div class="l"><ha-icon icon="mdi:calendar-clock"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="level"><div class="l"><ha-icon icon="mdi:storage-tank-outline"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="autonomy"><div class="l"><ha-icon icon="mdi:calendar-end"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
         </div>
       </ha-card>`;
       this._card = root.querySelector('ha-card');
       window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(this._c.entity_feed || this._c.entity_portions));
-      const tgt = { portions: 'entity_portions', weight: 'entity_weight', serving: 'entity_serving', source: 'entity_source', mode: 'entity_mode' };
+      const tgt = { portions: 'entity_portions', weight: 'entity_weight', serving: 'entity_serving', source: 'entity_source', mode: 'entity_mode', level: 'entity_level', autonomy: 'entity_level' };
       root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(this._c[tgt[el.dataset.k]])));
       root.getElementById('pfctrls').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { e.stopPropagation(); this._cmd(b.dataset.k); } });
       this._root = root; this._built = true; this._lastPortions = undefined;
@@ -25336,10 +27551,26 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         this._feedAnim(); this._render();
       } else if (k === 'led' && c.entity_led) h.callService('homeassistant', 'toggle', { entity_id: c.entity_led });
       else if (k === 'lock' && c.entity_child_lock) h.callService('homeassistant', 'toggle', { entity_id: c.entity_child_lock });
-      else if (k === 'mode' && c.entity_mode) {
+      else if (k === 'refill' && c.entity_level) {
+        // trémie remplie : remet le niveau à la capacité (grammes, ou 100 si l'entité est en %)
+        const d = c.entity_level.split('.')[0], pct = /%/.test(this._unit(c.entity_level));
+        h.callService(d, 'set_value', { entity_id: c.entity_level, value: pct ? 100 : this._cap() });
+      } else if (k === 'mode' && c.entity_mode) {
         const s = this._st(c.entity_mode), opts = (s && s.attributes && s.attributes.options) || [];
         if (opts.length) h.callService('select', 'select_option', { entity_id: c.entity_mode, option: opts[(opts.indexOf(s.state) + 1) % opts.length] });
       }
+    }
+
+    _cap() { return Number(this._c.hopper_capacity) > 0 ? Number(this._c.hopper_capacity) : 1500; }
+    // niveau de la trémie : { frac (0-1), grams, days } ; NaN si `entity_level` absente ou indisponible
+    _level() {
+      const c = this._c, v = this._num(c.entity_level), cap = this._cap();
+      if (isNaN(v)) return { frac: NaN, grams: NaN, days: NaN };
+      const frac = Math.max(0, Math.min(1, /%/.test(this._unit(c.entity_level)) ? v / 100 : v / cap)), grams = frac * cap;
+      // consommation par jour : option daily_consumption (g), sinon poids du jour, sinon portions du jour × poids d'une portion
+      const w = this._num(c.entity_weight), pp = this._num(c.entity_portions), pw = this._num(c.entity_portion_weight);
+      const daily = Number(c.daily_consumption) > 0 ? Number(c.daily_consumption) : w > 0 ? w : pp > 0 && pw > 0 ? pp * pw : NaN;
+      return { frac, grams, days: isNaN(daily) ? NaN : grams / daily };
     }
 
     _state() {
@@ -25360,21 +27591,27 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       const pp = this._num(c.entity_portions);
       if (this._lastPortions !== undefined && !isNaN(pp) && pp > this._lastPortions) this._feedAnim();
       if (!isNaN(pp)) this._lastPortions = pp;
-      const st = this._state();
-      card.className = `${st}${this._isOn(c.entity_child_lock) ? ' locked' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
+      const st = this._state(), lv = this._level();
+      const low = !isNaN(lv.frac) && lv.frac * 100 <= (Number(c.food_low) >= 0 ? Number(c.food_low) : 25);
+      card.className = `${st}${low ? ' lowfood' : ''}${this._isOn(c.entity_child_lock) ? ' locked' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
       const goal = Number(c.daily_goal) > 0 ? Number(c.daily_goal) : 6;
       card.style.setProperty('--fill', (isNaN(pp) ? 0 : Math.max(0, Math.min(1, pp / goal))).toFixed(3));
 
       r.getElementById('pftitle').textContent = c.name || m.label;
       const badge = r.getElementById('pfbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
       const es = this._st(c.entity_error);
-      r.getElementById('pfalert').textContent = st === 'error' ? `${this._t('error')}${es && !/^(on|true)$/i.test(es.state) ? ` : ${es.state}` : ''}` : '';
+      // niveau dans la trémie : hauteur 112 (px de la photo) × fraction, ancrée en bas
+      const lvl = r.querySelector('.level'), hh = isNaN(lv.frac) ? 0 : lv.frac * 112;
+      lvl.setAttribute('height', hh.toFixed(1)); lvl.setAttribute('y', (174 - hh).toFixed(1));
+      r.getElementById('pfalert').textContent = st === 'error' ? `${this._t('error')}${es && !/^(on|true)$/i.test(es.state) ? ` : ${es.state}` : ''}` : low && st !== 'unavailable' ? this._t('low_food') : '';
 
       const modeS = this._st(c.entity_mode), ledOn = this._isOn(c.entity_led), lockOn = this._isOn(c.entity_child_lock);
       const btns = [
         ['feed', 'mdi:food-drumstick', this._t('feed'), 'main', !!c.entity_feed && !!this._st(c.entity_feed)],
         ['led', 'mdi:led-on', this._t('led'), ledOn ? 'on' : '', !!this._st(c.entity_led)],
         ['lock', lockOn ? 'mdi:lock' : 'mdi:lock-open-variant', this._t('child_lock'), lockOn ? 'on' : '', !!this._st(c.entity_child_lock)],
+        // Remplir : seulement si le niveau est un input_number / number (modifiable)
+        ['refill', 'mdi:bucket-outline', this._t('refill'), '', !!this._st(c.entity_level) && /^(input_number|number)\./.test(c.entity_level)],
       ].filter((b) => b[4] && c.show_controls !== false);
       const ctr = r.getElementById('pfctrls');
       ctr.classList.toggle('hide', !btns.length);
@@ -25392,6 +27629,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         serving: [!!this._st(c.entity_serving) && c.show_serving !== false, this._fmt(sv, 0), isNaN(pw) ? this._t('portions_unit') : `× ${this._fmt(pw, 0)} g`],
         source: [!!src && c.show_source !== false, this._tr(val(src)), ''],
         mode: [!!modeS && c.show_mode !== false, this._tr(val(modeS)), ''],
+        level: [!isNaN(lv.frac) && c.show_level !== false, this._fmt(lv.grams, 0), `g · ${this._fmt(lv.frac * 100, 0)} %`],
+        autonomy: [!isNaN(lv.days) && c.show_autonomy !== false, this._fmt(lv.days, lv.days < 10 ? 1 : 0), this._t('days_short')],
       };
       Object.entries(V).forEach(([k, [show, v, unit]]) => {
         const el = r.querySelector(`.tile[data-k="${k}"]`);
@@ -25399,6 +27638,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         el.querySelector('.lbl').textContent = this._l(k);
         const small = document.createElement('small'); small.textContent = unit;
         el.querySelector('.v').replaceChildren(String(v), small);
+        el.classList.toggle('bad', low && (k === 'level' || k === 'autonomy'));
         if (k === 'mode') el.onclick = () => this._cmd('mode');
       });
     }
@@ -25430,12 +27670,17 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_feed'), { name: 'feed_option', selector: { text: {} } }, ent('entity_source'), ent('entity_serving', 'number'), ent('entity_portion_weight', 'number'),
         ent('entity_portions', 'sensor'), ent('entity_weight', 'sensor'), ent('entity_error'), ent('entity_led', 'switch'), ent('entity_child_lock', 'switch'), ent('entity_mode', 'select'),
+        ent('entity_level', ['input_number', 'number', 'sensor']),
+        { name: 'hopper_capacity', default: 1500, selector: { number: { min: 50, max: 20000, step: 50, mode: 'box', unit_of_measurement: 'g' } } },
+        { name: 'daily_consumption', selector: { number: { min: 0, max: 2000, step: 5, mode: 'box', unit_of_measurement: 'g' } } },
+        { name: 'food_low', default: 25, selector: { number: { min: 0, max: 100, step: 5, mode: 'box', unit_of_measurement: '%' } } },
         { name: 'daily_goal', default: 6, selector: { number: { min: 1, max: 20, step: 1, mode: 'box' } } },
         ...window.applianceActionFields,
         { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', cs: 'Čeština', hu: 'Magyar', sr: 'Српски', 'sr-Latn': 'Srpski' }[value] || value })) } } },
-        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_portions'), bool('show_weight'), bool('show_serving'), bool('show_source'), bool('show_mode'), bool('animations')] },
+        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_portions'), bool('show_weight'), bool('show_serving'), bool('show_source'), bool('show_mode'), bool('show_level'), bool('show_autonomy'), bool('animations')] },
       ];
       this._form.computeLabel = (s) => window.applianceEditorLabel(s.name === 'model' ? 'pet_feeder_model' : s.name, this._hass);
     }
@@ -25446,6 +27691,462 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
   window.customCards.push({
     type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
     description: 'Distributeur de croquettes en photo (Aqara Smart Pet Feeder C1) : croquettes qui tombent dans la gamelle, portions du jour, erreur, sécurité enfant, mode.', preview: true,
+    documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards',
+  });
+})();
+
+/* Carte « Climatiseur mobile » — custom:appliance-portable-ac-card
+ * Climatiseur monobloc portable avec gaine d'évacuation (Tuya / Smart Life / Midea / De'Longhi…) : dessin SVG du bloc sur roulettes,
+ * écran avec la consigne, grille de soufflage, réservoir de condensats et gaine qui part vers la fenêtre.
+ * Entités (toutes facultatives) : climate (mode, consigne, température, ventilation) ou simple interrupteur ; température, consigne,
+ * ventilation, minuterie, réservoir (plein / niveau), puissance. Boutons : marche / arrêt, consigne − / +, mode.
+ * Animations : air froid bleu qui sort de la grille (orange en chauffage, gris en ventilation), air chaud orange qui part par la gaine
+ * vers l'extérieur, gouttes qui tombent dans le réservoir en déshumidification, réservoir plein qui clignote en rouge, écran qui
+ * s'éteint à l'arrêt. La vitesse des flux suit la ventilation.
+ * États : off, cooling, dry, fan, heating, idle, unavailable. Alerte : réservoir plein.
+ */
+(() => {
+  const TAG = 'appliance-portable-ac-card';
+  if (customElements.get(TAG)) return;
+
+  const T = {
+    "en": {
+      "name": "Portable air conditioner",
+      "off": "Off",
+      "cooling": "Cooling",
+      "dry": "Dehumidifying",
+      "fan": "Fan",
+      "heating": "Heating",
+      "idle": "At target",
+      "unavailable": "Unavailable",
+      "lcd_cooling": "COOL",
+      "lcd_dry": "DRY",
+      "lcd_fan": "FAN",
+      "lcd_heating": "HEAT",
+      "lcd_idle": "READY",
+      "tank_full": "Water tank full: empty it",
+      "temperature": "Temperature",
+      "target": "Target",
+      "fan_label": "Fan",
+      "timer": "Timer",
+      "tank": "Tank",
+      "power": "Power",
+      "full": "Full",
+      "ok": "OK",
+      "temp_down": "Lower",
+      "temp_up": "Raise",
+      "mode": "Mode",
+      "fan_low": "Low",
+      "fan_medium": "Medium",
+      "fan_high": "High",
+      "fan_auto": "Auto"
+    },
+    "fr": {
+      "name": "Climatiseur mobile",
+      "off": "Arrêt",
+      "cooling": "Froid",
+      "dry": "Déshumidification",
+      "fan": "Ventilation",
+      "heating": "Chauffage",
+      "idle": "Consigne atteinte",
+      "unavailable": "Indisponible",
+      "lcd_cooling": "FROID",
+      "lcd_dry": "SEC",
+      "lcd_fan": "VENT",
+      "lcd_heating": "CHAUD",
+      "lcd_idle": "OK",
+      "tank_full": "Réservoir plein : à vider",
+      "temperature": "Température",
+      "target": "Consigne",
+      "fan_label": "Ventilation",
+      "timer": "Minuteur",
+      "tank": "Réservoir",
+      "power": "Puissance",
+      "full": "Plein",
+      "ok": "OK",
+      "temp_down": "Baisser",
+      "temp_up": "Monter",
+      "mode": "Mode",
+      "fan_low": "Basse",
+      "fan_medium": "Moyenne",
+      "fan_high": "Haute",
+      "fan_auto": "Auto"
+    },
+    "sr": {
+      "name": "Преносни клима-уређај",
+      "off": "Искључено",
+      "cooling": "Хлађење",
+      "dry": "Одвлаживање",
+      "fan": "Вентилатор",
+      "heating": "Грејање",
+      "idle": "На циљној темп.",
+      "unavailable": "Недоступно",
+      "lcd_cooling": "ХЛАЂЕЊЕ",
+      "lcd_dry": "ОДВЛАЖ.",
+      "lcd_fan": "ВЕНТ.",
+      "lcd_heating": "ГРЕЈАЊЕ",
+      "lcd_idle": "СПРЕМНО",
+      "tank_full": "Резервоар за воду је пун: испразните га",
+      "temperature": "Температура",
+      "target": "Циљна",
+      "fan_label": "Вентилатор",
+      "timer": "Тајмер",
+      "tank": "Резервоар",
+      "power": "Снага",
+      "full": "Пун",
+      "ok": "У реду",
+      "temp_down": "Смањи",
+      "temp_up": "Повећај",
+      "mode": "Режим",
+      "fan_low": "Ниско",
+      "fan_medium": "Средње",
+      "fan_high": "Високо",
+      "fan_auto": "Аутоматски"
+    },
+    "sr-Latn": {
+      "name": "Prenosni klima-uređaj",
+      "off": "Isključeno",
+      "cooling": "Hlađenje",
+      "dry": "Odvlaživanje",
+      "fan": "Ventilator",
+      "heating": "Grejanje",
+      "idle": "Na ciljnoj temp.",
+      "unavailable": "Nedostupno",
+      "lcd_cooling": "HLAĐENJE",
+      "lcd_dry": "ODVLAŽ.",
+      "lcd_fan": "VENT.",
+      "lcd_heating": "GREJANJE",
+      "lcd_idle": "SPREMNO",
+      "tank_full": "Rezervoar za vodu je pun: ispraznite ga",
+      "temperature": "Temperatura",
+      "target": "Ciljna",
+      "fan_label": "Ventilator",
+      "timer": "Tajmer",
+      "tank": "Rezervoar",
+      "power": "Snaga",
+      "full": "Pun",
+      "ok": "U redu",
+      "temp_down": "Smanji",
+      "temp_up": "Povećaj",
+      "mode": "Režim",
+      "fan_low": "Nisko",
+      "fan_medium": "Srednje",
+      "fan_high": "Visoko",
+      "fan_auto": "Automatski"
+    }
+  };
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const FULL_RE = /^(on|true|full|plein|1)$/i;
+
+  const CSS = `
+:host{display:block;height:100%}ha-card{height:100%;box-sizing:border-box;display:block;padding:10px 12px 12px;overflow:hidden;
+  --pa-ok:var(--appliance-ok-color,#43a047);--pa-alert:var(--appliance-alert-color,#db4437);--cold:#4db6ff;--hot:#ff8a3d;--spd:1.6s;--tank:.2}
+.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap}
+.cooling .badge{background:color-mix(in srgb,var(--cold) 24%,transparent);color:var(--cold)}
+.heating .badge{background:color-mix(in srgb,var(--hot) 24%,transparent);color:var(--hot)}
+.dry .badge,.fan .badge,.idle .badge{background:color-mix(in srgb,var(--pa-ok) 20%,transparent);color:var(--pa-ok)}
+.alert{display:none;margin-top:4px;font-size:11px;color:var(--pa-alert);font-weight:500;text-align:center}
+.tankfull .alert{display:block}
+svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
+.tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
+.tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
+.tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .v small{font-size:10px;font-weight:400;color:var(--secondary-text-color);margin-left:2px}
+.tile.hide{display:none}.tile.bad .v{color:var(--pa-alert)}
+.ctrls{display:flex;justify-content:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.ctrls.hide{display:none}
+.ctrls button{width:34px;height:34px;border-radius:50%;border:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--primary-text-color);
+  background:var(--secondary-background-color,rgba(127,127,127,.18));transition:transform .15s,background .3s,box-shadow .3s;--mdc-icon-size:19px;padding:0}
+.ctrls button:hover{transform:scale(1.08)}.ctrls button:active{transform:scale(.92)}
+.ctrls button.on{background:var(--cold);color:#fff;box-shadow:0 0 12px color-mix(in srgb,var(--cold) 55%,transparent)}
+.heating .ctrls button.on{background:var(--hot);box-shadow:0 0 12px color-mix(in srgb,var(--hot) 55%,transparent)}
+.ctrls button:disabled{opacity:.35;cursor:default;transform:none}
+
+/* ---- appareil ---- */
+.body{fill:url(#pa-body);stroke:#c9ccd2;stroke-width:1.2}
+.screen{fill:#0d1013;transition:fill .4s}
+.dt{fill:var(--cold);font:700 17px/1 var(--paper-font-body1_-_font-family,Roboto,sans-serif);text-anchor:middle;transition:opacity .4s,fill .4s}
+.dm{fill:#9fb0c0;font:600 5.5px/1 var(--paper-font-body1_-_font-family,Roboto,sans-serif);text-anchor:middle;letter-spacing:.08em;transition:opacity .4s}
+.off .dt,.off .dm,.unavailable .dt,.unavailable .dm{opacity:0}
+.heating .dt{fill:var(--hot)}.dry .dt,.fan .dt,.idle .dt{fill:#8be0a4}
+.led{fill:#555;transition:fill .3s}.cooling .led{fill:var(--cold)}.heating .led{fill:var(--hot)}.dry .led,.fan .led,.idle .led{fill:#43d17a}.tankfull .led{fill:var(--pa-alert);animation:pablink .8s steps(2) infinite}
+.slat{stroke:#9aa0aa;stroke-width:1.4;stroke-linecap:round}
+.air{fill:none;stroke:var(--cold);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:7 9;opacity:0}
+.cooling .air{opacity:.9;animation:paair var(--spd) linear infinite}
+.heating .air{stroke:var(--hot);opacity:.9;animation:paair var(--spd) linear infinite}
+.fan .air{stroke:#aab4c0;opacity:.8;animation:paair var(--spd) linear infinite}
+.dry .air{stroke:#9fe0c4;opacity:.6;animation:paair calc(var(--spd) * 1.6) linear infinite}
+.idle .air{opacity:.35;animation:paair calc(var(--spd) * 3) linear infinite}
+.air:nth-child(2){animation-delay:-.4s!important}.air:nth-child(3){animation-delay:-.8s!important}
+@keyframes paair{to{stroke-dashoffset:-32}}
+.hose{fill:none;stroke:#cfd3d9;stroke-width:9;stroke-linecap:round}
+.hoseribs{fill:none;stroke:#9ea4ad;stroke-width:9;stroke-dasharray:1.4 3.2;stroke-linecap:butt}
+.exh{fill:none;stroke:var(--hot);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:3 10;opacity:0}
+.cooling .exh,.dry .exh,.heating .exh{opacity:.95;animation:paexh calc(var(--spd) * .9) linear infinite}
+.heating .exh{stroke:#ffb86b;opacity:.35}
+.fan .exh{stroke:#aab4c0;opacity:.6;animation:paexh var(--spd) linear infinite}
+.idle .exh{opacity:.3;animation:paexh calc(var(--spd) * 3) linear infinite}
+@keyframes paexh{to{stroke-dashoffset:-26}}
+.wave{fill:none;stroke:var(--hot);stroke-width:1.6;stroke-linecap:round;opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+.cooling .wave,.dry .wave{animation:pawave 2.4s ease-in-out infinite}
+.wave.w2{animation-delay:.8s!important}.wave.w3{animation-delay:1.6s!important}
+@keyframes pawave{0%{opacity:0;transform:translateY(5px)}30%{opacity:.8}100%{opacity:0;transform:translateY(-10px)}}
+.sun{fill:#ffcc4d;opacity:.75}.cooling .sun,.dry .sun{filter:drop-shadow(0 0 4px #ffb300)}
+.tankwin{fill:#e8f4ff;stroke:#b7bfc9;stroke-width:1}
+.water{fill:#58b8ff;opacity:.85;transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--tank));transition:transform 1s,fill .4s}
+.tankfull .water{fill:#ff5a4d;animation:pablink 1s steps(2) infinite}
+.drop{fill:#7cc8ff;opacity:0}
+.dry .drop{animation:padrop 1.3s ease-in infinite}
+.drop.d2{animation-delay:.45s!important}.drop.d3{animation-delay:.85s!important}
+@keyframes padrop{0%{opacity:0;transform:translateY(0)}15%{opacity:.95}85%{opacity:.95}100%{opacity:0;transform:translateY(12px)}}
+@keyframes pablink{50%{opacity:.25}}
+.noanim *{animation:none!important;transition:none!important}
+
+/* ---- compact ---- */
+ha-card.compact{display:flex;flex-direction:column;padding:6px}
+.compact .head{flex:none;gap:4px}
+.compact .title{font-size:12px;line-height:16px}
+.compact .badge{font-size:10px;padding:0 6px}
+.compact .alert{flex:none;font-size:10px;margin-top:2px}
+.compact .tiles{flex:none;gap:4px;margin-top:4px;grid-template-columns:repeat(auto-fit,minmax(56px,1fr))}
+.compact .tile{padding:2px 5px;border-radius:8px}
+.compact .tile .l ha-icon{--mdc-icon-size:12px}
+.compact .tile .v{font-size:12px;line-height:15px;margin-top:0}
+.compact > svg{flex:1 1 0;min-height:40px;width:calc(100% * min(1, var(--illus-scale,1)));max-width:none;height:auto;margin-top:3px}
+.compact .ctrls{flex:none;gap:2px;margin-top:4px;flex-wrap:nowrap}
+.compact .ctrls button{width:21px;height:21px;--mdc-icon-size:13px}
+`;
+
+  const SVG = (label) => `
+<svg viewBox="0 0 300 180" role="img" aria-label="${esc(label)}">
+ <defs>
+  <linearGradient id="pa-body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e4e7ec"/><stop offset=".4" stop-color="#fbfbfc"/><stop offset="1" stop-color="#d4d8de"/></linearGradient>
+  <linearGradient id="pa-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset="1" stop-color="#dff2ff"/></linearGradient>
+  <radialGradient id="pa-shadow"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+ </defs>
+ <!-- mur et fenêtre -->
+ <rect x="236" y="0" width="64" height="170" fill="var(--secondary-background-color)" opacity=".6"/>
+ <rect x="244" y="14" width="48" height="98" rx="3" fill="url(#pa-sky)" stroke="#b4bcc6" stroke-width="2"/>
+ <circle class="sun" cx="276" cy="32" r="8"/>
+ <path d="M244 112 H292" stroke="#b4bcc6" stroke-width="3"/>
+ <g class="waves"><path class="wave" d="M262 50 q-4 -6 0 -12 q4 -6 0 -12"/><path class="wave w2" d="M272 54 q-4 -6 0 -12 q4 -6 0 -12"/><path class="wave w3" d="M282 50 q-4 -6 0 -12 q4 -6 0 -12"/></g>
+ <ellipse cx="133" cy="168" rx="52" ry="5" fill="url(#pa-shadow)"/>
+ <line x1="0" y1="168" x2="300" y2="168" stroke="currentColor" stroke-opacity=".12"/>
+ <!-- gaine d'évacuation -->
+ <path class="hose" d="M176 78 C214 78 206 70 244 66"/><path class="hoseribs" d="M176 78 C214 78 206 70 244 66"/>
+ <path class="exh" d="M176 78 C214 78 206 70 246 66"/>
+ <rect x="240" y="58" width="9" height="16" rx="2" fill="#aeb5be"/>
+ <!-- appareil -->
+ <g class="unit">
+  <rect class="body" x="90" y="16" width="86" height="146" rx="12"/>
+  <rect x="98" y="22" width="70" height="12" rx="5" fill="#e4e7ec" stroke="#c9ccd2"/>
+  <path class="slat" d="M104 28 H162 M104 31 H162"/>
+  <rect class="screen" x="102" y="42" width="62" height="34" rx="6"/>
+  <text class="dt" id="padt" x="133" y="62">--</text>
+  <text class="dm" id="padm" x="133" y="71"></text>
+  <circle class="led" cx="156" cy="48" r="1.8"/>
+  <g stroke="#c4c8cf" stroke-width="1.6" stroke-linecap="round"><path d="M104 88 H162 M104 94 H162 M104 100 H162 M104 106 H162 M104 112 H162"/></g>
+  <rect class="tankwin" x="106" y="124" width="54" height="22" rx="4"/>
+  <rect class="water" x="108" y="126" width="50" height="18" rx="3"/>
+  <g class="drops"><circle class="drop" cx="120" cy="116" r="1.8"/><circle class="drop d2" cx="133" cy="116" r="1.8"/><circle class="drop d3" cx="146" cy="116" r="1.8"/></g>
+  <circle cx="104" cy="166" r="3.6" fill="#4b4f57"/><circle cx="162" cy="166" r="3.6" fill="#4b4f57"/>
+ </g>
+ <!-- air soufflé par la grille du haut -->
+ <g class="airs"><path class="air" d="M110 20 C102 12 88 10 72 17"/><path class="air" d="M126 18 C122 8 100 4 80 11"/><path class="air" d="M142 18 C142 5 116 1 90 5"/></g>
+</svg>`;
+
+  class AppliancePortableAcCard extends HTMLElement {
+    get _config() { return this._c; }
+    static getConfigElement() { return document.createElement(TAG + '-editor'); }
+    static getStubConfig(hass) {
+      const ids = Object.keys((hass && hass.states) || {});
+      const cl = ids.find((i) => i.startsWith('climate.') && /portable|mobile|clim|ac_|aircon|monobloc/i.test(i)) || ids.find((i) => i.startsWith('climate.')) || '';
+      return cl ? { entity: cl } : {};
+    }
+    setConfig(c) {
+      if (window.applianceSize) window.applianceSize(this, c);
+      if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
+      this._c = { show_status: true, show_controls: true, show_temperature: true, show_target: true, show_fan: true, show_timer: true, show_power: true, temp_step: 1, ...c };
+      this._built = false;
+      if (this._hass) this._render();
+    }
+    set hass(h) { const ch = this._c && window.applianceChanged(this, h, this._c); this._hass = h; if (ch) this._render(); }
+    getCardSize() { return 5; }
+    getGridOptions() { return { columns: 12, min_columns: 3, rows: 'auto', min_rows: 1 }; }
+
+    _t(k) { return T[this._lang()][k] ?? T.en[k] ?? k; }
+    _l(k) { const L = this._c && this._c.labels; return L && L[k] != null && L[k] !== '' ? String(L[k]) : this._t(k); }
+    _lang() { return window.applianceLang(T, this._c, this._hass); }
+    _st(id) { return id && this._hass && this._hass.states[id]; }
+    _num(id) { const s = this._st(id); if (!s) return NaN; const v = parseFloat(String(s.state).replace(',', '.')); return isFinite(v) ? v : NaN; }
+    _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
+    _more(id) { if (window.applianceMore) window.applianceMore(this, id); }
+    _unit() { return (this._hass && this._hass.config && this._hass.config.unit_system && this._hass.config.unit_system.temperature) || '°C'; }
+
+    _build() {
+      const root = this.shadowRoot || this.attachShadow({ mode: 'open' });
+      root.innerHTML = `<style>${CSS}</style><ha-card>
+        <div class="head"><div class="title" id="patitle"></div><div class="badge" id="pabadge"></div></div>
+        <div class="alert" id="paalert"></div>
+        ${SVG(this._c.name || this._t('name'))}
+        <div class="ctrls" id="pactrls"></div>
+        <div class="tiles">
+          <div class="tile hide" data-k="temperature"><div class="l"><ha-icon icon="mdi:thermometer"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="target"><div class="l"><ha-icon icon="mdi:target"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="fan"><div class="l"><ha-icon icon="mdi:fan"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="timer"><div class="l"><ha-icon icon="mdi:timer-outline"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="tank"><div class="l"><ha-icon icon="mdi:water"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+          <div class="tile hide" data-k="power"><div class="l"><ha-icon icon="mdi:flash"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
+        </div>
+      </ha-card>`;
+      this._card = root.querySelector('ha-card');
+      window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(this._c.entity));
+      const tgt = { temperature: 'entity_temperature', target: 'entity_target', fan: 'entity_fan', timer: 'entity_timer', tank: 'entity_tank', power: 'entity_power' };
+      root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(this._c[tgt[el.dataset.k]] || this._c.entity)));
+      root.getElementById('pactrls').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { e.stopPropagation(); this._cmd(b.dataset.k); } });
+      this._root = root; this._built = true;
+    }
+
+    // mode affiché : off, cooling, dry, fan, heating, idle, unavailable
+    _mode() {
+      const c = this._c, s = this._st(c.entity);
+      if (!s || /^(unavailable|unknown)$/i.test(String(s.state))) return 'unavailable';
+      const raw = String(s.state).toLowerCase(), a = s.attributes || {}, act = String(a.hvac_action || '').toLowerCase();
+      if (raw === 'off' || act === 'off') return 'off';
+      if (act === 'idle') return 'idle';
+      const m = { cooling: 'cooling', drying: 'dry', fan: 'fan', heating: 'heating' }[act];
+      if (m) return m;
+      return { cool: 'cooling', dry: 'dry', fan_only: 'fan', heat: 'heating', auto: 'cooling', heat_cool: 'cooling', on: 'cooling' }[raw] || 'cooling';
+    }
+
+    _cmd(k) {
+      const c = this._c, h = this._hass, s = this._st(c.entity); if (!h || !s) return;
+      const d = c.entity.split('.')[0], a = s.attributes || {}, off = String(s.state).toLowerCase() === 'off';
+      if (k === 'power') {
+        if (d === 'climate') h.callService('climate', off ? 'turn_on' : 'turn_off', { entity_id: c.entity });
+        else h.callService('homeassistant', 'toggle', { entity_id: c.entity });
+      } else if ((k === 'up' || k === 'down') && d === 'climate') {
+        const step = Number(c.temp_step) || 1, cur = Number(a.temperature);
+        if (isFinite(cur)) h.callService('climate', 'set_temperature', { entity_id: c.entity, temperature: Math.max(Number(a.min_temp) || 16, Math.min(Number(a.max_temp) || 30, cur + (k === 'up' ? step : -step))) });
+      } else if ((k === 'up' || k === 'down') && c.entity_target) {
+        const t = this._st(c.entity_target), v = this._num(c.entity_target), st = Number(t && t.attributes && t.attributes.step) || Number(c.temp_step) || 1;
+        if (!isNaN(v)) h.callService('number', 'set_value', { entity_id: c.entity_target, value: v + (k === 'up' ? st : -st) });
+      } else if (k === 'mode' && d === 'climate') {
+        const modes = (a.hvac_modes || []).filter((m) => m !== 'off');
+        if (modes.length) h.callService('climate', 'set_hvac_mode', { entity_id: c.entity, hvac_mode: modes[(modes.indexOf(s.state) + 1) % modes.length] });
+      }
+    }
+
+    _render() {
+      if (!this._built) this._build();
+      const c = this._c, r = this._root, card = this._card, s = this._st(c.entity), a = (s && s.attributes) || {};
+      const mode = this._mode();
+      const tankS = this._st(c.entity_tank);
+      const tankFull = !!tankS && (FULL_RE.test(String(tankS.state)) || (!isNaN(this._num(c.entity_tank)) && this._num(c.entity_tank) >= 100));
+      const tankPct = !tankS ? NaN : /^(on|off|true|false)$/i.test(String(tankS.state)) ? (tankFull ? 100 : 15) : this._num(c.entity_tank);
+      card.className = `${mode}${tankFull ? ' tankfull' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
+      card.style.setProperty('--tank', String(isNaN(tankPct) ? (mode === 'dry' ? 0.45 : 0.2) : Math.max(0.08, Math.min(1, tankPct / 100))));
+
+      // ventilation : vitesse des flux (low / medium / high / auto, ou nombre)
+      const fanS = this._st(c.entity_fan), fanRaw = String((fanS && fanS.state) ?? a.fan_mode ?? '').toLowerCase();
+      const spd = /high|haut|fort|3|max|turbo/.test(fanRaw) ? 0.9 : /med|moy|2/.test(fanRaw) ? 1.4 : /low|bas|faible|1|quiet|silent/.test(fanRaw) ? 2.1 : 1.5;
+      card.style.setProperty('--spd', spd + 's');
+
+      const cur = c.entity_temperature ? this._num(c.entity_temperature) : Number(a.current_temperature);
+      const tgt = c.entity_target ? this._num(c.entity_target) : Number(a.temperature);
+      const unit = this._unit(), u = String(unit).replace(/^°?/, '°');
+      r.getElementById('patitle').textContent = c.name || this._t('name');
+      const badge = r.getElementById('pabadge'); badge.textContent = this._t(mode); badge.style.display = c.show_status === false ? 'none' : '';
+      r.getElementById('paalert').textContent = tankFull ? this._t('tank_full') : '';
+      r.getElementById('padt').textContent = isFinite(tgt) ? this._fmt(tgt, tgt % 1 ? 1 : 0) + '°' : isFinite(cur) ? this._fmt(cur, 1) + '°' : '--';
+      r.getElementById('padm').textContent = mode === 'off' || mode === 'unavailable' ? '' : this._t(`lcd_${mode}`);
+
+      // boutons
+      const isClimate = !!c.entity && c.entity.startsWith('climate.');
+      const canTemp = (isClimate && a.temperature != null) || (!!c.entity_target && !!this._st(c.entity_target));
+      const modes = isClimate ? (a.hvac_modes || []).filter((m) => m !== 'off') : [];
+      const on = mode !== 'off' && mode !== 'unavailable';
+      const btns = [
+        ['power', 'mdi:power', 'power', on, !!s],
+        ['down', 'mdi:minus', 'temp_down', null, canTemp],
+        ['up', 'mdi:plus', 'temp_up', null, canTemp],
+        ['mode', 'mdi:sun-snowflake-variant', 'mode', null, modes.length > 1],
+      ].filter((b) => b[4] && c.show_controls !== false);
+      const ctr = r.getElementById('pactrls');
+      ctr.classList.toggle('hide', !btns.length);
+      const sig = btns.map((b) => b.join('|')).join(';') + mode;
+      if (ctr._sig !== sig) {
+        ctr._sig = sig;
+        ctr.innerHTML = btns.map(([k, icon, lbl, onb]) => `<button class="${onb ? 'on' : ''}" data-k="${k}" title="${esc(this._t(lbl))}" aria-label="${esc(this._t(lbl))}"${mode === 'unavailable' || (!on && k !== 'power') ? ' disabled' : ''}><ha-icon icon="${icon}"></ha-icon></button>`).join('');
+      }
+
+      const tm = this._num(c.entity_timer), pw = this._num(c.entity_power);
+      const fanTxt = fanRaw && fanRaw !== 'unknown' ? (this._t(`fan_${fanRaw}`) !== `fan_${fanRaw}` ? this._t(`fan_${fanRaw}`) : fanRaw) : '';
+      const V = {
+        temperature: [isFinite(cur) && c.show_temperature !== false, this._fmt(cur, 1), u],
+        target: [isFinite(tgt) && c.show_target !== false, this._fmt(tgt, tgt % 1 ? 1 : 0), u],
+        fan: [!!fanTxt && c.show_fan !== false, fanTxt, ''],
+        timer: [!isNaN(tm) && c.show_timer !== false, this._fmt(tm, 0), this._st(c.entity_timer)?.attributes?.unit_of_measurement || 'min'],
+        tank: [!!tankS && c.show_tank !== false, tankFull ? this._t('full') : isNaN(tankPct) ? this._t('ok') : `${this._fmt(tankPct, 0)} %`, ''],
+        power: [!!this._st(c.entity_power) && c.show_power !== false, this._fmt(pw, pw < 10 ? 1 : 0), this._st(c.entity_power)?.attributes?.unit_of_measurement || 'W'],
+      };
+      Object.entries(V).forEach(([k, [show, val, un]]) => {
+        const el = r.querySelector(`.tile[data-k="${k}"]`);
+        el.classList.toggle('hide', !show);
+        el.classList.toggle('bad', k === 'tank' && tankFull);
+        el.querySelector('.lbl').textContent = this._l(k);
+        const small = document.createElement('small'); small.textContent = un;
+        el.querySelector('.v').replaceChildren(String(val), small);
+      });
+    }
+  }
+  customElements.define(TAG, AppliancePortableAcCard);
+
+  /* ---- éditeur visuel ---- */
+  class AppliancePortableAcCardEditor extends HTMLElement {
+    setConfig(c) { this._c = c; this._draw(); }
+    set hass(h) { this._hass = h; if (this._form) this._form.hass = h; }
+    _draw() {
+      if (!this._form) {
+        this._form = document.createElement('ha-form');
+        this._form.addEventListener('value-changed', (e) => {
+          this._c = e.detail.value;
+          this.dispatchEvent(new CustomEvent('config-changed', { detail: { config: this._c }, bubbles: true, composed: true }));
+        });
+        this.appendChild(this._form);
+      }
+      const ent = (name, domain) => ({ name, selector: { entity: domain ? { domain } : {} } });
+      const bool = (name, def = true) => ({ name, selector: { boolean: {} }, default: def });
+      this._form.hass = this._hass;
+      this._form.data = this._c;
+      this._form.schema = [
+        { name: 'name', selector: { text: {} } },
+        { name: 'labels', selector: { object: {} } },
+        { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
+        { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
+        { name: 'entity', selector: { entity: { domain: ['climate', 'switch', 'input_boolean'] } } },
+        ent('entity_temperature', 'sensor'), ent('entity_target', 'number'), ent('entity_fan'), ent('entity_timer'), ent('entity_tank'), ent('entity_power', 'sensor'),
+        { name: 'temp_step', default: 1, selector: { number: { min: 0.5, max: 5, step: 0.5, mode: 'box' } } },
+        ...window.applianceActionFields,
+        { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', cs: 'Čeština', hu: 'Magyar', sr: 'Српски', 'sr-Latn': 'Srpski' }[value] || value })) } } },
+        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_temperature'), bool('show_target'), bool('show_fan'), bool('show_timer'), bool('show_tank'), bool('show_power'), bool('animations')] },
+      ];
+      this._form.computeLabel = (s) => window.applianceEditorLabel(s.name, this._hass);
+    }
+  }
+  customElements.define(TAG + '-editor', AppliancePortableAcCardEditor);
+
+  window.customCards = window.customCards || [];
+  window.customCards.push({
+    type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
+    description: 'Climatiseur mobile (monobloc avec gaine) en dessin SVG : air froid, gaine d\'évacuation, réservoir de condensats, consigne, ventilation, minuterie.', preview: true,
     documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards',
   });
 })();
@@ -25505,6 +28206,28 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "btn_stop": "Stop",
       "btn_close": "Zavřít",
       "btn_command": "Povel"
+    },
+    "da": {
+      "barrier": "Bom",
+      "sliding_gate": "Skydeport",
+      "swing_gate": "Fløjport",
+      "garage_door": "Garageport",
+      "open": "Åben",
+      "closed": "Lukket",
+      "opening": "Åbner",
+      "closing": "Lukker",
+      "partial": "Delvist åben",
+      "unavailable": "Utilgængelig",
+      "position": "Position",
+      "power": "Motor",
+      "energy": "Energi",
+      "cost": "Pris",
+      "since": "Seneste ændring",
+      "btn_open": "Åbn",
+      "btn_stop": "Stop",
+      "btn_close": "Luk",
+      "btn_command": "Kommando",
+      "btn_pedestrian": "Gående"
     },
     "de": {
       "barrier": "Schranke",
@@ -25734,7 +28457,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "closing": "Затварање",
       "partial": "Делимично отворено",
       "unavailable": "Недоступно",
-      "position": "Позиција",
+      "position": "Положај",
       "power": "Мотор",
       "energy": "Енергија",
       "cost": "Трошак",
@@ -25742,7 +28465,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "btn_open": "Отвори",
       "btn_stop": "Заустави",
       "btn_close": "Затвори",
-      "btn_command": "Команда"
+      "btn_command": "Команда",
+      "btn_pedestrian": "Пешачки"
     },
     "sr-Latn": {
       "barrier": "Rampa",
@@ -25755,7 +28479,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "closing": "Zatvaranje",
       "partial": "Delimično otvoreno",
       "unavailable": "Nedostupno",
-      "position": "Pozicija",
+      "position": "Položaj",
       "power": "Motor",
       "energy": "Energija",
       "cost": "Trošak",
@@ -25763,7 +28487,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "btn_open": "Otvori",
       "btn_stop": "Zaustavi",
       "btn_close": "Zatvori",
-      "btn_command": "Komanda"
+      "btn_command": "Komanda",
+      "btn_pedestrian": "Pešački"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -25797,7 +28522,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--acc-move:var(--ap
 .ctl button:disabled{opacity:.4;cursor:default;filter:none}
 .ctl button.hide{display:none}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -26240,6 +28966,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--acc-move:var(--ap
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_control'), ent('entity_open'), ent('entity_close'), ent('entity_stop'), ent('entity_pedestrian'),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
@@ -26334,6 +29061,23 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--acc-move:var(--ap
       "turn_on": "Zapnout",
       "turn_off": "Vypnout",
       "overheat": "Příliš horko"
+    },
+    "da": {
+      "name": "Sauna",
+      "off": "Slukket",
+      "heating": "Varmer",
+      "ready": "Klar",
+      "cooling": "Køler af",
+      "fault": "Fejl",
+      "temp": "Kabine",
+      "target": "Mål",
+      "humidity": "Luftfugtighed",
+      "power": "Saunaovn",
+      "energy": "Energi",
+      "cost": "Pris",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "overheat": "For varm"
     },
     "de": {
       "name": "Sauna",
@@ -26564,7 +29308,8 @@ svg{display:block;width:100%;max-width:calc(250px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button:hover{filter:brightness(1.12)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -26855,6 +29600,7 @@ svg{display:block;width:100%;max-width:calc(250px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_temp', ['sensor', 'climate', 'water_heater']), ent('entity_target_temp'), ent('entity_humidity', 'sensor'),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
@@ -26955,6 +29701,34 @@ svg{display:block;width:100%;max-width:calc(250px * var(--illus-scale,1));height
       "high_level": "Vysoká hladina vody",
       "pit": "Jímka",
       "starts": "Starty"
+    },
+    "da": {
+      "water_pump": "Vandpumpe",
+      "industrial_pump": "Industripumpe",
+      "off": "Slukket",
+      "running": "Kører",
+      "warning": "Advarsel",
+      "fault": "Fejl",
+      "unavailable": "Utilgængelig",
+      "flow": "Flow",
+      "pressure": "Tryk",
+      "power": "Effekt",
+      "temp": "Motor",
+      "level": "Tank",
+      "runtime": "Driftstid",
+      "energy": "Energi",
+      "cost": "Pris",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "no_flow": "Intet flow: tørløb?",
+      "overpressure": "Overtryk",
+      "overheat": "Motoren er for varm",
+      "low_level": "Lavt niveau",
+      "sump_pump": "Drænpumpe",
+      "alarm": "Højt niveau",
+      "high_level": "Højt vandniveau",
+      "pit": "Brønd",
+      "starts": "Starter"
     },
     "de": {
       "water_pump": "Wasserpumpe",
@@ -27316,7 +30090,8 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button:hover{filter:brightness(1.12)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -27792,6 +30567,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_power', 'sensor'), ent('entity_flow', 'sensor'), ent('entity_pressure', 'sensor'),
         ent('entity_temp', ['sensor', 'climate', 'water_heater']), ent('entity_level', 'sensor'), ent('entity_fault', 'binary_sensor'), ent('entity_runtime', 'sensor'),
         ...(KINDS[this.kind].sump ? [ent('entity_float', 'binary_sensor'), ent('entity_starts', 'sensor')] : []),
@@ -27907,6 +30683,31 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "energy": "Energie",
       "filter_full": "Filtr je třeba vyčistit",
       "low_water": "Nízká hladina vody"
+    },
+    "da": {
+      "name": "Poolrobot",
+      "cleaning": "Gør rent",
+      "paused": "På pause",
+      "returning": "Kommer op",
+      "idle": "Inaktiv",
+      "error": "Fejl",
+      "unavailable": "Utilgængelig",
+      "start": "Start",
+      "pause": "Pause",
+      "dock": "Hent op",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "status": "Status",
+      "filter": "Filter",
+      "water_level": "Vandniveau",
+      "water_temp": "Vand",
+      "time": "Tilbage",
+      "battery": "Batteri",
+      "mode": "Tilstand",
+      "power": "Effekt",
+      "energy": "Energi",
+      "filter_full": "Filteret skal renses",
+      "low_water": "Lavt vandniveau"
     },
     "de": {
       "name": "Poolroboter",
@@ -28232,7 +31033,8 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button:hover{filter:brightness(1.12)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -28548,6 +31350,7 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_switch'), ent('entity_status', 'sensor'), ent('entity_filter', 'sensor'), ent('entity_water_level', 'sensor'),
         ent('entity_water_temp', 'sensor'), ent('entity_time', 'sensor'), ent('entity_battery', 'sensor'), ent('entity_mode'),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
@@ -28627,6 +31430,27 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "energy": "Energie",
       "overload": "Přetížení",
       "replace_battery": "Vyměňte baterii"
+    },
+    "da": {
+      "name": "UPS",
+      "online": "På elnettet",
+      "charging": "Oplader",
+      "on_battery": "På batteri",
+      "low_battery": "Lavt batteri",
+      "offline": "Slukket",
+      "unavailable": "Utilgængelig",
+      "charge": "Batteri",
+      "runtime": "Driftstid",
+      "load": "Belastning",
+      "power": "Effekt",
+      "input": "Indgang",
+      "output": "Udgang",
+      "energy": "Energi",
+      "battery_voltage": "Batterispænding",
+      "nominal_power": "Mærkeeffekt",
+      "beeper": "Summer",
+      "overload": "Overbelastning",
+      "replace_battery": "Skift batteriet"
     },
     "de": {
       "name": "USV",
@@ -28812,11 +31636,11 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "replace_battery": "Замените батарею"
     },
     "sr": {
-      "name": "UPS (БПН)",
+      "name": "UPS",
       "online": "На мрежи",
       "charging": "Пуњење",
       "on_battery": "На батерији",
-      "low_battery": "Батерија је ниска",
+      "low_battery": "Слаба батерија",
       "offline": "Искључено",
       "unavailable": "Недоступно",
       "charge": "Батерија",
@@ -28826,15 +31650,18 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "input": "Улаз",
       "output": "Излаз",
       "energy": "Енергија",
+      "battery_voltage": "Напон батерије",
+      "nominal_power": "Називна снага",
+      "beeper": "Зујалица",
       "overload": "Преоптерећење",
       "replace_battery": "Замените батерију"
     },
     "sr-Latn": {
-      "name": "UPS (BPN)",
+      "name": "UPS",
       "online": "Na mreži",
       "charging": "Punjenje",
       "on_battery": "Na bateriji",
-      "low_battery": "Baterija je niska",
+      "low_battery": "Slaba baterija",
       "offline": "Isključeno",
       "unavailable": "Nedostupno",
       "charge": "Baterija",
@@ -28844,6 +31671,9 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "input": "Ulaz",
       "output": "Izlaz",
       "energy": "Energija",
+      "battery_voltage": "Napon baterije",
+      "nominal_power": "Nazivna snaga",
+      "beeper": "Zujalica",
       "overload": "Preopterećenje",
       "replace_battery": "Zamenite bateriju"
     }
@@ -28865,7 +31695,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--up-ok:var(--appli
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -29168,6 +31999,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_charge', 'sensor'), ent('entity_runtime', 'sensor'), ent('entity_load', 'sensor'), ent('entity_power', 'sensor'),
         ent('entity_input_voltage', 'sensor'), ent('entity_output_voltage', 'sensor'), ent('entity_energy', 'sensor'),
         ent('entity_battery_voltage', 'sensor'), ent('entity_nominal_power', 'sensor'), ent('entity_beeper'),
@@ -29197,6 +32029,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
  * le circuit en serpentin, collecteur départ / retour au mur (hydraulique) ou câble chauffant
  * (heating_type: electric), thermostat mural. En chauffe, l'eau ou le courant circule, la dalle
  * rougeoit (--heat) et des ondes de chaleur montent du sol.
+ * `surface: wall` : mur chauffant (même circuit, vue de face : l'enduit est retiré à gauche pour montrer le serpentin).
  * États : off, heating, idle (allumé, consigne atteinte), fault. Entité climate (consigne ± et
  * marche / arrêt), switch / input_boolean / binary_sensor (vanne, circulateur) ou puissance seule.
  */
@@ -29221,6 +32054,9 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "turn_on": "Turn on",
       "turn_off": "Turn off",
       "floor_hot": "Floor too hot",
+      "name_wall": "Wall heating",
+      "wall": "Wall",
+      "wall_hot": "Wall too hot",
       "water_hot": "Water too hot"
     },
     "cs": {
@@ -29240,6 +32076,24 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "turn_off": "Vypnout",
       "floor_hot": "Podlaha příliš horká",
       "water_hot": "Voda příliš horká"
+    },
+    "da": {
+      "name": "Gulvvarme",
+      "off": "Slukket",
+      "heating": "Varmer",
+      "idle": "Inaktiv",
+      "fault": "Fejl",
+      "temp": "Rum",
+      "target": "Mål",
+      "floor": "Gulv",
+      "water": "Fremløb",
+      "power": "Effekt",
+      "energy": "Energi",
+      "cost": "Pris",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "floor_hot": "Gulvet er for varmt",
+      "water_hot": "Vandet er for varmt"
     },
     "de": {
       "name": "Fußbodenheizung",
@@ -29293,6 +32147,9 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "turn_on": "Allumer",
       "turn_off": "Éteindre",
       "floor_hot": "Sol trop chaud",
+      "name_wall": "Mur chauffant",
+      "wall": "Mur",
+      "wall_hot": "Mur trop chaud",
       "water_hot": "Eau trop chaude"
     },
     "hu": {
@@ -29481,7 +32338,8 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button:hover{filter:brightness(1.12)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -29500,6 +32358,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
 .elec .flow{stroke:#fff3c4;stroke-width:1.2;stroke-dasharray:2 8}
 @keyframes ufflow{to{stroke-dashoffset:-28}}
 .glow{opacity:calc(var(--heat) * .75);transition:opacity 1.5s}
+.glow2{opacity:calc(var(--heat) * .3);transition:opacity 1.5s}
 .wave{fill:none;stroke:var(--uf-heat-c);stroke-width:1.6;stroke-linecap:round;opacity:0}
 .heating .wave{animation:ufwave 3s ease-in infinite}
 .idle .wave{animation:ufwave 5s ease-in infinite;stroke-opacity:.5}
@@ -29566,6 +32425,44 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
  </g>
 </svg>`;
 
+  // mur chauffant (surface: wall) : mur vu de face, enduit retiré à gauche pour montrer le serpentin ; mêmes classes que le sol (couleurs, flux, lueur, ondes)
+  const WCOIL = 'M24 30 H138 Q148 30 148 40 Q148 50 138 50 H46 Q36 50 36 60 Q36 70 46 70 H138 Q148 70 148 80 Q148 90 138 90 H46 Q36 90 36 100 Q36 110 46 110 H138 Q148 110 148 120 Q148 130 138 130 H24';
+  const SVG_WALL = (label) => `
+<svg viewBox="0 0 270 170" role="img" aria-label="${esc(label)}">
+ <defs>
+  <linearGradient id="ufwwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f3f5"/><stop offset="1" stop-color="#dde2e6"/></linearGradient>
+  <linearGradient id="ufglow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff7a3d" stop-opacity=".75"/><stop offset="1" stop-color="#ff5a2a" stop-opacity=".2"/></linearGradient>
+  <clipPath id="ufwslab"><rect x="24" y="22" width="126" height="116"/></clipPath>
+ </defs>
+ <ellipse cx="135" cy="164" rx="128" ry="4" fill="#000" opacity=".15"/>
+ <!-- mur, plinthe, sol -->
+ <rect x="14" y="14" width="242" height="128" rx="3" fill="url(#ufwwall)" stroke="#c3cad1"/>
+ <rect x="0" y="142" width="270" height="20" fill="#b9a98f"/><rect x="14" y="136" width="242" height="6" fill="#e8e4dc" stroke="#c9c2b4" stroke-width=".8"/>
+ <!-- enduit retiré : chape et serpentin -->
+ <rect x="24" y="22" width="126" height="116" rx="2" fill="#cdc6ba" stroke="#a89c86" stroke-width="1.4"/>
+ <g clip-path="url(#ufwslab)"><path class="pipe" d="${WCOIL}"/><path class="flow" d="${WCOIL}"/></g>
+ <rect class="glow" x="24" y="22" width="126" height="116" rx="2" fill="url(#ufglow)"/>
+ <rect class="glow2" x="150" y="14" width="106" height="122" fill="#ff7a3d"/>
+ <!-- ondes de chaleur qui rayonnent du mur -->
+ <g><path class="wave" d="M170 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M188 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M206 128 q4 -5 0 -10 t0 -10"/>
+  <path class="wave" d="M224 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M242 128 q4 -5 0 -10 t0 -10"/></g>
+ <!-- thermostat -->
+ <rect x="186" y="34" width="30" height="36" rx="4" fill="#f9fafb" stroke="#b9c1c8"/>
+ <rect x="190" y="39" width="22" height="13" rx="2" fill="#1b1e22"/>
+ <text class="dsp" id="ufdsp" x="201" y="48.5">--</text>
+ <circle class="led" cx="201" cy="61" r="2.2"/>
+ <!-- collecteur (hydraulique) / boîtier du câble (électrique) -->
+ <g class="hyd">
+  <rect x="222" y="86" width="28" height="44" rx="3" fill="#f4f6f8" stroke="#b9c1c8"/>
+  <rect x="226" y="95" width="20" height="4" rx="2" fill="#d9483b"/><rect x="226" y="113" width="20" height="4" rx="2" fill="#2b7fd9"/>
+  <g fill="#5b636b"><circle cx="231" cy="97" r="2.2"/><circle cx="241" cy="97" r="2.2"/><circle cx="231" cy="115" r="2.2"/><circle cx="241" cy="115" r="2.2"/></g>
+ </g>
+ <g class="cab">
+  <rect x="224" y="96" width="24" height="28" rx="3" fill="#f4f6f8" stroke="#b9c1c8"/>
+  <path d="M236 102 l-4 7 h4 l-2 6 l6 -9 h-4 l2 -4 z" fill="#ff8a1f"/>
+ </g>
+</svg>`;
+
   const TILES = [
     ['temp', 'mdi:home-thermometer', 'show_temp'],
     ['target', 'mdi:thermometer-check', 'show_temp'],
@@ -29622,7 +32519,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       const c = this._c;
       root.innerHTML = `<style>${CSS}</style><ha-card>
         <div class="head"><div class="title" id="uftitle"></div><div class="badge" id="ufbadge"></div></div>
-        ${SVG(c.name || this._t('name'))}
+        ${(c.surface === 'wall' ? SVG_WALL : SVG)(c.name || this._t(c.surface === 'wall' ? 'name_wall' : 'name'))}
         <div class="alert" id="ufalert"></div>
         <div class="ctl" id="ufctl">
           <button class="sm" data-a="down"><ha-icon icon="mdi:minus"></ha-icon></button>
@@ -29689,15 +32586,15 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       const clamp = (x) => Math.max(0, Math.min(1, x));
       // lueur de la dalle : température du sol si connue (20 °C → floor_max, calcul en °C), sinon selon l'état
       const heat = !isNaN(floor) ? clamp((tc.toC(floor) - 20) / Math.max(1, tc.toC(floorMax) - 20)) : ({ heating: 0.8, idle: 0.3 }[st] || 0);
-      const elec = String(c.heating_type).toLowerCase() === 'electric';
-      card.className = `${st}${elec ? ' elec' : ''} ${c.animations === false ? 'noanim' : ''}`;
+      const elec = String(c.heating_type).toLowerCase() === 'electric', wall = c.surface === 'wall';
+      card.className = `${st}${elec ? ' elec' : ''}${wall ? ' wall' : ''} ${c.animations === false ? 'noanim' : ''}`;
       card.style.setProperty('--heat', (st === 'off' || st === 'fault' ? 0 : heat).toFixed(3));
 
-      r.getElementById('uftitle').textContent = c.name || this._t('name');
+      r.getElementById('uftitle').textContent = c.name || this._t(wall ? 'name_wall' : 'name');
       const badge = r.getElementById('ufbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
       r.getElementById('ufdsp').textContent = st === 'off' ? 'OFF' : st === 'fault' ? 'Err' : !isNaN(temp) ? `${this._fmt(temp, 1)}°` : 'ON';
       const alerts = [];
-      if (!isNaN(floor) && floor > floorMax) alerts.push(this._t('floor_hot'));
+      if (!isNaN(floor) && floor > floorMax) alerts.push(this._t(wall ? 'wall_hot' : 'floor_hot'));
       if (!isNaN(water) && water > waterMax) alerts.push(this._t('water_hot'));
       const al = r.getElementById('ufalert'); al.textContent = alerts.join(' · '); al.classList.toggle('on', alerts.length > 0);
 
@@ -29725,7 +32622,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         const el = r.querySelector(`.tile[data-k="${k}"]`); const [show, val, unit] = V[k];
         el.classList.toggle('hide', !show || c[opt] === false);
         el.classList.toggle('bad', !!bad[k]);
-        el.querySelector('.lbl').textContent = this._l(k);
+        el.querySelector('.lbl').textContent = k === 'floor' && wall && !(c.labels && c.labels.floor) ? this._t('wall') : this._l(k);
         const small = document.createElement('small'); small.textContent = unit ?? '';
         el.querySelector('.v').replaceChildren(String(val ?? ''), small);
       });
@@ -29759,9 +32656,11 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_temp', ['sensor', 'climate', 'water_heater']), ent('entity_target_temp'), ent('entity_floor_temp', 'sensor'), ent('entity_water_temp', 'sensor'),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
+        { name: 'surface', selector: { select: { options: ['floor', 'wall'] } } },
         { name: 'heating_type', selector: { select: { options: ['water', 'electric'] } } },
         { type: 'grid', name: '', schema: [tnum('floor_max', 20, 40, 0.5, 29), tnum('water_max', 25, 70, 1, 45), num('heat_threshold', 0, 5000, 1, 20, 'W')] },
         window.applianceTempField,
@@ -29841,6 +32740,28 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "power": "Výkon",
       "energy": "Energie",
       "ceiling_spot": "Zápustné bodovky"
+    },
+    "da": {
+      "light_bulb": "Pære",
+      "color_bulb": "Farvepære",
+      "filament_bulb": "Filamentpære",
+      "pendant_light": "Pendel",
+      "pendant_cluster": "Pendelklynge",
+      "desk_lamp": "Skrivebordslampe",
+      "floor_lamp": "Gulvlampe",
+      "chandelier": "Lysekrone",
+      "garden_spotlight": "Havespot",
+      "christmas_tree": "Juletræ",
+      "on": "Tændt",
+      "off": "Slukket",
+      "unavailable": "Utilgængelig",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "color": "Farve",
+      "brightness": "Lysstyrke",
+      "power": "Effekt",
+      "energy": "Energi",
+      "ceiling_spot": "Indbygningsspots"
     },
     "de": {
       "light_bulb": "Glühbirne",
@@ -30134,7 +33055,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .ctl button.ico ha-icon{--mdc-icon-size:22px}
 .ctl button:hover{filter:brightness(1.12)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -30522,9 +33444,9 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       card.className = `${st}${cycle ? ' cycle' : ''} ${c.animations === false ? 'noanim' : ''}${c.compact === true ? ' compact' : ''}`;
       card.style.setProperty('--lc', col);
       card.style.setProperty('--b', (st === 'on' ? bri : 0).toFixed(3));
-      // photo perso : plafond de l'éclairage de la photo (image_max) et de la lueur (glow_max), en % de la luminosité de la lampe
+      // photo perso : plafond de l'éclairage de la photo (image_max), plancher de l'éclairage de la photo allumée (image_min) et plafond de la lueur (glow_max), en % de la luminosité de la lampe
       const cap = (v) => (isFinite(Number(v)) && v !== '' && v !== null ? Math.max(0, Math.min(100, Number(v))) / 100 : 1);
-      card.style.setProperty('--pb', (st === 'on' ? bri * cap(c.image_max) : 0).toFixed(3));
+      card.style.setProperty('--pb', (st === 'on' ? Math.max(bri * cap(c.image_max), (isFinite(Number(c.image_min)) && c.image_min !== '' && c.image_min !== null ? Math.max(0, Math.min(100, Number(c.image_min))) / 100 : 0)) : 0).toFixed(3));
       card.style.setProperty('--gb', (st === 'on' ? bri * cap(c.glow_max) : 0).toFixed(3));
       // sapin : guirlande d'une seule couleur si multicolor: false
       if (this.kind === 'christmas_tree') r.querySelectorAll('.xb').forEach((el, i) => {
@@ -30599,11 +33521,13 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'image', selector: { text: {} } },
         ...(String(this._c.image || '').trim() ? [
+          { name: 'image_min', selector: { number: { min: 0, max: 100, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
           { name: 'image_max', selector: { number: { min: 0, max: 100, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
           { name: 'glow_max', selector: { number: { min: 0, max: 100, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         ] : []),
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity'), ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
         { name: 'tap_action', selector: { ui_action: { actions: ['more-info', 'toggle', 'navigate', 'url', 'perform-action', 'none'] } } },
         { name: 'hold_action', selector: { ui_action: { actions: ['more-info', 'toggle', 'navigate', 'url', 'perform-action', 'none'] } } },
@@ -30754,6 +33678,54 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "aw_wind_alert": "Silný vítr",
       "lux": "Osvit",
       "temperature": "Teplota"
+    },
+    "da": {
+      "roller_shutter": "Rulleskodde",
+      "venetian_blind": "Persienne",
+      "swing_shutter": "Skodder",
+      "open": "Åben",
+      "closed": "Lukket",
+      "opening": "Åbner",
+      "closing": "Lukker",
+      "partial": "Åben",
+      "unavailable": "Utilgængelig",
+      "btn_open": "Åbn",
+      "btn_stop": "Stop",
+      "btn_close": "Luk",
+      "position": "Position",
+      "tilt": "Vinkling",
+      "power": "Motor",
+      "since": "Seneste ændring",
+      "pergola": "Bioklimatisk pergola",
+      "pg_open": "Åben",
+      "pg_closed": "Lukket",
+      "pg_partial": "Åben",
+      "pg_position": "Lameller",
+      "rain": "Regn",
+      "wind": "Vind",
+      "yes": "Ja",
+      "no": "Nej",
+      "btn_light": "LED",
+      "roof_window": "Ovenlysvindue",
+      "rw_open": "Åben",
+      "rw_closed": "Lukket",
+      "rw_partial": "Åben",
+      "rw_position": "Åbning",
+      "blind": "Rullegardin",
+      "blind_down": "Rullegardin nede",
+      "btn_blind": "Rullegardin",
+      "awning": "Markise",
+      "aw_open": "Rullet ud",
+      "aw_closed": "Rullet ind",
+      "aw_partial": "Rullet ud",
+      "aw_opening": "Ruller ud",
+      "aw_closing": "Ruller ind",
+      "aw_position": "Udrulning",
+      "aw_btn_open": "Rul ud",
+      "aw_btn_close": "Rul ind",
+      "aw_wind_alert": "Kraftig vind",
+      "lux": "Sollys",
+      "temperature": "Temperatur"
     },
     "de": {
       "roller_shutter": "Rollladen",
@@ -31361,7 +34333,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
 .rng input{flex:1;min-width:0;width:100%;accent-color:var(--sh-cold);margin:0;cursor:pointer}
 .rng.tl input{accent-color:#c9a96b}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -31869,7 +34842,11 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
           this._hass.callService('cover', this._blindDown > 0 ? 'open_cover' : 'close_cover', { entity_id: id }); return;
         }
         if (b.dataset.a === 'light') { if (this._hass && this._c.entity_light) this._hass.callService('homeassistant', 'toggle', { entity_id: this._c.entity_light }); return; }
-        if (this._hass && this._main()) this._hass.callService('cover', `${b.dataset.a}_cover`, { entity_id: this._main() });
+        if (this._hass && this._main()) {
+          // invert_buttons : moteur câblé à l'envers, « Ouvrir » ferme la cover et inversement (le dessin et la position ne changent pas)
+          const a = this._c.invert_buttons ? { open: 'close', close: 'open' }[b.dataset.a] || b.dataset.a : b.dataset.a;
+          this._hass.callService('cover', `${a}_cover`, { entity_id: this._main() });
+        }
       }));
       root.querySelector('#shpos input').addEventListener('change', (e) => {
         if (!this._hass) return;
@@ -32078,7 +35055,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
         if (a === 'light') { b.classList.toggle('on', leds); b.disabled = !lightS; return; }
         // assumed_state (RFXCOM, Somfy RTS…) : l'état est supposé, pas mesuré, donc on laisse tout cliquable comme la carte HA,
         // sauf si la cover remonte une position (current_position) : on s'y fie et on grise Ouvrir à 100 %, Fermer à 0 %
-        b.disabled = st === 'unavailable' || ((!assumed || posKnown) && ((a === 'open' && (bst === 'open' || bst === 'opening')) || (a === 'close' && (bst === 'closed' || bst === 'closing'))));
+        const ea = c.invert_buttons ? { open: 'close', close: 'open' }[a] || a : a; // action réellement envoyée par ce bouton
+        b.disabled = st === 'unavailable' || ((!assumed || posKnown) && ((ea === 'open' && (bst === 'open' || bst === 'opening')) || (ea === 'close' && (bst === 'closed' || bst === 'closing'))));
       });
       const rng = (id, show, label, val) => {
         const el = r.getElementById(id), inp = el.querySelector('input');
@@ -32135,6 +35113,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', 'cover'), ent('entity_state'), ent('entity_position', 'sensor'), ent('entity_power', 'sensor'), ent('sun_entity', 'sun'),
         ...(this.kind === 'pergola' ? [ent('entity_rain'), ent('entity_light'), ent('entity_wind', 'sensor')] : []),
         ...(this.kind === 'awning' ? [ent('entity_wind', 'sensor'), ent('entity_rain'), ent('entity_light'), ent('entity_lux', 'sensor'), ent('entity_temperature', 'sensor'),
@@ -32145,6 +35124,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
           { name: 'travel_time', selector: { number: { min: 0, max: 120, step: 1, mode: 'box', unit_of_measurement: 's' } } },
         ] },
         bool('invert', false),
+        bool('invert_buttons', false),
         ...(this.kind === 'venetian_blind' ? [bool('tilt_only', false), bool('tilt_from_position', false), { name: 'tilt_presets', selector: { object: {} } }] : []),
         ...window.applianceActionFields,
         { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
@@ -32238,6 +35218,27 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
       "freeze": "Riziko zamrznutí",
       "freeze_risk": "Riziko zamrznutí: {t}",
       "leak_detected_by": "Únik zjištěn: {n}"
+    },
+    "da": {
+      "name": "Vandmåler",
+      "idle": "Intet flow",
+      "flowing": "Vand løber",
+      "leak": "Mulig lækage",
+      "valve_closed": "Ventil lukket",
+      "unavailable": "Utilgængelig",
+      "leak_detected": "Lækage registreret af sensoren",
+      "leak_continuous": "Vandet har løbet uafbrudt i mere end {n} min",
+      "open_valve": "Åbn ventil",
+      "close_valve": "Luk ventil",
+      "flow": "Flow",
+      "today": "I dag",
+      "index": "Indeks",
+      "cost": "Pris",
+      "temperature": "Temperatur",
+      "pressure": "Tryk",
+      "freeze": "Frostrisiko",
+      "freeze_risk": "Frostrisiko: {t}",
+      "leak_detected_by": "Lækage registreret af: {n}"
     },
     "de": {
       "name": "Wasserzähler",
@@ -32517,7 +35518,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button.closed{background:color-mix(in srgb,var(--wm-alert) 20%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -32748,6 +35750,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_index', 'sensor'), ent('entity_flow', 'sensor'), ent('entity_today', 'sensor'), ent('entity_cost', ['sensor', 'input_number']),
         ent('entity_temperature', 'sensor', { device_class: 'temperature' }), ent('entity_pressure', 'sensor', { device_class: 'pressure' }),
         ent('entity_leak', ['binary_sensor', 'input_boolean'], { multiple: true }), ent('entity_valve', ['valve', 'switch', 'input_boolean']),
@@ -32814,6 +35817,24 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "today": "Dnes",
       "index": "Stav",
       "cost": "Cena"
+    },
+    "da": {
+      "name": "Gasmåler",
+      "idle": "Intet flow",
+      "flowing": "Gas strømmer",
+      "leak": "Gaslækage",
+      "valve_closed": "Ventil lukket",
+      "unavailable": "Utilgængelig",
+      "leak_detected": "Gas registreret af sensoren",
+      "leak_detected_by": "Gas registreret af: {n}",
+      "open_valve": "Åbn ventil",
+      "close_valve": "Luk ventil",
+      "flow": "Flow",
+      "today": "I dag",
+      "index": "Indeks",
+      "cost": "Pris",
+      "variant_classic": "Klassisk (gul bælgmåler)",
+      "variant_modern": "Moderne (grå måler, gult rør)"
     },
     "de": {
       "name": "Gaszähler",
@@ -32990,36 +36011,40 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "cost": "Стоимость"
     },
     "sr": {
-      "name": "Мерач гаса",
+      "name": "Гасомер",
       "idle": "Нема протока",
-      "flowing": "Гас тече",
+      "flowing": "Проток гаса",
       "leak": "Цурење гаса",
       "valve_closed": "Вентил затворен",
       "unavailable": "Недоступно",
       "leak_detected": "Сензор је детектовао гас",
-      "leak_detected_by": "Гас детектован сензором: {n}",
+      "leak_detected_by": "Гас детектовао: {n}",
       "open_valve": "Отвори вентил",
       "close_valve": "Затвори вентил",
       "flow": "Проток",
       "today": "Данас",
-      "index": "Индекс",
-      "cost": "Трошак"
+      "index": "Стање",
+      "cost": "Трошак",
+      "variant_classic": "Класични (жути мембрански гасомер)",
+      "variant_modern": "Модерни (сиви гасомер, жута цев)"
     },
     "sr-Latn": {
-      "name": "Merač gasa",
+      "name": "Gasomer",
       "idle": "Nema protoka",
-      "flowing": "Gas teče",
+      "flowing": "Protok gasa",
       "leak": "Curenje gasa",
       "valve_closed": "Ventil zatvoren",
       "unavailable": "Nedostupno",
       "leak_detected": "Senzor je detektovao gas",
-      "leak_detected_by": "Gas detektovan senzorom: {n}",
+      "leak_detected_by": "Gas detektovao: {n}",
       "open_valve": "Otvori ventil",
       "close_valve": "Zatvori ventil",
       "flow": "Protok",
       "today": "Danas",
-      "index": "Indeks",
-      "cost": "Trošak"
+      "index": "Stanje",
+      "cost": "Trošak",
+      "variant_classic": "Klasični (žuti membranski gasomer)",
+      "variant_modern": "Moderni (sivi gasomer, žuta cev)"
     }
   };
   const asList = (v) => (Array.isArray(v) ? v : v ? [v] : []); // entity_leak : string ou array → array
@@ -33042,7 +36067,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button.closed{background:color-mix(in srgb,var(--gm-alert) 20%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -33279,6 +36305,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_index', 'sensor'), ent('entity_flow', 'sensor'), ent('entity_today', 'sensor'), ent('entity_cost', ['sensor', 'input_number']),
         ent('entity_leak', ['binary_sensor', 'input_boolean'], { multiple: true }), ent('entity_valve', ['valve', 'switch', 'input_boolean']),
         { type: 'grid', name: '', schema: [num('flow_threshold', 0, 5, 0.01, 0.01)] },
@@ -33338,6 +36365,22 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "today": "Dnes",
       "index": "Stav",
       "cost": "Cena",
+      "tariff": "Tarif",
+      "l1": "L1",
+      "l2": "L2",
+      "l3": "L3"
+    },
+    "da": {
+      "name": "Elmåler",
+      "idle": "Intet forbrug",
+      "consuming": "Forbruger",
+      "overload": "Overbelastning",
+      "unavailable": "Utilgængelig",
+      "overload_alert": "Effekt over den abonnerede effekt ({n} kVA)",
+      "power": "Effekt",
+      "today": "I dag",
+      "index": "Indeks",
+      "cost": "Pris",
       "tariff": "Tarif",
       "l1": "L1",
       "l2": "L2",
@@ -33504,15 +36547,15 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "l3": "L3"
     },
     "sr": {
-      "name": "Бројило струје",
-      "idle": "Нема протока",
-      "consuming": "Потрошња у току",
+      "name": "Бројило електричне енергије",
+      "idle": "Нема потрошње",
+      "consuming": "Потрошња",
       "overload": "Преоптерећење",
       "unavailable": "Недоступно",
-      "overload_alert": "Снага изнад уговорене снаге ({n} kVA)",
+      "overload_alert": "Снага изнад одобрене снаге ({n} kVA)",
       "power": "Снага",
       "today": "Данас",
-      "index": "Индекс",
+      "index": "Стање",
       "cost": "Трошак",
       "tariff": "Тарифа",
       "l1": "L1",
@@ -33520,15 +36563,15 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "l3": "L3"
     },
     "sr-Latn": {
-      "name": "Brojilo struje",
-      "idle": "Nema protoka",
-      "consuming": "Potrošnja u toku",
+      "name": "Brojilo električne energije",
+      "idle": "Nema potrošnje",
+      "consuming": "Potrošnja",
       "overload": "Preopterećenje",
       "unavailable": "Nedostupno",
-      "overload_alert": "Snaga iznad ugovorene snage ({n} kVA)",
+      "overload_alert": "Snaga iznad odobrene snage ({n} kVA)",
       "power": "Snaga",
       "today": "Danas",
-      "index": "Indeks",
+      "index": "Stanje",
       "cost": "Trošak",
       "tariff": "Tarifa",
       "l1": "L1",
@@ -33554,7 +36597,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--em-on:var(--appli
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height:auto;margin:2px auto 0;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -33747,6 +36791,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_power', 'sensor'), ent('entity_index', 'sensor'), ent('entity_today', 'sensor'), ent('entity_cost', ['sensor', 'input_number']), ent('entity_tariff', ['sensor', 'select', 'input_select']),
         ent('entity_power_l1', 'sensor'), ent('entity_power_l2', 'sensor'), ent('entity_power_l3', 'sensor'),
         { type: 'grid', name: '', schema: [num('subscribed_power', 0, 100, 0.5, 0, 'kVA')] },
@@ -33805,6 +36850,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "model_tado": "Tado X wall thermostat",
       "model_t6": "Honeywell Home T6 thermostat",
       "model_bht6000": "Tuya BHT6000 thermostat (round, black screen)",
+      "model_vitotrol": "Viessmann Vitotrol 200 thermostat",
       "model_atlantic_io": "Atlantic io thermostat (square, Zone Control)",
       "model_atlantic_io2": "Atlantic io thermostat (vertical, dial)",
       "model_classic": "Radiator valve (classic)",
@@ -33838,6 +36884,39 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "model_tado": "Nástěnný termostat Tado X",
       "model_t6": "Termostat Honeywell Home T6",
       "model_bht6000": "Termostat Tuya BHT6000 (kulatý, černý displej)"
+    },
+    "da": {
+      "name": "Radiatortermostat",
+      "idle": "Mål nået",
+      "heating": "Varmer",
+      "off": "Slukket",
+      "window": "Vindue åbent",
+      "unavailable": "Utilgængelig",
+      "window_alert": "Vindue åbent: varme sat på pause",
+      "target": "Mål",
+      "temperature": "Temperatur",
+      "valve": "Ventil",
+      "battery": "Batteri",
+      "open": "Åben",
+      "closed": "Lukket",
+      "model": "Model",
+      "model_trv": "Radiatortermostat (Tado X)",
+      "model_netatmo": "Netatmo-termostat",
+      "model_nest": "Google Nest-termostat",
+      "model_tado": "Tado X rumtermostat",
+      "model_t6": "Honeywell Home T6-termostat",
+      "model_bht6000": "Tuya BHT6000-termostat (rund, sort skærm)",
+      "model_atlantic_io": "Atlantic io-termostat (firkantet, Zone Control)",
+      "model_atlantic_io2": "Atlantic io-termostat (lodret, drejeknap)",
+      "model_classic": "Radiatortermostat (klassisk)",
+      "model_netatmo_trv": "Netatmo-termostat (1. gen.)",
+      "model_netatmo_trv2": "Netatmo-termostat (ny)",
+      "model_danfoss": "Danfoss Ally-termostat",
+      "model_shelly": "Shelly TRV-termostat",
+      "model_somfy": "Somfy io-termostat",
+      "duration": "Varighed",
+      "dur_default": "Standard",
+      "resume": "Tilbage til tidsplan"
     },
     "de": {
       "name": "Heizkörperthermostat",
@@ -33924,6 +37003,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "model_tado": "Thermostat mural Tado X",
       "model_t6": "Thermostat Honeywell Home T6",
       "model_bht6000": "Thermostat Tuya BHT6000 (rond, écran noir)",
+      "model_vitotrol": "Thermostat Viessmann Vitotrol 200",
       "model_atlantic_io": "Thermostat Atlantic io (carré, Zone Control)",
       "model_atlantic_io2": "Thermostat Atlantic io (vertical, molette)",
       "model_classic": "Tête thermostatique (classique)",
@@ -34156,63 +37236,69 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "resume": "Вернуться к расписанию"
     },
     "sr": {
-      "name": "Термостатска глава",
-      "idle": "Задата температура достигнута",
-      "heating": "Греје",
-      "off": "Искључена",
+      "name": "Радијаторски вентил",
+      "idle": "На циљној темп.",
+      "heating": "Грејање",
+      "off": "Искључено",
       "window": "Прозор отворен",
       "unavailable": "Недоступно",
       "window_alert": "Прозор отворен: грејање паузирано",
-      "target": "Задата",
+      "target": "Циљна",
       "temperature": "Температура",
       "valve": "Вентил",
       "battery": "Батерија",
       "open": "Отворен",
       "closed": "Затворен",
       "model": "Модел",
-      "model_trv": "Термостатска глава (Tado X)",
+      "model_trv": "Радијаторски вентил (Tado X)",
       "model_netatmo": "Netatmo термостат",
       "model_nest": "Google Nest термостат",
       "model_tado": "Tado X зидни термостат",
       "model_t6": "Honeywell Home T6 термостат",
       "model_bht6000": "Tuya BHT6000 термостат (округли, црни екран)",
-      "model_classic": "Термостатска глава (класична)",
-      "model_netatmo_trv": "Netatmo глава (1. ген.)",
-      "model_netatmo_trv2": "Netatmo глава (нова)",
-      "model_danfoss": "Danfoss Ally глава",
-      "model_shelly": "Shelly TRV глава",
-      "model_somfy": "Somfy io глава",
+      "model_vitotrol": "Viessmann Vitotrol 200 термостат",
+      "model_atlantic_io": "Atlantic io термостат (квадратни, Zone Control)",
+      "model_atlantic_io2": "Atlantic io термостат (вертикални, точкић)",
+      "model_classic": "Радијаторски вентил (класични)",
+      "model_netatmo_trv": "Netatmo вентил (1. ген.)",
+      "model_netatmo_trv2": "Netatmo вентил (нови)",
+      "model_danfoss": "Danfoss Ally вентил",
+      "model_shelly": "Shelly TRV вентил",
+      "model_somfy": "Somfy io вентил",
       "duration": "Трајање",
       "dur_default": "Подразумевано",
       "resume": "Назад на распоред"
     },
     "sr-Latn": {
-      "name": "Termostatska glava",
-      "idle": "Zadata temperatura dostignuta",
-      "heating": "Greje",
-      "off": "Isključena",
+      "name": "Radijatorski ventil",
+      "idle": "Na ciljnoj temp.",
+      "heating": "Grejanje",
+      "off": "Isključeno",
       "window": "Prozor otvoren",
       "unavailable": "Nedostupno",
       "window_alert": "Prozor otvoren: grejanje pauzirano",
-      "target": "Zadata",
+      "target": "Ciljna",
       "temperature": "Temperatura",
       "valve": "Ventil",
       "battery": "Baterija",
       "open": "Otvoren",
       "closed": "Zatvoren",
       "model": "Model",
-      "model_trv": "Termostatska glava (Tado X)",
+      "model_trv": "Radijatorski ventil (Tado X)",
       "model_netatmo": "Netatmo termostat",
       "model_nest": "Google Nest termostat",
       "model_tado": "Tado X zidni termostat",
       "model_t6": "Honeywell Home T6 termostat",
       "model_bht6000": "Tuya BHT6000 termostat (okrugli, crni ekran)",
-      "model_classic": "Termostatska glava (klasična)",
-      "model_netatmo_trv": "Netatmo glava (1. gen.)",
-      "model_netatmo_trv2": "Netatmo glava (nova)",
-      "model_danfoss": "Danfoss Ally glava",
-      "model_shelly": "Shelly TRV glava",
-      "model_somfy": "Somfy io glava",
+      "model_vitotrol": "Viessmann Vitotrol 200 termostat",
+      "model_atlantic_io": "Atlantic io termostat (kvadratni, Zone Control)",
+      "model_atlantic_io2": "Atlantic io termostat (vertikalni, točkić)",
+      "model_classic": "Radijatorski ventil (klasični)",
+      "model_netatmo_trv": "Netatmo ventil (1. gen.)",
+      "model_netatmo_trv2": "Netatmo ventil (novi)",
+      "model_danfoss": "Danfoss Ally ventil",
+      "model_shelly": "Shelly TRV ventil",
+      "model_somfy": "Somfy io ventil",
       "duration": "Trajanje",
       "dur_default": "Podrazumevano",
       "resume": "Nazad na raspored"
@@ -34238,6 +37324,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
     atlantic_io: 'data:image/webp;base64,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',
     atlantic_io2: 'data:image/webp;base64,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',
     somfy: 'data:image/webp;base64,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',
+    vitotrol: 'data:image/webp;base64,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',
   };
   // anneaux lumineux de la Netatmo 1re génération, affichés seulement en chauffe (calque posé sur la photo)
   const RING = 'data:image/webp;base64,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';
@@ -34293,6 +37380,26 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       <g fill="none" stroke="#222" stroke-width="2.2">${[113, 213, 313].map((x) => `<circle cx="${x}" cy="302" r="22"/>`).join('')}
         <path d="M103 302 h20 M303 302 h20 M313 292 v20 M203 294 h20 M203 302 h20 M203 310 h20"/></g>
       ${SNOW(130, 103, 20, '#1e88e5')}` },
+    // Viessmann Vitotrol 200 (RF / E) : thermostat d'ambiance mural à écran LCD gris (photo détourée, écran redessiné en direct).
+    // En grand la consigne, en petit la température mesurée ; date et heure de l'appareil, flamme en chauffe.
+    vitotrol: { w: 445, h: 308, big: 'target', nodeg: true, dec: true, glow: [222, 154, 240, 170], svg: () => `
+      <rect x="49" y="46" width="229" height="150" fill="url(#tvvit)"/>
+      <g style="fill:none" stroke="#16181b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M57 56 h9 a3 3 0 0 1 3 3 v2 M60 56 v-2"/><path d="M80 53.5 v10 M84 53.5 v10 M88 53.5 v10 M92 53.5 v10 M96 53.5 v10"/>
+        <path d="M218 54 l-4 5 l4 5 M270 54 l4 5 l-4 5"/><path d="M53 71 h221" stroke-width="1.2"/>
+        <circle cx="64" cy="94" r="3.6" fill="#16181b"/><path d="M64 80 v14" stroke-width="3"/>
+        <path d="M140 152 V108 L188 94 L240 108" stroke-width="2.4"/>
+        <path d="M243 126 l3 -3 l3 3 M243 136 l3 3 l3 -3" stroke-width="1.6"/>
+        <circle cx="253" cy="178" r="5.5" stroke-width="1.2"/><path d="M253 175 v3.4 l2.4 1.4" stroke-width="1.1"/></g>
+      <text class="tv-lcd" x="69" y="86" font-size="7">3</text>
+      <text class="tv-lcd" x="244" y="63" text-anchor="middle" font-size="11.5" font-weight="500">HK1</text>
+      ${FLAME(106, 52, 13, '#16181b')}
+      <text class="tv-lcd" id="tvsmall" x="72" y="136" font-size="17" font-weight="500">--</text>
+      <text class="tv-lcd tv-big" id="tvbig" x="205" y="136" text-anchor="end" font-size="23" font-weight="500">--</text>
+      <text class="tv-lcd" id="tvunit" x="206" y="136" font-size="23" font-weight="500">°C</text>
+      <text class="tv-lcd" id="tvdate" x="62" y="182" font-size="9.5"></text>
+      <text class="tv-lcd" id="tvclock" x="245" y="182" text-anchor="end" font-size="9.5"></text>
+      ${SNOW(86, 160, 14, '#1e88e5')}` },
     // tête classique générique (dessin vectoriel) : cylindre blanc, petit écran, anneau LED orange en chauffe, écrou chromé
     classic: { w: 240, h: 400, mw: 130, big: 'target', glow: [120, 190, 150, 220], svg: () => `
       <defs><linearGradient id="tvclb" x1="0" x2="1"><stop offset="0" stop-color="#cfd3d8"/><stop offset=".18" stop-color="#f4f5f7"/><stop offset=".45" stop-color="#ffffff"/><stop offset=".8" stop-color="#e6e9ec"/><stop offset="1" stop-color="#bfc4ca"/></linearGradient>
@@ -34414,7 +37521,8 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
 .modes button.on[data-m="heat"]{background:color-mix(in srgb,var(--tv-heat) 22%,transparent);color:var(--tv-heat)}
 .modes button:disabled{opacity:.35;cursor:default}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -34474,6 +37582,7 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
     <radialGradient id="tvnesth" cx=".5" cy=".42" r=".65"><stop offset="0" stop-color="#ff8a2a"/><stop offset="1" stop-color="#c2410c"/></radialGradient>
     <linearGradient id="tvface" x1="0" x2="1"><stop offset="0" stop-color="#e8e7ec"/><stop offset="1" stop-color="#dedde2"/></linearGradient>
     <linearGradient id="tvlcd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0e8f1"/><stop offset="1" stop-color="#d0dbea"/></linearGradient>
+    <linearGradient id="tvvit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a4a4a4"/><stop offset="1" stop-color="#8f8f8f"/></linearGradient>
     <linearGradient id="tvplate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f7f8"/><stop offset="1" stop-color="#dfe3e7"/></linearGradient>
     <radialGradient id="tvbody" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#f1f3f5"/><stop offset="1" stop-color="#dde1e5"/></radialGradient>
     <radialGradient id="tvbht" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#1b1f26"/><stop offset="1" stop-color="#05070a"/></radialGradient>
@@ -34609,6 +37718,7 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       const bigTxt = k.dead ? '--' : k.off && big === 'target' ? 'OFF' : bigTarget ? tgt : now;
       const bigEl = r.getElementById('tvbig');
       bigEl.textContent = M.nodeg ? bigTxt.replace(/°$/, '') : bigTxt;
+      const unitEl = r.getElementById('tvunit'); if (unitEl) unitEl.setAttribute('display', /\d/.test(bigEl.textContent) ? '' : 'none');
       // écran étroit (photo) : « 21,5° » est resserré dans la largeur des chiffres d'origine
       if (M.fit && bigEl.textContent.length > M.fit[0]) { bigEl.setAttribute('textLength', String(M.fit[1])); bigEl.setAttribute('lengthAdjust', 'spacingAndGlyphs'); } else bigEl.removeAttribute('textLength');
       const dte = r.getElementById('tvdate');
@@ -34737,6 +37847,7 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_temperature', 'sensor'), ent('entity_window', ['binary_sensor', 'input_boolean']), ent('entity_humidity', 'sensor'), ent('entity_battery', ['sensor', 'binary_sensor']), ent('entity_valve_position', ['sensor', 'number']),
         { type: 'grid', name: '', schema: [{ name: 'override', selector: { boolean: {} } }, { name: 'override_durations', selector: { object: {} } }] },
         { type: 'grid', name: '', schema: [{ name: 'header', selector: { select: { mode: 'dropdown', options: ['name', 'icon', 'both'] } } }, { name: 'icon', selector: { icon: {} } }] },
@@ -34923,6 +38034,82 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "previous": "Předchozí období",
       "fan_mode": "Režim ventilátoru",
       "preset_mode": "Předvolba"
+    },
+    "da": {
+      "name": "Indeklima",
+      "comfort": "Behageligt",
+      "cool": "Køligt",
+      "warm": "Varmt",
+      "humid": "Fugtigt",
+      "dry": "Tørt",
+      "unavailable": "Utilgængelig",
+      "too_hot": "For varmt",
+      "too_cold": "For koldt",
+      "too_humid": "For fugtigt",
+      "too_dry": "For tørt",
+      "mold_risk": "Skimmelrisiko",
+      "condensation_risk": "Risiko for kondens",
+      "ventilate": "Luft ud",
+      "air_dry": "udeluften indeholder mindre vand (absolut fugtighed)",
+      "air_cool": "udeluften er køligere",
+      "window_open": "Vindue åbent",
+      "window_guess": "Vindue åbent? (pludseligt temperaturfald)",
+      "window_drop_note": "Vindue åbent? −{n}° på 15 min",
+      "battery_low": "Lavt batteri",
+      "outdoor": "Ude",
+      "dew_point": "Dugpunkt",
+      "dew_point_room": "Dugpunkt i rummet",
+      "trend_1h": "Ændring den seneste time",
+      "stable": "stabil",
+      "history": "Historik",
+      "close": "Luk",
+      "both": "Begge",
+      "temperature": "Temperatur",
+      "humidity": "Luftfugtighed",
+      "h24": "24 t",
+      "d7": "7 dage",
+      "d30": "30 dage",
+      "current": "Nu",
+      "average": "Gennemsnit",
+      "min": "Min",
+      "max": "Maks",
+      "loading": "Indlæser…",
+      "no_history": "Ingen historik tilgængelig",
+      "ideal_zone": "Ideel zone",
+      "avg_short": "Gns.",
+      "indoor": "Inde",
+      "st_standard": "Standard",
+      "st_gauge": "Måler",
+      "st_gradient": "Farveforløb",
+      "st_minimal": "Minimal",
+      "st_lcd": "Vejrstation",
+      "st_tile": "Miniflise",
+      "st_thermometer": "Stort termometer",
+      "st_gradient_ring": "Ring med farveforløb",
+      "st_double_ring": "Dobbelt ring",
+      "st_dial": "Viserskive",
+      "st_neon": "Neon",
+      "st_netatmo": "Netatmo",
+      "st_nest": "Google Nest",
+      "heating_now": "Varmer",
+      "st_bars": "Søjler",
+      "lcd_auto": "Automatisk (grøn om dagen, blå i mørk tilstand)",
+      "lcd_green": "Grøn",
+      "lcd_blue": "Blå",
+      "lcd_amber": "Rav",
+      "tap_history": "Historik-pop-up",
+      "tap_more_info": "Entitetsdetaljer",
+      "tap_navigate": "Åbn en side",
+      "tap_none": "Intet",
+      "target": "Mål",
+      "thermostat_off": "Termostat slukket",
+      "heating": "varmer",
+      "cooling": "køler",
+      "compare": "Sammenlign",
+      "yesterday": "I går",
+      "previous": "Forrige periode",
+      "fan_mode": "Ventilatortilstand",
+      "preset_mode": "Forvalg"
     },
     "de": {
       "name": "Raumklima",
@@ -37251,6 +40438,39 @@ ha-card.st-neon{background:#07080c;--ha-card-border-color:#000;color:#fff}
       "model_standard": "Standardní schránka",
       "model_boks": "BOKS (box na balíky)"
     },
+    "da": {
+      "name": "Postkasse",
+      "empty": "Tom",
+      "mail": "Post",
+      "parcel": "Pakke",
+      "both": "Post + pakke",
+      "open": "Låge åben",
+      "door_front": "Forside",
+      "door_back": "Bagside",
+      "open_front": "Forreste låge åben",
+      "open_back": "Bagerste låge åben",
+      "open_both": "Låger åbne",
+      "closed": "Lukket",
+      "open_short": "Åben",
+      "unavailable": "Utilgængelig",
+      "collect": "Marker som tømt",
+      "last": "Leveret",
+      "count": "Breve",
+      "battery": "Batteri",
+      "color_anthracite": "Antracit",
+      "color_black": "Sort",
+      "color_grey": "Grå",
+      "color_white": "Hvid",
+      "color_green": "Grøn",
+      "color_red": "Rød",
+      "color_blue": "Blå",
+      "color_yellow": "Gul",
+      "color_brown": "Brun",
+      "open_door": "Åbn lågen",
+      "last_open": "Senest åbnet",
+      "model_standard": "Almindelig postkasse",
+      "model_boks": "BOKS (pakkeboks)"
+    },
     "de": {
       "name": "Briefkasten",
       "empty": "Leer",
@@ -37687,7 +40907,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button:disabled{opacity:.5;cursor:default}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -38003,6 +41224,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_mail', ['binary_sensor', 'input_boolean', 'sensor', 'switch', 'counter', 'input_number', 'input_select', 'input_text', 'event']),
         ent('entity_parcel', ['binary_sensor', 'input_boolean', 'sensor', 'switch', 'counter', 'input_number']),
         ent('entity_door', ['binary_sensor', 'input_boolean', 'cover', 'lock']),
@@ -38105,6 +41327,37 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       "level": "Koncentrace plynu",
       "open_valve": "Otevřít ventil",
       "close_valve": "Zavřít ventil"
+    },
+    "da": {
+      "name": "Røgalarm",
+      "ok": "OK",
+      "alarm": "Røg!",
+      "co": "Kulilte",
+      "test": "Test",
+      "fault": "Fejl",
+      "low_battery": "Lavt batteri",
+      "unavailable": "Utilgængelig",
+      "alarm_at": "Røg registreret kl. {t}",
+      "co_ppm": "Kulilte: {n} ppm, luft ud!",
+      "co_detected": "Kulilte registreret, luft ud!",
+      "co_detected_short": "Registreret",
+      "fault_detail": "Detektoren melder fejl",
+      "test_button": "Test",
+      "silence": "Slå alarm fra",
+      "since": "Seneste ændring",
+      "alarm_tile": "Alarm",
+      "co_level": "CO",
+      "battery": "Batteri",
+      "temperature": "Temperatur",
+      "low": "Lav",
+      "model_cylinder": "Kompakt cylinder",
+      "model_round": "Rund",
+      "gas_name": "Gasalarm",
+      "gas_alarm": "Gas!",
+      "gas_alarm_at": "Gas registreret kl. {t}",
+      "level": "Gasniveau",
+      "open_valve": "Åbn ventil",
+      "close_valve": "Luk ventil"
     },
     "de": {
       "name": "Rauchmelder",
@@ -38506,7 +41759,8 @@ svg{display:block;width:100%;max-width:calc(200px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button.red{background:color-mix(in srgb,var(--sd-alert) 25%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -38779,6 +42033,7 @@ svg{display:block;width:100%;max-width:calc(200px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_smoke', ['binary_sensor', 'sensor', 'input_boolean', 'switch', 'event']),
         ent('entity_co', ['binary_sensor', 'sensor']),
         { name: 'co_threshold', default: 50, selector: { number: { min: 1, max: 1000, step: 1, mode: 'box', unit_of_measurement: 'ppm' } } },
@@ -38885,6 +42140,37 @@ svg{display:block;width:100%;max-width:calc(200px * var(--illus-scale,1));height
       "ok": "OK",
       "door": "Dveře",
       "since": "Od"
+    },
+    "da": {
+      "name": "Smart lås",
+      "model_nuki_3_pro": "Nuki Smart Lock 3.0 Pro",
+      "model_nuki_pro_5": "Nuki Smart Lock Pro (5. gen.)",
+      "locked": "Låst",
+      "unlocked": "Ulåst",
+      "locking": "Låser",
+      "unlocking": "Låser op",
+      "open": "Falden åben",
+      "opening": "Åbner falden",
+      "jammed": "Blokeret",
+      "unknown": "Ukendt",
+      "unavailable": "Utilgængelig",
+      "door_open": "Dør åben",
+      "door_closed": "Lukket",
+      "door_opened": "Åben",
+      "jammed_detail": "Motoren er blokeret: tjek døren og nøglen",
+      "battery_critical": "Batteriet er kritisk lavt: skift eller oplad det",
+      "btn_lock": "Lås",
+      "btn_unlock": "Lås op",
+      "btn_open": "Åbn fallen",
+      "btn_confirm": "Bekræft?",
+      "btn_lock_n_go": "Lock 'n' Go",
+      "btn_lock_n_go_unlatch": "Lock 'n' Go + åbn fallen",
+      "battery": "Batteri",
+      "charging": "Oplader",
+      "critical": "Kritisk",
+      "ok": "OK",
+      "door": "Dør",
+      "since": "Siden"
     },
     "de": {
       "name": "Smartes Schloss",
@@ -39292,7 +42578,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button.on{background:color-mix(in srgb,var(--sl-c) 28%,var(--secondary-background-color))}
 .ctl button.confirm{background:color-mix(in srgb,var(--sl-cold) 35%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -39595,6 +42882,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', 'lock'),
         ent('entity_unlatch', ['button', 'input_button', 'script']),
         ent('entity_lock_n_go', ['button', 'input_button', 'script']),
@@ -39658,6 +42946,30 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "on": "On",
       "off": "Off",
       "low": "Low",
+      "ok": "OK"
+    },
+    "da": {
+      "name": "Kattelem",
+      "mode_unlocked": "Åben",
+      "mode_locked_all": "Låst",
+      "mode_locked_in": "Kun ind",
+      "mode_locked_out": "Kun ud",
+      "mode_curfew": "Udgangsforbud",
+      "mode_unknown": "Ukendt",
+      "mode_unavailable": "Utilgængelig",
+      "curfew": "Udgangsforbud",
+      "inside": "Inde",
+      "outside": "Ude",
+      "unknown": "Ukendt",
+      "went_in": "{n} kom ind",
+      "went_out": "{n} gik ud",
+      "intruder_detail": "Ukendt dyr ved lemmen",
+      "battery_low": "Lavt batteri: skift batterierne",
+      "battery": "Batteri",
+      "since": "Seneste passage",
+      "on": "Til",
+      "off": "Fra",
+      "low": "Lav",
       "ok": "OK"
     },
     "de": {
@@ -39851,6 +43163,54 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "off": "Wył.",
       "low": "Niski",
       "ok": "OK"
+    },
+    "sr": {
+      "name": "Вратанца за мачке",
+      "mode_unlocked": "Отворено",
+      "mode_locked_all": "Закључано",
+      "mode_locked_in": "Само улаз",
+      "mode_locked_out": "Само излаз",
+      "mode_curfew": "Полицијски час",
+      "mode_unknown": "Непознато",
+      "mode_unavailable": "Недоступно",
+      "curfew": "Полицијски час",
+      "inside": "Унутра",
+      "outside": "Напољу",
+      "unknown": "Непознато",
+      "went_in": "{n} ушла",
+      "went_out": "{n} изашла",
+      "intruder_detail": "Непозната животиња код вратанца",
+      "battery_low": "Слаба батерија: замените батерије",
+      "battery": "Батерија",
+      "since": "Последњи пролаз",
+      "on": "Укључено",
+      "off": "Искључено",
+      "low": "Ниско",
+      "ok": "У реду"
+    },
+    "sr-Latn": {
+      "name": "Vratanca za mačke",
+      "mode_unlocked": "Otvoreno",
+      "mode_locked_all": "Zaključano",
+      "mode_locked_in": "Samo ulaz",
+      "mode_locked_out": "Samo izlaz",
+      "mode_curfew": "Policijski čas",
+      "mode_unknown": "Nepoznato",
+      "mode_unavailable": "Nedostupno",
+      "curfew": "Policijski čas",
+      "inside": "Unutra",
+      "outside": "Napolju",
+      "unknown": "Nepoznato",
+      "went_in": "{n} ušla",
+      "went_out": "{n} izašla",
+      "intruder_detail": "Nepoznata životinja kod vratanca",
+      "battery_low": "Slaba baterija: zamenite baterije",
+      "battery": "Baterija",
+      "since": "Poslednji prolaz",
+      "on": "Uključeno",
+      "off": "Isključeno",
+      "low": "Nisko",
+      "ok": "U redu"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -39899,7 +43259,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button:disabled{opacity:.4;cursor:default;filter:none}
 .ctl button.on{background:color-mix(in srgb,var(--cf-c) 28%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -40232,6 +43593,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['lock', 'select', 'input_select']),
         ent('entity_locked_in', 'lock'),
         ent('entity_locked_out', 'lock'),
@@ -40312,6 +43674,46 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "ok": "OK",
       "to_change": "To replace",
       "to_clean": "To clean"
+    },
+    "da": {
+      "name": "Drikkefontæne",
+      "state_flowing": "Løber",
+      "state_drinking": "Drikker",
+      "state_low": "Lavt vand",
+      "state_empty": "Tom",
+      "state_off": "Slukket",
+      "state_unavailable": "Utilgængelig",
+      "alert_empty": "Tanken er tom: fyld fontænen",
+      "alert_low": "Lavt vandniveau",
+      "alert_filter": "Skift filteret",
+      "alert_clean": "Rengøring er forfalden",
+      "battery_low": "Lavt batteri",
+      "btn_turn_on": "Tænd",
+      "btn_turn_off": "Sluk",
+      "btn_light": "Lys",
+      "btn_filter_reset": "Nulstil filter",
+      "btn_clean_reset": "Rengjort",
+      "btn_confirm": "Bekræft?",
+      "mode_continuous": "Konstant",
+      "mode_intermittent": "Med pauser",
+      "mode_sensor": "Sensor",
+      "mode_smart": "Smart",
+      "mode_normal": "Normal",
+      "mode_flowing": "Løbende",
+      "mode_night": "Nat",
+      "mode_eco": "Eco",
+      "level": "Vand",
+      "filter": "Filter",
+      "today": "I dag",
+      "drink": "Seneste drik",
+      "clean": "Rengøring",
+      "power": "Effekt",
+      "battery": "Batteri",
+      "days": "d",
+      "low": "Lav",
+      "ok": "OK",
+      "to_change": "Skal skiftes",
+      "to_clean": "Skal rengøres"
     },
     "de": {
       "name": "Trinkbrunnen",
@@ -40632,6 +44034,86 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "ok": "OK",
       "to_change": "Do wymiany",
       "to_clean": "Do wyczyszczenia"
+    },
+    "sr": {
+      "name": "Фонтана за љубимце",
+      "state_flowing": "Тече",
+      "state_drinking": "Пије",
+      "state_low": "Мало воде",
+      "state_empty": "Празно",
+      "state_off": "Искључено",
+      "state_unavailable": "Недоступно",
+      "alert_empty": "Резервоар је празан: допуните фонтану",
+      "alert_low": "Низак ниво воде",
+      "alert_filter": "Замените филтер",
+      "alert_clean": "Потребно чишћење",
+      "battery_low": "Слаба батерија",
+      "btn_turn_on": "Укључи",
+      "btn_turn_off": "Искључи",
+      "btn_light": "Светло",
+      "btn_filter_reset": "Ресетуј филтер",
+      "btn_clean_reset": "Очишћено",
+      "btn_confirm": "Потврди?",
+      "mode_continuous": "Непрекидно",
+      "mode_intermittent": "Повремено",
+      "mode_sensor": "Сензор",
+      "mode_smart": "Паметни",
+      "mode_normal": "Нормално",
+      "mode_flowing": "Проток",
+      "mode_night": "Ноћни",
+      "mode_eco": "Еко",
+      "level": "Вода",
+      "filter": "Филтер",
+      "today": "Данас",
+      "drink": "Последње пијење",
+      "clean": "Чишћење",
+      "power": "Снага",
+      "battery": "Батерија",
+      "days": "д",
+      "low": "Ниско",
+      "ok": "У реду",
+      "to_change": "За замену",
+      "to_clean": "За чишћење"
+    },
+    "sr-Latn": {
+      "name": "Fontana za ljubimce",
+      "state_flowing": "Teče",
+      "state_drinking": "Pije",
+      "state_low": "Malo vode",
+      "state_empty": "Prazno",
+      "state_off": "Isključeno",
+      "state_unavailable": "Nedostupno",
+      "alert_empty": "Rezervoar je prazan: dopunite fontanu",
+      "alert_low": "Nizak nivo vode",
+      "alert_filter": "Zamenite filter",
+      "alert_clean": "Potrebno čišćenje",
+      "battery_low": "Slaba baterija",
+      "btn_turn_on": "Uključi",
+      "btn_turn_off": "Isključi",
+      "btn_light": "Svetlo",
+      "btn_filter_reset": "Resetuj filter",
+      "btn_clean_reset": "Očišćeno",
+      "btn_confirm": "Potvrdi?",
+      "mode_continuous": "Neprekidno",
+      "mode_intermittent": "Povremeno",
+      "mode_sensor": "Senzor",
+      "mode_smart": "Pametni",
+      "mode_normal": "Normalno",
+      "mode_flowing": "Protok",
+      "mode_night": "Noćni",
+      "mode_eco": "Eko",
+      "level": "Voda",
+      "filter": "Filter",
+      "today": "Danas",
+      "drink": "Poslednje pijenje",
+      "clean": "Čišćenje",
+      "power": "Snaga",
+      "battery": "Baterija",
+      "days": "d",
+      "low": "Nisko",
+      "ok": "U redu",
+      "to_change": "Za zamenu",
+      "to_clean": "Za čišćenje"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -40660,7 +44142,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button.on{background:color-mix(in srgb,var(--pf-cold) 28%,var(--secondary-background-color))}
 .ctl button.confirm{background:color-mix(in srgb,var(--pf-warn) 35%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -40996,6 +44479,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['switch', 'input_boolean', 'binary_sensor', 'sensor']),
         ent('entity_water_level', ['sensor', 'input_number']),
         ent('entity_low_water', 'binary_sensor'),
@@ -41091,6 +44575,31 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "temperature": "Teplota",
       "humidity": "Vlhkost",
       "low": "Slabá",
+      "ok": "OK"
+    },
+    "da": {
+      "name": "Lækagesensor",
+      "dry": "Tør",
+      "leak": "Lækage!",
+      "leak_valve_closed": "Lækage, ventil lukket",
+      "freeze": "Frostrisiko",
+      "low_battery": "Lavt batteri",
+      "unavailable": "Utilgængelig",
+      "leak_at": "Vand registreret kl. {t}",
+      "leak_where": "Lækage: {names}",
+      "water_off": "vandforsyningen er lukket",
+      "freeze_alert": "Frostrisiko: beskyt rørene",
+      "open_valve": "Åbn ventil",
+      "close_valve": "Luk ventil",
+      "silence": "Slå sirene fra",
+      "since": "Seneste ændring",
+      "leak_tile": "Lækage",
+      "probes": "Sonder",
+      "battery": "Batteri",
+      "battery_min": "Laveste batteri",
+      "temperature": "Temperatur",
+      "humidity": "Luftfugtighed",
+      "low": "Lav",
       "ok": "OK"
     },
     "de": {
@@ -41351,7 +44860,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "freeze": "Ризик од смрзавања",
       "low_battery": "Слаба батерија",
       "unavailable": "Недоступно",
-      "leak_at": "Вода откривена у {t}",
+      "leak_at": "Вода детектована у {t}",
       "leak_where": "Цурење: {names}",
       "water_off": "довод воде искључен",
       "freeze_alert": "Ризик од смрзавања: заштитите цеви",
@@ -41362,10 +44871,10 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "leak_tile": "Цурење",
       "probes": "Сонде",
       "battery": "Батерија",
-      "battery_min": "Најслабија батерија",
+      "battery_min": "Најнижа батерија",
       "temperature": "Температура",
       "humidity": "Влажност",
-      "low": "Слаба",
+      "low": "Ниско",
       "ok": "У реду"
     },
     "sr-Latn": {
@@ -41376,7 +44885,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "freeze": "Rizik od smrzavanja",
       "low_battery": "Slaba baterija",
       "unavailable": "Nedostupno",
-      "leak_at": "Voda otkrivena u {t}",
+      "leak_at": "Voda detektovana u {t}",
       "leak_where": "Curenje: {names}",
       "water_off": "dovod vode isključen",
       "freeze_alert": "Rizik od smrzavanja: zaštitite cevi",
@@ -41387,10 +44896,10 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "leak_tile": "Curenje",
       "probes": "Sonde",
       "battery": "Baterija",
-      "battery_min": "Najslabija baterija",
+      "battery_min": "Najniža baterija",
       "temperature": "Temperatura",
       "humidity": "Vlažnost",
-      "low": "Slaba",
+      "low": "Nisko",
       "ok": "U redu"
     }
   };
@@ -41421,7 +44930,8 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button.red{background:color-mix(in srgb,var(--lk-alert) 25%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -41648,6 +45158,7 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_leak', ['binary_sensor', 'sensor', 'input_boolean'], true),
         ent('entity_valve', ['valve', 'switch', 'input_boolean']),
         ent('entity_siren', ['siren', 'switch', 'input_boolean', 'button', 'script']),
@@ -41703,6 +45214,8 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "uptime": "Uptime",
       "model_minisforum_x1": "Minisforum X1 (mini PC)",
       "model_mac_mini": "Mac mini",
+      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
+      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
       "model_bmax_b9": "BMAX B9 Max (mini PC)",
       "model_home_assistant_green": "Home Assistant Green",
       "power": "Power",
@@ -41731,6 +45244,34 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "overheating": "Přehřívání",
       "disk_full": "Disk téměř plný",
       "ram_full": "Paměť je plná",
+      "d": "d"
+    },
+    "da": {
+      "name": "Mini-PC",
+      "off": "Slukket",
+      "idle": "Inaktiv",
+      "running": "Kører",
+      "busy": "Travl",
+      "hot": "Overophedet",
+      "unavailable": "Utilgængelig",
+      "cpu": "CPU",
+      "temp": "CPU-temp.",
+      "ram": "RAM",
+      "disk": "Disk",
+      "down": "Download",
+      "up": "Upload",
+      "uptime": "Oppetid",
+      "model_minisforum_x1": "Minisforum X1 (mini-PC)",
+      "model_mac_mini": "Mac mini",
+      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
+      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
+      "model_bmax_b9": "BMAX B9 Max (mini-PC)",
+      "model_home_assistant_green": "Home Assistant Green",
+      "power": "Effekt",
+      "energy": "Energi",
+      "overheating": "Overophedning",
+      "disk_full": "Disken er næsten fuld",
+      "ram_full": "Hukommelsen er fuld",
       "d": "d"
     },
     "de": {
@@ -41771,6 +45312,8 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "uptime": "Tiempo en marcha",
       "model_minisforum_x1": "Minisforum X1 (mini PC)",
       "model_mac_mini": "Mac mini",
+      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
+      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
       "model_bmax_b9": "BMAX B9 Max (mini PC)",
       "model_home_assistant_green": "Home Assistant Green",
       "power": "Potencia",
@@ -41953,32 +45496,37 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "d": "д"
     },
     "sr": {
-      "name": "Мини рачунар",
-      "off": "Искључен",
-      "idle": "Мирује",
-      "running": "Ради",
-      "busy": "Оптерећен",
+      "name": "Мини PC",
+      "off": "Искључено",
+      "idle": "У мировању",
+      "running": "У раду",
+      "busy": "Заузето",
       "hot": "Прегревање",
       "unavailable": "Недоступно",
-      "cpu": "ЦПУ",
-      "temp": "Темп. ЦПУ",
-      "ram": "РАМ",
+      "cpu": "CPU",
+      "temp": "Темп. CPU",
+      "ram": "RAM",
       "disk": "Диск",
       "down": "Преузимање",
-      "up": "Отпремање",
+      "up": "Слање",
       "uptime": "Време рада",
+      "model_minisforum_x1": "Minisforum X1 (мини PC)",
+      "model_mac_mini": "Mac mini",
+      "model_bmax_b9": "BMAX B9 Max (мини PC)",
+      "model_home_assistant_green": "Home Assistant Green",
       "power": "Снага",
+      "energy": "Енергија",
       "overheating": "Прегревање",
       "disk_full": "Диск је скоро пун",
       "ram_full": "Меморија је пуна",
       "d": "д"
     },
     "sr-Latn": {
-      "name": "Mini računar",
-      "off": "Isključen",
-      "idle": "Miruje",
-      "running": "Radi",
-      "busy": "Opterećen",
+      "name": "Mini PC",
+      "off": "Isključeno",
+      "idle": "U mirovanju",
+      "running": "U radu",
+      "busy": "Zauzeto",
       "hot": "Pregrevanje",
       "unavailable": "Nedostupno",
       "cpu": "CPU",
@@ -41986,9 +45534,14 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "ram": "RAM",
       "disk": "Disk",
       "down": "Preuzimanje",
-      "up": "Otpremanje",
+      "up": "Slanje",
       "uptime": "Vreme rada",
+      "model_minisforum_x1": "Minisforum X1 (mini PC)",
+      "model_mac_mini": "Mac mini",
+      "model_bmax_b9": "BMAX B9 Max (mini PC)",
+      "model_home_assistant_green": "Home Assistant Green",
       "power": "Snaga",
+      "energy": "Energija",
       "overheating": "Pregrevanje",
       "disk_full": "Disk je skoro pun",
       "ram_full": "Memorija je puna",
@@ -42024,6 +45577,18 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       heat: ['M110 58 q-4 -6 0 -12 t0 -12', 'M150 56 q-4 -6 0 -12 t0 -12', 'M190 58 q-4 -6 0 -12 t0 -12'],
       air: ['M44 96 C 34 94 24 98 14 94', 'M44 108 C 34 106 24 110 14 106', 'M44 120 C 34 118 24 122 14 118'],
       pwr: null, led: [224, 106] },
+    // lenovo_m720s : photo détourée du ThinkCentre M720s SFF (tour fine, vue de trois quarts), bouton rond en haut de la façade, voyant juste dessous
+    lenovo_m720s: { img: 'data:image/webp;base64,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', x: 100, y: 14, w: 80.7, h: 152, aura: [140, 90, 70, 85], shadow: [140, 168, 50, 6],
+      cable: 'M178 44 C 204 44 214 34 214 20', cableRev: 'M214 20 C 214 34 204 44 178 44',
+      heat: ['M122 14 q-3 -4 0 -7 t0 -7', 'M140 14 q-3 -4 0 -7 t0 -7', 'M158 14 q-3 -4 0 -7 t0 -7'],
+      air: ['M98 110 C 88 108 78 112 68 108', 'M98 122 C 88 120 78 124 68 120', 'M98 134 C 88 132 78 136 68 132', 'M98 146 C 88 144 78 148 68 144'],
+      pwr: [127.6, 24.6, 3.2], led: [126.5, 30.1] },
+    // lenovo_m920q : photo détourée du ThinkCentre M920q Tiny (1 litre, vue de face debout), gros bouton rond en haut, voyant dessous
+    lenovo_m920q: { img: 'data:image/webp;base64,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', x: 135, y: 15, w: 30.3, h: 150, aura: [150, 90, 50, 80], shadow: [150, 168, 30, 5],
+      cable: 'M166 50 C 196 50 214 40 214 20', cableRev: 'M214 20 C 214 40 196 50 166 50',
+      heat: ['M142 16 q-3 -4 0 -7 t0 -7', 'M150 16 q-3 -4 0 -7 t0 -7', 'M158 16 q-3 -4 0 -7 t0 -7'],
+      air: ['M133 100 C 123 98 113 102 103 98', 'M133 112 C 123 110 113 114 103 110', 'M133 124 C 123 122 113 126 103 122', 'M133 136 C 123 134 113 138 103 134'],
+      pwr: [146.1, 27.5, 4.7], led: [146.1, 37.2] },
     // home_assistant_green : photo détourée (capot transparent sur radiateur à ailettes), pas de bouton : voyant à l'angle avant
     home_assistant_green: { img: 'data:image/webp;base64,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', x: 24, y: 40, w: 200, h: 113, aura: [124, 100, 118, 62], shadow: [124, 154, 100, 6],
       cable: 'M220 72 C 240 58 238 26 222 16', cableRev: 'M222 16 C 238 26 240 58 220 72',
@@ -42047,7 +45612,8 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
 .alert.on{display:block}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -42366,6 +45932,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         { name: 'model', selector: { select: { mode: 'dropdown', options: Object.keys(MODELS).map((value) => ({ value, label: tr[`model_${value}`] || T.en[`model_${value}`] || value })) } } },
         ent('entity'), ent('entity_cpu', 'sensor'), ent('entity_cpu_temp', 'sensor'), ent('entity_ram', 'sensor'), ent('entity_disk', 'sensor'),
         ent('entity_net_down', 'sensor'), ent('entity_net_up', 'sensor'), ent('entity_uptime', 'sensor'), ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
@@ -42473,6 +46040,48 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "volume_full": "Svazek téměř plný",
       "security": "Varování zabezpečení",
       "update": "⬆ K dispozici aktualizace DSM"
+    },
+    "da": {
+      "name": "NAS",
+      "off": "Slukket",
+      "idle": "Inaktiv",
+      "running": "Kører",
+      "busy": "Aktiv",
+      "warning": "Advarsel",
+      "unavailable": "Utilgængelig",
+      "volume": "Volumen",
+      "free": "Ledig plads",
+      "go": "GB",
+      "to": "TB",
+      "uptime": "Oppetid",
+      "d": "d",
+      "cpu": "CPU",
+      "ram": "RAM",
+      "temp": "Temperatur",
+      "disks": "Diske",
+      "disk": "Disk",
+      "down": "Download",
+      "up": "Upload",
+      "power": "Effekt",
+      "volume_alert": "Volumen degraderet",
+      "drive_alert": "Disk {n}: problem",
+      "hot": "Overophedning",
+      "volume_full": "Volumen næsten fuld",
+      "security": "Sikkerhedsadvarsel",
+      "update": "⬆ DSM-opdatering tilgængelig",
+      "model_synology_ds423": "Synology DS423+ (4 båse)",
+      "model_synology_ds925": "Synology DS925+ (4 båse)",
+      "model_terramaster_f4_423": "TerraMaster F4-423 (4 båse)",
+      "model_terramaster_f4_425": "TerraMaster F4-425 (4 båse)",
+      "model_terramaster_f6_424": "TerraMaster F6-424 (6 båse)",
+      "model_qnap_ts251": "QNAP TS-251+ (2 båse)",
+      "model_qnap_ts253": "QNAP TS-253 (2 båse)",
+      "model_synology_ds224": "Synology DS224+ (2 båse)",
+      "model_ugreen_dxp4800_plus": "UGREEN DXP4800 Plus (4 båse)",
+      "model_ugreen_idx6011_pro": "UGREEN iDX6011 Pro (6 båse)",
+      "parity_alert": "Paritet ugyldig",
+      "flash_alert": "USB-flash: problem",
+      "nvme_alert": "SSD {n}: problem"
     },
     "de": {
       "name": "NAS",
@@ -42804,41 +46413,58 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     },
     "sr": {
       "name": "NAS",
-      "off": "Искључен",
-      "idle": "Мирује",
-      "running": "Ради",
+      "off": "Искључено",
+      "idle": "У мировању",
+      "running": "У раду",
       "busy": "Активан",
       "warning": "Упозорење",
       "unavailable": "Недоступно",
       "volume": "Волумен",
       "free": "Слободан простор",
+      "go": "GB",
+      "to": "TB",
       "uptime": "Време рада",
       "d": "д",
-      "cpu": "ЦПУ",
-      "ram": "РАМ",
+      "cpu": "CPU",
+      "ram": "RAM",
       "temp": "Температура",
       "disks": "Дискови",
       "disk": "Диск",
       "down": "Преузимање",
-      "up": "Отпремање",
+      "up": "Слање",
       "power": "Снага",
       "volume_alert": "Волумен је деградиран",
       "drive_alert": "Диск {n}: проблем",
       "hot": "Прегревање",
       "volume_full": "Волумен је скоро пун",
       "security": "Безбедносно упозорење",
-      "update": "⬆ Доступно ажурирање DSM"
+      "update": "⬆ Доступно ажурирање за DSM",
+      "model_synology_ds423": "Synology DS423+ (4 лежишта)",
+      "model_synology_ds925": "Synology DS925+ (4 лежишта)",
+      "model_terramaster_f4_423": "TerraMaster F4-423 (4 лежишта)",
+      "model_terramaster_f4_425": "TerraMaster F4-425 (4 лежишта)",
+      "model_terramaster_f6_424": "TerraMaster F6-424 (6 лежишта)",
+      "model_qnap_ts251": "QNAP TS-251+ (2 лежишта)",
+      "model_qnap_ts253": "QNAP TS-253 (2 лежишта)",
+      "model_synology_ds224": "Synology DS224+ (2 лежишта)",
+      "model_ugreen_dxp4800_plus": "UGREEN DXP4800 Plus (4 лежишта)",
+      "model_ugreen_idx6011_pro": "UGREEN iDX6011 Pro (6 лежишта)",
+      "parity_alert": "Паритет није исправан",
+      "flash_alert": "USB флеш: проблем",
+      "nvme_alert": "SSD {n}: проблем"
     },
     "sr-Latn": {
       "name": "NAS",
-      "off": "Isključen",
-      "idle": "Miruje",
-      "running": "Radi",
+      "off": "Isključeno",
+      "idle": "U mirovanju",
+      "running": "U radu",
       "busy": "Aktivan",
       "warning": "Upozorenje",
       "unavailable": "Nedostupno",
       "volume": "Volumen",
       "free": "Slobodan prostor",
+      "go": "GB",
+      "to": "TB",
       "uptime": "Vreme rada",
       "d": "d",
       "cpu": "CPU",
@@ -42847,14 +46473,27 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "disks": "Diskovi",
       "disk": "Disk",
       "down": "Preuzimanje",
-      "up": "Otpremanje",
+      "up": "Slanje",
       "power": "Snaga",
       "volume_alert": "Volumen je degradiran",
       "drive_alert": "Disk {n}: problem",
       "hot": "Pregrevanje",
       "volume_full": "Volumen je skoro pun",
       "security": "Bezbednosno upozorenje",
-      "update": "⬆ Dostupno ažuriranje DSM"
+      "update": "⬆ Dostupno ažuriranje za DSM",
+      "model_synology_ds423": "Synology DS423+ (4 ležišta)",
+      "model_synology_ds925": "Synology DS925+ (4 ležišta)",
+      "model_terramaster_f4_423": "TerraMaster F4-423 (4 ležišta)",
+      "model_terramaster_f4_425": "TerraMaster F4-425 (4 ležišta)",
+      "model_terramaster_f6_424": "TerraMaster F6-424 (6 ležišta)",
+      "model_qnap_ts251": "QNAP TS-251+ (2 ležišta)",
+      "model_qnap_ts253": "QNAP TS-253 (2 ležišta)",
+      "model_synology_ds224": "Synology DS224+ (2 ležišta)",
+      "model_ugreen_dxp4800_plus": "UGREEN DXP4800 Plus (4 ležišta)",
+      "model_ugreen_idx6011_pro": "UGREEN iDX6011 Pro (6 ležišta)",
+      "parity_alert": "Paritet nije ispravan",
+      "flash_alert": "USB fleš: problem",
+      "nvme_alert": "SSD {n}: problem"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -42878,7 +46517,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .info.on{display:block}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -43298,6 +46938,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         { name: 'model', selector: { select: { mode: 'dropdown', options: Object.keys(MODELS).map((value) => ({ value, label: tr[`model_${value}`] || value })) } } },
         ent('entity'), ent('entity_volume', 'sensor', true), ent('entity_volume_used', 'sensor', true), ent('entity_volume_free', 'sensor', true), ent('entity_cpu', 'sensor'), ent('entity_ram', 'sensor'), ent('entity_temp', 'sensor'),
         ent('entity_net_down', 'sensor'), ent('entity_net_up', 'sensor'), ent('entity_uptime', 'sensor'),
@@ -43359,6 +47000,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "play": "Play",
       "pause": "Pause",
       "previous": "Previous",
+      "source": "Next source",
       "next": "Next",
       "vol_down": "Volume down",
       "vol_up": "Volume up",
@@ -43387,6 +47029,29 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "vol_up": "Zesílit",
       "mute": "Ztlumit",
       "home": "Domů"
+    },
+    "da": {
+      "name": "TV-boks",
+      "off": "Slukket",
+      "standby": "Standby",
+      "idle": "Inaktiv",
+      "on": "Tændt",
+      "playing": "Afspiller",
+      "paused": "På pause",
+      "buffering": "Indlæser",
+      "unavailable": "Utilgængelig",
+      "app": "App",
+      "volume": "Lydstyrke",
+      "power": "Tænd/sluk",
+      "muted": "Lyd slået fra",
+      "play": "Afspil",
+      "pause": "Pause",
+      "previous": "Forrige",
+      "next": "Næste",
+      "vol_down": "Skru ned",
+      "vol_up": "Skru op",
+      "mute": "Slå lyd fra",
+      "home": "Hjem"
     },
     "de": {
       "name": "TV-Box",
@@ -43451,6 +47116,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "play": "Lecture",
       "pause": "Pause",
       "previous": "Précédent",
+      "source": "Source suivante",
       "next": "Suivant",
       "vol_down": "Volume −",
       "vol_up": "Volume +",
@@ -43710,7 +47376,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       led: '',
     },
   };
-  const BTN_KEYS = ['power', 'home', 'prev', 'play_pause', 'next', 'vol_down', 'mute', 'vol_up'];
+  const BTN_KEYS = ['power', 'home', 'prev', 'play_pause', 'next', 'source', 'vol_down', 'mute', 'vol_up'];
   const ALIAS = { firetvstickgen1: 'fire_tv_stick_gen1', firetvgen1: 'fire_tv_stick_gen1', firetv: 'fire_tv_stick', firetvstick: 'fire_tv_stick', amazonfiretv: 'fire_tv_stick', orange: 'orange_tv', orangetv: 'orange_tv', kaon: 'orange_tv', shield: 'shield_tv_pro', shieldtvpro: 'shield_tv_pro', xiaomi: 'xiaomi_tv_box_s', xiaomitvboxs: 'xiaomi_tv_box_s', mibox: 'xiaomi_tv_box_s', freebox: 'freebox_pop', freeboxpop: 'freebox_pop', playerpop: 'freebox_pop', googletv: 'google_tv', chromecast: 'google_tv', googletvstreamer: 'google_tv_streamer', tvstreamer: 'google_tv_streamer' };
   const modelKey = (m) => { const k = String(m || '').toLowerCase(); if (MODELS[k]) return k; const n = k.replace(/[^a-z0-9]/g, ''); return ALIAS[n] || 'shield_tv_pro'; };
 
@@ -43724,7 +47390,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .on .badge,.idle .badge,.paused .badge{background:color-mix(in srgb,var(--tv-ok) 20%,transparent);color:var(--tv-ok)}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -43992,6 +47659,11 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       } else if (k === 'play_pause') call('media_play_pause');
       else if (k === 'prev') call('media_previous_track');
       else if (k === 'next') call('media_next_track');
+      else if (k === 'source') {
+        // source suivante dans source_list (HDMI 1 → HDMI 2 → …) ; select_source doit être géré par l'intégration
+        const list = Array.isArray(a.source_list) ? a.source_list : [];
+        if (list.length) call('select_source', { source: list[(list.indexOf(a.source) + 1) % list.length] });
+      }
       else if (k === 'mute') call('volume_mute', { is_volume_muted: !a.is_volume_muted });
       else if (k === 'home' && c.entity_remote) hass.callService('remote', 'send_command', { entity_id: c.entity_remote, command: 'HOME' });
       else if (k === 'vol_up' || k === 'vol_down') {
@@ -44040,6 +47712,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         ['prev', 'mdi:skip-previous', 'previous', null, has(16)],
         ['play_pause', play ? 'mdi:pause' : 'mdi:play', play ? 'pause' : 'play', null, has(1) || has(16384), 'main'],
         ['next', 'mdi:skip-next', 'next', null, has(32)],
+        ['source', 'mdi:import', 'source', null, Array.isArray(a.source_list) && a.source_list.length > 1 && has(2048)],
         ['vol_down', 'mdi:volume-minus', 'vol_down', null, volOk],
         ['mute', muted ? 'mdi:volume-off' : 'mdi:volume-high', 'mute', muted, has(8)],
         ['vol_up', 'mdi:volume-plus', 'vol_up', null, volOk],
@@ -44093,6 +47766,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', 'media_player'), ent('entity_remote', 'remote'), ent('entity_power', 'sensor'),
         { name: 'volume_step', default: 0.05, selector: { number: { min: 0.01, max: 0.2, step: 0.01, mode: 'box' } } },
         ...window.applianceActionFields,
@@ -44177,6 +47851,32 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "normal": "Norma",
       "over": "Nadváha",
       "obese": "Obezita"
+    },
+    "da": {
+      "name": "Smart vægt",
+      "weight": "Vægt",
+      "fat": "Fedtprocent",
+      "fat_mass": "Fedtmasse",
+      "muscle": "Muskler",
+      "bone": "Knogler",
+      "water": "Vand",
+      "visceral": "Visceralt fedt",
+      "pulse": "Puls",
+      "goal": "Mål",
+      "battery": "Batteri",
+      "bmi": "BMI",
+      "goal_reached": "Mål nået",
+      "last": "Vejet",
+      "just_now": "lige nu",
+      "min_ago": "for {n} min siden",
+      "h_ago": "for {n} t siden",
+      "d_ago": "for {n} d siden",
+      "unavailable": "Utilgængelig",
+      "trend": "{n} dage",
+      "under": "Under",
+      "normal": "Normal",
+      "over": "Over",
+      "obese": "Svær overvægt"
     },
     "de": {
       "name": "Smarte Waage",
@@ -44441,7 +48141,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     "sr": {
       "name": "Паметна вага",
       "weight": "Тежина",
-      "fat": "Масти",
+      "fat": "Телесна маст",
       "fat_mass": "Масна маса",
       "muscle": "Мишићи",
       "bone": "Кости",
@@ -44451,23 +48151,23 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "goal": "Циљ",
       "battery": "Батерија",
       "bmi": "БМИ",
-      "goal_reached": "Циљ је достигнут",
-      "last": "Мерено",
-      "just_now": "управо",
+      "goal_reached": "Циљ достигнут",
+      "last": "Измерено",
+      "just_now": "управо сада",
       "min_ago": "пре {n} мин",
-      "h_ago": "пре {n} ч",
+      "h_ago": "пре {n} х",
       "d_ago": "пре {n} д",
       "unavailable": "Недоступно",
       "trend": "{n} дана",
-      "under": "Мање",
+      "under": "Потхрањеност",
       "normal": "Нормално",
-      "over": "Вишак",
+      "over": "Прекомерно",
       "obese": "Гојазност"
     },
     "sr-Latn": {
       "name": "Pametna vaga",
       "weight": "Težina",
-      "fat": "Masti",
+      "fat": "Telesna mast",
       "fat_mass": "Masna masa",
       "muscle": "Mišići",
       "bone": "Kosti",
@@ -44477,17 +48177,17 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "goal": "Cilj",
       "battery": "Baterija",
       "bmi": "BMI",
-      "goal_reached": "Cilj je dostignut",
-      "last": "Mereno",
-      "just_now": "upravo",
+      "goal_reached": "Cilj dostignut",
+      "last": "Izmereno",
+      "just_now": "upravo sada",
       "min_ago": "pre {n} min",
       "h_ago": "pre {n} h",
       "d_ago": "pre {n} d",
       "unavailable": "Nedostupno",
       "trend": "{n} dana",
-      "under": "Manje",
+      "under": "Pothranjenost",
       "normal": "Normalno",
-      "over": "Višak",
+      "over": "Prekomerno",
       "obese": "Gojaznost"
     }
   };
@@ -44559,7 +48259,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .td.dn{fill:var(--sc-ok)}.td.up{fill:#ff9800}.td.eq{fill:var(--secondary-text-color)}
 .notrend .trend{display:none}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(66px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -44901,6 +48602,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_weight'), ent('entity_fat_ratio'), ent('entity_fat_mass'), ent('entity_muscle_mass'), ent('entity_bone_mass'), ent('entity_hydration'),
         ent('entity_visceral_fat'), ent('entity_heart_pulse'), ent('entity_weight_goal'), ent('entity_battery'), ent('entity_bmi'),
         { type: 'grid', name: '', schema: [num('height', 50, 250, 1, undefined, 'cm'), num('recent_minutes', 1, 120, 1, 5, 'min'), num('trend_days', 7, 365, 1, 30)] },
@@ -44948,6 +48650,21 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "target": "Target",
       "bottom": "Bottom",
       "reserve": "Hot water"
+    },
+    "da": {
+      "name": "Varmepumpevandvarmer",
+      "mode_off": "Slukket",
+      "mode_pause": "Pause",
+      "mode_green": "Grøn",
+      "mode_boost": "Boost",
+      "mode_unavailable": "Utilgængelig",
+      "energy": "Energi",
+      "power": "Effekt",
+      "mode": "Tilstand",
+      "temp": "Temperatur",
+      "target": "Mål",
+      "bottom": "Bund",
+      "reserve": "Varmt vand"
     },
     "es": {
       "name": "Termo termodinámico",
@@ -45008,6 +48725,36 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "target": "Cel",
       "bottom": "Dół",
       "reserve": "Ciepła woda"
+    },
+    "sr": {
+      "name": "Термодинамички бојлер",
+      "mode_off": "Искључено",
+      "mode_pause": "Пауза",
+      "mode_green": "Зелени",
+      "mode_boost": "Појачано",
+      "mode_unavailable": "Недоступно",
+      "energy": "Енергија",
+      "power": "Снага",
+      "mode": "Режим",
+      "temp": "Температура",
+      "target": "Циљна",
+      "bottom": "Дно",
+      "reserve": "Топла вода"
+    },
+    "sr-Latn": {
+      "name": "Termodinamički bojler",
+      "mode_off": "Isključeno",
+      "mode_pause": "Pauza",
+      "mode_green": "Zeleni",
+      "mode_boost": "Pojačano",
+      "mode_unavailable": "Nedostupno",
+      "energy": "Energija",
+      "power": "Snaga",
+      "mode": "Režim",
+      "temp": "Temperatura",
+      "target": "Ciljna",
+      "bottom": "Dno",
+      "reserve": "Topla voda"
     }
   };
   const asList = (v) => (Array.isArray(v) ? v : v ? [v] : []);
@@ -45024,7 +48771,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--th-ok:var(--appli
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer}
 .tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -45033,6 +48781,7 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
 .tile.hide{display:none}
 /* ---- illustration ---- */
 .th-fan{transform-box:fill-box;transform-origin:50% 50%}
+.th-lcd-txt{fill:#7fe0ff;font:700 29px 'Courier New',monospace;text-anchor:middle;dominant-baseline:central}.off .th-lcd-txt,.unavailable .th-lcd-txt{fill:#4f7d8f}
 .green .th-fan,.boost .th-fan{animation:thspin var(--spd) linear infinite}
 .boost .th-fan{animation-duration:calc(var(--spd) * .55)}
 .th-elem path{fill:#8d8d8d;transition:fill .4s}
@@ -45054,6 +48803,7 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
     <linearGradient id="thtank" gradientUnits="userSpaceOnUse" x1="506" y1="2157" x2="506" y2="867"><stop id="thg0" offset="0" stop-color="#000dc4"/><stop id="thg1" offset=".5" stop-color="#7f0762"/><stop offset="1" stop-color="#ff0000"/></linearGradient></defs>
     <image href="${PHOTO}" x="0" y="0" width="738" height="1674"/>
     <g class="th-fan"><image href="${FAN}" x="198" y="102" width="280" height="280"/></g>
+    <g class="th-lcd"><rect x="488" y="196" width="108" height="62" rx="9" fill="#0c1720" stroke="#8f98a2" stroke-width="3"/><text id="thlcd" class="th-lcd-txt" x="542" y="228">--°</text></g>
     <g transform="scale(.78935) translate(-94 -255)">
       <g class="th-water"><path fill="url(#thtank)" stroke="#2b2a29" stroke-width="3" d="M923 2093c-208,92 -477,87 -699,0l1 -1145c232,-106 446,-119 699,0l-1 1145z"/></g>
       <path fill="url(#th2)" d="M208 708l0 753c0,5 -4,9 -10,9l0 0c-5,0 -12,-4 -12,-9l1 -753c0,-5 5,-9 11,-9l0 0c5,0 10,4 10,9z"/><path fill="url(#th3)" d="M381 543l-188 0c-4,0 -8,-5 -8,-11l0 0c0,-6 4,-13 8,-13l188 1c4,0 8,6 8,12l0 0c0,6 -4,11 -8,11z"/><path fill="url(#th4)" d="M379 695l-152 0c-4,0 -8,-5 -8,-11l0 0c0,-6 4,-13 8,-13l152 1c4,0 8,6 8,12l0 0c0,6 -4,11 -8,11z"/><path fill="url(#th5)" d="M174 566l0 1116c0,5 -5,9 -12,9l0 0c-7,0 -14,-4 -14,-9l2 -1116c0,-5 6,-9 13,-9l0 0c7,0 12,4 12,9z"/><path fill="url(#th6)" d="M311 1533l499 -36c6,0 10,4 11,9l0 0c0,6 -4,11 -10,11l-499 36c-6,0 -10,-4 -11,-9l0 0c0,-6 4,-11 10,-11z"/><path fill="url(#th7)" d="M246 1485l567 12c5,0 8,5 8,10l0 0c-1,6 -5,10 -10,10l-567 -12c-5,0 -8,-5 -7,-10l0 0c1,-6 5,-10 10,-10z"/><path fill="url(#th8)" d="M221 1709l590 -21c7,0 13,4 13,10l0 0c0,6 -6,11 -14,11l-590 21c-7,0 -13,-4 -13,-10l0 0c0,-6 6,-11 14,-11z"/><path fill="url(#th9)" d="M312 1596l499 -36c6,0 10,4 11,9l0 0c0,6 -4,11 -10,11l-499 36c-6,0 -10,-4 -11,-9l0 0c0,-6 4,-11 10,-11z"/><path fill="url(#th10)" d="M314 1659l499 -36c6,0 10,4 11,9l0 0c0,6 -4,11 -10,11l-499 36c-6,0 -10,-4 -11,-9l0 0c0,-6 4,-11 10,-11z"/><path fill="url(#th11)" d="M313 1533l500 28c6,0 9,5 8,11l0 0c-1,6 -6,10 -12,10l-500 -28c-6,0 -9,-5 -8,-11l0 0c1,-6 6,-10 12,-10z"/><path fill="url(#th12)" d="M315 1596l500 28c6,0 9,5 8,11l0 0c-1,6 -6,10 -12,10l-500 -28c-6,0 -9,-5 -8,-11l0 0c1,-6 6,-10 12,-10z"/><path fill="url(#th13)" d="M316 1659l500 28c6,0 9,5 8,11l0 0c-1,6 -6,10 -12,10l-500 -28c-6,0 -9,-5 -8,-11l0 0c1,-6 6,-10 12,-10z"/>
@@ -45158,6 +48908,8 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       // donc à (1 − réserve) en partant du bas : réserve pleine → ballon rouge, réserve vide → ballon bleu (#307)
       r.getElementById('thg1').setAttribute('offset', String(Math.max(.02, Math.min(.98, 1 - f)).toFixed(3)));
 
+      // écran dessiné sur l'appareil : température actuelle de l'eau
+      r.getElementById('thlcd').textContent = isNaN(temp) ? '--°' : `${this._fmt(temp, 1)}°`;
       r.getElementById('thtitle').textContent = c.name || this._t('name');
       const badge = r.getElementById('thbadge');
       badge.textContent = this._t(`mode_${mode}`);
@@ -45208,6 +48960,7 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['water_heater', 'climate', 'switch']), ent('entity_mode', ['select', 'input_select', 'sensor']),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_temp', 'sensor'), ent('entity_target', ['sensor', 'number', 'input_number']),
         ent('entity_temp_bottom', 'sensor'), ent('entity_reserve', 'sensor'),
@@ -45273,6 +49026,39 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "pressure": "Pressure",
       "cost": "Cost",
       "low": "Low"
+    },
+    "da": {
+      "name": "Smart vandhane",
+      "watering": "Vander",
+      "closed": "Lukket",
+      "rain": "På pause (regn)",
+      "fault": "Fejl",
+      "low_battery": "Lavt batteri",
+      "freeze": "Frostrisiko",
+      "leak": "Lækage!",
+      "unavailable": "Utilgængelig",
+      "fault_alert": "Fejl: tjek vandforsyningen",
+      "leak_alert": "Lækage registreret",
+      "freeze_alert": "Frostrisiko: tøm hanen",
+      "rain_alert": "Regn registreret: vanding sat på pause",
+      "open_tap": "Åbn hanen",
+      "close_tap": "Luk hanen",
+      "minutes": "{n} min",
+      "schedule": "Tidsplan",
+      "flow": "Flow",
+      "volume": "Mængde",
+      "remaining": "Tilbage",
+      "today": "I dag",
+      "total": "Total",
+      "next": "Næste kørsel",
+      "moisture": "Jordfugtighed",
+      "mode": "Tilstand",
+      "battery": "Batteri",
+      "signal": "Signal",
+      "temperature": "Temperatur",
+      "pressure": "Tryk",
+      "cost": "Pris",
+      "low": "Lav"
     },
     "de": {
       "name": "Smarter Wasserhahn",
@@ -45504,6 +49290,72 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "pressure": "Druk",
       "cost": "Kosten",
       "low": "Laag"
+    },
+    "sr": {
+      "name": "Паметна славина",
+      "watering": "Заливање",
+      "closed": "Затворено",
+      "rain": "Паузирано (киша)",
+      "fault": "Квар",
+      "low_battery": "Слаба батерија",
+      "freeze": "Ризик од смрзавања",
+      "leak": "Цурење!",
+      "unavailable": "Недоступно",
+      "fault_alert": "Квар: проверите довод воде",
+      "leak_alert": "Откривено цурење",
+      "freeze_alert": "Ризик од смрзавања: испустите воду из славине",
+      "rain_alert": "Откривена киша: заливање паузирано",
+      "open_tap": "Отвори славину",
+      "close_tap": "Затвори славину",
+      "minutes": "{n} мин",
+      "schedule": "Распоред",
+      "flow": "Проток",
+      "volume": "Запремина",
+      "remaining": "Преостало",
+      "today": "Данас",
+      "total": "Укупно",
+      "next": "Следеће покретање",
+      "moisture": "Влажност земљишта",
+      "mode": "Режим",
+      "battery": "Батерија",
+      "signal": "Сигнал",
+      "temperature": "Температура",
+      "pressure": "Притисак",
+      "cost": "Трошак",
+      "low": "Ниско"
+    },
+    "sr-Latn": {
+      "name": "Pametna slavina",
+      "watering": "Zalivanje",
+      "closed": "Zatvoreno",
+      "rain": "Pauzirano (kiša)",
+      "fault": "Kvar",
+      "low_battery": "Slaba baterija",
+      "freeze": "Rizik od smrzavanja",
+      "leak": "Curenje!",
+      "unavailable": "Nedostupno",
+      "fault_alert": "Kvar: proverite dovod vode",
+      "leak_alert": "Otkriveno curenje",
+      "freeze_alert": "Rizik od smrzavanja: ispustite vodu iz slavine",
+      "rain_alert": "Otkrivena kiša: zalivanje pauzirano",
+      "open_tap": "Otvori slavinu",
+      "close_tap": "Zatvori slavinu",
+      "minutes": "{n} min",
+      "schedule": "Raspored",
+      "flow": "Protok",
+      "volume": "Zapremina",
+      "remaining": "Preostalo",
+      "today": "Danas",
+      "total": "Ukupno",
+      "next": "Sledeće pokretanje",
+      "moisture": "Vlažnost zemljišta",
+      "mode": "Režim",
+      "battery": "Baterija",
+      "signal": "Signal",
+      "temperature": "Temperatura",
+      "pressure": "Pritisak",
+      "cost": "Trošak",
+      "low": "Nisko"
     }
   };
   const TV = {
@@ -45541,6 +49393,41 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "signal": "Signal",
       "cost": "Cost",
       "low": "Low"
+    },
+    "da": {
+      "name": "Vandventil",
+      "open": "Åben",
+      "closed": "Lukket",
+      "opening": "Åbner",
+      "closing": "Lukker",
+      "leak": "Lækage!",
+      "fault": "Fejl",
+      "freeze": "Frostrisiko",
+      "low_battery": "Lavt batteri",
+      "unavailable": "Utilgængelig",
+      "leak_alert": "Lækage registreret: luk ventilen",
+      "fault_alert": "Fejl på ventil",
+      "freeze_alert": "Frostrisiko: beskyt rørene",
+      "open_valve": "Åbn",
+      "close_valve": "Luk",
+      "minutes": "{n} min",
+      "schedule": "Tidsplan",
+      "position": "Position",
+      "flow": "Flow",
+      "volume": "Mængde",
+      "remaining": "Tilbage",
+      "closes_in": "Lukker om",
+      "today": "I dag",
+      "total": "Total",
+      "next": "Næste kørsel",
+      "mode": "Tilstand",
+      "pressure": "Tryk",
+      "temperature": "Temperatur",
+      "power": "Effekt",
+      "battery": "Batteri",
+      "signal": "Signal",
+      "cost": "Pris",
+      "low": "Lav"
     },
     "de": {
       "name": "Motorventil",
@@ -45786,6 +49673,76 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "signal": "Signaal",
       "cost": "Kosten",
       "low": "Laag"
+    },
+    "sr": {
+      "name": "Вентил за воду",
+      "open": "Отворен",
+      "closed": "Затворен",
+      "opening": "Отварање",
+      "closing": "Затварање",
+      "leak": "Цурење!",
+      "fault": "Квар",
+      "freeze": "Ризик од смрзавања",
+      "low_battery": "Слаба батерија",
+      "unavailable": "Недоступно",
+      "leak_alert": "Откривено цурење: затворите вентил",
+      "fault_alert": "Квар вентила",
+      "freeze_alert": "Ризик од смрзавања: заштитите цеви",
+      "open_valve": "Отвори",
+      "close_valve": "Затвори",
+      "minutes": "{n} мин",
+      "schedule": "Распоред",
+      "position": "Положај",
+      "flow": "Проток",
+      "volume": "Запремина",
+      "remaining": "Преостало",
+      "closes_in": "Затвара се за",
+      "today": "Данас",
+      "total": "Укупно",
+      "next": "Следеће покретање",
+      "mode": "Режим",
+      "pressure": "Притисак",
+      "temperature": "Температура",
+      "power": "Снага",
+      "battery": "Батерија",
+      "signal": "Сигнал",
+      "cost": "Трошак",
+      "low": "Ниско"
+    },
+    "sr-Latn": {
+      "name": "Ventil za vodu",
+      "open": "Otvoren",
+      "closed": "Zatvoren",
+      "opening": "Otvaranje",
+      "closing": "Zatvaranje",
+      "leak": "Curenje!",
+      "fault": "Kvar",
+      "freeze": "Rizik od smrzavanja",
+      "low_battery": "Slaba baterija",
+      "unavailable": "Nedostupno",
+      "leak_alert": "Otkriveno curenje: zatvorite ventil",
+      "fault_alert": "Kvar ventila",
+      "freeze_alert": "Rizik od smrzavanja: zaštitite cevi",
+      "open_valve": "Otvori",
+      "close_valve": "Zatvori",
+      "minutes": "{n} min",
+      "schedule": "Raspored",
+      "position": "Položaj",
+      "flow": "Protok",
+      "volume": "Zapremina",
+      "remaining": "Preostalo",
+      "closes_in": "Zatvara se za",
+      "today": "Danas",
+      "total": "Ukupno",
+      "next": "Sledeće pokretanje",
+      "mode": "Režim",
+      "pressure": "Pritisak",
+      "temperature": "Temperatura",
+      "power": "Snaga",
+      "battery": "Baterija",
+      "signal": "Signal",
+      "cost": "Trošak",
+      "low": "Nisko"
     }
   };
 
@@ -45815,7 +49772,8 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
 .ctl button.on{background:color-mix(in srgb,var(--wv-water) 30%,var(--secondary-background-color))}
 .ctl button.red{background:color-mix(in srgb,var(--wv-alert) 25%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
 .tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -46184,6 +50142,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['valve', 'switch', 'input_boolean', 'cover', 'light']),
         ent('entity_flow', 'sensor'), ent('entity_volume', 'sensor'), ent('entity_today', 'sensor'), ent('entity_total', 'sensor'),
         ent('entity_remaining', ['sensor', 'number', 'input_number']),
@@ -46231,7 +50190,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 
 /* Carte « Adoucisseur d'eau » — custom:appliance-water-softener-card 
  * Adoucisseur à résine (type Culligan) : cuve à résine avec tête de commande (écran LCD, boutons) et bac à sel.
- * Phases : service (eau adoucie), contre-lavage, aspiration de saumure, rinçage ; alerte sel bas.
+ * Phases : service (eau adoucie), contre-lavage, aspiration de saumure, rinçage, renvoi d'eau (remplissage du bac à sel) ; alerte sel bas.
  * Tuiles : débit, capacité restante, sel, dureté (entrée → sortie), consommation du jour, prochaine régénération, puissance.
  */
 (() => {
@@ -46245,6 +50204,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "backwash": "Backwash",
       "brine": "Brine draw",
       "rinse": "Rinse",
+      "refill": "Water return",
       "idle": "Standby",
       "lowsalt": "Low salt",
       "off": "Off",
@@ -46253,6 +50213,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "lcd_backwash": "BACKWASH",
       "lcd_brine": "BRINE",
       "lcd_rinse": "RINSE",
+      "lcd_refill": "RETURN",
       "lcd_idle": "READY",
       "lcd_lowsalt": "ADD SALT",
       "lcd_off": "OFF",
@@ -46264,6 +50225,33 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "today": "Today",
       "regen": "Next regen.",
       "power": "Power",
+      "days": "d"
+    },
+    "da": {
+      "name": "Blødgøringsanlæg",
+      "service": "Drift",
+      "backwash": "Returskylning",
+      "brine": "Saltlage-indsugning",
+      "rinse": "Skylning",
+      "idle": "Standby",
+      "lowsalt": "Lavt saltniveau",
+      "off": "Slukket",
+      "unavailable": "Utilgængelig",
+      "lcd_service": "DRIFT",
+      "lcd_backwash": "RETURSKYL",
+      "lcd_brine": "SALTLAGE",
+      "lcd_rinse": "SKYL",
+      "lcd_idle": "KLAR",
+      "lcd_lowsalt": "FYLD SALT",
+      "lcd_off": "SLUKKET",
+      "lcd_unavailable": "- - -",
+      "flow": "Flow",
+      "capacity": "Resterende kapacitet",
+      "salt": "Salt",
+      "hardness": "Hårdhed",
+      "today": "I dag",
+      "regen": "Næste regen.",
+      "power": "Effekt",
       "days": "d"
     },
     "de": {
@@ -46326,6 +50314,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "backwash": "Contre-lavage",
       "brine": "Aspiration saumure",
       "rinse": "Rinçage",
+      "refill": "Renvoi d'eau",
       "idle": "Veille",
       "lowsalt": "Sel bas",
       "off": "Arrêt",
@@ -46334,6 +50323,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "lcd_backwash": "CONTRE-LAV",
       "lcd_brine": "SAUMURE",
       "lcd_rinse": "RINCAGE",
+      "lcd_refill": "RENVOI",
       "lcd_idle": "PRET",
       "lcd_lowsalt": "AJOUTER SEL",
       "lcd_off": "ARRET",
@@ -46454,6 +50444,60 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "regen": "Volgende regen.",
       "power": "Vermogen",
       "days": "d"
+    },
+    "sr": {
+      "name": "Омекшивач воде",
+      "service": "У раду",
+      "backwash": "Повратно испирање",
+      "brine": "Усисавање слане воде",
+      "rinse": "Испирање",
+      "idle": "Приправност",
+      "lowsalt": "Мало соли",
+      "off": "Искључено",
+      "unavailable": "Недоступно",
+      "lcd_service": "У РАДУ",
+      "lcd_backwash": "ПОВ. ИСПИРАЊЕ",
+      "lcd_brine": "СОЛАНА",
+      "lcd_rinse": "ИСПИРАЊЕ",
+      "lcd_idle": "СПРЕМНО",
+      "lcd_lowsalt": "ДОДАЈ СО",
+      "lcd_off": "ИСКЉ.",
+      "lcd_unavailable": "- - -",
+      "flow": "Проток",
+      "capacity": "Преостали капацитет",
+      "salt": "Со",
+      "hardness": "Тврдоћа",
+      "today": "Данас",
+      "regen": "Следећа реген.",
+      "power": "Снага",
+      "days": "д"
+    },
+    "sr-Latn": {
+      "name": "Omekšivač vode",
+      "service": "U radu",
+      "backwash": "Povratno ispiranje",
+      "brine": "Usisavanje slane vode",
+      "rinse": "Ispiranje",
+      "idle": "Pripravnost",
+      "lowsalt": "Malo soli",
+      "off": "Isključeno",
+      "unavailable": "Nedostupno",
+      "lcd_service": "U RADU",
+      "lcd_backwash": "POV. ISPIRANJE",
+      "lcd_brine": "SOLANA",
+      "lcd_rinse": "ISPIRANJE",
+      "lcd_idle": "SPREMNO",
+      "lcd_lowsalt": "DODAJ SO",
+      "lcd_off": "ISKLJ.",
+      "lcd_unavailable": "- - -",
+      "flow": "Protok",
+      "capacity": "Preostali kapacitet",
+      "salt": "So",
+      "hardness": "Tvrdoća",
+      "today": "Danas",
+      "regen": "Sledeća regen.",
+      "power": "Snaga",
+      "days": "d"
     }
   };
 
@@ -46465,12 +50509,13 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--ws-ok:var(--appli
 .title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap}
 .service .badge{background:color-mix(in srgb,var(--ws-cold) 22%,transparent);color:var(--ws-cold)}
-.backwash .badge,.brine .badge,.rinse .badge{background:color-mix(in srgb,var(--ws-warn) 24%,transparent);color:var(--ws-warn)}
+.backwash .badge,.brine .badge,.rinse .badge,.refill .badge{background:color-mix(in srgb,var(--ws-warn) 24%,transparent);color:var(--ws-warn)}
 .lowsalt .badge{background:color-mix(in srgb,var(--ws-alert) 22%,transparent);color:var(--ws-alert)}
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
 .tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -46486,6 +50531,7 @@ svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px *
 .backwash .pin .pflow,.backwash .pdr .pflow{opacity:1;animation:wsd var(--spd) linear infinite}
 .rinse .pin .pflow,.rinse .pdr .pflow{opacity:1;animation:wsd calc(var(--spd) * .6) linear infinite}
 .brine .pbr .pflow,.brine .pdr .pflow{opacity:1;animation:wsd calc(var(--spd) * 1.4) linear infinite}
+.refill .pin .pflow,.refill .pbr .pflow{opacity:1;animation:wsd var(--spd) linear infinite}.refill .pbr .pflow{stroke:#6f8cff;animation-direction:reverse}
 .pbr .pflow{animation-direction:normal}
 @keyframes wsd{to{stroke-dashoffset:-16}}
 .drop{fill:#7fdcff;opacity:0}
@@ -46504,13 +50550,15 @@ svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px *
 .muddy{fill:#b08a5a;opacity:0;transition:opacity .6s}.backwash .muddy{opacity:.32}
 .brinew{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--lvl));transition:transform 1.4s ease}
 .brine .brinew{animation:wsbrine 5s ease-in-out infinite alternate}
+.refill .brinew{animation:wsrefill 5s ease-in-out infinite alternate}
+@keyframes wsrefill{from{transform:scaleY(.55)}to{transform:scaleY(.9)}}
 @keyframes wsbrine{from{transform:scaleY(.9)}to{transform:scaleY(.55)}}
 .salt{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--salt));transition:transform 1.2s ease}
 .alertw{opacity:0}.lowsalt .alertw{opacity:1;animation:wsblink 1s ease-in-out infinite}
 .lowsalt .lid{animation:wsblink 1.6s ease-in-out infinite}
 @keyframes wsblink{50%{opacity:.35}}
 .lcdt{font:700 6.6px/1 ui-monospace,Consolas,monospace;fill:#2c3a10;text-anchor:middle;letter-spacing:.2px}
-.led{fill:#43d17a}.backwash .led,.brine .led,.rinse .led{fill:#ffa000;animation:wsblink .8s steps(2) infinite}.lowsalt .led{fill:#e53935}
+.led{fill:#43d17a}.backwash .led,.brine .led,.rinse .led,.refill .led{fill:#ffa000;animation:wsblink .8s steps(2) infinite}.lowsalt .led{fill:#e53935}
 .off svg,.unavailable svg{filter:grayscale(.85) opacity(.65)}
 .noanim *{animation:none!important}
 /* ---- compact : petits emplacements fixes ; l'illustration prend la hauteur restante, tuiles en colonne ---- */
@@ -46568,7 +50616,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
   const RE = {
     backwash: /backwash|back.?wash|contre.?lavage|d[ée]tassage|gegenstrom/i,
     brine: /brine|saumure|aspir|draw|slow|regener|r[ée]g[ée]n[ée]ration|recharge|regen/i,
-    rinse: /rins|rin[cç]|fast|spül|spuel|refill|remplissage|renvoi/i,
+    rinse: /rins|rin[cç]|fast|spül|spuel/i,
+    refill: /refill|remplissage|renvoi|water.?return|return/i,
   };
 
   class ApplianceWaterSoftenerCard extends HTMLElement {
@@ -46617,18 +50666,21 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       const c = this._c, e = this._st(c.entity);
       const flow = this._num(c.entity_flow), salt = this._num(c.entity_salt);
       const raw = e ? String(e.state) : '';
-      const known = [c.entity, c.entity_flow, c.entity_capacity, c.entity_salt, c.entity_backwash, c.entity_brine, c.entity_rinse].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
+      const known = [c.entity, c.entity_flow, c.entity_capacity, c.entity_salt, c.entity_backwash, c.entity_brine, c.entity_rinse, c.entity_refill, c.entity_service].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
       let phase = 'idle';
       if (!known) phase = 'unavailable';
       else if (e && /^(off)$/i.test(raw)) phase = 'off';
       else if (RE.backwash.test(raw)) phase = 'backwash';
+      else if (RE.refill.test(raw)) phase = 'refill';
       else if (RE.rinse.test(raw)) phase = 'rinse';
       else if (RE.brine.test(raw) || (e && /^on$/i.test(raw) && /regen/i.test(String(e.entity_id) + JSON.stringify(e.attributes || {})))) phase = 'brine';
       // une entité par phase (interrupteur / binary_sensor), prises en compte si `entity` ne donne pas déjà la phase
       else if (this._on(c.entity_backwash)) phase = 'backwash';
       else if (this._on(c.entity_brine)) phase = 'brine';
       else if (this._on(c.entity_rinse)) phase = 'rinse';
-      else if (/^(service|en.?service)$/i.test(raw.trim()) || (!isNaN(flow) && flow > 0.05)) phase = 'service';
+      else if (this._on(c.entity_refill)) phase = 'refill';
+      // « service » : entité dédiée, texte « service », ou `entity` allumée dont le nom contient « service » (ex. « Cycle Service »)
+      else if (this._on(c.entity_service) || /^(service|en.?service)$/i.test(raw.trim()) || (e && /^on$/i.test(raw) && /service/i.test(String(e.entity_id) + ' ' + ((e.attributes && e.attributes.friendly_name) || ''))) || (!isNaN(flow) && flow > 0.05)) phase = 'service';
       const low = !isNaN(salt) && salt <= Number(c.salt_low);
       return { phase, flow, salt, low };
     }
@@ -46641,7 +50693,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       card.style.setProperty('--spd', `${(isNaN(flow) ? 1.2 : Math.max(.5, Math.min(2.4, 2.4 - flow / 12))).toFixed(2)}s`);
       card.style.setProperty('--salt', String(isNaN(salt) ? .6 : Math.max(.03, Math.min(1, salt / 100)).toFixed(3)));
       r.getElementById('wstitle').textContent = c.name || this._t('name');
-      const state = low && phase !== 'backwash' && phase !== 'brine' && phase !== 'rinse' ? 'lowsalt' : phase;
+      const state = low && !/^(backwash|brine|rinse|refill)$/.test(phase) ? 'lowsalt' : phase;
       r.getElementById('wsbadge').textContent = this._t(state);
       r.getElementById('wslcd').textContent = this._t(`lcd_${state}`);
       const fu = this._unit(c.entity_flow, 'L/min'), tu = this._unit(c.entity_today, 'L');
@@ -46688,8 +50740,9 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['sensor', 'binary_sensor', 'switch', 'input_boolean', 'select']),
-        ent('entity_backwash', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_brine', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_rinse', ['binary_sensor', 'switch', 'input_boolean', 'sensor']),
+        ent('entity_backwash', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_brine', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_rinse', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_refill', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_service', ['binary_sensor', 'switch', 'input_boolean', 'sensor']),
         ent('entity_flow', 'sensor'), ent('entity_capacity', 'sensor'), ent('entity_salt', 'sensor'),
         ent('entity_hardness_in', 'sensor'), ent('entity_hardness_out', 'sensor'),
         ent('entity_today', 'sensor'), ent('entity_regen_days', 'sensor'), ent('entity_power', 'sensor'),
@@ -46708,6 +50761,642 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
     description: "Adoucisseur d'eau animé : service, contre-lavage, saumure, rinçage, sel, capacité, dureté.", preview: true,
     documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/water-softener.md',
+  });
+})();
+
+/* Carte « Arrosage » — custom:appliance-irrigation-card
+ * Arrosage automatique du jardin : de 1 à 8 zones (électrovannes `valve`, `switch` ou `input_boolean`), pompe de puits,
+ * détecteur de pluie, humidité du sol. Un bouton par zone (clic = marche / arrêt), arrêt général, arrosage auto (interrupteur maître).
+ * Tout est facultatif : les entités sont génériques (aucune marque), la carte lit simplement l'état on / off des zones.
+ */
+(() => {
+  const TAG = 'appliance-irrigation-card';
+  if (customElements.get(TAG)) return;
+
+  const T = {
+    "en": {
+      "name": "Irrigation",
+      "idle": "Idle",
+      "watering": "Watering",
+      "rain": "Rain",
+      "dry": "Dry",
+      "unavailable": "Unavailable",
+      "zones": "zones",
+      "stop": "Stop all",
+      "auto": "Auto",
+      "blocked": "Blocked: rain",
+      "on": "On",
+      "off": "Off",
+      "flow": "Flow",
+      "soil": "Soil moisture",
+      "today": "Today",
+      "next": "Next run",
+      "pressure": "Pressure",
+      "pump": "Well pump",
+      "power": "Power"
+    },
+    "fr": {
+      "name": "Arrosage",
+      "idle": "Arrêt",
+      "watering": "Arrosage",
+      "rain": "Pluie",
+      "dry": "Sec",
+      "unavailable": "Indisponible",
+      "zones": "zones",
+      "stop": "Tout arrêter",
+      "auto": "Auto",
+      "blocked": "Bloqué : pluie",
+      "on": "Marche",
+      "off": "Arrêt",
+      "flow": "Débit",
+      "soil": "Humidité sol",
+      "today": "Aujourd'hui",
+      "next": "Prochain",
+      "pressure": "Pression",
+      "pump": "Pompe de puits",
+      "power": "Puissance"
+    }
+  };
+
+  const ON_RE = /^(on|open|opening|true|yes|1|running|watering|irrigating|active)$/i;
+  const RAIN_RE = /^(on|true|yes|1|rain|raining|wet|detected|pluie)$/i;
+
+  const CSS = `
+:host{display:block;height:100%} ha-card{display:block;height:100%;box-sizing:border-box;padding:10px 12px 12px;overflow:hidden;
+  --ir-ok:var(--appliance-ok-color,#43a047);--ir-warn:var(--appliance-warn-color,#ffa000);--ir-alert:var(--appliance-alert-color,#db4437);--ir-cold:var(--appliance-cold-color,#2b9af9)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap;max-width:60%;overflow:hidden;text-overflow:ellipsis}
+.watering .badge{background:color-mix(in srgb,var(--ir-cold) 22%,transparent);color:var(--ir-cold)}
+.rain .badge{background:color-mix(in srgb,var(--ir-warn) 24%,transparent);color:var(--ir-warn)}
+.body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
+svg{display:block;flex:0 1 calc(250px * var(--illus-scale,1));width:calc(250px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
+.tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px;min-width:0}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
+.tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
+.tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
+.tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .v small{font-size:10px;font-weight:400;color:var(--secondary-text-color);margin-left:2px}
+.tile.hide{display:none}.tile.bad .v{color:var(--ir-warn)}
+.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(86px,1fr));gap:6px;margin-top:8px}
+.zones:empty{display:none}
+.zb{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:7px 6px;border:0;border-radius:12px;cursor:pointer;font:inherit;font-size:12px;font-weight:500;
+  background:var(--ac-tile-bg,rgba(127,127,127,.12));color:var(--primary-text-color)}
+.zb span{min-width:0;overflow:hidden;text-align:center;line-height:1.15;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.zb ha-icon{--mdc-icon-size:17px;flex:none}
+.zb.on{background:color-mix(in srgb,var(--ir-cold) 28%,transparent);color:var(--ir-cold)}
+.zb.stop.on{background:color-mix(in srgb,var(--ir-alert) 24%,transparent);color:var(--ir-alert)}
+.zb:disabled{opacity:.4;cursor:default}
+/* ---- image perso (option image) : la photo ou le plan remplace le dessin, les vannes sont posées dessus (x / y en %) ---- */
+.map{position:relative;flex:1 1 100%;width:calc(100% * min(1,var(--illus-scale,1)));max-width:100%;margin:0 auto;border-radius:12px;overflow:hidden;cursor:pointer;line-height:0}
+.map img{display:block;width:100%;height:auto}
+.zb.mk{position:absolute;transform:translate(-50%,-50%);flex-direction:column;gap:1px;padding:5px;min-width:32px;min-height:32px;border-radius:50%;line-height:1.1;
+  background:rgba(20,24,30,.62);color:#fff;backdrop-filter:blur(2px);box-shadow:0 1px 4px rgba(0,0,0,.45)}
+.zb.mk.lbl{border-radius:12px;padding:4px 7px}
+.zb.mk span{font-size:10px;max-width:84px}.zb.mk:not(.lbl) span{display:none}
+.zb.mk ha-icon{--mdc-icon-size:20px;display:inline-flex;width:20px;height:20px}
+.zb.mk.on{background:color-mix(in srgb,var(--ir-cold) 78%,#000);color:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--ir-cold) 40%,transparent),0 0 12px var(--ir-cold)}
+.noanim .zb.mk.on{box-shadow:0 0 0 3px color-mix(in srgb,var(--ir-cold) 40%,transparent)}
+.zb.mk.on ha-icon{animation:irpulse 1.4s ease-in-out infinite}@keyframes irpulse{50%{transform:scale(1.18)}}
+.compact .map{flex:1 1 0;min-width:0}
+/* ---- illustration ---- */
+.spr{opacity:0}.spr.on{opacity:1}
+.arc{fill:none;stroke:#5fb8ff;stroke-width:2;stroke-linecap:round;stroke-dasharray:3 6}
+.on .arc,.spr.on .arc{animation:irsp 1s linear infinite}
+.arc.b{animation-duration:1.4s!important;opacity:.75}
+@keyframes irsp{to{stroke-dashoffset:-18}}
+.lawn.wet{filter:saturate(1.25) brightness(.95)}
+.cloud{opacity:0;transition:opacity .6s}.rain .cloud{opacity:1}
+.rd{fill:#7fb6ff;opacity:0}.rain .rd{opacity:.9;animation:irfall 1.1s linear infinite}
+.rd:nth-child(2){animation-delay:-.3s!important}.rd:nth-child(3){animation-delay:-.6s!important}.rd:nth-child(4){animation-delay:-.9s!important}
+@keyframes irfall{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(32px);opacity:0}}
+.pled{fill:#9aa3ad}.pump-on .pled{fill:#43d17a;animation:irblink 1s steps(2) infinite}
+@keyframes irblink{50%{opacity:.35}}
+.sun{opacity:.95;transition:opacity .6s}.rain .sun,.watering .sun{opacity:.2}
+.unavailable svg{filter:grayscale(.85) opacity(.65)}
+.noanim *{animation:none!important}
+/* ---- compact ---- */
+ha-card.compact{display:flex;flex-direction:column;padding:6px}
+.compact .head{flex:none;gap:4px}.compact .title{font-size:12px;line-height:16px}.compact .badge{font-size:10px;padding:0 6px}
+.compact .body{flex:1 1 auto;min-height:0;flex-wrap:nowrap;gap:6px;margin-top:3px;align-items:stretch}
+.compact svg{flex:1 1 0;min-width:0;width:auto;height:100%;max-width:none;margin:0}
+.compact .tiles{flex:0 0 42%;grid-template-columns:1fr;gap:3px;align-content:center}
+.compact .tile{padding:2px 5px;border-radius:8px}.compact .tile .l ha-icon{--mdc-icon-size:12px}.compact .tile .v{font-size:12px;line-height:15px;margin-top:0}
+.compact .zones{margin-top:4px;gap:4px}.compact .zb{padding:4px;font-size:11px}
+`;
+
+  const TILES = [['flow', 'mdi:water-pump', 'show_flow'], ['soil', 'mdi:water-percent', 'show_soil'], ['today', 'mdi:calendar-today', 'show_today'],
+    ['next', 'mdi:calendar-clock', 'show_next'], ['pressure', 'mdi:gauge', 'show_pressure'], ['pump', 'mdi:pump', 'show_pump'], ['power', 'mdi:flash', 'show_power'], ['rain', 'mdi:weather-rainy', 'show_rain']];
+
+  // Liste de zones : ['valve.x', {entity, name, icon, x, y}, …] ou « a, b, c » → [{id, name}]
+  const parseZones = (v) => (Array.isArray(v) ? v : v == null || v === '' ? [] : String(v).split(',')).map((z) => {
+    const o = typeof z === 'string' ? { entity: z.trim() } : z || {};
+    const pct = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); return isFinite(n) ? Math.max(0, Math.min(100, n)) : null; };
+    const x = pct(o.x), y = pct(o.y); // position sur l'image perso, en % depuis le coin haut-gauche
+    return o.entity ? { id: String(o.entity), name: o.name || '', icon: o.icon || '', x: x != null && y != null ? x : null, y: x != null && y != null ? y : null } : null;
+  }).filter(Boolean).slice(0, 8);
+
+  class ApplianceIrrigationCard extends HTMLElement {
+    static getConfigElement() { return document.createElement(TAG + '-editor'); }
+    static getStubConfig(hass) {
+      const ids = Object.keys((hass && hass.states) || {});
+      return { zones: ids.filter((i) => /^valve\./.test(i)).slice(0, 4) };
+    }
+    setConfig(c) {
+      if (window.applianceSize) window.applianceSize(this, c);
+      if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
+      this._c = { show_flow: true, show_soil: true, show_today: true, show_next: true, show_pressure: true, show_pump: true, show_power: true, show_rain: true, show_buttons: true, ...c };
+      this._zones = parseZones(this._c.zones);
+      this._built = false;
+      if (this._hass) this._render();
+    }
+    set hass(h) { const ch = this._c && window.applianceChanged(this, h, this._c); this._hass = h; if (ch) this._render(); }
+    getCardSize() { return 5; }
+    getGridOptions() { return { columns: 6, min_columns: 3, rows: 'auto', min_rows: 1 }; }
+
+    _lang() { return window.applianceLang(T, this._c, this._hass); }
+    _t(k) { return T[this._lang()][k] ?? T.en[k] ?? k; }
+    _l(k) { const L = this._c && this._c.labels; return L && L[k] != null && L[k] !== '' ? String(L[k]) : this._t(k); }
+    _st(id) { return id && this._hass.states[id]; }
+    _num(id) { const s = this._st(id); if (!s) return NaN; const v = parseFloat(String(s.state).replace(',', '.')); return isFinite(v) ? v : NaN; }
+    _unit(id, d) { const s = this._st(id); return String((s && s.attributes && s.attributes.unit_of_measurement) || d).trim(); }
+    _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
+    _on(id) { const s = this._st(id); return !!s && ON_RE.test(String(s.state)); }
+    _dom(id) { return String(id).split('.')[0]; }
+    _name(z) { const s = this._st(z.id); return z.name || (s && s.attributes && s.attributes.friendly_name) || z.id; }
+    _more(id) { if (id) this.dispatchEvent(new CustomEvent('hass-more-info', { detail: { entityId: id }, bubbles: true, composed: true })); }
+    // marche / arrêt d'une entité : valve (open_valve / close_valve), switch / input_boolean / autre (turn_on / turn_off)
+    _set(id, on) {
+      const d = this._dom(id);
+      if (d === 'valve') this._hass.callService('valve', on ? 'open_valve' : 'close_valve', { entity_id: id });
+      else this._hass.callService(['switch', 'input_boolean', 'light', 'fan'].includes(d) ? d : 'homeassistant', on ? 'turn_on' : 'turn_off', { entity_id: id });
+    }
+
+    // Repères : 250 × 150. Une tête d'arrosage par zone, régulièrement espacées sur la pelouse.
+    _svg(label) {
+      const n = Math.max(1, this._zones.length), heads = [];
+      for (let i = 0; i < n; i++) {
+        const x = n === 1 ? 125 : 52 + (i * (196 - 52)) / (n - 1);
+        heads.push(`<g class="spr" data-z="${i}"><path class="arc" d="M${x} 106 Q${x - 16} 80 ${x - 30} 112"/><path class="arc" d="M${x} 106 Q${x + 16} 80 ${x + 30} 112"/>
+          <path class="arc b" d="M${x} 106 Q${x - 7} 84 ${x - 14} 112"/><path class="arc b" d="M${x} 106 Q${x + 7} 84 ${x + 14} 112"/></g>
+          <rect x="${x - 2}" y="104" width="4" height="12" rx="1.5" fill="#6b7480"/><rect x="${x - 4}" y="102" width="8" height="4" rx="2" fill="#2b2f36"/>`);
+      }
+      return `<svg viewBox="0 0 250 150" role="img" aria-label="${label}"><defs>
+        <linearGradient id="irg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec850"/><stop offset="1" stop-color="#4f9a34"/></linearGradient>
+        <linearGradient id="irs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset="1" stop-color="#eaf6ff"/></linearGradient></defs>
+        <rect x="0" y="0" width="250" height="108" rx="10" fill="url(#irs)" opacity=".55"/>
+        <g class="sun"><circle cx="214" cy="26" r="13" fill="#ffd54f"/><g stroke="#ffd54f" stroke-width="2" stroke-linecap="round"><path d="M214 5v5M214 42v5M193 26h5M230 26h5M199 11l3 3M226 38l3 3M229 11l-3 3M202 38l-3 3"/></g></g>
+        <path class="lawn" d="M0 100 Q60 90 125 98 T250 96 V140 a10 10 0 0 1-10 10 H10 a10 10 0 0 1-10-10Z" fill="url(#irg)"/>
+        <g class="cloud"><ellipse cx="96" cy="30" rx="30" ry="14" fill="#8e9aa8"/><ellipse cx="120" cy="24" rx="24" ry="14" fill="#9fabb8"/><ellipse cx="74" cy="34" rx="18" ry="10" fill="#8e9aa8"/>
+          <g><circle class="rd" cx="84" cy="52" r="2"/><circle class="rd" cx="100" cy="50" r="2"/><circle class="rd" cx="116" cy="52" r="2"/><circle class="rd" cx="130" cy="50" r="2"/></g></g>
+        ${heads.join('')}
+        <g class="pump"><rect x="6" y="116" width="30" height="24" rx="5" fill="#cfd6dd" stroke="#9aa3ad"/><circle cx="21" cy="128" r="6" fill="#5b6672"/><circle class="pled" cx="31" cy="120" r="2"/></g>
+      </svg>`;
+    }
+
+    // Image perso : <img> en fond, une pastille cliquable par zone qui a x / y (en % de l'image). Les autres zones restent en boutons dessous.
+    _map(label) {
+      const e = (v) => String(v).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+      const mk = this._zones.map((z, i) => (z.x == null ? '' : `<button class="zb mk${this._c.marker_names === true ? ' lbl' : ''}" data-b="z${i}" data-id="${e(z.id)}" style="left:${z.x}%;top:${z.y}%"><ha-icon icon="${e(z.icon || (this._dom(z.id) === 'valve' ? 'mdi:valve' : 'mdi:sprinkler-variant'))}"></ha-icon><span></span></button>`)).join('');
+      return `<div class="map" role="img" aria-label="${e(label)}"><img src="${e(this._c.image)}" alt="" loading="lazy">${mk}</div>`;
+    }
+
+    _build() {
+      const root = this.shadowRoot || this.attachShadow({ mode: 'open' });
+      root.innerHTML = `<style>${CSS}</style><ha-card>
+        <div class="head"><div class="title" id="irtitle"></div><div class="badge" id="irbadge"></div></div>
+        <div class="body">${this._c.image ? this._map((this._c.name || this._t('name')).replace(/"/g, '')) : this._svg((this._c.name || this._t('name')).replace(/"/g, ''))}
+          <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${k}"><div class="l"><ha-icon icon="${ic}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div>
+        </div><div class="zones" id="irzones"></div></ha-card>`;
+      window.applianceBindIllus(this, root.querySelector('svg, .map'), () => this._more((this._zones[0] || {}).id || this._c.entity_pump));
+      root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => {
+        const c = this._c; this._more({ flow: c.entity_flow, soil: c.entity_soil, today: c.entity_today, next: c.entity_next, pressure: c.entity_pressure, pump: c.entity_pump, power: c.entity_power, rain: c.entity_rain }[el.dataset.k]);
+      }));
+      // boutons : un par zone, arrêt général, arrosage auto (interrupteur maître) — reconstruits seulement quand la config change
+      const zb = root.getElementById('irzones');
+      const btn = (key, icon, id) => `<button class="zb" data-b="${key}"${id ? ` data-id="${id}"` : ''}><ha-icon icon="${icon}"></ha-icon><span></span></button>`;
+      zb.innerHTML = this._c.show_buttons === false ? '' :
+        this._zones.map((z, i) => (this._c.image && z.x != null ? '' : btn('z' + i, z.icon || (this._dom(z.id) === 'valve' ? 'mdi:valve' : 'mdi:sprinkler-variant'), z.id))).join('')
+        + (this._zones.length > 1 ? btn('stop', 'mdi:stop', '').replace('class="zb"', 'class="zb stop"') : '')
+        + (this._c.entity_master ? btn('master', 'mdi:calendar-check', this._c.entity_master) : '');
+      // boutons du bas et pastilles de l'image : même comportement (stopPropagation : pas d'action tap_action de l'image)
+      root.querySelectorAll('.zb').forEach((b) => b.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const k = b.dataset.b;
+        if (k === 'stop') { this._zones.forEach((z) => this._on(z.id) && this._set(z.id, false)); return; }
+        if (k === 'master') { this._set(this._c.entity_master, !this._on(this._c.entity_master)); return; }
+        const z = this._zones[Number(k.slice(1))]; if (z) this._set(z.id, !this._on(z.id));
+      }));
+      root.querySelectorAll('.zb.mk').forEach((b) => b.addEventListener('pointerdown', (ev) => ev.stopPropagation()));
+      this._root = root; this._card = root.querySelector('ha-card'); this._built = true;
+    }
+
+    _compute() {
+      const c = this._c, zs = this._zones;
+      const rainSt = this._st(c.entity_rain), rainRaw = rainSt ? String(rainSt.state) : '';
+      const rain = !!rainSt && (RAIN_RE.test(rainRaw) || (isFinite(parseFloat(rainRaw)) && parseFloat(rainRaw) > 0 && /^sensor\./.test(c.entity_rain) && !/%|lx|°|°c/i.test(this._unit(c.entity_rain, ''))));
+      const known = [...zs.map((z) => z.id), c.entity_pump, c.entity_flow, c.entity_soil, c.entity_rain].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
+      const active = zs.filter((z) => this._on(z.id));
+      const flow = this._num(c.entity_flow);
+      const pump = this._on(c.entity_pump);
+      const watering = active.length > 0 || (!zs.length && (pump || (!isNaN(flow) && flow > 0.05)));
+      const phase = !known ? 'unavailable' : watering ? 'watering' : rain ? 'rain' : 'idle';
+      return { phase, active, rain, pump, flow };
+    }
+
+    _render() {
+      if (!this._built) this._build();
+      const c = this._c, r = this._root, card = this._card;
+      const { phase, active, rain, pump, flow } = this._compute();
+      card.className = `${phase}${rain ? ' rain' : ''}${pump ? ' pump-on' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
+      r.getElementById('irtitle').textContent = c.name || this._t('name');
+      r.getElementById('irbadge').textContent = phase === 'watering'
+        ? (active.length === 1 ? this._name(active[0]) : active.length > 1 ? `${active.length} ${this._t('zones')}` : this._t('watering'))
+        : this._t(rain && phase !== 'unavailable' ? 'rain' : phase);
+      // têtes d'arrosage : celles des zones ouvertes projettent l'eau
+      r.querySelectorAll('.spr').forEach((el) => el.classList.toggle('on', this._zones[Number(el.dataset.z)] ? this._on(this._zones[Number(el.dataset.z)].id) : false));
+      const lawn = r.querySelector('.lawn'); if (lawn) lawn.classList.toggle('wet', phase === 'watering');
+      // boutons
+      const blocked = c.block_on_rain === true && rain;
+      r.querySelectorAll('.zb').forEach((b) => {
+        const k = b.dataset.b, span = b.querySelector('span'), st = this._st(b.dataset.id);
+        if (k === 'stop') { span.textContent = this._t('stop'); b.classList.toggle('on', active.length > 0); b.disabled = !active.length; return; }
+        if (k === 'master') { const on = this._on(c.entity_master); span.textContent = this._t('auto'); b.classList.toggle('on', on); b.disabled = !st || st.state === 'unavailable'; return; }
+        const z = this._zones[Number(k.slice(1))], on = this._on(z.id);
+        span.textContent = this._name(z); b.title = this._name(z); b.classList.toggle('on', on);
+        b.disabled = !st || st.state === 'unavailable' || (blocked && !on);
+        if (blocked && !on) b.title = this._t('blocked');
+      });
+      // tuiles
+      const fu = this._unit(c.entity_flow, 'L/min'), tu = this._unit(c.entity_today, 'L');
+      let next = null;
+      const ns = this._st(c.entity_next);
+      if (ns && !/^(unavailable|unknown|none)$/i.test(ns.state)) {
+        const d = new Date(ns.state);
+        next = ns.attributes && ns.attributes.device_class === 'timestamp' || (!isNaN(d) && /\d{4}-\d{2}-\d{2}|T\d/.test(ns.state))
+          ? d.toLocaleString(window.applianceLocale(c, this._hass, true), { weekday: 'short', hour: '2-digit', minute: '2-digit' }) : String(ns.state);
+      }
+      const ps = this._st(c.entity_pump);
+      const V = {
+        flow: [c.entity_flow, this._fmt(flow, 1), fu],
+        soil: [c.entity_soil, this._fmt(this._num(c.entity_soil), 0), this._unit(c.entity_soil, '%')],
+        today: [c.entity_today, this._fmt(this._num(c.entity_today), 0), tu],
+        next: [next != null && c.entity_next, next, ''],
+        pressure: [c.entity_pressure, this._fmt(this._num(c.entity_pressure), 1), this._unit(c.entity_pressure, 'bar')],
+        pump: [ps && c.entity_pump, this._t(pump ? 'on' : 'off'), ''],
+        power: [c.entity_power, this._fmt(this._num(c.entity_power), 0), this._unit(c.entity_power, 'W')],
+        rain: [c.entity_rain, this._t(rain ? 'rain' : 'dry'), ''],
+      };
+      TILES.forEach(([k, , opt]) => {
+        const el = r.querySelector(`.tile[data-k="${k}"]`); const [show, val, unit] = V[k];
+        el.classList.toggle('hide', !show || c[opt] === false);
+        el.classList.toggle('bad', k === 'rain' && rain);
+        el.querySelector('.lbl').textContent = this._l(k);
+        const small = document.createElement('small'); small.textContent = unit ?? '';
+        el.querySelector('.v').replaceChildren(String(val ?? ''), small);
+      });
+    }
+  }
+  customElements.define(TAG, ApplianceIrrigationCard);
+
+  /* ---- éditeur visuel ---- */
+  class ApplianceIrrigationCardEditor extends HTMLElement {
+    setConfig(c) { this._c = c; this._draw(); }
+    set hass(h) { this._hass = h; if (this._form) this._form.hass = h; }
+    _draw() {
+      if (!this._form) {
+        this._form = document.createElement('ha-form');
+        this._form.addEventListener('value-changed', (e) => {
+          this._c = e.detail.value;
+          this.dispatchEvent(new CustomEvent('config-changed', { detail: { config: this._c }, bubbles: true, composed: true }));
+        });
+        this.appendChild(this._form);
+      }
+      const ent = (name, domain) => ({ name, selector: { entity: domain ? { domain } : {} } });
+      const bool = (name, def = true) => ({ name, selector: { boolean: {} }, default: def });
+      this._form.hass = this._hass; this._form.data = { ...this._c };
+      this._form.schema = [
+        { name: 'name', selector: { text: {} } },
+        { name: 'labels', selector: { object: {} } },
+        { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
+        { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
+        // zones : liste d'objets {entity, name, icon, x, y} (HA ≥ 2024.12) ; une ancienne version de HA affiche le YAML. x / y : position sur l'image perso, en %
+        { name: 'zones', selector: { object: { multiple: true, label_field: 'entity', fields: {
+          entity: { label: window.applianceEditorLabel('zone_entity', this._hass), required: true, selector: { entity: { domain: ['valve', 'switch', 'input_boolean'] } } },
+          name: { label: window.applianceEditorLabel('zone_name', this._hass), selector: { text: {} } },
+          icon: { label: window.applianceEditorLabel('zone_icon', this._hass), selector: { icon: {} } },
+          x: { label: window.applianceEditorLabel('zone_x', this._hass), selector: { number: { min: 0, max: 100, step: 1, mode: 'box', unit_of_measurement: '%' } } },
+          y: { label: window.applianceEditorLabel('zone_y', this._hass), selector: { number: { min: 0, max: 100, step: 1, mode: 'box', unit_of_measurement: '%' } } },
+        } } } },
+        { name: 'image', selector: { text: {} } }, bool('marker_names', false),
+        ent('entity_pump', ['switch', 'input_boolean', 'binary_sensor']), ent('entity_master', ['switch', 'input_boolean']),
+        ent('entity_rain', ['binary_sensor', 'sensor', 'input_boolean']), bool('block_on_rain', false),
+        ent('entity_flow', 'sensor'), ent('entity_soil', 'sensor'), ent('entity_today', 'sensor'), ent('entity_next', ['sensor', 'input_datetime']),
+        ent('entity_pressure', 'sensor'), ent('entity_power', 'sensor'),
+        ...window.applianceActionFields,
+        { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
+        { type: 'grid', name: '', schema: [bool('compact', false), bool('show_buttons'), ...TILES.map(([, , o]) => bool(o)), bool('animations')] },
+      ];
+      this._form.computeLabel = (s) => window.applianceEditorLabel(s.name, this._hass);
+    }
+  }
+  customElements.define(TAG + '-editor', ApplianceIrrigationCardEditor);
+
+  window.customCards = window.customCards || [];
+  window.customCards.push({
+    type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
+    description: "Arrosage du jardin : zones (électrovannes), pompe de puits, pluie, humidité du sol, arrêt général.", preview: true,
+    documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/irrigation.md',
+  });
+})();
+
+/* Carte « Ruban LED » — custom:appliance-led-strip-card
+ * Ruban LED piloté par une entité `light` (couleur, luminosité, effet) ou un simple `switch` / `input_boolean` (module on / off).
+ * `shape: bars` : deux barres verticales (type Govee DreamView) de part et d'autre d'un téléviseur, même entité.
+ * Dessin : le ruban seul (pastilles LED sur une bande souple) avec sa lueur, sans décor.
+ * La lueur prend la couleur réelle de l'ampoule (rgb_color, hs_color, color_temp_kelvin), à défaut un blanc chaud, et suit la luminosité.
+ * Commandes : marche / arrêt, curseur de luminosité (si l'entité sait varier), effet suivant (si l'entité a des effets).
+ */
+(() => {
+  const TAG = 'appliance-led-strip-card';
+  if (customElements.get(TAG)) return;
+
+  const T = {
+    "en": {
+      "name": "LED strip",
+      "on": "On",
+      "off": "Off",
+      "unavailable": "Unavailable",
+      "turn_on": "Turn on",
+      "turn_off": "Turn off",
+      "brightness": "Brightness",
+      "effect": "Effect",
+      "none": "None",
+      "next_effect": "Next effect",
+      "power": "Power",
+      "energy": "Energy"
+    },
+    "fr": {
+      "name": "Ruban LED",
+      "on": "Allumé",
+      "off": "Éteint",
+      "unavailable": "Indisponible",
+      "turn_on": "Allumer",
+      "turn_off": "Éteindre",
+      "brightness": "Luminosité",
+      "effect": "Effet",
+      "none": "Aucun",
+      "next_effect": "Effet suivant",
+      "power": "Puissance",
+      "energy": "Énergie"
+    }
+  };
+  const ON_RE = /^(on|true|1)$/i;
+  const BAD_RE = /^(unavailable|unknown)$/i;
+
+  const CSS = `
+:host{display:block;height:100%} ha-card{display:block;height:100%;box-sizing:border-box;padding:10px 12px 12px;overflow:hidden;--ls-c:255,214,153;--ls-c2:255,214,153;--ls-b:.8;--ls-ok:var(--appliance-ok-color,#43a047)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap}
+.on .badge{background:rgba(var(--ls-c),.28);color:var(--primary-text-color)}
+svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
+.ctl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
+.ctl.hide{display:none}
+.ctl button{display:flex;align-items:center;justify-content:center;gap:4px;border:0;border-radius:18px;height:34px;min-width:34px;padding:0 10px;cursor:pointer;background:var(--secondary-background-color,rgba(127,127,127,.18));color:var(--primary-text-color);font:600 12px var(--paper-font-body1_-_font-family,Roboto,sans-serif);--mdc-icon-size:18px}
+.ctl button.on{background:rgb(var(--ls-c));color:#1b1b1b;box-shadow:0 0 12px rgba(var(--ls-c),.55)}
+.ctl button.hide{display:none}.ctl button:disabled{opacity:.4;cursor:default}
+.ctl input[type=range]{flex:1 1 auto;min-width:60px;max-width:160px;accent-color:rgb(var(--ls-c));cursor:pointer}
+.ctl input.hide{display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
+.tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
+.tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
+.tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .v small{font-size:10px;font-weight:400;color:var(--secondary-text-color);margin-left:2px}
+.tile.hide{display:none}
+/* ---- illustration : la lueur suit la couleur (--ls-c) et la luminosité (--ls-b) ---- */
+.sbase{fill:none;stroke:#d9dee3;stroke-width:12;stroke-linecap:round}
+.sglow{fill:none;stroke:rgb(var(--ls-c));stroke-width:34;stroke-linecap:round;filter:blur(9px);opacity:0;transition:opacity .6s}
+.on .sglow{opacity:calc(.25 + var(--ls-b) * .65)}
+.sled{fill:none;stroke:#aab2ba;stroke-width:6;stroke-dasharray:2.4 8.6;transition:stroke .5s}
+.on .sled{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c)))}
+.on .sbase{stroke:rgb(var(--ls-c));stroke-opacity:.55}
+.on.fx .sled{animation:lsmove 1s linear infinite}
+@keyframes lsmove{to{stroke-dashoffset:-22}}
+.wall{fill:#171a22}.on .wall{fill:#10121a}
+.wl,.wr{filter:blur(16px);opacity:0;transition:opacity .6s}.wl{fill:rgb(var(--ls-c))}.wr{fill:rgb(var(--ls-c2))}
+.on .wl,.on .wr{opacity:calc(.2 + var(--ls-b) * .6)}
+.tvscr{fill:#242831;stroke:#07080b;stroke-width:1.5}
+.tvpic{opacity:0;transition:opacity .6s}.on .tvpic{opacity:calc(.35 + var(--ls-b) * .6)}
+.cam{fill:#1b1d22}
+.board{fill:#2c303a}.boardl{stroke:#171a22;stroke-width:1}
+.table{fill:#3a3f4b}.tleg{fill:#1b1d22}.spk{fill:#8b93a1}
+.bbase{fill:none;stroke:#3b414d;stroke-width:5;stroke-linecap:round}
+.bfoot{fill:#3b414d}
+.bglow{fill:none;stroke-width:26;stroke-linecap:round;filter:blur(8px);opacity:0;transition:opacity .6s}
+.bgl{stroke:rgb(var(--ls-c))}.bgr{stroke:rgb(var(--ls-c2))}
+.on .bglow{opacity:calc(.25 + var(--ls-b) * .65)}
+.bled{fill:none;stroke:#59606d;stroke-width:3;stroke-dasharray:2 4;stroke-linecap:round;transition:stroke .5s}
+.on .bledl{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c)))}.on .bledr{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c2)))}
+.on.fx .bled{animation:lsmove 1s linear infinite}
+.unavailable svg{filter:grayscale(.85) opacity(.65)}
+.noanim *{animation:none!important}
+ha-card.compact{display:flex;flex-direction:column;padding:6px}
+.compact .head{flex:none}.compact .title{font-size:12px;line-height:16px}.compact .badge{font-size:10px;padding:0 6px}
+.compact svg{flex:1 1 0;min-height:40px;width:calc(100% * min(1,var(--illus-scale,1)));max-width:none;height:auto;margin-top:3px}
+.compact .ctl{margin-top:4px}.compact .ctl button{height:24px;font-size:10px;--mdc-icon-size:14px}
+.compact .tiles{margin-top:4px;gap:4px}.compact .tile{padding:2px 5px;border-radius:8px}.compact .tile .v{font-size:12px;line-height:15px}
+`;
+
+  // Dessin : repères 270 × 100, bande souple ondulée ; la lueur est le même tracé flouté, teinté de la couleur de l'ampoule.
+  const STRIP = 'M16 62 C58 22 100 22 135 50 S212 78 254 38';
+  const SVG_STRIP = (label) => `<svg viewBox="0 0 270 100" role="img" aria-label="${label}"><path class="sglow" d="${STRIP}"/><path class="sbase" d="${STRIP}"/><path class="sled" d="${STRIP}"/></svg>`;
+  // Barres TV (d'après la photo des Govee DreamView) : salon de nuit, mur éclairé de deux couleurs (gauche / droite), téléviseur
+  // avec caméra, meuble bas, deux barres posées de chaque côté, table basse. Barre gauche = couleur de l'ampoule, droite = couleur 2.
+  const BARL = 'M32 112 L32 150', BARR = 'M238 112 L238 150';
+  const SVG_BARS = (label) => `<svg viewBox="0 0 270 200" role="img" aria-label="${label}"><defs><linearGradient id="lspic" x1="0" x2="1" y1="0.2" y2="0.8"><stop offset="0" style="stop-color:rgb(var(--ls-c))"/><stop offset="1" style="stop-color:rgb(var(--ls-c2))"/></linearGradient></defs><rect class="wall" width="270" height="168" rx="8"/><rect class="wl" x="6" y="14" width="140" height="140"/><rect class="wr" x="124" y="14" width="140" height="140"/><path class="bglow bgl" d="${BARL}"/><path class="bglow bgr" d="${BARR}"/><rect class="tvscr" x="58" y="30" width="154" height="90" rx="2"/><rect class="tvpic" x="60" y="32" width="150" height="86" fill="url(#lspic)"/><rect class="cam" x="130" y="24" width="10" height="6" rx="3"/><rect class="board" x="10" y="150" width="250" height="20" rx="2"/><path class="boardl" d="M95 150V170M175 150V170"/><path class="bbase" d="${BARL}"/><path class="bled bledl" d="${BARL}"/><path class="bbase" d="${BARR}"/><path class="bled bledr" d="${BARR}"/><rect class="bfoot" x="26" y="148" width="12" height="3" rx="1.5"/><rect class="bfoot" x="232" y="148" width="12" height="3" rx="1.5"/><ellipse class="table" cx="135" cy="182" rx="56" ry="7"/><rect class="tleg" x="125" y="184" width="20" height="14" rx="2"/><ellipse class="spk" cx="118" cy="180" rx="6" ry="2.5"/></svg>`;
+  const SVG = (label, shape) => (shape === 'bars' ? SVG_BARS : SVG_STRIP)(label);
+
+  const TILES = [['brightness', 'mdi:brightness-6', 'show_brightness'], ['effect', 'mdi:palette-swatch-variant', 'show_effect'],
+    ['power', 'mdi:flash', 'show_power'], ['energy', 'mdi:lightning-bolt-circle', 'show_energy']];
+
+  // température de couleur (kelvins) → RGB approximatif (formule de Tanner Helland)
+  const kelvinRgb = (k) => {
+    const t = Math.max(1000, Math.min(40000, k)) / 100, cl = (v) => Math.max(0, Math.min(255, Math.round(v)));
+    const r = t <= 66 ? 255 : 329.698727446 * Math.pow(t - 60, -0.1332047592);
+    const g = t <= 66 ? 99.4708025861 * Math.log(t) - 161.1195681661 : 288.1221695283 * Math.pow(t - 60, -0.0755148492);
+    const b = t >= 66 ? 255 : t <= 19 ? 0 : 138.5177312231 * Math.log(t - 10) - 305.0447927307;
+    return [cl(r), cl(g), cl(b)];
+  };
+  const hsRgb = (h, s) => { // teinte 0-360, saturation 0-100 → RGB (luminosité maximale)
+    s /= 100; const f = (n) => { const k = (n + h / 60) % 6; return Math.round(255 * (1 - s * Math.max(0, Math.min(k, 4 - k, 1)))); };
+    return [f(5), f(3), f(1)];
+  };
+
+  // teinte décalée : RGB → HSL, +deg, retour RGB (pour la 2e couleur du mur par défaut)
+  const shiftHue = ([r, g, b], deg) => {
+    r /= 255; g /= 255; b /= 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
+    let h = 0, sa = 0;
+    if (d) { sa = d / (1 - Math.abs(2 * l - 1)); h = mx === r ? ((g - b) / d + 6) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h *= 60; }
+    const k = (n) => { const q = (n + (h + deg) / 30) % 12; return Math.round(255 * (l - sa * Math.min(l, 1 - l) * Math.max(-1, Math.min(q - 3, 9 - q, 1)))); };
+    return [k(0), k(8), k(4)];
+  };
+
+  class ApplianceLedStripCard extends HTMLElement {
+    static getConfigElement() { return document.createElement(TAG + '-editor'); }
+    static getStubConfig(hass) {
+      const ids = Object.keys((hass && hass.states) || {});
+      return { entity: ids.find((i) => /^light\./.test(i) && /(ruban|strip|led)/i.test(i)) || ids.find((i) => /^light\./.test(i)) || '' };
+    }
+    setConfig(c) {
+      if (window.applianceSize) window.applianceSize(this, c);
+      if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
+      this._c = { show_status: true, show_controls: true, show_brightness: true, show_effect: true, show_power: true, show_energy: true, ...c };
+      this._built = false; // reconstruit aussi le dessin quand `shape` change
+      if (this._hass) this._render();
+    }
+    set hass(h) { const ch = this._c && window.applianceChanged(this, h, this._c); this._hass = h; if (ch && !this._dragging) this._render(); }
+    getCardSize() { return 4; }
+    getGridOptions() { return { columns: 6, min_columns: 3, rows: 'auto', min_rows: 1 }; }
+
+    _lang() { return window.applianceLang(T, this._c, this._hass); }
+    _t(k) { return T[this._lang()][k] ?? T.en[k] ?? k; }
+    _l(k) { const L = this._c && this._c.labels; return L && L[k] != null && L[k] !== '' ? String(L[k]) : this._t(k); }
+    _st(id) { return id && this._hass.states[id]; }
+    _num(id) { const s = this._st(id); if (!s) return NaN; const v = parseFloat(String(s.state).replace(',', '.')); return isFinite(v) ? v : NaN; }
+    _unit(id, d) { const s = this._st(id); return (s && s.attributes && s.attributes.unit_of_measurement) || d; }
+    _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
+    _more(id) { if (id) this.dispatchEvent(new CustomEvent('hass-more-info', { detail: { entityId: id }, bubbles: true, composed: true })); }
+    _dom() { return String(this._c.entity || '').split('.')[0]; }
+
+    _build() {
+      const root = this.shadowRoot || this.attachShadow({ mode: 'open' }), c = this._c;
+      root.innerHTML = `<style>${CSS}</style><ha-card>
+        <div class="head"><div class="title" id="lstitle"></div><div class="badge" id="lsbadge"></div></div>
+        ${SVG((c.name || this._t('name')).replace(/"/g, ''), c.shape)}
+        <div class="ctl" id="lsctl"><button id="lspw" aria-pressed="false"><ha-icon icon="mdi:power"></ha-icon></button><input id="lsbr" class="hide" type="range" min="1" max="100" step="1" aria-label="${this._t('brightness')}"><button id="lsfx" class="hide"><ha-icon icon="mdi:palette-swatch-variant"></ha-icon></button></div>
+        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${k}"><div class="l"><ha-icon icon="${ic}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div>
+      </ha-card>`;
+      window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(c.entity));
+      root.getElementById('lspw').addEventListener('click', () => {
+        const d = this._dom(); this._hass.callService(['light', 'switch', 'input_boolean'].includes(d) ? d : 'homeassistant', 'toggle', { entity_id: c.entity });
+      });
+      const br = root.getElementById('lsbr');
+      br.addEventListener('input', () => { this._dragging = true; });
+      br.addEventListener('change', () => { this._dragging = false; this._hass.callService('light', 'turn_on', { entity_id: c.entity, brightness_pct: Number(br.value) }); });
+      root.getElementById('lsfx').addEventListener('click', () => {
+        const s = this._st(c.entity), list = (s && s.attributes && s.attributes.effect_list) || [];
+        if (list.length) this._hass.callService('light', 'turn_on', { entity_id: c.entity, effect: list[(list.indexOf(s.attributes.effect) + 1) % list.length] });
+      });
+      const tgt = { brightness: c.entity, effect: c.entity, power: c.entity_power, energy: c.entity_energy };
+      root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(tgt[el.dataset.k])));
+      this._root = root; this._card = root.querySelector('ha-card'); this._built = true;
+    }
+
+    // couleur imposée : #rrggbb, rgb(…) ou nom CSS, résolue par le navigateur (null si absente ou invalide)
+    _css(v) {
+      if (!v) return null;
+      const el = document.createElement('canvas').getContext('2d'); el.fillStyle = '#ffd699'; el.fillStyle = String(v);
+      const m = /^#([0-9a-f]{6})$/i.exec(el.fillStyle); return m ? [0, 2, 4].map((i) => parseInt(m[1].substr(i, 2), 16)) : null;
+    }
+    _color(a) {
+      const c = this._c, forced = this._css(c.color);
+      if (forced) return forced;
+      if (Array.isArray(a.rgb_color) && a.rgb_color.length >= 3) return a.rgb_color.slice(0, 3);
+      if (Array.isArray(a.hs_color) && a.hs_color.length >= 2 && Number(a.hs_color[1]) > 4) return hsRgb(Number(a.hs_color[0]), Number(a.hs_color[1]));
+      const k = Number(a.color_temp_kelvin) || (Number(a.color_temp) > 0 ? 1e6 / Number(a.color_temp) : NaN);
+      return isNaN(k) ? [255, 214, 153] : kelvinRgb(k);
+    }
+
+    _render() {
+      if (!this._built) this._build();
+      const c = this._c, r = this._root, card = this._card, s = this._st(c.entity);
+      const raw = s ? String(s.state) : '', a = (s && s.attributes) || {};
+      const st = !s || BAD_RE.test(raw) ? 'unavailable' : ON_RE.test(raw) ? 'on' : 'off';
+      const dimmable = this._dom() === 'light' && Array.isArray(a.supported_color_modes) ? a.supported_color_modes.some((m) => m !== 'onoff') : this._dom() === 'light' && a.brightness != null;
+      const bri = a.brightness != null ? Math.max(0, Math.min(1, Number(a.brightness) / 255)) : 1;
+      const fx = st === 'on' && !!a.effect && !/^(none|off)$/i.test(String(a.effect));
+      card.className = `${st}${fx ? ' fx' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
+      const col = this._color(a);
+      card.style.setProperty('--ls-c', col.join(','));
+      card.style.setProperty('--ls-c2', (this._css(c.color2) || shiftHue(col, 150)).join(',')); // barres TV : 2e couleur du mur
+      card.style.setProperty('--ls-b', (st === 'on' ? Math.max(0.15, bri) : 0).toFixed(2));
+      r.getElementById('lstitle').textContent = c.name || (s && s.attributes && s.attributes.friendly_name) || this._t('name');
+      const badge = r.getElementById('lsbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
+
+      // commandes
+      const ctl = r.getElementById('lsctl'), pw = r.getElementById('lspw'), br = r.getElementById('lsbr'), fxb = r.getElementById('lsfx');
+      ctl.classList.toggle('hide', c.show_controls === false || !s);
+      pw.classList.toggle('on', st === 'on'); pw.setAttribute('aria-pressed', String(st === 'on')); pw.disabled = st === 'unavailable'; pw.title = this._t(st === 'on' ? 'turn_off' : 'turn_on');
+      br.classList.toggle('hide', !dimmable || st === 'unavailable'); br.disabled = st !== 'on';
+      if (!this._dragging) br.value = String(Math.round(bri * 100));
+      const hasFx = Array.isArray(a.effect_list) && a.effect_list.length > 1;
+      fxb.classList.toggle('hide', !hasFx || st === 'unavailable'); fxb.title = this._t('next_effect');
+
+      // tuiles
+      const V = {
+        brightness: [dimmable && st === 'on', this._fmt(bri * 100, 0), '%'],
+        effect: [hasFx || fx, a.effect ? String(a.effect) : this._t('none'), ''],
+        power: [c.entity_power, this._fmt(this._num(c.entity_power), 0), this._unit(c.entity_power, 'W')],
+        energy: [c.entity_energy, this._fmt(this._num(c.entity_energy), 2), this._unit(c.entity_energy, 'kWh')],
+      };
+      TILES.forEach(([k, , opt]) => {
+        const el = r.querySelector(`.tile[data-k="${k}"]`), [show, val, unit] = V[k];
+        el.classList.toggle('hide', !show || c[opt] === false);
+        el.querySelector('.lbl').textContent = this._l(k);
+        const small = document.createElement('small'); small.textContent = unit ?? '';
+        el.querySelector('.v').replaceChildren(String(val ?? ''), small);
+      });
+    }
+  }
+  customElements.define(TAG, ApplianceLedStripCard);
+
+  /* ---- éditeur visuel ---- */
+  class ApplianceLedStripCardEditor extends HTMLElement {
+    setConfig(c) { this._c = c; this._draw(); }
+    set hass(h) { this._hass = h; if (this._form) this._form.hass = h; }
+    _draw() {
+      if (!this._form) {
+        this._form = document.createElement('ha-form');
+        this._form.addEventListener('value-changed', (e) => {
+          this._c = e.detail.value;
+          this.dispatchEvent(new CustomEvent('config-changed', { detail: { config: this._c }, bubbles: true, composed: true }));
+        });
+        this.appendChild(this._form);
+      }
+      const ent = (name, domain) => ({ name, selector: { entity: domain ? { domain } : {} } });
+      const bool = (name, def = true) => ({ name, selector: { boolean: {} }, default: def });
+      this._form.hass = this._hass; this._form.data = { ...this._c };
+      this._form.schema = [
+        { name: 'name', selector: { text: {} } },
+        { name: 'labels', selector: { object: {} } },
+        { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
+        { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
+        { name: 'shape', selector: { select: { mode: 'dropdown', options: [{ value: 'strip', label: window.applianceEditorLabel('shape_strip', this._hass) }, { value: 'bars', label: window.applianceEditorLabel('shape_bars', this._hass) }] } } },
+        ent('entity', ['light', 'switch', 'input_boolean']), { name: 'color', selector: { text: {} } }, { name: 'color2', selector: { text: {} } },
+        ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
+        ...window.applianceActionFields,
+        { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
+        { type: 'grid', name: '', schema: [bool('compact', false), bool('show_status'), bool('show_controls'), ...TILES.map(([, , o]) => bool(o)), bool('animations')] },
+      ];
+      this._form.computeLabel = (s) => window.applianceEditorLabel(s.name, this._hass);
+    }
+  }
+  customElements.define(TAG + '-editor', ApplianceLedStripCardEditor);
+
+  window.customCards = window.customCards || [];
+  window.customCards.push({
+    type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
+    description: 'Ruban LED animé ou barres lumineuses TV : plafond, toiture ou terrasse, couleur et luminosité réelles, marche / arrêt, effet.', preview: true,
+    documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/led-strip.md',
   });
 })();
 
@@ -46740,6 +51429,25 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "year": "This year",
       "last": "Last rain",
       "battery": "Battery",
+      "signal": "Signal"
+    },
+    "da": {
+      "name": "Regnmåler",
+      "dry": "Tørt",
+      "light": "Let regn",
+      "moderate": "Regn",
+      "heavy": "Kraftig regn",
+      "violent": "Skybrud",
+      "unavailable": "Utilgængelig",
+      "low_battery": "Lavt batteri",
+      "rate": "Intensitet",
+      "hour": "Seneste time",
+      "day": "I dag",
+      "week": "Denne uge",
+      "month": "Denne måned",
+      "year": "I år",
+      "last": "Seneste regn",
+      "battery": "Batteri",
       "signal": "Signal"
     },
     "de": {
@@ -46855,6 +51563,44 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "last": "Laatste regen",
       "battery": "Batterij",
       "signal": "Signaal"
+    },
+    "sr": {
+      "name": "Кишомер",
+      "dry": "Суво",
+      "light": "Слаба киша",
+      "moderate": "Киша",
+      "heavy": "Јака киша",
+      "violent": "Пљусак",
+      "unavailable": "Недоступно",
+      "low_battery": "Слаба батерија",
+      "rate": "Интензитет",
+      "hour": "Последњи сат",
+      "day": "Данас",
+      "week": "Ове недеље",
+      "month": "Овог месеца",
+      "year": "Ове године",
+      "last": "Последња киша",
+      "battery": "Батерија",
+      "signal": "Сигнал"
+    },
+    "sr-Latn": {
+      "name": "Kišomer",
+      "dry": "Suvo",
+      "light": "Slaba kiša",
+      "moderate": "Kiša",
+      "heavy": "Jaka kiša",
+      "violent": "Pljusak",
+      "unavailable": "Nedostupno",
+      "low_battery": "Slaba baterija",
+      "rate": "Intenzitet",
+      "hour": "Poslednji sat",
+      "day": "Danas",
+      "week": "Ove nedelje",
+      "month": "Ovog meseca",
+      "year": "Ove godine",
+      "last": "Poslednja kiša",
+      "battery": "Baterija",
+      "signal": "Signal"
     }
   };
 
@@ -46879,7 +51625,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--rg-ok:var(--appli
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(200px * var(--illus-scale,1));width:calc(200px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
 .tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -47109,6 +51856,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['sensor', 'binary_sensor', 'input_boolean']),
         ent('entity_hour', 'sensor'), ent('entity_day', 'sensor'), ent('entity_week', 'sensor'), ent('entity_month', 'sensor'), ent('entity_year', 'sensor'),
         ent('entity_last', 'sensor'), ent('entity_battery', 'sensor'), ent('entity_signal', 'sensor'),
@@ -47163,6 +51911,26 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_sensor": "Sensor (SVG)",
       "style_plant_photo": "Plant (photo)",
       "style_sensor_photo": "Sensor (photo)"
+    },
+    "da": {
+      "name": "Plantesensor",
+      "ok": "Sund",
+      "dry": "Skal vandes",
+      "cold": "For koldt",
+      "dark": "For lidt lys",
+      "hungry": "Skal gødes",
+      "low_battery": "Lavt batteri",
+      "unavailable": "Utilgængelig",
+      "moisture": "Jordfugtighed",
+      "temperature": "Temperatur",
+      "conductivity": "Næring",
+      "brightness": "Lys",
+      "battery": "Batteri",
+      "rssi": "Signal",
+      "style_plant": "Plante (SVG)",
+      "style_sensor": "Sensor (SVG)",
+      "style_plant_photo": "Plante (foto)",
+      "style_sensor_photo": "Sensor (foto)"
     },
     "de": {
       "name": "Pflanzenmonitor",
@@ -47263,6 +52031,46 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_sensor": "Sensor (SVG)",
       "style_plant_photo": "Plant (foto)",
       "style_sensor_photo": "Sensor (foto)"
+    },
+    "sr": {
+      "name": "Монитор за биљке",
+      "ok": "Здрава",
+      "dry": "Потребна вода",
+      "cold": "Прехладно",
+      "dark": "Недовољно светла",
+      "hungry": "Потребно ђубриво",
+      "low_battery": "Слаба батерија",
+      "unavailable": "Недоступно",
+      "moisture": "Влажност земљишта",
+      "temperature": "Температура",
+      "conductivity": "Плодност",
+      "brightness": "Светлост",
+      "battery": "Батерија",
+      "rssi": "Сигнал",
+      "style_plant": "Биљка (SVG)",
+      "style_sensor": "Сензор (SVG)",
+      "style_plant_photo": "Биљка (фотографија)",
+      "style_sensor_photo": "Сензор (фотографија)"
+    },
+    "sr-Latn": {
+      "name": "Monitor za biljke",
+      "ok": "Zdrava",
+      "dry": "Potrebna voda",
+      "cold": "Prehladno",
+      "dark": "Nedovoljno svetla",
+      "hungry": "Potrebno đubrivo",
+      "low_battery": "Slaba baterija",
+      "unavailable": "Nedostupno",
+      "moisture": "Vlažnost zemljišta",
+      "temperature": "Temperatura",
+      "conductivity": "Plodnost",
+      "brightness": "Svetlost",
+      "battery": "Baterija",
+      "rssi": "Signal",
+      "style_plant": "Biljka (SVG)",
+      "style_sensor": "Senzor (SVG)",
+      "style_plant_photo": "Biljka (fotografija)",
+      "style_sensor_photo": "Senzor (fotografija)"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -47285,7 +52093,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
 .tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -47489,6 +52298,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_moisture', 'sensor'), ent('entity_temperature', 'sensor'), ent('entity_conductivity', 'sensor'), ent('entity_brightness', 'sensor'), ent('entity_battery', 'sensor'), ent('entity_rssi', 'sensor'),
         { type: 'grid', name: '', schema: [num('min_moisture', 20, 0, 100, 1, '%'), num('min_temperature', undefined, -20, 60, 0.5, '°C'), num('min_conductivity', undefined, 0, 5000, 10, 'µS/cm'),
           num('min_brightness', undefined, 0, 100000, 100, 'lx'), num('min_battery', 15, 0, 100, 1, '%')] },
@@ -47545,6 +52355,29 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_svg": "Drawing (SVG)",
       "style_smartmi": "Smartmi Evaporative Humidifier 2 (photo)",
       "target_tile": "Target"
+    },
+    "da": {
+      "name": "Luftfugter",
+      "off": "Slukket",
+      "humidifying": "Fugter",
+      "target": "Mål nået",
+      "dry": "Tørretilstand",
+      "clean": "Rengøring",
+      "unavailable": "Utilgængelig",
+      "low_water": "Lavt vand",
+      "low_water_alert": "Vandtanken er næsten tom",
+      "turn_on": "Tænd",
+      "turn_off": "Sluk",
+      "humidity": "Luftfugtighed",
+      "temperature": "Temperatur",
+      "tank": "Vandtank",
+      "fan": "Ventilator",
+      "mode": "Tilstand",
+      "low": "Lav",
+      "ok": "OK",
+      "style_svg": "Tegning (SVG)",
+      "style_smartmi": "Smartmi Evaporative Humidifier 2 (foto)",
+      "target_tile": "Mål"
     },
     "de": {
       "name": "Luftbefeuchter",
@@ -47660,6 +52493,52 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_svg": "Tekening (SVG)",
       "style_smartmi": "Smartmi Evaporative Humidifier 2 (foto)",
       "target_tile": "Doel"
+    },
+    "sr": {
+      "name": "Овлаживач ваздуха",
+      "off": "Искључено",
+      "humidifying": "Овлаживање",
+      "target": "Циљ достигнут",
+      "dry": "Режим сушења",
+      "clean": "Чишћење",
+      "unavailable": "Недоступно",
+      "low_water": "Мало воде",
+      "low_water_alert": "Резервоар за воду је скоро празан",
+      "turn_on": "Укључи",
+      "turn_off": "Искључи",
+      "humidity": "Влажност",
+      "temperature": "Температура",
+      "tank": "Резервоар за воду",
+      "fan": "Вентилатор",
+      "mode": "Режим",
+      "low": "Ниско",
+      "ok": "У реду",
+      "style_svg": "Цртеж (SVG)",
+      "style_smartmi": "Smartmi Evaporative Humidifier 2 (фотографија)",
+      "target_tile": "Циљна"
+    },
+    "sr-Latn": {
+      "name": "Ovlaživač vazduha",
+      "off": "Isključeno",
+      "humidifying": "Ovlaživanje",
+      "target": "Cilj dostignut",
+      "dry": "Režim sušenja",
+      "clean": "Čišćenje",
+      "unavailable": "Nedostupno",
+      "low_water": "Malo vode",
+      "low_water_alert": "Rezervoar za vodu je skoro prazan",
+      "turn_on": "Uključi",
+      "turn_off": "Isključi",
+      "humidity": "Vlažnost",
+      "temperature": "Temperatura",
+      "tank": "Rezervoar za vodu",
+      "fan": "Ventilator",
+      "mode": "Režim",
+      "low": "Nisko",
+      "ok": "U redu",
+      "style_svg": "Crtež (SVG)",
+      "style_smartmi": "Smartmi Evaporative Humidifier 2 (fotografija)",
+      "target_tile": "Ciljna"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -47682,7 +52561,8 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
 .tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
 .tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -47965,6 +52845,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity', ['humidifier', 'switch', 'fan', 'input_boolean']), ent('switch', ['switch', 'input_boolean', 'fan']),
         ent('humidity', 'sensor'), ent('target_humidity', ['number', 'input_number', 'sensor']), ent('temperature', 'sensor'),
         ent('fan_speed', ['select', 'input_select', 'fan']), ent('mode', ['select', 'input_select', 'fan', 'humidifier']),
@@ -48023,6 +52904,29 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "mode_low": "Low",
       "mode_high": "High",
       "alarm_alert": "Tip-over or overheat protection triggered"
+    },
+    "da": {
+      "name": "Varmeblæser",
+      "off": "Slukket",
+      "standby": "Standby",
+      "fan": "Kun ventilator",
+      "low": "Varmer · lav",
+      "high": "Varmer · høj",
+      "alarm": "Fejl",
+      "unavailable": "Utilgængelig",
+      "power": "El",
+      "energy": "El-energi",
+      "cost": "Pris",
+      "temp": "Rum",
+      "target": "Mål",
+      "mode": "Indstilling",
+      "timer": "Timer",
+      "btn_on": "Tænd",
+      "btn_off": "Sluk",
+      "mode_fan": "Kun ventilator",
+      "mode_low": "Lav",
+      "mode_high": "Høj",
+      "alarm_alert": "Væltesikring eller overophedningsbeskyttelse udløst"
     },
     "de": {
       "name": "Heizlüfter",
@@ -48161,6 +53065,52 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "mode_low": "Laag",
       "mode_high": "Hoog",
       "alarm_alert": "Kantel- of oververhittingsbeveiliging geactiveerd"
+    },
+    "sr": {
+      "name": "Калорифер",
+      "off": "Искључено",
+      "standby": "Приправност",
+      "fan": "Само вентилатор",
+      "low": "Грејање · слабо",
+      "high": "Грејање · јако",
+      "alarm": "Квар",
+      "unavailable": "Недоступно",
+      "power": "Снага",
+      "energy": "Ел. енергија",
+      "cost": "Трошак",
+      "temp": "Просторија",
+      "target": "Циљна",
+      "mode": "Подешавање",
+      "timer": "Тајмер",
+      "btn_on": "Укључи",
+      "btn_off": "Искључи",
+      "mode_fan": "Само вентилатор",
+      "mode_low": "Слабо",
+      "mode_high": "Јако",
+      "alarm_alert": "Активирана заштита од превртања или прегревања"
+    },
+    "sr-Latn": {
+      "name": "Kalorifer",
+      "off": "Isključeno",
+      "standby": "Pripravnost",
+      "fan": "Samo ventilator",
+      "low": "Grejanje · slabo",
+      "high": "Grejanje · jako",
+      "alarm": "Kvar",
+      "unavailable": "Nedostupno",
+      "power": "Snaga",
+      "energy": "El. energija",
+      "cost": "Trošak",
+      "temp": "Prostorija",
+      "target": "Ciljna",
+      "mode": "Podešavanje",
+      "timer": "Tajmer",
+      "btn_on": "Uključi",
+      "btn_off": "Isključi",
+      "mode_fan": "Samo ventilator",
+      "mode_low": "Slabo",
+      "mode_high": "Jako",
+      "alarm_alert": "Aktivirana zaštita od prevrtanja ili pregrevanja"
     }
   };
   const ALARM_RE = /(alarm|alarme|error|erreur|fault|d[ée]faut|tip|overheat|surchauffe|renvers|kipp|ribalt)/i;
@@ -48184,7 +53134,8 @@ svg{display:block;flex:0 1 calc(200px * var(--illus-scale,1));width:calc(200px *
 .ctl button ha-icon{--mdc-icon-size:16px}
 .ctl button.on{background:color-mix(in srgb,var(--fh-heat) 28%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -48416,6 +53367,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_status', ['switch', 'climate', 'input_boolean', 'fan', 'binary_sensor', 'sensor']), ent('entity_switch', ['switch', 'input_boolean', 'fan', 'light']),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
@@ -48484,6 +53436,38 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "hot": "Water too hot",
       "alarm_alert": "Fault {e}",
       "alarm_short": "Fault: check the spa"
+    },
+    "da": {
+      "name": "Oppusteligt spabad",
+      "off": "Slukket",
+      "standby": "Standby",
+      "filtering": "Filtrerer",
+      "heating": "Varmer",
+      "bubbles": "Bobler",
+      "jets": "Dyser",
+      "alarm": "Fejl",
+      "unavailable": "Utilgængelig",
+      "temp": "Vand",
+      "target": "Mål",
+      "power": "El",
+      "energy": "El-energi",
+      "cost": "Pris",
+      "ph": "pH",
+      "chlorine": "Klor",
+      "timer": "Timer",
+      "cover": "Låg",
+      "cover_closed": "Lukket",
+      "cover_open": "Åbent",
+      "btn_heater": "Varme",
+      "btn_filter": "Filter",
+      "btn_bubbles": "Bobler",
+      "btn_jets": "Dyser",
+      "btn_light": "Lys",
+      "lowph": "pH for lav",
+      "highph": "pH for høj",
+      "hot": "Vandet er for varmt",
+      "alarm_alert": "Fejl {e}",
+      "alarm_short": "Fejl: tjek spabadet"
     },
     "de": {
       "name": "Aufblasbarer Whirlpool",
@@ -48676,6 +53660,70 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "hot": "Water te heet",
       "alarm_alert": "Storing {e}",
       "alarm_short": "Storing: controleer de spa"
+    },
+    "sr": {
+      "name": "Ђакузи на надувавање",
+      "off": "Искључено",
+      "standby": "Приправност",
+      "filtering": "Филтрирање",
+      "heating": "Грејање",
+      "bubbles": "Мехурићи",
+      "jets": "Млазнице",
+      "alarm": "Квар",
+      "unavailable": "Недоступно",
+      "temp": "Вода",
+      "target": "Циљна",
+      "power": "Снага",
+      "energy": "Ел. енергија",
+      "cost": "Трошак",
+      "ph": "pH",
+      "chlorine": "Хлор",
+      "timer": "Тајмер",
+      "cover": "Покривач",
+      "cover_closed": "Затворен",
+      "cover_open": "Отворен",
+      "btn_heater": "Грејач",
+      "btn_filter": "Филтер",
+      "btn_bubbles": "Мехурићи",
+      "btn_jets": "Млазнице",
+      "btn_light": "Светло",
+      "lowph": "pH је пренизак",
+      "highph": "pH је превисок",
+      "hot": "Вода је преврућа",
+      "alarm_alert": "Квар {e}",
+      "alarm_short": "Квар: проверите ђакузи"
+    },
+    "sr-Latn": {
+      "name": "Đakuzi na naduvavanje",
+      "off": "Isključeno",
+      "standby": "Pripravnost",
+      "filtering": "Filtriranje",
+      "heating": "Grejanje",
+      "bubbles": "Mehurići",
+      "jets": "Mlaznice",
+      "alarm": "Kvar",
+      "unavailable": "Nedostupno",
+      "temp": "Voda",
+      "target": "Ciljna",
+      "power": "Snaga",
+      "energy": "El. energija",
+      "cost": "Trošak",
+      "ph": "pH",
+      "chlorine": "Hlor",
+      "timer": "Tajmer",
+      "cover": "Pokrivač",
+      "cover_closed": "Zatvoren",
+      "cover_open": "Otvoren",
+      "btn_heater": "Grejač",
+      "btn_filter": "Filter",
+      "btn_bubbles": "Mehurići",
+      "btn_jets": "Mlaznice",
+      "btn_light": "Svetlo",
+      "lowph": "pH je prenizak",
+      "highph": "pH je previsok",
+      "hot": "Voda je prevruća",
+      "alarm_alert": "Kvar {e}",
+      "alarm_short": "Kvar: proverite đakuzi"
     }
   };
   const NO_ERR = /^(|0|none|no|ok|off|false|normal|no_error|aucune?|kein|unknown|unavailable)$/i;
@@ -48700,7 +53748,8 @@ svg{display:block;flex:0 1 calc(240px * var(--illus-scale,1));width:calc(240px *
 .ctl button.on{background:color-mix(in srgb,var(--sp-cold) 30%,var(--secondary-background-color))}
 .ctl button.on.heat{background:color-mix(in srgb,var(--sp-heat) 32%,var(--secondary-background-color))}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -48969,6 +54018,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_status', ['climate', 'water_heater', 'switch', 'input_boolean', 'sensor', 'binary_sensor']),
         ent('entity_heater', ['switch', 'input_boolean', 'climate', 'binary_sensor']), ent('entity_filter', ['switch', 'input_boolean', 'binary_sensor']),
         ent('entity_bubbles', ['switch', 'input_boolean', 'binary_sensor']), ent('entity_jets', ['switch', 'input_boolean', 'binary_sensor']),
@@ -49026,6 +54076,20 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "volume": "Volume",
       "room": "Room"
     },
+    "da": {
+      "name": "Varmemåler",
+      "idle": "Ingen varme",
+      "heating": "Varmer",
+      "unavailable": "Utilgængelig",
+      "supply": "Fremløb (Tv)",
+      "return": "Retur (Tr)",
+      "delta": "ΔT",
+      "power": "Effekt",
+      "flow": "Flow",
+      "energy": "Energi",
+      "volume": "Volumen",
+      "room": "Rum"
+    },
     "fr": {
       "name": "Compteur de chaleur",
       "idle": "Pas de chauffe",
@@ -49039,6 +54103,34 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "energy": "Énergie",
       "volume": "Volume",
       "room": "Pièce"
+    },
+    "sr": {
+      "name": "Калориметар",
+      "idle": "Нема грејања",
+      "heating": "Грејање",
+      "unavailable": "Недоступно",
+      "supply": "Полазни вод (Tv)",
+      "return": "Повратни вод (Tr)",
+      "delta": "ΔT",
+      "power": "Снага",
+      "flow": "Проток",
+      "energy": "Енергија",
+      "volume": "Запремина",
+      "room": "Просторија"
+    },
+    "sr-Latn": {
+      "name": "Kalorimetar",
+      "idle": "Nema grejanja",
+      "heating": "Grejanje",
+      "unavailable": "Nedostupno",
+      "supply": "Polazni vod (Tv)",
+      "return": "Povratni vod (Tr)",
+      "delta": "ΔT",
+      "power": "Snaga",
+      "flow": "Protok",
+      "energy": "Energija",
+      "volume": "Zapremina",
+      "room": "Prostorija"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -49059,7 +54151,8 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--hm-hot:var(--appl
 .heating .badge{background:color-mix(in srgb,var(--hm-hot) 20%,transparent);color:var(--hm-hot)}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:auto;margin:4px auto 0;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(68px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;background:var(--secondary-background-color);border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
+:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
 .tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
 .tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tile .l ha-icon{--mdc-icon-size:13px;flex:none}
@@ -49293,6 +54386,7 @@ svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height
         { name: 'labels', selector: { object: {} } },
         { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
         { name: 'transparent', selector: { boolean: {} } },
+        ...window.applianceTileFields(this._hass),
         ent('entity_energy', 'sensor'), ent('entity_supply_temp', 'sensor'), ent('entity_return_temp', 'sensor'), ent('entity_power', 'sensor'),
         ent('entity_flow', 'sensor'), ent('entity_water_volume', 'sensor'), ent('entity_room_temp', 'sensor'),
         { name: 'power_threshold', default: 0.05, selector: { number: { min: 0, max: 5, step: 0.01, mode: 'box', unit_of_measurement: 'kW' } } },

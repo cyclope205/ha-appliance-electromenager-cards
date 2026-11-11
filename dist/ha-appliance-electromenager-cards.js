@@ -8,7 +8,7 @@
  */
 (() => {
 "use strict";
-const VERSION = "1.124.0";
+const VERSION = "1.118.0";
 
 /* ------------------------------------------------------------------ */
 /* i18n — strings live in src/i18n/<lang>.json, inlined by build.js    */
@@ -114,10 +114,6 @@ const STRINGS = {
     "f_show_temperature": "Show temperature",
     "lamp": "Lamp",
     "picture_mode": "Picture",
-    "source_active": "Active source",
-    "sound_mode": "Current audio mode",
-    "sound_mode_next": "Next audio mode",
-    "f_show_sound_mode": "Show the audio mode",
     "source_next": "Next source",
     "f_warm_threshold": "Keep-warm / ready above (W)",
     "fridge": "Refrigerator",
@@ -434,15 +430,6 @@ const STRINGS = {
     "presence_off": "Nobody",
     "low_water": "Low water level",
     "f_switch_ph_plus": "pH+ dosing pump (on/off)",
-    "dose_interval": "Interval",
-    "dose_timer": "Timer",
-    "dose_volume": "Dose",
-    "dose_time": "Time",
-    "day_short": "d",
-    "f_dose_interval": "Dosing interval (days: number, input_number or sensor)",
-    "f_dose_timer": "Dosing timer (switch: on = doses at the planned interval)",
-    "f_dose_volume": "Volume per dose (sensor, mL)",
-    "f_dose_time": "Dosing time (sensor with the schedule, e.g. 10:00)",
     "f_switch_ph_minus": "pH- dosing pump (on/off)",
     "f_switch_electrolysis": "Electrolysis (on/off)",
     "f_switch_heat_pump": "Pool heat pump (on/off)",
@@ -2224,10 +2211,6 @@ const STRINGS = {
     "f_show_temperature": "Afficher la température",
     "lamp": "Lampe",
     "picture_mode": "Image",
-    "source_active": "Source active",
-    "sound_mode": "Mode audio actuel",
-    "sound_mode_next": "Mode audio suivant",
-    "f_show_sound_mode": "Afficher le mode audio",
     "source_next": "Source suivante",
     "f_warm_threshold": "Maintien au chaud / prête au-dessus de (W)",
     "fridge": "Réfrigérateur",
@@ -2544,15 +2527,6 @@ const STRINGS = {
     "presence_off": "Personne",
     "low_water": "Niveau d'eau bas",
     "f_switch_ph_plus": "Pompe doseuse pH+ (marche / arrêt)",
-    "dose_interval": "Intervalle",
-    "dose_timer": "Timer",
-    "dose_volume": "Dose",
-    "dose_time": "Heure",
-    "day_short": "j",
-    "f_dose_interval": "Intervalle de distribution (jours : number, input_number ou capteur)",
-    "f_dose_timer": "Timer de distribution (interrupteur : actif = distribue selon l'intervalle)",
-    "f_dose_volume": "Volume par dose (capteur, mL)",
-    "f_dose_time": "Heure de distribution (capteur du planning, ex. 10:00)",
     "f_switch_ph_minus": "Pompe doseuse pH- (marche / arrêt)",
     "f_switch_electrolysis": "Électrolyse (marche / arrêt)",
     "f_switch_heat_pump": "PAC de piscine (marche / arrêt)",
@@ -5437,10 +5411,7 @@ const STRINGS = {
     "f_bed_temperature": "Сензор температуре подлоге",
     "f_filament_color": "Боја филамента (CSS)",
     "f_image": "URL слике (нпр. /local/my-device.png)",
-    "f_image_min": "Мин. осветљеност фотографије када је светло укључено (%)",
-    "f_image_max": "Макс. осветљеност фотографије (% нивоа светлости)",
-    "f_glow_max": "Макс. сјај (% нивоа светлости)",
-    "f_nozzle_temperatures": "Сензори температуре дизне (T0, T1…)",
+    "f_nozzle_temperatures": "Сензори температуре млазнице (T0, T1…)",
     "filtering": "Филтрирање",
     "water": "Вода",
     "today": "Данас",
@@ -5587,49 +5558,24 @@ const STRINGS = {
     "f_transparent": "Провидна позадина",
     "monitor": "Монитор",
     "monitors": "Монитори",
-    "monitor_on": "Укључено",
-    "monitors_on": "Укључено",
+    "monitor_on": "Укључен",
+    "monitors_on": "Укључени",
     "pc_tower": "Кућиште рачунара",
     "f_screens": "Број екрана",
     "f_pc_style": "Илустрација",
     "f_standby_threshold_monitor": "Приправност изнад (W)",
-    "kettle": "Кувало за воду",
+    "kettle": "Кетлер (Кувало)",
     "toaster": "Тостер",
     "boiling": "Кување",
     "hot_water": "Врућа вода",
-    "toasting": "Тостирање",
-    "toast_ready": "Тост је готов!",
-    "f_hot_minutes": "Прикажи \"врућа вода\" током (мин)",
-    "f_ready_minutes": "Прикажи \"тост је готов\" током (мин)",
+    "toasting": "Печење тоста",
+    "toast_ready": "Тост је спреман!",
+    "f_hot_minutes": "Прикажи „врућа вода“ током (мин)",
+    "f_ready_minutes": "Прикажи „тост спреман“ током (мин)",
     "power_strip": "Продужни кабл",
     "phone_charger": "Пуњач за телефон",
-    "piano": "Дигитални клавир",
-    "smart_plug": "Паметна утичница",
-    "f_icon": "Иконица повезаног уређаја (mdi:...)",
-    "f_indicators": "Индикатори статуса",
-    "ind_led": "ЛЕД",
-    "ind_bolt": "Муња",
-    "ind_ring": "Прстен око утичнице",
-    "ind_glow": "Сјај",
-    "ind_flow": "Струја у каблу",
-    "f_plug_type": "Тип утичнице",
-    "plug_eu": "Европа (тип E / F)",
-    "plug_us": "Северна Америка (тип A / B)",
-    "printer": "Штампач / скенер",
-    "scanning": "Скенирање",
-    "ink_low": "Мало мастила",
-    "ink_black": "Црна",
-    "ink_cyan": "Цијан",
-    "ink_magenta": "Магента",
-    "ink_yellow": "Жута",
-    "f_ink_black": "Ниво црног мастила",
-    "f_ink_cyan": "Ниво цијан мастила",
-    "f_ink_magenta": "Ниво магента мастила",
-    "f_ink_yellow": "Ниво жутог мастила",
-    "f_status_message": "Порука штампача (нпр. Мало папира)",
-    "f_ink_low": "Мало мастила испод (%)",
-    "f_scan_threshold": "Скенирање изнад (W)",
-    "garland": "ЛЕД лампице",
+    "piano": "Дигитални пијано",
+    "garland": "LED новогодишње лампице",
     "powered": "Укључено",
     "lit": "Светли",
     "outlets": "Утичнице",
@@ -5685,38 +5631,7 @@ const STRINGS = {
     "f_hide_when_inactive": "Сакриј када је неактивно (нема циклуса, нема аларма)",
     "f_hide_delay": "Задржи видљиво након завршетка (мин)",
     "f_cycle_gap": "Пауза која се задржава у истом циклусу (мин)",
-    "f_hide_zero_power": "Сакриј снагу када је 0",
-    "pool_ph_plus": "pH+ пумпа",
-    "pool_ph_minus": "pH- пумпа",
-    "electrolysis": "Електролиза",
-    "pool_heat_pump": "Топлотна пумпа за базен",
-    "shower": "Туш",
-    "presence": "Присуство",
-    "presence_on": "Неко је ту",
-    "presence_off": "Нема никога",
-    "low_water": "Низак ниво воде",
-    "f_switch_ph_plus": "pH+ дозирна пумпа (укљ./искљ.)",
-    "f_switch_ph_minus": "pH- дозирна пумпа (укљ./искљ.)",
-    "f_switch_electrolysis": "Електролиза (укљ./искљ.)",
-    "f_switch_heat_pump": "Топлотна пумпа за базен (укљ./искљ.)",
-    "f_switch_shower": "Туш (укљ./искљ., статус)",
-    "f_presence": "Детектор присуства (неко у базену или око њега)",
-    "f_low_water": "Упозорење за низак ниво воде (сензор, сензор врата...)",
-    "dosing_pump": "Дозирна пумпа (pH+ / pH-)",
-    "dosing": "Дозирање",
-    "elliptical": "Елиптични тренажер",
-    "exercise_bike": "Собни бицикл",
-    "rowing_machine": "Справа за веслање",
-    "in_use": "У употреби",
-    "cadence": "Каденца",
-    "stroke_rate": "Брзина завеслаја",
-    "distance": "Раздаљина",
-    "heart_rate": "Откуцаји срца",
-    "calories": "Калорије",
-    "f_cadence": "Сензор каденце (обр./мин, или завеслаја/мин за веслање)",
-    "f_distance": "Сензор раздаљине",
-    "f_heart_rate": "Сензор откуцаја срца",
-    "f_calories": "Сензор калорија"
+    "f_hide_zero_power": "Сакриј снагу када је 0"
   },
   "sr-Latn": {
     "washer": "Veš mašina",
@@ -5875,9 +5790,6 @@ const STRINGS = {
     "f_bed_temperature": "Senzor temperature podloge",
     "f_filament_color": "Boja filamenta (CSS)",
     "f_image": "URL slike (npr. /local/my-device.png)",
-    "f_image_min": "Min. osvetljenost fotografije kada je svetlo uključeno (%)",
-    "f_image_max": "Maks. osvetljenost fotografije (% nivoa svetlosti)",
-    "f_glow_max": "Maks. sjaj (% nivoa svetlosti)",
     "f_nozzle_temperatures": "Senzori temperature mlaznice (T0, T1…)",
     "filtering": "Filtriranje",
     "water": "Voda",
@@ -6025,49 +5937,24 @@ const STRINGS = {
     "f_transparent": "Providna pozadina",
     "monitor": "Monitor",
     "monitors": "Monitori",
-    "monitor_on": "Uključeno",
-    "monitors_on": "Uključeno",
+    "monitor_on": "Uključen",
+    "monitors_on": "Uključeni",
     "pc_tower": "Kućište računara",
     "f_screens": "Broj ekrana",
     "f_pc_style": "Ilustracija",
     "f_standby_threshold_monitor": "Pripravnost iznad (W)",
-    "kettle": "Kuvalo za vodu",
+    "kettle": "Ketler (Kuvalo)",
     "toaster": "Toster",
     "boiling": "Kuvanje",
     "hot_water": "Vruća voda",
-    "toasting": "Tostiranje",
-    "toast_ready": "Tost je gotov!",
-    "f_hot_minutes": "Prikaži \"vruća voda\" tokom (min)",
-    "f_ready_minutes": "Prikaži \"tost je gotov\" tokom (min)",
+    "toasting": "Pečenje tosta",
+    "toast_ready": "Tost je spreman!",
+    "f_hot_minutes": "Prikaži „vruća voda“ tokom (min)",
+    "f_ready_minutes": "Prikaži „tost spreman“ tokom (min)",
     "power_strip": "Produžni kabl",
     "phone_charger": "Punjač za telefon",
-    "piano": "Digitalni klavir",
-    "smart_plug": "Pametna utičnica",
-    "f_icon": "Ikonica povezanog uređaja (mdi:...)",
-    "f_indicators": "Indikatori statusa",
-    "ind_led": "LED",
-    "ind_bolt": "Munja",
-    "ind_ring": "Prsten oko utičnice",
-    "ind_glow": "Sjaj",
-    "ind_flow": "Struja u kablu",
-    "f_plug_type": "Tip utičnice",
-    "plug_eu": "Evropa (tip E / F)",
-    "plug_us": "Severna Amerika (tip A / B)",
-    "printer": "Štampač / skener",
-    "scanning": "Skeniranje",
-    "ink_low": "Malo mastila",
-    "ink_black": "Crna",
-    "ink_cyan": "Cijan",
-    "ink_magenta": "Magenta",
-    "ink_yellow": "Žuta",
-    "f_ink_black": "Nivo crnog mastila",
-    "f_ink_cyan": "Nivo cijan mastila",
-    "f_ink_magenta": "Nivo magenta mastila",
-    "f_ink_yellow": "Nivo žutog mastila",
-    "f_status_message": "Poruka štampača (npr. Malo papira)",
-    "f_ink_low": "Malo mastila ispod (%)",
-    "f_scan_threshold": "Skeniranje iznad (W)",
-    "garland": "LED lampice",
+    "piano": "Digitalni pijano",
+    "garland": "LED novogodišnje lampice",
     "powered": "Uključeno",
     "lit": "Svetli",
     "outlets": "Utičnice",
@@ -6123,38 +6010,7 @@ const STRINGS = {
     "f_hide_when_inactive": "Sakrij kada je neaktivno (nema ciklusa, nema alarma)",
     "f_hide_delay": "Zadrži vidljivo nakon završetka (min)",
     "f_cycle_gap": "Pauza koja se zadržava u istom ciklusu (min)",
-    "f_hide_zero_power": "Sakrij snagu kada je 0",
-    "pool_ph_plus": "pH+ pumpa",
-    "pool_ph_minus": "pH- pumpa",
-    "electrolysis": "Elektroliza",
-    "pool_heat_pump": "Toplotna pumpa za bazen",
-    "shower": "Tuš",
-    "presence": "Prisustvo",
-    "presence_on": "Neko je tu",
-    "presence_off": "Nema nikoga",
-    "low_water": "Nizak nivo vode",
-    "f_switch_ph_plus": "pH+ dozirna pumpa (uklj./isklj.)",
-    "f_switch_ph_minus": "pH- dozirna pumpa (uklj./isklj.)",
-    "f_switch_electrolysis": "Elektroliza (uklj./isklj.)",
-    "f_switch_heat_pump": "Toplotna pumpa za bazen (uklj./isklj.)",
-    "f_switch_shower": "Tuš (uklj./isklj., status)",
-    "f_presence": "Detektor prisustva (neko u bazenu ili oko njega)",
-    "f_low_water": "Upozorenje za nizak nivo vode (senzor, senzor vrata...)",
-    "dosing_pump": "Dozirna pumpa (pH+ / pH-)",
-    "dosing": "Doziranje",
-    "elliptical": "Eliptični trenažer",
-    "exercise_bike": "Sobni bicikl",
-    "rowing_machine": "Sprava za veslanje",
-    "in_use": "U upotrebi",
-    "cadence": "Kadenca",
-    "stroke_rate": "Brzina zaveslaja",
-    "distance": "Razdaljina",
-    "heart_rate": "Otkucaji srca",
-    "calories": "Kalorije",
-    "f_cadence": "Senzor kadence (obr./min, ili zaveslaja/min za veslanje)",
-    "f_distance": "Senzor razdaljine",
-    "f_heart_rate": "Senzor otkucaja srca",
-    "f_calories": "Senzor kalorija"
+    "f_hide_zero_power": "Sakrij snagu kada je 0"
   }
 };
 const lang = (hass) => {
@@ -6867,11 +6723,11 @@ SVG.dishwasher = () => `
 /* Pompe doseuse péristaltique (pH+ / pH-) : boîtier bleu, tête transparente, rotor à galets qui tourne, tuyau beige, raccords noirs */
 SVG.dosing_pump = () => `
 <defs>${DEFS}
-<linearGradient id="ID-dpblue" x1="0" x2="1" y1="0" y2="1"><stop offset="0" style="stop-color:var(--dp-color,#3b86e0)"/><stop offset="1" style="stop-color:color-mix(in srgb,var(--dp-color,#3b86e0) 62%,#000)"/></linearGradient>
+<linearGradient id="ID-dpblue" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3b86e0"/><stop offset="1" stop-color="#1b55a6"/></linearGradient>
 <linearGradient id="ID-dpwin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#cfd8e2"/></linearGradient>
 <clipPath id="ID-dpclip"><rect x="26" y="40" width="68" height="58" rx="8"/></clipPath></defs>
 <ellipse cx="60" cy="126" rx="44" ry="4" fill="url(#ID-shadow)"/>
-<rect x="18" y="4" width="84" height="108" rx="10" fill="url(#ID-dpblue)" style="stroke:color-mix(in srgb,var(--dp-color,#3b86e0) 40%,#000)" stroke-width="1"/>
+<rect x="18" y="4" width="84" height="108" rx="10" fill="url(#ID-dpblue)" stroke="#143f7c" stroke-width="1"/>
 <rect x="26" y="10" width="68" height="26" rx="6" fill="#eef1f5" stroke="#c4ccd6" stroke-width=".8"/>
 <circle cx="37" cy="23" r="6" fill="#fff" stroke="#c4ccd6" stroke-width=".8"/><circle cx="83" cy="23" r="6" fill="#fff" stroke="#c4ccd6" stroke-width=".8"/>
 ${[0, 1, 2, 3, 4].map((k) => `<circle class="dp-led${k === 2 ? " dp-on" : ""}" cx="${48 + k * 6}" cy="20" r="1.7"/>`).join("")}
@@ -9252,7 +9108,7 @@ const DEF = {
     keys: ["piscine", "pool", "filtration", "pompe"] },
   // pompe doseuse péristaltique (pH+ / pH-) sur prise ou interrupteur : tourne quand elle injecte
   dosing_pump: { accent: "active", threshold: 3,
-    fields: ["entity", "power", "energy", "cost", "ph", "switch", "dose_interval", "dose_timer", "dose_volume", "dose_time"],
+    fields: ["entity", "power", "energy", "cost", "ph", "switch"],
     keys: ["doseuse", "dosing", "peristaltique", "ph_plus", "ph_moins", "ph_minus"] },
   chest_freezer: { accent: "cold", threshold: 20,
     fields: ["entity", "power", "energy", "cost", "temperature", "door", "switch"],
@@ -9561,7 +9417,7 @@ class ApplianceCardBase extends HTMLElement {
   _ids() {
     const c = this._config;
     return ["entity", "power", "power_solar", "energy_solar", "energy", "cost", "remaining", "progress", "program", "door", "switch",
-      "switch_low", "switch_high", "switch_ph_plus", "switch_ph_minus", "switch_electrolysis", "switch_heat_pump", "switch_shower", "presence", "low_water", "power_level", "pellet_level", "ph", "orp", "dose_interval", "dose_timer", "dose_volume", "dose_time", "pressure", "tds", "salt", "chlorine", "runtime", "usage_time", "speed", "bed_temperature", "humidity", "light", "keg_level", "pouring", "battery_level", "zone2_temperature", "zone_1", "zone_2", "zone_3", "zone_4", "mode", "window", "temperature", "target_temperature", "freezer_temperature", "flex_temperature", "freezer_door", "target_humidity", "tank_full", "fan_speed", "clean_water", "dirty_water", "hot_water_level", "hot_water_volume", "pm25", "filter"].map((k) => c[k]).concat(typeof c.tank_volume === "string" ? [c.tank_volume] : []).filter(Boolean).concat(this._nozzles()).concat(Array.isArray(c.outlets) ? c.outlets.filter((i) => typeof i === "string" && i) : [])
+      "switch_low", "switch_high", "switch_ph_plus", "switch_ph_minus", "switch_electrolysis", "switch_heat_pump", "switch_shower", "presence", "low_water", "power_level", "pellet_level", "ph", "orp", "pressure", "tds", "salt", "chlorine", "runtime", "usage_time", "speed", "bed_temperature", "humidity", "light", "keg_level", "pouring", "battery_level", "zone2_temperature", "zone_1", "zone_2", "zone_3", "zone_4", "mode", "window", "temperature", "target_temperature", "freezer_temperature", "flex_temperature", "freezer_door", "target_humidity", "tank_full", "fan_speed", "clean_water", "dirty_water", "hot_water_level", "hot_water_volume", "pm25", "filter"].map((k) => c[k]).concat(typeof c.tank_volume === "string" ? [c.tank_volume] : []).filter(Boolean).concat(this._nozzles()).concat(Array.isArray(c.outlets) ? c.outlets.filter((i) => typeof i === "string" && i) : [])
       .concat(Array.isArray(c.images) ? c.images.map((i) => i && typeof i.entity === "string" && i.entity).filter(Boolean) : []);
   }
 
@@ -10462,11 +10318,6 @@ class ApplianceCardBase extends HTMLElement {
       const list = Array.isArray(a.source_list) ? a.source_list : [];
       if (list.length) call("select_source", { source: list[(list.indexOf(a.source) + 1) % list.length] });
     }
-    else if (key === "sound_mode") {
-      // mode audio suivant dans sound_mode_list (DTS Surround → Dolby → Stéréo → …)
-      const list = Array.isArray(a.sound_mode_list) ? a.sound_mode_list : [];
-      if (list.length) call("select_sound_mode", { sound_mode: list[(list.indexOf(a.sound_mode) + 1) % list.length] });
-    }
     else if (key === "mute") call("volume_mute", { is_volume_muted: !a.is_volume_muted });
     else {
       const v = Number(a.volume_level), up = key === "vol_up";
@@ -10607,8 +10458,6 @@ class ApplianceCardBase extends HTMLElement {
     // illustration dynamic parts
     if (kind === "av_receiver") $("wrap").style.setProperty("--amp", (m.amp ?? .6).toFixed(2));
     if (kind === "smart_speaker") $("wrap").style.setProperty("--amp", (m.amp ?? .5).toFixed(2));
-    // dosing_pump : color = couleur du boîtier (n'importe quelle couleur CSS), pour repérer chaque produit (pH+, fer, potassium…)
-    if (kind === "dosing_pump") { if (c.color) $("wrap").style.setProperty("--dp-color", String(c.color)); else $("wrap").style.removeProperty("--dp-color"); }
     if (kind === "beer_tap") $("wrap").style.setProperty("--keg", ((m.keg ?? 70) / 100).toFixed(2));
     if (kind === "power_strip") {
       // fiche branchée : prises commandées (outlets), sinon toutes sauf la dernière ; LED allumée si la prise est active
@@ -10665,21 +10514,6 @@ class ApplianceCardBase extends HTMLElement {
     const sr = this.shadowRoot;
     const lcdEl = sr.querySelector(".lcd");
     if (lcdEl) lcdEl.textContent = this._lcdText(m);
-    // lcd_big : grande valeur lisible (icône + température) posée sur le dessin ; icône thermomètre = actuelle, cible = consigne (lcd_value)
-    if (c.lcd_big === true && ["radiator", "towel_dryer", "ac_split"].includes(kind)) {
-      const sv = sr.querySelector(".illus svg");
-      let bg = sv && sv.querySelector(".bigval");
-      if (sv && !bg) { bg = document.createElementNS("http://www.w3.org/2000/svg", "g"); bg.setAttribute("class", "bigval"); sv.appendChild(bg); }
-      if (bg) {
-        const raw = this._lcdText(m), num = /^-?\d+°$/.test(raw), txt = num ? `${raw.slice(0, -1)}${m.tempUnit || "°C"}` : raw;
-        const [cx, cy] = { radiator: [50, 64], towel_dryer: [60, 66], ac_split: [46, 60] }[kind];
-        const ico = c.lcd_value === "current"
-          ? `<g fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round"><path d="M-0.1 -4V1.2"/><circle cx="-0.1" cy="2.7" r="2" fill="#fff"/><path d="M-1.4 -3a1.3 1.3 0 0 1 2.6 0V1.4" /></g>`
-          : `<g fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"><circle r="3.4"/><circle r=".8" fill="#fff"/><path d="M0 -5.4V-3.6M0 3.6V5.4M-5.4 0H-3.6M3.6 0H5.4"/></g>`;
-        const slot = num ? 14 : 0, w = txt.length * 8.6 + slot, x0 = cx - w / 2;
-        bg.innerHTML = `${num ? `<g transform="translate(${(x0 + 5.5).toFixed(1)} ${cy}) scale(1.25)">${ico}</g>` : ""}<text x="${(x0 + slot + (w - slot) / 2).toFixed(1)}" y="${cy}">${esc(txt)}</text>`;
-      }
-    }
     const lcd3 = sr.querySelector(".lcd3");
     if (lcd3) lcd3.textContent = m.status === "unavailable" || m.flexVal == null ? "--°" : `${fmtNum(hass, m.flexVal, 0)}°`;
     const lcd2 = sr.querySelector(".lcd2");
@@ -10957,25 +10791,6 @@ class ApplianceCardBase extends HTMLElement {
         return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
       }).join("");
       modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
-    } else if (kind === "av_receiver" && c.show_controls !== false && domainOf(c.entity) === "media_player" && hass.states[c.entity]) {
-      // ampli : marche / arrêt, sourdine, volume −, volume +, source suivante, mode audio suivant (selon les fonctions annoncées par l'entité)
-      const a = hass.states[c.entity].attributes || {}, sf = Number(a.supported_features);
-      // MediaPlayerEntityFeature : VOLUME_SET 4, VOLUME_MUTE 8, TURN_ON 128, TURN_OFF 256, VOLUME_STEP 1024, SELECT_SOURCE 2048
-      const has = (bit) => !Number.isFinite(sf) || (sf & bit) !== 0;
-      const off = ["off", "standby", "unavailable"].includes(m.status), muted = m.status === "muted" || !!a.is_volume_muted, vol = has(4) || has(1024);
-      const btns = [
-        has(8) ? ["mute", muted ? "mdi:volume-off" : "mdi:volume-high", "mute", muted] : null,
-        vol ? ["vol_down", "mdi:volume-minus", "volume_down", null] : null,
-        vol ? ["vol_up", "mdi:volume-plus", "volume_up", null] : null,
-        has(128) || has(256) ? ["power", "mdi:power", "toggle", !off] : null,
-        has(2048) && Array.isArray(a.source_list) && a.source_list.length > 1 ? ["source", "mdi:import", "source_next", null] : null,
-        Array.isArray(a.sound_mode_list) && a.sound_mode_list.length > 1 ? ["sound_mode", "mdi:surround-sound", "sound_mode_next", null] : null,
-      ].filter(Boolean);
-      modesEl.innerHTML = btns.map(([k, icon, lbl, on]) => {
-        const dis = m.status === "unavailable" || (off && k !== "power");
-        return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
-      }).join("");
-      modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
     } else if (kind === "tv" && (c.show_controls ?? tvProjector(c)) && domainOf(c.entity) === "media_player" && hass.states[c.entity]) {
       // télé / vidéoprojecteur : marche / arrêt, source suivante, volume −, lecture / pause, volume +, sourdine
       const a = hass.states[c.entity].attributes || {}, sf = Number(a.supported_features);
@@ -10995,15 +10810,6 @@ class ApplianceCardBase extends HTMLElement {
         return `<button class="mode-btn sp-btn ${on ? "on" : ""}" data-sp="${k}" title="${esc(tr(hass, lbl))}" aria-label="${esc(tr(hass, lbl))}"${on != null ? ` aria-pressed="${on}"` : ""}${dis ? " disabled" : ""}><ha-icon icon="${icon}"></ha-icon></button>`;
       }).join("");
       modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => { ev.stopPropagation(); this._spkCmd(b.dataset.sp); }; });
-    } else if (kind === "dosing_pump" && c.dose_timer) {
-      // doseuse programmée (aquarium) : bouton Timer, clic = bascule, allumé = distribue selon l'intervalle prévu
-      const id = c.dose_timer, st = hass.states[id], on = isOn(st), name = tr(hass, "dose_timer");
-      modesEl.innerHTML = `<button class="mode-btn outlet-btn ${on ? "on" : ""}" data-outlet="${esc(id)}" title="${esc(name)}" aria-label="${esc(name)}" aria-pressed="${on}" ${!st || st.state === "unavailable" ? "disabled" : ""}><ha-icon icon="mdi:timer-outline"></ha-icon>${esc(name)}</button>`;
-      modesEl.querySelectorAll("button").forEach((b) => { b.onclick = (ev) => {
-        ev.stopPropagation();
-        const dom = domainOf(b.dataset.outlet);
-        hass.callService(["switch", "input_boolean", "light", "fan"].includes(dom) ? dom : "homeassistant", "toggle", { entity_id: b.dataset.outlet });
-      }; });
     } else if (kind === "pool_pump" && POOL_CTL.some(([k]) => c[k])) {
       // piscine : un bouton par équipement commandé (doseuses pH+ / pH-, électrolyse, PAC, douche), clic = bascule, bouton allumé = en marche
       modesEl.innerHTML = POOL_CTL.filter(([k]) => c[k]).map(([k, icon, lbl]) => {
@@ -11115,11 +10921,6 @@ class ApplianceCardBase extends HTMLElement {
       if (m.picMode && c.show_picture_mode !== false && !BAD.includes(String(m.picMode.state).toLowerCase()))
         tile("mdi:palette", stateText(hass, m.picMode), lb("picture_mode"), c.picture_mode);
       if (m.tempVal != null && c.show_temperature !== false) tile("mdi:thermometer", `${fmtNum(hass, m.tempVal, 0)} ${m.tempUnit}`, lb("temperature"), tEntity);
-    } else if (kind === "av_receiver") {
-      // ampli : source active et mode audio actuel (attributs `source` et `sound_mode` du media_player)
-      const a = m.main && domainOf(c.entity) === "media_player" ? m.main.attributes || {} : {}, up = !["off", "standby", "unavailable"].includes(m.status);
-      if (up && a.source && c.show_source !== false) tile("mdi:import", String(a.source), lb("source_active"), c.entity);
-      if (up && a.sound_mode && c.show_sound_mode !== false) tile("mdi:surround-sound", String(a.sound_mode), lb("sound_mode"), c.entity);
     } else if (kind === "smart_speaker") {
       if (m.vol != null && !["off", "standby", "unavailable"].includes(m.status)) tile(m.muted ? "mdi:volume-off" : "mdi:volume-high", `${Math.round(m.vol * 100)} %`, lb("volume"), c.entity, m.muted ? "warn" : "");
       if (spOn && m.app) tile("mdi:music-box-outline", m.app, lb("source"), c.entity);
@@ -11132,16 +10933,6 @@ class ApplianceCardBase extends HTMLElement {
       if (f.kcal) tile("mdi:fire", fmtUnit(hass, f.kcal, 0), lb("calories"), c.calories);
     } else if (kind === "dosing_pump") {
       if (m.pool && m.pool.ph) tile("mdi:ph", fmtUnit(hass, m.pool.ph, 2), lb("ph"), c.ph);
-      // aquarium (doseuse Jebao…) : intervalle en jours, volume par dose, heure de distribution
-      const dst = (k) => { const s = c[k] && hass.states[c[k]]; return s && !BAD.includes(String(s.state).toLowerCase()) ? s : null; };
-      const dInt = dst("dose_interval"), dVol = dst("dose_volume"), dTime = dst("dose_time");
-      if (dInt && num(dInt) != null) tile("mdi:calendar-refresh-outline", `${fmtNum(hass, num(dInt), 0)} ${tr(hass, "day_short")}`, lb("dose_interval"), c.dose_interval);
-      if (dVol) tile("mdi:cup-water", fmtUnit(hass, dVol, 1), lb("dose_volume"), c.dose_volume);
-      if (dTime) {
-        const sched = Array.isArray(dTime.attributes.schedule) && dTime.attributes.schedule[0] && dTime.attributes.schedule[0].time;
-        const t = /^\d{1,2}:\d{2}/.test(String(dTime.state)) ? String(dTime.state).slice(0, 5) : sched ? String(sched).slice(0, 5) : String(dTime.state);
-        tile("mdi:clock-outline", t, lb("dose_time"), c.dose_time);
-      }
     } else if (kind === "pool_pump") {
       if (m.tempVal != null && c.show_temperature !== false) tile("mdi:thermometer-water", `${fmtNum(hass, m.tempVal, 1)} ${m.tempUnit}`, lb("water"), tEntity);
       // analyses de l'eau : [clé, icône, décimales] ; chaque mesure se masque avec show_<clé>: false
@@ -11248,10 +11039,6 @@ const SEL = {
   switch: { entity: { domain: ["switch", "input_boolean", "light"] } },
   switch_low: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_high: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
-  dose_interval: { entity: { domain: ["number", "input_number", "sensor"] } },
-  dose_timer: { entity: { domain: ["switch", "input_boolean"] } },
-  dose_volume: { entity: { domain: ["sensor", "number", "input_number"] } },
-  dose_time: { entity: { domain: ["sensor", "input_datetime"] } },
   switch_ph_plus: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_ph_minus: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
   switch_electrolysis: { entity: { domain: ["switch", "input_boolean", "light", "fan"] } },
@@ -11382,7 +11169,6 @@ function buildForm(kind) {
           ...(["radiator", "towel_dryer", "ac_split"].includes(kind) ? [
             { name: "lcd_value", selector: { select: { mode: "dropdown", options: [
               { value: "target", label: tr(null, "lcd_value_target") }, { value: "current", label: tr(null, "lcd_value_current") }] } } },
-            { name: "lcd_big", selector: { boolean: {} }, default: false },
           ] : []),
           ...(["ac_split", "heat_pump"].includes(kind) ? [
             { name: "hvac", selector: { select: { mode: "dropdown", options: [
@@ -11408,10 +11194,6 @@ function buildForm(kind) {
           ] : []),
           ...(kind === "av_receiver" ? [
             { name: "max_power", selector: { number: { min: 50, max: 2000, step: 10, mode: "box", unit_of_measurement: "W" } } },
-            { name: "show_controls", selector: { boolean: {} }, default: true },
-            { name: "show_source", selector: { boolean: {} }, default: true },
-            { name: "show_sound_mode", selector: { boolean: {} }, default: true },
-            { name: "volume_step", selector: { number: { min: 0.01, max: 0.2, step: 0.01, mode: "box" } } },
           ] : []),
           ...(kind === "smart_speaker" ? [
             // model : photo de l'enceinte (vide = devinée depuis l'entité : Sonos, Google Nest, sinon Echo Dot)
@@ -11877,25 +11659,6 @@ svg { width: 100%; height: 100%; display: block; overflow: visible; }
   line-height: 1 !important;
   margin-top: 1.5px !important;
 }
-
-/* tile_order: name → titre et état en ligne du haut, au-dessus du dessin (comme les cartes récentes) ; sans l'option, disposition historique.
-   Rien ne change pour la disposition « split ». */
-:host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head head" "illus stats"; }
-:host([tile-order="name"]) .wrap:not(.layout-split) .stats { align-self: center; }
-@container (max-width: 400px) {
-  :host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head head" "illus illus" "stats stats"; }
-  :host([tile-order="name"]) .wrap:not(.layout-split) .illus { justify-self: center; }
-}
-@container (max-width: 280px) {
-  :host([tile-order="name"]) .wrap:not(.layout-split) .top { grid-template-areas: "head" "illus" "stats"; }
-}
-@container (max-width: 320px) {
-  :host([tile-order="name"][illus-big]) .wrap:not(.layout-split) .top { grid-template-areas: "head" "illus" "stats"; }
-}
-
-/* lcd_big : grande valeur posée sur le dessin (contour sombre pour rester lisible sur toutes les teintes) */
-.bigval { filter: drop-shadow(0 0 1.2px rgba(0, 0, 0, .85)); pointer-events: none; }
-.bigval text { fill: #fff; stroke: rgba(20, 22, 28, .75); stroke-width: 2.4px; paint-order: stroke; stroke-linejoin: round; font: 700 16px var(--paper-font-body1_-_font-family, Roboto, sans-serif); text-anchor: middle; dominant-baseline: central; }
 
 ﻿/* ---------- illustration: shared ---------- */
 .lcd { font: 700 8.5px ui-monospace, "Courier New", monospace; letter-spacing: .25px; fill: #7ec8e3 !important; font-weight: 700; dominant-baseline: central; transition: fill .3s; }
@@ -13416,18 +13179,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
   if (window.applianceEditorLabel) return;
   const L = {
     "en": {
-      "surface": "Installation (floor or wall)",
-      "food_low": "Low hopper alert (%)",
-      "hopper_capacity": "Hopper capacity (g)",
-      "daily_consumption": "Food eaten per day (g, optional)",
-      "show_autonomy": "Show the autonomy",
-      "entity_pump": "Well pump",
-      "entity_master": "Auto watering (on = enabled)",
-      "entity_soil": "Soil moisture",
-      "entity_next": "Next run",
-      "block_on_rain": "Block manual start when it rains",
-      "show_soil": "Show the soil moisture",
-      "show_pump": "Show the pump",
       "extra_tiles": "Extra tiles (list: entity, name, icon)",
       "animations": "Animations",
       "battery_low": "Low battery (%)",
@@ -13524,7 +13275,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "indexes": "Meter indexes",
       "invert": "Invert state",
       "invert_position": "Invert position (open ↔ closed)",
-      "invert_buttons": "Invert the buttons (Open ↔ Close commands)",
       "invert_power": "Invert power sign",
       "jets_threshold": "Jets threshold (W)",
       "language": "Language",
@@ -13626,18 +13376,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_slider": "Show sliders",
       "show_tilt": "Show tilt",
       "image": "Your own image (URL)",
-      "zones": "Zones (valves)",
-      "zone_entity": "Entity",
-      "zone_name": "Name",
-      "zone_icon": "Icon",
-      "zone_x": "Position X on the image (%, from the left)",
-      "zone_y": "Position Y on the image (%, from the top)",
-      "marker_names": "Show valve names on the image",
       "illustration_size": "Illustration size",
-      "shape": "Shape",
-      "color2": "Second colour (TV light bars)",
-      "shape_strip": "Flexible strip",
-      "shape_bars": "TV light bars",
       "transparent": "Transparent background",
       "tile_background": "Tile background",
       "tile_bg_transparent": "Transparent (default)",
@@ -13645,8 +13384,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "tile_order": "Tile order",
       "tile_order_name": "Name above, value below",
       "tile_order_value": "Value above, name below",
-      "lcd_big": "Large value on the drawing",
-      "f_lcd_big": "Large value on the drawing",
       "lcd_value": "Value on the display",
       "lcd_value_target": "Target temperature (default)",
       "lcd_value_current": "Current temperature",
@@ -13817,7 +13554,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_btn_prev": "Previous button",
       "show_btn_play_pause": "Play / pause button",
       "show_btn_next": "Next button",
-      "show_btn_source": "Source button (next source)",
       "show_btn_vol_down": "Volume − button",
       "show_btn_mute": "Mute button",
       "show_btn_vol_up": "Volume + button",
@@ -13979,8 +13715,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_room": "Show room",
       "entity_backwash": "Backwash (on = running)",
       "entity_brine": "Brine draw (on = running)",
-      "entity_refill": "Water return (on = running)",
-      "entity_service": "Service (on = running)",
       "entity_rinse": "Rinse (on = running)",
       "entity_fan": "Fan speed",
       "entity_tank": "Water tank (full / level)",
@@ -15814,18 +15548,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "fabric_color": "Color de la tela"
     },
     "fr": {
-      "surface": "Installation (sol ou mur)",
-      "food_low": "Alerte réserve basse (%)",
-      "hopper_capacity": "Capacité du bac (g)",
-      "daily_consumption": "Consommation par jour (g, facultatif)",
-      "show_autonomy": "Afficher l'autonomie",
-      "entity_pump": "Pompe de puits",
-      "entity_master": "Arrosage auto (on = activé)",
-      "entity_soil": "Humidité du sol",
-      "entity_next": "Prochain arrosage",
-      "block_on_rain": "Bloquer le démarrage manuel s'il pleut",
-      "show_soil": "Afficher l'humidité du sol",
-      "show_pump": "Afficher la pompe",
       "animations": "Animations",
       "battery_low": "Batterie faible (%)",
       "buffer_tank": "Ballon tampon",
@@ -15915,7 +15637,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "indexes": "Index du compteur",
       "invert": "Inverser l'état",
       "invert_position": "Inverser la position (ouvert ↔ fermé)",
-      "invert_buttons": "Inverser les boutons (commandes Ouvrir ↔ Fermer)",
       "invert_power": "Inverser le signe de la puissance",
       "jets_threshold": "Seuil des jets (W)",
       "language": "Langue",
@@ -16017,18 +15738,7 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_slider": "Afficher les curseurs",
       "show_tilt": "Afficher l'inclinaison",
       "image": "Image perso (URL)",
-      "zones": "Zones (vannes)",
-      "zone_entity": "Entité",
-      "zone_name": "Nom",
-      "zone_icon": "Icône",
-      "zone_x": "Position X sur l'image (%, depuis la gauche)",
-      "zone_y": "Position Y sur l'image (%, depuis le haut)",
-      "marker_names": "Afficher le nom des vannes sur l'image",
       "illustration_size": "Taille de l'illustration",
-      "shape": "Forme",
-      "color2": "Seconde couleur (barres TV)",
-      "shape_strip": "Ruban souple",
-      "shape_bars": "Barres lumineuses TV",
       "transparent": "Fond transparent",
       "tile_background": "Fond des tuiles",
       "tile_bg_transparent": "Transparent (défaut)",
@@ -16036,8 +15746,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "tile_order": "Ordre des tuiles",
       "tile_order_name": "Nom au-dessus, valeur en dessous",
       "tile_order_value": "Valeur au-dessus, nom en dessous",
-      "lcd_big": "Grande valeur sur le dessin",
-      "f_lcd_big": "Grande valeur sur le dessin",
       "lcd_value": "Valeur sur l'écran",
       "lcd_value_target": "Consigne (défaut)",
       "lcd_value_current": "Température actuelle",
@@ -16208,7 +15916,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_btn_prev": "Bouton précédent",
       "show_btn_play_pause": "Bouton lecture / pause",
       "show_btn_next": "Bouton suivant",
-      "show_btn_source": "Bouton source (source suivante)",
       "show_btn_vol_down": "Bouton volume −",
       "show_btn_mute": "Bouton muet",
       "show_btn_vol_up": "Bouton volume +",
@@ -16371,8 +16078,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_room": "Afficher la pièce",
       "entity_backwash": "Contre-lavage (on = en cours)",
       "entity_brine": "Aspiration de saumure (on = en cours)",
-      "entity_refill": "Renvoi d'eau (on = en cours)",
-      "entity_service": "Service (on = en cours)",
       "entity_rinse": "Rinçage (on = en cours)",
       "entity_fan": "Vitesse de ventilation",
       "entity_tank": "Réservoir (plein / niveau)",
@@ -19285,25 +18990,23 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "fabric_color": "Цвет полотна"
     },
     "sr": {
-      "extra_tiles": "Додатне плочице (листа: ентитет, име, иконица)",
       "animations": "Анимације",
-      "battery_low": "Слаба батерија (%)",
-      "buffer_tank": "Бафер резервоар",
+      "battery_low": "Ниска батерија (%)",
+      "buffer_tank": "Буфер резервоар",
       "capacity_kwh": "Капацитет (kWh)",
       "car_color": "Боја аутомобила",
       "compressor_threshold": "Праг компресора (W)",
-      "entity": "Главни ентитет",
+      "entity": "Главни уређај (Ентитет)",
       "entity_active_power": "Активна снага",
       "entity_area": "Очишћена површина",
       "entity_battery": "Батерија",
       "entity_blade": "Нож",
       "entity_brush": "Четка",
-      "entity_buffer_temp": "Температура бафер резервоара",
+      "entity_buffer_temp": "Температура буфер резервоара",
       "entity_car_soc": "Ниво батерије аутомобила",
       "entity_charge": "Напуњеност батерије",
       "entity_compressor": "Компресор",
       "entity_control": "Контрола (дугме / прекидач)",
-      "entity_pedestrian": "Пешачко отварање (дугме / скрипта)",
       "entity_cop": "COP",
       "entity_cost": "Трошак",
       "entity_energy": "Енергија",
@@ -19324,14 +19027,8 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_heat_power": "Топлотни учинак",
       "entity_hp": "Индекс више тарифе",
       "entity_humidity": "Влажност",
-      "entity_injection": "Индекс предаје енергије",
+      "entity_injection": "Индекс извоза",
       "entity_input_voltage": "Улазни напон",
-      "entity_battery_voltage": "Напон батерије",
-      "entity_nominal_power": "Називна (номинална) снага",
-      "entity_beeper": "Стање зујалице / бипера",
-      "show_battery_voltage": "Прикажи напон батерије",
-      "show_nominal_power": "Прикажи називну снагу",
-      "show_beeper": "Прикажи зујалицу",
       "entity_level": "Ниво (%)",
       "entity_light": "Светло",
       "entity_load": "Оптерећење",
@@ -19591,25 +19288,23 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Прикажи прозор",
       "spot_count": "Број спотова",
       "brightness_slider": "Клизач осветљености",
-      "entity_cpu": "Сензор оптерећења CPU (%)",
+      "entity_cpu": "Искоришћење ЦПУ",
       "entity_cpu_temp": "Температура ЦПУ",
       "entity_ram": "Искоришћење меморије (%)",
       "entity_disk": "Искоришћење диска (%)",
       "entity_net_down": "Брзина преузимања",
       "entity_net_up": "Брзина отпремања",
-      "entity_uptime": "Сензор времена рада",
+      "entity_uptime": "Време рада или последње покретање",
       "cpu_busy": "Праг оптерећења (ЦПУ %)",
       "ram_max": "Упозорење меморије (%)",
       "disk_max": "Упозорење диска (%)",
-      "show_cpu": "CPU плочица",
+      "show_cpu": "Прикажи ЦПУ",
       "show_ram": "Прикажи меморију",
       "show_disk": "Прикажи диск",
       "show_network": "Прикажи мрежу",
-      "show_uptime": "Плочица времена рада",
+      "show_uptime": "Прикажи време рада",
       "entity_volume": "Стање волумена",
       "entity_volume_used": "Заузет волумен (%)",
-      "entity_volume_free": "Слободан простор волумена (GB, TB)",
-      "show_free": "Прикажи слободан простор",
       "entity_security": "Безбедносни статус",
       "entity_update": "Ажурирање DSM",
       "volume_max": "Упозорење волумена (%)",
@@ -19656,196 +19351,40 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_pulse": "Прикажи пулс",
       "show_goal": "Прикажи циљ",
       "show_btn_power": "Дугме за напајање",
-      "show_btn_home": "Почетно дугме",
-      "show_btn_prev": "Дугме за претходно",
-      "show_btn_play_pause": "Дугме за репродукцију / паузу",
-      "show_btn_next": "Дугме за следеће",
-      "show_btn_vol_down": "Дугме за утишавање −",
-      "show_btn_mute": "Дугме за искључивање звука",
-      "show_btn_vol_up": "Дугме за појачавање +",
-      "override": "Привремена промена (Netatmo)",
-      "override_durations": "Трајање привремене промене (мин)",
-      "pets": "Љубимци (листа: ентитет, име, слика)",
-      "entity_motion": "Сензор покрета на вратанцима",
-      "entity_curfew": "Полицијски час",
-      "entity_intruder": "Откривена непозната животиња",
-      "show_pets": "Прикажи љубимце",
-      "show_inside": "Прикажи унутра",
-      "show_outside": "Прикажи напољу",
-      "show_curfew": "Прикажи полицијски час",
-      "entity_low_water": "Упозорење за низак ниво воде",
-      "entity_water_today": "Попијена вода данас",
-      "entity_drinking": "Сензор пијења љубимца",
-      "entity_last_drink": "Последње пијење",
-      "entity_clean": "Чишћење (рок / дани)",
-      "entity_filter_reset": "Дугме за ресетовање филтера",
-      "entity_clean_reset": "Дугме за ресетовање чишћења",
-      "capacity": "Капацитет резервоара (иста јединица као ниво, ако није %)",
-      "level_low": "Низак ниво воде (%)",
-      "filter_low_days": "Упозорење за филтер (преостали дани)",
-      "filter_low": "Упозорење за филтер (преостали %)",
-      "show_drink": "Прикажи последње пијење",
-      "show_clean": "Прикажи чишћење",
-      "entity_locked_in": "Закључавање \"Само улаз\" (Sure Petcare)",
-      "entity_locked_out": "Закључавање \"Само излаз\" (Sure Petcare)",
-      "entity_target": "Циљна температура (број)",
-      "entity_reserve": "Резерва топле воде (%)",
-      "entity_temp_bottom": "Ентитет температуре на дну",
-      "boost_above": "Појачано изнад (W)",
-      "running_above": "У раду изнад (W)",
-      "green_above": "Еко (зелени) изнад (W)",
-      "show_target": "Плочица циљне темп.",
-      "show_reserve": "Прикажи топлу воду",
-      "nas_model": "Модел NAS-а",
-      "mini_pc_model": "Модел",
-      "entity_parity": "Исправност паритета (binary_sensor, off = неисправно)",
-      "entity_flash": "Стање USB флеша (binary_sensor, on = проблем)",
-      "show_parity": "Прикажи упозорење за паритет",
-      "show_flash": "Прикажи упозорење за флеш",
-      "entity_nvme_1": "SSD 1 (NVMe)",
-      "entity_nvme_1_temp": "Температура SSD 1",
-      "entity_nvme_2": "SSD 2 (NVMe)",
-      "entity_nvme_2_temp": "Температура SSD 2",
-      "entity_capacity": "Преостали капацитет",
-      "entity_salt": "Ниво соли",
-      "entity_hardness_in": "Улазна тврдоћа (сирова вода)",
-      "entity_hardness_out": "Излазна тврдоћа (омекшана)",
-      "entity_regen_days": "Дана до следеће регенерације",
-      "salt_low": "Упозорење за мало соли (%)",
-      "show_capacity": "Прикажи капацитет",
-      "show_salt": "Прикажи со",
-      "show_hardness": "Прикажи тврдоћу",
-      "show_regen": "Прикажи следећу регенерацију",
-      "entity_hour": "Киша, последњи сат",
-      "entity_day": "Киша данас (24 h)",
-      "entity_week": "Киша ове недеље",
-      "entity_month": "Киша овог месеца",
-      "entity_year": "Киша ове године",
-      "entity_last": "Последња киша (датум)",
-      "entity_signal": "Јачина сигнала",
-      "show_rate": "Прикажи интензитет",
-      "show_hour": "Прикажи последњи сат",
-      "show_day": "Прикажи данас",
-      "show_week": "Прикажи недељу",
-      "show_month": "Прикажи месец",
-      "show_year": "Прикажи годину",
-      "show_last": "Прикажи последњу кишу",
-      "show_signal": "Прикажи сигнал",
-      "heavy_rate": "Јака киша од (mm/h)",
-      "gauge_max": "Мерач пун на (mm дневно)",
-      "entity_alarm": "Аларм (превртање, прегревање)",
-      "high_threshold": "Јако подешавање од",
-      "bubbles_threshold": "Мехурићи од",
-      "entity_bubbles": "Мехурићи (ваздушна пумпа)",
-      "entity_chlorine": "Хлор",
-      "entity_cover": "Покривач (затворен / отворен)",
-      "entity_error": "Грешка",
-      "entity_heater": "Грејач",
-      "entity_jets": "Млазнице",
-      "entity_timer": "Тајмер",
-      "show_chlorine": "Прикажи хлор",
-      "show_cover": "Прикажи покривач",
-      "show_timer": "Плочица тајмера",
-      "switch_low": "Прекидач за малу брзину",
-      "switch_high": "Прекидач за велику брзину",
-      "entity_state": "Сензор отворено/затворено (контакт)",
-      "entity_position": "Сензор положаја (0-100)",
-      "entity_moisture": "Сензор влажности земљишта",
-      "entity_conductivity": "Сензор проводљивости (плодности)",
-      "entity_brightness": "Сензор осветљења (lux)",
-      "entity_rssi": "Јачина сигнала (RSSI)",
-      "min_moisture": "Залити испод (%)",
-      "min_temperature": "Хладно испод (°C)",
-      "min_conductivity": "Ђубриво испод (µS/cm)",
-      "min_brightness": "Мрачно испод (lx)",
-      "min_battery": "Слаба батерија испод (%)",
-      "show_moisture": "Прикажи влажност земљишта",
-      "show_conductivity": "Прикажи проводљивост",
-      "show_rssi": "Прикажи сигнал",
-      "water_low": "Мало воде испод (%)",
-      "low_water": "Упозорење за мало воде (бинарни сензор)",
-      "target_step": "Циљни корак (%)",
-      "show_tank": "Плочица резервоара",
-      "target_humidity": "Циљна влажност",
-      "fan_speed": "Брзина вентилатора (избор)",
-      "water_level": "Ниво воде (%)",
-      "entity_lux": "Сензор нивоа светлости (lux)",
+      "show_btn_home": "Дугме почетна",
+      "show_btn_prev": "Дугме претходно",
+      "show_btn_play_pause": "Дугме пусти / пауза",
+      "show_btn_next": "Дугме следеће",
+      "show_btn_vol_down": "Дугме тише",
+      "show_btn_mute": "Дугме утишај",
+      "show_btn_vol_up": "Дугме гласније",
+      "override": "Привремена измена (Netatmo)",
+      "override_durations": "Трајања (мин)",
+      "entity_state": "Open/closed sensor (contact)",
+      "entity_position": "Position sensor (0-100)",
+      "entity_lux": "Сензор осветљености (лукс)",
       "wind_max": "Праг јаког ветра (km/h)",
-      "show_lux": "Прикажи ниво светлости",
-      "fabric_color": "Боја тканине",
-      "internet_box_model": "Модел рутера",
-      "illustration": "Илустрација (фотографија или SVG)",
-      "entity_download": "Брзина преузимања",
-      "entity_upload": "Брзина слања",
-      "entity_devices": "Повезани уређаји",
-      "entity_wifi": "Wi-Fi прекидач",
-      "entity_reboot": "Дугме за поновно покретање",
-      "max_speed": "Референтна брзина (Mb/s)",
-      "show_download": "Плочица преузимања",
-      "show_upload": "Плочица слања",
-      "show_devices": "Плочица уређаја",
-      "show_wifi": "Wi-Fi плочица",
-      "entity_ping": "Пинг сензор (ms)",
-      "entity_wan_ip": "WAN IP сензор",
-      "entity_memory": "Сензор заузећа меморије (%)",
-      "entity_wifi_24": "Wi-Fi 2.4 GHz прекидач",
-      "entity_wifi_5": "Wi-Fi 5 GHz прекидач",
-      "entity_wifi_6": "Wi-Fi 6 GHz прекидач",
-      "entity_wifi_guest": "Wi-Fi за госте прекидач",
-      "entity_wifi_iot": "IoT Wi-Fi прекидач",
-      "show_ping": "Пинг плочица",
-      "show_wan_ip": "WAN IP плочица",
-      "show_memory": "Плочица меморије",
-      "pet_feeder_model": "Модел хранилице",
-      "entity_feed": "Храњење (избор / дугме)",
-      "feed_option": "Опција храњења (избор, подразумевано: start)",
-      "entity_source": "Извор храњења",
-      "entity_serving": "Величина сервирања (порције)",
-      "entity_portion_weight": "Тежина порције (g)",
-      "entity_portions": "Порције по дану",
-      "entity_led": "ЛЕД индикатор",
-      "entity_child_lock": "Заштита за децу",
-      "daily_goal": "Дневне порције (пуни посуду)",
-      "show_portions": "Плочица порција",
-      "show_serving": "Плочица сервирања",
-      "show_source": "Плочица извора",
-      "entity_close": "Команда за затварање (дугме / скрипта)",
-      "entity_stop": "Команда за заустављање (дугме / скрипта)",
-      "entity_supply_temp": "Температура полазног вода (Tv)",
-      "entity_water_volume": "Укупна запремина воде",
-      "entity_room_temp": "Собна температура",
-      "power_threshold": "Праг грејања (kW)",
-      "show_supply": "Прикажи полазни вод",
-      "show_return": "Прикажи повратни вод",
-      "show_delta": "Прикажи ΔT",
-      "show_room": "Прикажи просторију",
-      "entity_backwash": "Повратно испирање (on = у току)",
-      "entity_brine": "Усисавање слане воде (on = у току)",
-      "entity_rinse": "Испирање (on = у току)",
-      "entity_fan": "Брзина вентилатора",
-      "entity_tank": "Резервоар за воду (пун / ниво)",
-      "temp_step": "Корак температуре"
+      "show_lux": "Прикажи осветљеност",
+      "fabric_color": "Боја платна"
     },
     "sr-Latn": {
-      "extra_tiles": "Dodatne pločice (lista: entitet, ime, ikonica)",
       "animations": "Animacije",
-      "battery_low": "Slaba baterija (%)",
-      "buffer_tank": "Bafer rezervoar",
+      "battery_low": "Niska baterija (%)",
+      "buffer_tank": "Bufer rezervoar",
       "capacity_kwh": "Kapacitet (kWh)",
       "car_color": "Boja automobila",
       "compressor_threshold": "Prag kompresora (W)",
-      "entity": "Glavni entitet",
+      "entity": "Glavni uređaj (Entitet)",
       "entity_active_power": "Aktivna snaga",
       "entity_area": "Očišćena površina",
       "entity_battery": "Baterija",
       "entity_blade": "Nož",
       "entity_brush": "Četka",
-      "entity_buffer_temp": "Temperatura bafer rezervoara",
+      "entity_buffer_temp": "Temperatura bufer rezervoara",
       "entity_car_soc": "Nivo baterije automobila",
       "entity_charge": "Napunjenost baterije",
       "entity_compressor": "Kompresor",
       "entity_control": "Kontrola (dugme / prekidač)",
-      "entity_pedestrian": "Pešačko otvaranje (dugme / skripta)",
       "entity_cop": "COP",
       "entity_cost": "Trošak",
       "entity_energy": "Energija",
@@ -19868,12 +19407,6 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "entity_humidity": "Vlažnost",
       "entity_injection": "Indeks izvoza",
       "entity_input_voltage": "Ulazni napon",
-      "entity_battery_voltage": "Napon baterije",
-      "entity_nominal_power": "Nazivna (nominalna) snaga",
-      "entity_beeper": "Stanje zujalice / bipera",
-      "show_battery_voltage": "Prikaži napon baterije",
-      "show_nominal_power": "Prikaži nazivnu snagu",
-      "show_beeper": "Prikaži zujalicu",
       "entity_level": "Nivo (%)",
       "entity_light": "Svetlo",
       "entity_load": "Opterećenje",
@@ -20133,25 +19666,23 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_window": "Prikaži prozor",
       "spot_count": "Broj spotova",
       "brightness_slider": "Klizač osvetljenosti",
-      "entity_cpu": "Senzor opterećenja CPU (%)",
+      "entity_cpu": "Iskorišćenje CPU",
       "entity_cpu_temp": "Temperatura CPU",
       "entity_ram": "Iskorišćenje memorije (%)",
       "entity_disk": "Iskorišćenje diska (%)",
       "entity_net_down": "Brzina preuzimanja",
       "entity_net_up": "Brzina otpremanja",
-      "entity_uptime": "Senzor vremena rada",
+      "entity_uptime": "Vreme rada ili poslednje pokretanje",
       "cpu_busy": "Prag opterećenja (CPU %)",
       "ram_max": "Upozorenje memorije (%)",
       "disk_max": "Upozorenje diska (%)",
-      "show_cpu": "CPU pločica",
+      "show_cpu": "Prikaži CPU",
       "show_ram": "Prikaži memoriju",
       "show_disk": "Prikaži disk",
       "show_network": "Prikaži mrežu",
-      "show_uptime": "Pločica vremena rada",
+      "show_uptime": "Prikaži vreme rada",
       "entity_volume": "Stanje volumena",
       "entity_volume_used": "Zauzet volumen (%)",
-      "entity_volume_free": "Slobodan prostor volumena (GB, TB)",
-      "show_free": "Prikaži slobodan prostor",
       "entity_security": "Bezbednosni status",
       "entity_update": "Ažuriranje DSM",
       "volume_max": "Upozorenje volumena (%)",
@@ -20198,175 +19729,21 @@ console.info(`%c HA-APPLIANCE-CARDS %c v${VERSION} `,
       "show_pulse": "Prikaži puls",
       "show_goal": "Prikaži cilj",
       "show_btn_power": "Dugme za napajanje",
-      "show_btn_home": "Početno dugme",
-      "show_btn_prev": "Dugme za prethodno",
-      "show_btn_play_pause": "Dugme za reprodukciju / pauzu",
-      "show_btn_next": "Dugme za sledeće",
-      "show_btn_vol_down": "Dugme za utišavanje −",
-      "show_btn_mute": "Dugme za isključivanje zvuka",
-      "show_btn_vol_up": "Dugme za pojačavanje +",
-      "override": "Privremena promena (Netatmo)",
-      "override_durations": "Trajanje privremene promene (min)",
-      "pets": "Ljubimci (lista: entitet, ime, slika)",
-      "entity_motion": "Senzor pokreta na vratancima",
-      "entity_curfew": "Policijski čas",
-      "entity_intruder": "Otkrivena nepoznata životinja",
-      "show_pets": "Prikaži ljubimce",
-      "show_inside": "Prikaži unutra",
-      "show_outside": "Prikaži napolju",
-      "show_curfew": "Prikaži policijski čas",
-      "entity_low_water": "Upozorenje za nizak nivo vode",
-      "entity_water_today": "Popijena voda danas",
-      "entity_drinking": "Senzor pijenja ljubimca",
-      "entity_last_drink": "Poslednje pijenje",
-      "entity_clean": "Čišćenje (rok / dani)",
-      "entity_filter_reset": "Dugme za resetovanje filtera",
-      "entity_clean_reset": "Dugme za resetovanje čišćenja",
-      "capacity": "Kapacitet rezervoara (ista jedinica kao nivo, ako nije %)",
-      "level_low": "Nizak nivo vode (%)",
-      "filter_low_days": "Upozorenje za filter (preostali dani)",
-      "filter_low": "Upozorenje za filter (preostali %)",
-      "show_drink": "Prikaži poslednje pijenje",
-      "show_clean": "Prikaži čišćenje",
-      "entity_locked_in": "Zaključavanje \"Samo ulaz\" (Sure Petcare)",
-      "entity_locked_out": "Zaključavanje \"Samo izlaz\" (Sure Petcare)",
-      "entity_target": "Ciljna temperatura (broj)",
-      "entity_reserve": "Rezerva tople vode (%)",
-      "entity_temp_bottom": "Entitet temperature na dnu",
-      "boost_above": "Pojačano iznad (W)",
-      "running_above": "U radu iznad (W)",
-      "green_above": "Eko (zeleni) iznad (W)",
-      "show_target": "Pločica ciljne temp.",
-      "show_reserve": "Prikaži toplu vodu",
-      "nas_model": "Model NAS-a",
-      "mini_pc_model": "Model",
-      "entity_parity": "Ispravnost pariteta (binary_sensor, off = neispravno)",
-      "entity_flash": "Stanje USB fleša (binary_sensor, on = problem)",
-      "show_parity": "Prikaži upozorenje za paritet",
-      "show_flash": "Prikaži upozorenje za fleš",
-      "entity_nvme_1": "SSD 1 (NVMe)",
-      "entity_nvme_1_temp": "Temperatura SSD 1",
-      "entity_nvme_2": "SSD 2 (NVMe)",
-      "entity_nvme_2_temp": "Temperatura SSD 2",
-      "entity_capacity": "Preostali kapacitet",
-      "entity_salt": "Nivo soli",
-      "entity_hardness_in": "Ulazna tvrdoća (sirova voda)",
-      "entity_hardness_out": "Izlazna tvrdoća (omekšana)",
-      "entity_regen_days": "Dana do sledeće regeneracije",
-      "salt_low": "Upozorenje za malo soli (%)",
-      "show_capacity": "Prikaži kapacitet",
-      "show_salt": "Prikaži so",
-      "show_hardness": "Prikaži tvrdoću",
-      "show_regen": "Prikaži sledeću regeneraciju",
-      "entity_hour": "Kiša, poslednji sat",
-      "entity_day": "Kiša danas (24 h)",
-      "entity_week": "Kiša ove nedelje",
-      "entity_month": "Kiša ovog meseca",
-      "entity_year": "Kiša ove godine",
-      "entity_last": "Poslednja kiša (datum)",
-      "entity_signal": "Jačina signala",
-      "show_rate": "Prikaži intenzitet",
-      "show_hour": "Prikaži poslednji sat",
-      "show_day": "Prikaži danas",
-      "show_week": "Prikaži nedelju",
-      "show_month": "Prikaži mesec",
-      "show_year": "Prikaži godinu",
-      "show_last": "Prikaži poslednju kišu",
-      "show_signal": "Prikaži signal",
-      "heavy_rate": "Jaka kiša od (mm/h)",
-      "gauge_max": "Merač pun na (mm dnevno)",
-      "entity_alarm": "Alarm (prevrtanje, pregrevanje)",
-      "high_threshold": "Jako podešavanje od",
-      "bubbles_threshold": "Mehurići od",
-      "entity_bubbles": "Mehurići (vazdušna pumpa)",
-      "entity_chlorine": "Hlor",
-      "entity_cover": "Pokrivač (zatvoren / otvoren)",
-      "entity_error": "Greška",
-      "entity_heater": "Grejač",
-      "entity_jets": "Mlaznice",
-      "entity_timer": "Tajmer",
-      "show_chlorine": "Prikaži hlor",
-      "show_cover": "Prikaži pokrivač",
-      "show_timer": "Pločica tajmera",
-      "switch_low": "Prekidač za malu brzinu",
-      "switch_high": "Prekidač za veliku brzinu",
-      "entity_state": "Senzor otvoreno/zatvoreno (kontakt)",
-      "entity_position": "Senzor položaja (0-100)",
-      "entity_moisture": "Senzor vlažnosti zemljišta",
-      "entity_conductivity": "Senzor provodljivosti (plodnosti)",
-      "entity_brightness": "Senzor osvetljenja (lux)",
-      "entity_rssi": "Jačina signala (RSSI)",
-      "min_moisture": "Zaliti ispod (%)",
-      "min_temperature": "Hladno ispod (°C)",
-      "min_conductivity": "Đubrivo ispod (µS/cm)",
-      "min_brightness": "Mračno ispod (lx)",
-      "min_battery": "Slaba baterija ispod (%)",
-      "show_moisture": "Prikaži vlažnost zemljišta",
-      "show_conductivity": "Prikaži provodljivost",
-      "show_rssi": "Prikaži signal",
-      "water_low": "Malo vode ispod (%)",
-      "low_water": "Upozorenje za malo vode (binarni senzor)",
-      "target_step": "Ciljni korak (%)",
-      "show_tank": "Pločica rezervoara",
-      "target_humidity": "Ciljna vlažnost",
-      "fan_speed": "Brzina ventilatora (izbor)",
-      "water_level": "Nivo vode (%)",
-      "entity_lux": "Senzor nivoa svetlosti (lux)",
+      "show_btn_home": "Dugme početna",
+      "show_btn_prev": "Dugme prethodno",
+      "show_btn_play_pause": "Dugme pusti / pauza",
+      "show_btn_next": "Dugme sledeće",
+      "show_btn_vol_down": "Dugme tiše",
+      "show_btn_mute": "Dugme utišaj",
+      "show_btn_vol_up": "Dugme glasnije",
+      "override": "Privremena izmena (Netatmo)",
+      "override_durations": "Trajanja (min)",
+      "entity_state": "Open/closed sensor (contact)",
+      "entity_position": "Position sensor (0-100)",
+      "entity_lux": "Senzor osvetljenosti (luks)",
       "wind_max": "Prag jakog vetra (km/h)",
-      "show_lux": "Prikaži nivo svetlosti",
-      "fabric_color": "Boja tkanine",
-      "internet_box_model": "Model rutera",
-      "illustration": "Ilustracija (fotografija ili SVG)",
-      "entity_download": "Brzina preuzimanja",
-      "entity_upload": "Brzina slanja",
-      "entity_devices": "Povezani uređaji",
-      "entity_wifi": "Wi-Fi prekidač",
-      "entity_reboot": "Dugme za ponovno pokretanje",
-      "max_speed": "Referentna brzina (Mb/s)",
-      "show_download": "Pločica preuzimanja",
-      "show_upload": "Pločica slanja",
-      "show_devices": "Pločica uređaja",
-      "show_wifi": "Wi-Fi pločica",
-      "entity_ping": "Ping senzor (ms)",
-      "entity_wan_ip": "WAN IP senzor",
-      "entity_memory": "Senzor zauzeća memorije (%)",
-      "entity_wifi_24": "Wi-Fi 2.4 GHz prekidač",
-      "entity_wifi_5": "Wi-Fi 5 GHz prekidač",
-      "entity_wifi_6": "Wi-Fi 6 GHz prekidač",
-      "entity_wifi_guest": "Wi-Fi za goste prekidač",
-      "entity_wifi_iot": "IoT Wi-Fi prekidač",
-      "show_ping": "Ping pločica",
-      "show_wan_ip": "WAN IP pločica",
-      "show_memory": "Pločica memorije",
-      "pet_feeder_model": "Model hranilice",
-      "entity_feed": "Hranjenje (izbor / dugme)",
-      "feed_option": "Opcija hranjenja (izbor, podrazumevano: start)",
-      "entity_source": "Izvor hranjenja",
-      "entity_serving": "Veličina serviranja (porcije)",
-      "entity_portion_weight": "Težina porcije (g)",
-      "entity_portions": "Porcije po danu",
-      "entity_led": "LED indikator",
-      "entity_child_lock": "Zaštita za decu",
-      "daily_goal": "Dnevne porcije (puni posudu)",
-      "show_portions": "Pločica porcija",
-      "show_serving": "Pločica serviranja",
-      "show_source": "Pločica izvora",
-      "entity_close": "Komanda za zatvaranje (dugme / skripta)",
-      "entity_stop": "Komanda za zaustavljanje (dugme / skripta)",
-      "entity_supply_temp": "Temperatura polaznog voda (Tv)",
-      "entity_water_volume": "Ukupna zapremina vode",
-      "entity_room_temp": "Sobna temperatura",
-      "power_threshold": "Prag grejanja (kW)",
-      "show_supply": "Prikaži polazni vod",
-      "show_return": "Prikaži povratni vod",
-      "show_delta": "Prikaži ΔT",
-      "show_room": "Prikaži prostoriju",
-      "entity_backwash": "Povratno ispiranje (on = u toku)",
-      "entity_brine": "Usisavanje slane vode (on = u toku)",
-      "entity_rinse": "Ispiranje (on = u toku)",
-      "entity_fan": "Brzina ventilatora",
-      "entity_tank": "Rezervoar za vodu (pun / nivo)",
-      "temp_step": "Korak temperature"
+      "show_lux": "Prikaži osvetljenost",
+      "fabric_color": "Boja platna"
     }
   };
   const lang = (hass) => {
@@ -26763,54 +26140,6 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "wifi_6": "Wi-Fi 6 GHz",
       "wifi_guest": "Wi-Fi invités",
       "wifi_iot": "Wi-Fi objets connectés"
-    },
-    "sr": {
-      "name": "Интернет рутер",
-      "online": "На мрежи",
-      "offline": "Ван мреже",
-      "unavailable": "Недоступно",
-      "download": "Преузимање",
-      "upload": "Слање",
-      "devices": "Уређаји",
-      "wifi": "Wi-Fi",
-      "on": "Укључено",
-      "off": "Искључено",
-      "reboot": "Поново покрени",
-      "reboot_confirm": "Поново покренути рутер? Интернет веза ће бити прекинута на неколико минута.",
-      "ping": "Пинг",
-      "wan_ip": "WAN IP",
-      "uptime": "Време рада",
-      "cpu": "Процесор",
-      "memory": "Меморија",
-      "wifi_24": "Wi-Fi 2.4 GHz",
-      "wifi_5": "Wi-Fi 5 GHz",
-      "wifi_6": "Wi-Fi 6 GHz",
-      "wifi_guest": "Wi-Fi за госте",
-      "wifi_iot": "IoT Wi-Fi"
-    },
-    "sr-Latn": {
-      "name": "Internet ruter",
-      "online": "Na mreži",
-      "offline": "Van mreže",
-      "unavailable": "Nedostupno",
-      "download": "Preuzimanje",
-      "upload": "Slanje",
-      "devices": "Uređaji",
-      "wifi": "Wi-Fi",
-      "on": "Uključeno",
-      "off": "Isključeno",
-      "reboot": "Ponovo pokreni",
-      "reboot_confirm": "Ponovo pokrenuti ruter? Internet veza će biti prekinuta na nekoliko minuta.",
-      "ping": "Ping",
-      "wan_ip": "WAN IP",
-      "uptime": "Vreme rada",
-      "cpu": "Procesor",
-      "memory": "Memorija",
-      "wifi_24": "Wi-Fi 2.4 GHz",
-      "wifi_5": "Wi-Fi 5 GHz",
-      "wifi_6": "Wi-Fi 6 GHz",
-      "wifi_guest": "Wi-Fi za goste",
-      "wifi_iot": "IoT Wi-Fi"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -27247,8 +26576,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
  * portions et poids du jour, erreur, indicateur LED, sécurité enfant, mode (manuel / programmé), portions réglées, poids d'une portion.
  * Animations : croquettes qui tombent de la trappe dans la gamelle pendant la distribution, tas de croquettes qui grossit avec les
  * portions du jour, écran qui s'allume, voyant rouge qui clignote en cas d'erreur, cadenas affiché quand la sécurité enfant est active.
- * Réserve de croquettes (facultatif) : `entity_level` (grammes restants ou %) + `hopper_capacity` → niveau teinté dans la trémie, tuiles Réserve et
- * Autonomie (jours), alerte sous `food_low` %, bouton Remplir (remet `entity_level` à la capacité).
  * États : ready, feeding, error, unavailable.
  */
 (() => {
@@ -27270,11 +26597,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "serving": "Serving",
       "source": "Last feed",
       "mode": "Mode",
-      "level": "Hopper",
-      "autonomy": "Autonomy",
-      "refill": "Refill",
-      "low_food": "Food running low",
-      "days_short": "days",
       "portions_unit": "portions",
       "v_schedule": "Schedule",
       "v_manual": "Manual",
@@ -27317,59 +26639,12 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "serving": "Portion",
       "source": "Dernière",
       "mode": "Mode",
-      "level": "Réserve",
-      "autonomy": "Autonomie",
-      "refill": "Remplir",
-      "low_food": "Réserve de croquettes basse",
-      "days_short": "jours",
       "portions_unit": "portions",
       "v_schedule": "Programmé",
       "v_manual": "Manuel",
       "v_remote": "À distance",
       "v_unknown": "Inconnu",
       "v_none": "Aucune"
-    },
-    "sr": {
-      "name": "Хранилица за љубимце",
-      "ready": "Спремно",
-      "feeding": "Храњење",
-      "error": "Грешка",
-      "unavailable": "Недоступно",
-      "feed": "Нахрани",
-      "led": "ЛЕД индикатор",
-      "child_lock": "Заштита за децу",
-      "portions": "Порције",
-      "weight": "Тежина",
-      "serving": "Сервирање",
-      "source": "Последње храњење",
-      "mode": "Режим",
-      "portions_unit": "порција",
-      "v_schedule": "Распоред",
-      "v_manual": "Ручно",
-      "v_remote": "Даљински",
-      "v_unknown": "Непознато",
-      "v_none": "Нема"
-    },
-    "sr-Latn": {
-      "name": "Hranilica za ljubimce",
-      "ready": "Spremno",
-      "feeding": "Hranjenje",
-      "error": "Greška",
-      "unavailable": "Nedostupno",
-      "feed": "Nahrani",
-      "led": "LED indikator",
-      "child_lock": "Zaštita za decu",
-      "portions": "Porcije",
-      "weight": "Težina",
-      "serving": "Serviranje",
-      "source": "Poslednje hranjenje",
-      "mode": "Režim",
-      "portions_unit": "porcija",
-      "v_schedule": "Raspored",
-      "v_manual": "Ručno",
-      "v_remote": "Daljinski",
-      "v_unknown": "Nepoznato",
-      "v_none": "Nema"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -27395,7 +26670,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 .feeding .badge{background:color-mix(in srgb,var(--kib) 28%,transparent);color:var(--kib)}
 .error .badge{background:color-mix(in srgb,var(--pf-alert) 22%,transparent);color:var(--pf-alert)}
 .alert{display:none;margin-top:4px;font-size:11px;color:var(--pf-alert);font-weight:500;text-align:center}
-.error .alert,.lowfood .alert{display:block}
+.error .alert{display:block}
 svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:6px}
 .tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
@@ -27438,9 +26713,6 @@ svg{display:block;width:100%;max-width:calc(300px * var(--illus-scale,1));height
 .mound.dots{fill:#8b4a17;stroke:none}
 .feeding .mound{animation:pfbump .55s ease-in-out infinite}
 @keyframes pfbump{50%{transform:scale(calc(.3 + var(--fill) * .75)) translateY(-1px)}}
-.level{fill:#c98a4b;opacity:.6;mix-blend-mode:multiply;transition:y .8s,height .8s,fill .4s}
-.lowfood .level{fill:#e0643a;animation:pfblink 1.6s ease-in-out infinite}
-.tile.bad .v{color:var(--pf-alert)}
 .noanim *{animation:none!important;transition:none!important}
 
 /* ---- compact : petits emplacements fixes ---- */
@@ -27464,9 +26736,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 <svg viewBox="0 0 300 180" role="img" aria-label="${esc(label)}">
  <g transform="translate(${bx} ${by}) scale(${k.toFixed(5)})">
   <image class="photo" href="${m.img}" x="0" y="0" width="${m.pw}" height="${m.ph}"/>
-  <!-- niveau de croquettes dans la trémie (haut du réservoir, sous le couvercle) -->
-  <clipPath id="pfhop"><rect x="20" y="62" width="316" height="112" rx="30"/></clipPath>
-  <g clip-path="url(#pfhop)"><rect class="level" x="20" y="174" width="316" height="0"/></g>
   <!-- tas de croquettes dans la gamelle -->
   <g class="mounds"><ellipse class="mound" cx="232" cy="378" rx="46" ry="17"/><g class="mound dots"><circle cx="212" cy="368" r="4"/><circle cx="226" cy="362" r="4"/><circle cx="242" cy="364" r="4"/><circle cx="256" cy="370" r="4"/><circle cx="234" cy="372" r="4"/></g></g>
   <!-- croquettes qui tombent de la trappe -->
@@ -27493,7 +26762,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     setConfig(c) {
       if (window.applianceSize) window.applianceSize(this, c);
       if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
-      this._c = { show_status: true, show_controls: true, show_portions: true, show_weight: true, show_source: true, show_serving: true, show_mode: true, show_level: true, show_autonomy: true, food_low: 25, daily_goal: 6, ...c };
+      this._c = { show_status: true, show_controls: true, show_portions: true, show_weight: true, show_source: true, show_serving: true, show_mode: true, daily_goal: 6, ...c };
       this._built = false;
       if (this._hass) this._render();
     }
@@ -27527,13 +26796,11 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
           <div class="tile hide" data-k="serving"><div class="l"><ha-icon icon="mdi:bowl-mix"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="source"><div class="l"><ha-icon icon="mdi:history"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
           <div class="tile hide" data-k="mode"><div class="l"><ha-icon icon="mdi:calendar-clock"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
-          <div class="tile hide" data-k="level"><div class="l"><ha-icon icon="mdi:storage-tank-outline"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
-          <div class="tile hide" data-k="autonomy"><div class="l"><ha-icon icon="mdi:calendar-end"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>
         </div>
       </ha-card>`;
       this._card = root.querySelector('ha-card');
       window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(this._c.entity_feed || this._c.entity_portions));
-      const tgt = { portions: 'entity_portions', weight: 'entity_weight', serving: 'entity_serving', source: 'entity_source', mode: 'entity_mode', level: 'entity_level', autonomy: 'entity_level' };
+      const tgt = { portions: 'entity_portions', weight: 'entity_weight', serving: 'entity_serving', source: 'entity_source', mode: 'entity_mode' };
       root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(this._c[tgt[el.dataset.k]])));
       root.getElementById('pfctrls').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { e.stopPropagation(); this._cmd(b.dataset.k); } });
       this._root = root; this._built = true; this._lastPortions = undefined;
@@ -27551,26 +26818,10 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         this._feedAnim(); this._render();
       } else if (k === 'led' && c.entity_led) h.callService('homeassistant', 'toggle', { entity_id: c.entity_led });
       else if (k === 'lock' && c.entity_child_lock) h.callService('homeassistant', 'toggle', { entity_id: c.entity_child_lock });
-      else if (k === 'refill' && c.entity_level) {
-        // trémie remplie : remet le niveau à la capacité (grammes, ou 100 si l'entité est en %)
-        const d = c.entity_level.split('.')[0], pct = /%/.test(this._unit(c.entity_level));
-        h.callService(d, 'set_value', { entity_id: c.entity_level, value: pct ? 100 : this._cap() });
-      } else if (k === 'mode' && c.entity_mode) {
+      else if (k === 'mode' && c.entity_mode) {
         const s = this._st(c.entity_mode), opts = (s && s.attributes && s.attributes.options) || [];
         if (opts.length) h.callService('select', 'select_option', { entity_id: c.entity_mode, option: opts[(opts.indexOf(s.state) + 1) % opts.length] });
       }
-    }
-
-    _cap() { return Number(this._c.hopper_capacity) > 0 ? Number(this._c.hopper_capacity) : 1500; }
-    // niveau de la trémie : { frac (0-1), grams, days } ; NaN si `entity_level` absente ou indisponible
-    _level() {
-      const c = this._c, v = this._num(c.entity_level), cap = this._cap();
-      if (isNaN(v)) return { frac: NaN, grams: NaN, days: NaN };
-      const frac = Math.max(0, Math.min(1, /%/.test(this._unit(c.entity_level)) ? v / 100 : v / cap)), grams = frac * cap;
-      // consommation par jour : option daily_consumption (g), sinon poids du jour, sinon portions du jour × poids d'une portion
-      const w = this._num(c.entity_weight), pp = this._num(c.entity_portions), pw = this._num(c.entity_portion_weight);
-      const daily = Number(c.daily_consumption) > 0 ? Number(c.daily_consumption) : w > 0 ? w : pp > 0 && pw > 0 ? pp * pw : NaN;
-      return { frac, grams, days: isNaN(daily) ? NaN : grams / daily };
     }
 
     _state() {
@@ -27591,27 +26842,21 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       const pp = this._num(c.entity_portions);
       if (this._lastPortions !== undefined && !isNaN(pp) && pp > this._lastPortions) this._feedAnim();
       if (!isNaN(pp)) this._lastPortions = pp;
-      const st = this._state(), lv = this._level();
-      const low = !isNaN(lv.frac) && lv.frac * 100 <= (Number(c.food_low) >= 0 ? Number(c.food_low) : 25);
-      card.className = `${st}${low ? ' lowfood' : ''}${this._isOn(c.entity_child_lock) ? ' locked' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
+      const st = this._state();
+      card.className = `${st}${this._isOn(c.entity_child_lock) ? ' locked' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
       const goal = Number(c.daily_goal) > 0 ? Number(c.daily_goal) : 6;
       card.style.setProperty('--fill', (isNaN(pp) ? 0 : Math.max(0, Math.min(1, pp / goal))).toFixed(3));
 
       r.getElementById('pftitle').textContent = c.name || m.label;
       const badge = r.getElementById('pfbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
       const es = this._st(c.entity_error);
-      // niveau dans la trémie : hauteur 112 (px de la photo) × fraction, ancrée en bas
-      const lvl = r.querySelector('.level'), hh = isNaN(lv.frac) ? 0 : lv.frac * 112;
-      lvl.setAttribute('height', hh.toFixed(1)); lvl.setAttribute('y', (174 - hh).toFixed(1));
-      r.getElementById('pfalert').textContent = st === 'error' ? `${this._t('error')}${es && !/^(on|true)$/i.test(es.state) ? ` : ${es.state}` : ''}` : low && st !== 'unavailable' ? this._t('low_food') : '';
+      r.getElementById('pfalert').textContent = st === 'error' ? `${this._t('error')}${es && !/^(on|true)$/i.test(es.state) ? ` : ${es.state}` : ''}` : '';
 
       const modeS = this._st(c.entity_mode), ledOn = this._isOn(c.entity_led), lockOn = this._isOn(c.entity_child_lock);
       const btns = [
         ['feed', 'mdi:food-drumstick', this._t('feed'), 'main', !!c.entity_feed && !!this._st(c.entity_feed)],
         ['led', 'mdi:led-on', this._t('led'), ledOn ? 'on' : '', !!this._st(c.entity_led)],
         ['lock', lockOn ? 'mdi:lock' : 'mdi:lock-open-variant', this._t('child_lock'), lockOn ? 'on' : '', !!this._st(c.entity_child_lock)],
-        // Remplir : seulement si le niveau est un input_number / number (modifiable)
-        ['refill', 'mdi:bucket-outline', this._t('refill'), '', !!this._st(c.entity_level) && /^(input_number|number)\./.test(c.entity_level)],
       ].filter((b) => b[4] && c.show_controls !== false);
       const ctr = r.getElementById('pfctrls');
       ctr.classList.toggle('hide', !btns.length);
@@ -27629,8 +26874,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         serving: [!!this._st(c.entity_serving) && c.show_serving !== false, this._fmt(sv, 0), isNaN(pw) ? this._t('portions_unit') : `× ${this._fmt(pw, 0)} g`],
         source: [!!src && c.show_source !== false, this._tr(val(src)), ''],
         mode: [!!modeS && c.show_mode !== false, this._tr(val(modeS)), ''],
-        level: [!isNaN(lv.frac) && c.show_level !== false, this._fmt(lv.grams, 0), `g · ${this._fmt(lv.frac * 100, 0)} %`],
-        autonomy: [!isNaN(lv.days) && c.show_autonomy !== false, this._fmt(lv.days, lv.days < 10 ? 1 : 0), this._t('days_short')],
       };
       Object.entries(V).forEach(([k, [show, v, unit]]) => {
         const el = r.querySelector(`.tile[data-k="${k}"]`);
@@ -27638,7 +26881,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         el.querySelector('.lbl').textContent = this._l(k);
         const small = document.createElement('small'); small.textContent = unit;
         el.querySelector('.v').replaceChildren(String(v), small);
-        el.classList.toggle('bad', low && (k === 'level' || k === 'autonomy'));
         if (k === 'mode') el.onclick = () => this._cmd('mode');
       });
     }
@@ -27673,14 +26915,10 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         ...window.applianceTileFields(this._hass),
         ent('entity_feed'), { name: 'feed_option', selector: { text: {} } }, ent('entity_source'), ent('entity_serving', 'number'), ent('entity_portion_weight', 'number'),
         ent('entity_portions', 'sensor'), ent('entity_weight', 'sensor'), ent('entity_error'), ent('entity_led', 'switch'), ent('entity_child_lock', 'switch'), ent('entity_mode', 'select'),
-        ent('entity_level', ['input_number', 'number', 'sensor']),
-        { name: 'hopper_capacity', default: 1500, selector: { number: { min: 50, max: 20000, step: 50, mode: 'box', unit_of_measurement: 'g' } } },
-        { name: 'daily_consumption', selector: { number: { min: 0, max: 2000, step: 5, mode: 'box', unit_of_measurement: 'g' } } },
-        { name: 'food_low', default: 25, selector: { number: { min: 0, max: 100, step: 5, mode: 'box', unit_of_measurement: '%' } } },
         { name: 'daily_goal', default: 6, selector: { number: { min: 1, max: 20, step: 1, mode: 'box' } } },
         ...window.applianceActionFields,
         { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', cs: 'Čeština', hu: 'Magyar', sr: 'Српски', 'sr-Latn': 'Srpski' }[value] || value })) } } },
-        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_portions'), bool('show_weight'), bool('show_serving'), bool('show_source'), bool('show_mode'), bool('show_level'), bool('show_autonomy'), bool('animations')] },
+        { type: 'grid', name: '', schema: [bool('show_status'), bool('compact', false), bool('show_controls'), bool('show_portions'), bool('show_weight'), bool('show_serving'), bool('show_source'), bool('show_mode'), bool('animations')] },
       ];
       this._form.computeLabel = (s) => window.applianceEditorLabel(s.name === 'model' ? 'pet_feeder_model' : s.name, this._hass);
     }
@@ -27771,68 +27009,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "fan_medium": "Moyenne",
       "fan_high": "Haute",
       "fan_auto": "Auto"
-    },
-    "sr": {
-      "name": "Преносни клима-уређај",
-      "off": "Искључено",
-      "cooling": "Хлађење",
-      "dry": "Одвлаживање",
-      "fan": "Вентилатор",
-      "heating": "Грејање",
-      "idle": "На циљној темп.",
-      "unavailable": "Недоступно",
-      "lcd_cooling": "ХЛАЂЕЊЕ",
-      "lcd_dry": "ОДВЛАЖ.",
-      "lcd_fan": "ВЕНТ.",
-      "lcd_heating": "ГРЕЈАЊЕ",
-      "lcd_idle": "СПРЕМНО",
-      "tank_full": "Резервоар за воду је пун: испразните га",
-      "temperature": "Температура",
-      "target": "Циљна",
-      "fan_label": "Вентилатор",
-      "timer": "Тајмер",
-      "tank": "Резервоар",
-      "power": "Снага",
-      "full": "Пун",
-      "ok": "У реду",
-      "temp_down": "Смањи",
-      "temp_up": "Повећај",
-      "mode": "Режим",
-      "fan_low": "Ниско",
-      "fan_medium": "Средње",
-      "fan_high": "Високо",
-      "fan_auto": "Аутоматски"
-    },
-    "sr-Latn": {
-      "name": "Prenosni klima-uređaj",
-      "off": "Isključeno",
-      "cooling": "Hlađenje",
-      "dry": "Odvlaživanje",
-      "fan": "Ventilator",
-      "heating": "Grejanje",
-      "idle": "Na ciljnoj temp.",
-      "unavailable": "Nedostupno",
-      "lcd_cooling": "HLAĐENJE",
-      "lcd_dry": "ODVLAŽ.",
-      "lcd_fan": "VENT.",
-      "lcd_heating": "GREJANJE",
-      "lcd_idle": "SPREMNO",
-      "tank_full": "Rezervoar za vodu je pun: ispraznite ga",
-      "temperature": "Temperatura",
-      "target": "Ciljna",
-      "fan_label": "Ventilator",
-      "timer": "Tajmer",
-      "tank": "Rezervoar",
-      "power": "Snaga",
-      "full": "Pun",
-      "ok": "U redu",
-      "temp_down": "Smanji",
-      "temp_up": "Povećaj",
-      "mode": "Režim",
-      "fan_low": "Nisko",
-      "fan_medium": "Srednje",
-      "fan_high": "Visoko",
-      "fan_auto": "Automatski"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -28457,7 +27633,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "closing": "Затварање",
       "partial": "Делимично отворено",
       "unavailable": "Недоступно",
-      "position": "Положај",
+      "position": "Позиција",
       "power": "Мотор",
       "energy": "Енергија",
       "cost": "Трошак",
@@ -28465,8 +27641,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "btn_open": "Отвори",
       "btn_stop": "Заустави",
       "btn_close": "Затвори",
-      "btn_command": "Команда",
-      "btn_pedestrian": "Пешачки"
+      "btn_command": "Команда"
     },
     "sr-Latn": {
       "barrier": "Rampa",
@@ -28479,7 +27654,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "closing": "Zatvaranje",
       "partial": "Delimično otvoreno",
       "unavailable": "Nedostupno",
-      "position": "Položaj",
+      "position": "Pozicija",
       "power": "Motor",
       "energy": "Energija",
       "cost": "Trošak",
@@ -28487,8 +27662,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "btn_open": "Otvori",
       "btn_stop": "Zaustavi",
       "btn_close": "Zatvori",
-      "btn_command": "Komanda",
-      "btn_pedestrian": "Pešački"
+      "btn_command": "Komanda"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -31636,11 +30810,11 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "replace_battery": "Замените батарею"
     },
     "sr": {
-      "name": "UPS",
+      "name": "UPS (БПН)",
       "online": "На мрежи",
       "charging": "Пуњење",
       "on_battery": "На батерији",
-      "low_battery": "Слаба батерија",
+      "low_battery": "Батерија је ниска",
       "offline": "Искључено",
       "unavailable": "Недоступно",
       "charge": "Батерија",
@@ -31650,18 +30824,15 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "input": "Улаз",
       "output": "Излаз",
       "energy": "Енергија",
-      "battery_voltage": "Напон батерије",
-      "nominal_power": "Називна снага",
-      "beeper": "Зујалица",
       "overload": "Преоптерећење",
       "replace_battery": "Замените батерију"
     },
     "sr-Latn": {
-      "name": "UPS",
+      "name": "UPS (BPN)",
       "online": "Na mreži",
       "charging": "Punjenje",
       "on_battery": "Na bateriji",
-      "low_battery": "Slaba baterija",
+      "low_battery": "Baterija je niska",
       "offline": "Isključeno",
       "unavailable": "Nedostupno",
       "charge": "Baterija",
@@ -31671,9 +30842,6 @@ svg{display:block;width:100%;max-width:calc(280px * var(--illus-scale,1));height
       "input": "Ulaz",
       "output": "Izlaz",
       "energy": "Energija",
-      "battery_voltage": "Napon baterije",
-      "nominal_power": "Nazivna snaga",
-      "beeper": "Zujalica",
       "overload": "Preopterećenje",
       "replace_battery": "Zamenite bateriju"
     }
@@ -32029,7 +31197,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
  * le circuit en serpentin, collecteur départ / retour au mur (hydraulique) ou câble chauffant
  * (heating_type: electric), thermostat mural. En chauffe, l'eau ou le courant circule, la dalle
  * rougeoit (--heat) et des ondes de chaleur montent du sol.
- * `surface: wall` : mur chauffant (même circuit, vue de face : l'enduit est retiré à gauche pour montrer le serpentin).
  * États : off, heating, idle (allumé, consigne atteinte), fault. Entité climate (consigne ± et
  * marche / arrêt), switch / input_boolean / binary_sensor (vanne, circulateur) ou puissance seule.
  */
@@ -32054,9 +31221,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "turn_on": "Turn on",
       "turn_off": "Turn off",
       "floor_hot": "Floor too hot",
-      "name_wall": "Wall heating",
-      "wall": "Wall",
-      "wall_hot": "Wall too hot",
       "water_hot": "Water too hot"
     },
     "cs": {
@@ -32147,9 +31311,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       "turn_on": "Allumer",
       "turn_off": "Éteindre",
       "floor_hot": "Sol trop chaud",
-      "name_wall": "Mur chauffant",
-      "wall": "Mur",
-      "wall_hot": "Mur trop chaud",
       "water_hot": "Eau trop chaude"
     },
     "hu": {
@@ -32358,7 +31519,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
 .elec .flow{stroke:#fff3c4;stroke-width:1.2;stroke-dasharray:2 8}
 @keyframes ufflow{to{stroke-dashoffset:-28}}
 .glow{opacity:calc(var(--heat) * .75);transition:opacity 1.5s}
-.glow2{opacity:calc(var(--heat) * .3);transition:opacity 1.5s}
 .wave{fill:none;stroke:var(--uf-heat-c);stroke-width:1.6;stroke-linecap:round;opacity:0}
 .heating .wave{animation:ufwave 3s ease-in infinite}
 .idle .wave{animation:ufwave 5s ease-in infinite;stroke-opacity:.5}
@@ -32425,44 +31585,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
  </g>
 </svg>`;
 
-  // mur chauffant (surface: wall) : mur vu de face, enduit retiré à gauche pour montrer le serpentin ; mêmes classes que le sol (couleurs, flux, lueur, ondes)
-  const WCOIL = 'M24 30 H138 Q148 30 148 40 Q148 50 138 50 H46 Q36 50 36 60 Q36 70 46 70 H138 Q148 70 148 80 Q148 90 138 90 H46 Q36 90 36 100 Q36 110 46 110 H138 Q148 110 148 120 Q148 130 138 130 H24';
-  const SVG_WALL = (label) => `
-<svg viewBox="0 0 270 170" role="img" aria-label="${esc(label)}">
- <defs>
-  <linearGradient id="ufwwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f3f5"/><stop offset="1" stop-color="#dde2e6"/></linearGradient>
-  <linearGradient id="ufglow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff7a3d" stop-opacity=".75"/><stop offset="1" stop-color="#ff5a2a" stop-opacity=".2"/></linearGradient>
-  <clipPath id="ufwslab"><rect x="24" y="22" width="126" height="116"/></clipPath>
- </defs>
- <ellipse cx="135" cy="164" rx="128" ry="4" fill="#000" opacity=".15"/>
- <!-- mur, plinthe, sol -->
- <rect x="14" y="14" width="242" height="128" rx="3" fill="url(#ufwwall)" stroke="#c3cad1"/>
- <rect x="0" y="142" width="270" height="20" fill="#b9a98f"/><rect x="14" y="136" width="242" height="6" fill="#e8e4dc" stroke="#c9c2b4" stroke-width=".8"/>
- <!-- enduit retiré : chape et serpentin -->
- <rect x="24" y="22" width="126" height="116" rx="2" fill="#cdc6ba" stroke="#a89c86" stroke-width="1.4"/>
- <g clip-path="url(#ufwslab)"><path class="pipe" d="${WCOIL}"/><path class="flow" d="${WCOIL}"/></g>
- <rect class="glow" x="24" y="22" width="126" height="116" rx="2" fill="url(#ufglow)"/>
- <rect class="glow2" x="150" y="14" width="106" height="122" fill="#ff7a3d"/>
- <!-- ondes de chaleur qui rayonnent du mur -->
- <g><path class="wave" d="M170 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M188 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M206 128 q4 -5 0 -10 t0 -10"/>
-  <path class="wave" d="M224 128 q4 -5 0 -10 t0 -10"/><path class="wave" d="M242 128 q4 -5 0 -10 t0 -10"/></g>
- <!-- thermostat -->
- <rect x="186" y="34" width="30" height="36" rx="4" fill="#f9fafb" stroke="#b9c1c8"/>
- <rect x="190" y="39" width="22" height="13" rx="2" fill="#1b1e22"/>
- <text class="dsp" id="ufdsp" x="201" y="48.5">--</text>
- <circle class="led" cx="201" cy="61" r="2.2"/>
- <!-- collecteur (hydraulique) / boîtier du câble (électrique) -->
- <g class="hyd">
-  <rect x="222" y="86" width="28" height="44" rx="3" fill="#f4f6f8" stroke="#b9c1c8"/>
-  <rect x="226" y="95" width="20" height="4" rx="2" fill="#d9483b"/><rect x="226" y="113" width="20" height="4" rx="2" fill="#2b7fd9"/>
-  <g fill="#5b636b"><circle cx="231" cy="97" r="2.2"/><circle cx="241" cy="97" r="2.2"/><circle cx="231" cy="115" r="2.2"/><circle cx="241" cy="115" r="2.2"/></g>
- </g>
- <g class="cab">
-  <rect x="224" y="96" width="24" height="28" rx="3" fill="#f4f6f8" stroke="#b9c1c8"/>
-  <path d="M236 102 l-4 7 h4 l-2 6 l6 -9 h-4 l2 -4 z" fill="#ff8a1f"/>
- </g>
-</svg>`;
-
   const TILES = [
     ['temp', 'mdi:home-thermometer', 'show_temp'],
     ['target', 'mdi:thermometer-check', 'show_temp'],
@@ -32519,7 +31641,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       const c = this._c;
       root.innerHTML = `<style>${CSS}</style><ha-card>
         <div class="head"><div class="title" id="uftitle"></div><div class="badge" id="ufbadge"></div></div>
-        ${(c.surface === 'wall' ? SVG_WALL : SVG)(c.name || this._t(c.surface === 'wall' ? 'name_wall' : 'name'))}
+        ${SVG(c.name || this._t('name'))}
         <div class="alert" id="ufalert"></div>
         <div class="ctl" id="ufctl">
           <button class="sm" data-a="down"><ha-icon icon="mdi:minus"></ha-icon></button>
@@ -32586,15 +31708,15 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
       const clamp = (x) => Math.max(0, Math.min(1, x));
       // lueur de la dalle : température du sol si connue (20 °C → floor_max, calcul en °C), sinon selon l'état
       const heat = !isNaN(floor) ? clamp((tc.toC(floor) - 20) / Math.max(1, tc.toC(floorMax) - 20)) : ({ heating: 0.8, idle: 0.3 }[st] || 0);
-      const elec = String(c.heating_type).toLowerCase() === 'electric', wall = c.surface === 'wall';
-      card.className = `${st}${elec ? ' elec' : ''}${wall ? ' wall' : ''} ${c.animations === false ? 'noanim' : ''}`;
+      const elec = String(c.heating_type).toLowerCase() === 'electric';
+      card.className = `${st}${elec ? ' elec' : ''} ${c.animations === false ? 'noanim' : ''}`;
       card.style.setProperty('--heat', (st === 'off' || st === 'fault' ? 0 : heat).toFixed(3));
 
-      r.getElementById('uftitle').textContent = c.name || this._t(wall ? 'name_wall' : 'name');
+      r.getElementById('uftitle').textContent = c.name || this._t('name');
       const badge = r.getElementById('ufbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
       r.getElementById('ufdsp').textContent = st === 'off' ? 'OFF' : st === 'fault' ? 'Err' : !isNaN(temp) ? `${this._fmt(temp, 1)}°` : 'ON';
       const alerts = [];
-      if (!isNaN(floor) && floor > floorMax) alerts.push(this._t(wall ? 'wall_hot' : 'floor_hot'));
+      if (!isNaN(floor) && floor > floorMax) alerts.push(this._t('floor_hot'));
       if (!isNaN(water) && water > waterMax) alerts.push(this._t('water_hot'));
       const al = r.getElementById('ufalert'); al.textContent = alerts.join(' · '); al.classList.toggle('on', alerts.length > 0);
 
@@ -32622,7 +31744,7 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         const el = r.querySelector(`.tile[data-k="${k}"]`); const [show, val, unit] = V[k];
         el.classList.toggle('hide', !show || c[opt] === false);
         el.classList.toggle('bad', !!bad[k]);
-        el.querySelector('.lbl').textContent = k === 'floor' && wall && !(c.labels && c.labels.floor) ? this._t('wall') : this._l(k);
+        el.querySelector('.lbl').textContent = this._l(k);
         const small = document.createElement('small'); small.textContent = unit ?? '';
         el.querySelector('.v').replaceChildren(String(val ?? ''), small);
       });
@@ -32660,7 +31782,6 @@ svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height
         ent('entity'), ent('entity_temp', ['sensor', 'climate', 'water_heater']), ent('entity_target_temp'), ent('entity_floor_temp', 'sensor'), ent('entity_water_temp', 'sensor'),
         ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'), ent('entity_cost', 'sensor'),
         { name: 'price_per_kwh', selector: { number: { min: 0, step: 0.0001, mode: 'box' } } },
-        { name: 'surface', selector: { select: { options: ['floor', 'wall'] } } },
         { name: 'heating_type', selector: { select: { options: ['water', 'electric'] } } },
         { type: 'grid', name: '', schema: [tnum('floor_max', 20, 40, 0.5, 29), tnum('water_max', 25, 70, 1, 45), num('heat_threshold', 0, 5000, 1, 20, 'W')] },
         window.applianceTempField,
@@ -34842,11 +33963,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
           this._hass.callService('cover', this._blindDown > 0 ? 'open_cover' : 'close_cover', { entity_id: id }); return;
         }
         if (b.dataset.a === 'light') { if (this._hass && this._c.entity_light) this._hass.callService('homeassistant', 'toggle', { entity_id: this._c.entity_light }); return; }
-        if (this._hass && this._main()) {
-          // invert_buttons : moteur câblé à l'envers, « Ouvrir » ferme la cover et inversement (le dessin et la position ne changent pas)
-          const a = this._c.invert_buttons ? { open: 'close', close: 'open' }[b.dataset.a] || b.dataset.a : b.dataset.a;
-          this._hass.callService('cover', `${a}_cover`, { entity_id: this._main() });
-        }
+        if (this._hass && this._main()) this._hass.callService('cover', `${b.dataset.a}_cover`, { entity_id: this._main() });
       }));
       root.querySelector('#shpos input').addEventListener('change', (e) => {
         if (!this._hass) return;
@@ -35055,8 +34172,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
         if (a === 'light') { b.classList.toggle('on', leds); b.disabled = !lightS; return; }
         // assumed_state (RFXCOM, Somfy RTS…) : l'état est supposé, pas mesuré, donc on laisse tout cliquable comme la carte HA,
         // sauf si la cover remonte une position (current_position) : on s'y fie et on grise Ouvrir à 100 %, Fermer à 0 %
-        const ea = c.invert_buttons ? { open: 'close', close: 'open' }[a] || a : a; // action réellement envoyée par ce bouton
-        b.disabled = st === 'unavailable' || ((!assumed || posKnown) && ((ea === 'open' && (bst === 'open' || bst === 'opening')) || (ea === 'close' && (bst === 'closed' || bst === 'closing'))));
+        b.disabled = st === 'unavailable' || ((!assumed || posKnown) && ((a === 'open' && (bst === 'open' || bst === 'opening')) || (a === 'close' && (bst === 'closed' || bst === 'closing'))));
       });
       const rng = (id, show, label, val) => {
         const el = r.getElementById(id), inp = el.querySelector('input');
@@ -35124,7 +34240,6 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--sh-move:var(--app
           { name: 'travel_time', selector: { number: { min: 0, max: 120, step: 1, mode: 'box', unit_of_measurement: 's' } } },
         ] },
         bool('invert', false),
-        bool('invert_buttons', false),
         ...(this.kind === 'venetian_blind' ? [bool('tilt_only', false), bool('tilt_from_position', false), { name: 'tilt_presets', selector: { object: {} } }] : []),
         ...window.applianceActionFields,
         { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
@@ -36011,40 +35126,36 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "cost": "Стоимость"
     },
     "sr": {
-      "name": "Гасомер",
+      "name": "Мерач гаса",
       "idle": "Нема протока",
-      "flowing": "Проток гаса",
+      "flowing": "Гас тече",
       "leak": "Цурење гаса",
       "valve_closed": "Вентил затворен",
       "unavailable": "Недоступно",
       "leak_detected": "Сензор је детектовао гас",
-      "leak_detected_by": "Гас детектовао: {n}",
+      "leak_detected_by": "Гас детектован сензором: {n}",
       "open_valve": "Отвори вентил",
       "close_valve": "Затвори вентил",
       "flow": "Проток",
       "today": "Данас",
-      "index": "Стање",
-      "cost": "Трошак",
-      "variant_classic": "Класични (жути мембрански гасомер)",
-      "variant_modern": "Модерни (сиви гасомер, жута цев)"
+      "index": "Индекс",
+      "cost": "Трошак"
     },
     "sr-Latn": {
-      "name": "Gasomer",
+      "name": "Merač gasa",
       "idle": "Nema protoka",
-      "flowing": "Protok gasa",
+      "flowing": "Gas teče",
       "leak": "Curenje gasa",
       "valve_closed": "Ventil zatvoren",
       "unavailable": "Nedostupno",
       "leak_detected": "Senzor je detektovao gas",
-      "leak_detected_by": "Gas detektovao: {n}",
+      "leak_detected_by": "Gas detektovan senzorom: {n}",
       "open_valve": "Otvori ventil",
       "close_valve": "Zatvori ventil",
       "flow": "Protok",
       "today": "Danas",
-      "index": "Stanje",
-      "cost": "Trošak",
-      "variant_classic": "Klasični (žuti membranski gasomer)",
-      "variant_modern": "Moderni (sivi gasomer, žuta cev)"
+      "index": "Indeks",
+      "cost": "Trošak"
     }
   };
   const asList = (v) => (Array.isArray(v) ? v : v ? [v] : []); // entity_leak : string ou array → array
@@ -36547,15 +35658,15 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "l3": "L3"
     },
     "sr": {
-      "name": "Бројило електричне енергије",
-      "idle": "Нема потрошње",
-      "consuming": "Потрошња",
+      "name": "Бројило струје",
+      "idle": "Нема протока",
+      "consuming": "Потрошња у току",
       "overload": "Преоптерећење",
       "unavailable": "Недоступно",
-      "overload_alert": "Снага изнад одобрене снаге ({n} kVA)",
+      "overload_alert": "Снага изнад уговорене снаге ({n} kVA)",
       "power": "Снага",
       "today": "Данас",
-      "index": "Стање",
+      "index": "Индекс",
       "cost": "Трошак",
       "tariff": "Тарифа",
       "l1": "L1",
@@ -36563,15 +35674,15 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "l3": "L3"
     },
     "sr-Latn": {
-      "name": "Brojilo električne energije",
-      "idle": "Nema potrošnje",
-      "consuming": "Potrošnja",
+      "name": "Brojilo struje",
+      "idle": "Nema protoka",
+      "consuming": "Potrošnja u toku",
       "overload": "Preopterećenje",
       "unavailable": "Nedostupno",
-      "overload_alert": "Snaga iznad odobrene snage ({n} kVA)",
+      "overload_alert": "Snaga iznad ugovorene snage ({n} kVA)",
       "power": "Snaga",
       "today": "Danas",
-      "index": "Stanje",
+      "index": "Indeks",
       "cost": "Trošak",
       "tariff": "Tarifa",
       "l1": "L1",
@@ -37236,69 +36347,63 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "resume": "Вернуться к расписанию"
     },
     "sr": {
-      "name": "Радијаторски вентил",
-      "idle": "На циљној темп.",
-      "heating": "Грејање",
-      "off": "Искључено",
+      "name": "Термостатска глава",
+      "idle": "Задата температура достигнута",
+      "heating": "Греје",
+      "off": "Искључена",
       "window": "Прозор отворен",
       "unavailable": "Недоступно",
       "window_alert": "Прозор отворен: грејање паузирано",
-      "target": "Циљна",
+      "target": "Задата",
       "temperature": "Температура",
       "valve": "Вентил",
       "battery": "Батерија",
       "open": "Отворен",
       "closed": "Затворен",
       "model": "Модел",
-      "model_trv": "Радијаторски вентил (Tado X)",
+      "model_trv": "Термостатска глава (Tado X)",
       "model_netatmo": "Netatmo термостат",
       "model_nest": "Google Nest термостат",
       "model_tado": "Tado X зидни термостат",
       "model_t6": "Honeywell Home T6 термостат",
       "model_bht6000": "Tuya BHT6000 термостат (округли, црни екран)",
-      "model_vitotrol": "Viessmann Vitotrol 200 термостат",
-      "model_atlantic_io": "Atlantic io термостат (квадратни, Zone Control)",
-      "model_atlantic_io2": "Atlantic io термостат (вертикални, точкић)",
-      "model_classic": "Радијаторски вентил (класични)",
-      "model_netatmo_trv": "Netatmo вентил (1. ген.)",
-      "model_netatmo_trv2": "Netatmo вентил (нови)",
-      "model_danfoss": "Danfoss Ally вентил",
-      "model_shelly": "Shelly TRV вентил",
-      "model_somfy": "Somfy io вентил",
+      "model_classic": "Термостатска глава (класична)",
+      "model_netatmo_trv": "Netatmo глава (1. ген.)",
+      "model_netatmo_trv2": "Netatmo глава (нова)",
+      "model_danfoss": "Danfoss Ally глава",
+      "model_shelly": "Shelly TRV глава",
+      "model_somfy": "Somfy io глава",
       "duration": "Трајање",
       "dur_default": "Подразумевано",
       "resume": "Назад на распоред"
     },
     "sr-Latn": {
-      "name": "Radijatorski ventil",
-      "idle": "Na ciljnoj temp.",
-      "heating": "Grejanje",
-      "off": "Isključeno",
+      "name": "Termostatska glava",
+      "idle": "Zadata temperatura dostignuta",
+      "heating": "Greje",
+      "off": "Isključena",
       "window": "Prozor otvoren",
       "unavailable": "Nedostupno",
       "window_alert": "Prozor otvoren: grejanje pauzirano",
-      "target": "Ciljna",
+      "target": "Zadata",
       "temperature": "Temperatura",
       "valve": "Ventil",
       "battery": "Baterija",
       "open": "Otvoren",
       "closed": "Zatvoren",
       "model": "Model",
-      "model_trv": "Radijatorski ventil (Tado X)",
+      "model_trv": "Termostatska glava (Tado X)",
       "model_netatmo": "Netatmo termostat",
       "model_nest": "Google Nest termostat",
       "model_tado": "Tado X zidni termostat",
       "model_t6": "Honeywell Home T6 termostat",
       "model_bht6000": "Tuya BHT6000 termostat (okrugli, crni ekran)",
-      "model_vitotrol": "Viessmann Vitotrol 200 termostat",
-      "model_atlantic_io": "Atlantic io termostat (kvadratni, Zone Control)",
-      "model_atlantic_io2": "Atlantic io termostat (vertikalni, točkić)",
-      "model_classic": "Radijatorski ventil (klasični)",
-      "model_netatmo_trv": "Netatmo ventil (1. gen.)",
-      "model_netatmo_trv2": "Netatmo ventil (novi)",
-      "model_danfoss": "Danfoss Ally ventil",
-      "model_shelly": "Shelly TRV ventil",
-      "model_somfy": "Somfy io ventil",
+      "model_classic": "Termostatska glava (klasična)",
+      "model_netatmo_trv": "Netatmo glava (1. gen.)",
+      "model_netatmo_trv2": "Netatmo glava (nova)",
+      "model_danfoss": "Danfoss Ally glava",
+      "model_shelly": "Shelly TRV glava",
+      "model_somfy": "Somfy io glava",
       "duration": "Trajanje",
       "dur_default": "Podrazumevano",
       "resume": "Nazad na raspored"
@@ -43163,54 +42268,6 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "off": "Wył.",
       "low": "Niski",
       "ok": "OK"
-    },
-    "sr": {
-      "name": "Вратанца за мачке",
-      "mode_unlocked": "Отворено",
-      "mode_locked_all": "Закључано",
-      "mode_locked_in": "Само улаз",
-      "mode_locked_out": "Само излаз",
-      "mode_curfew": "Полицијски час",
-      "mode_unknown": "Непознато",
-      "mode_unavailable": "Недоступно",
-      "curfew": "Полицијски час",
-      "inside": "Унутра",
-      "outside": "Напољу",
-      "unknown": "Непознато",
-      "went_in": "{n} ушла",
-      "went_out": "{n} изашла",
-      "intruder_detail": "Непозната животиња код вратанца",
-      "battery_low": "Слаба батерија: замените батерије",
-      "battery": "Батерија",
-      "since": "Последњи пролаз",
-      "on": "Укључено",
-      "off": "Искључено",
-      "low": "Ниско",
-      "ok": "У реду"
-    },
-    "sr-Latn": {
-      "name": "Vratanca za mačke",
-      "mode_unlocked": "Otvoreno",
-      "mode_locked_all": "Zaključano",
-      "mode_locked_in": "Samo ulaz",
-      "mode_locked_out": "Samo izlaz",
-      "mode_curfew": "Policijski čas",
-      "mode_unknown": "Nepoznato",
-      "mode_unavailable": "Nedostupno",
-      "curfew": "Policijski čas",
-      "inside": "Unutra",
-      "outside": "Napolju",
-      "unknown": "Nepoznato",
-      "went_in": "{n} ušla",
-      "went_out": "{n} izašla",
-      "intruder_detail": "Nepoznata životinja kod vratanca",
-      "battery_low": "Slaba baterija: zamenite baterije",
-      "battery": "Baterija",
-      "since": "Poslednji prolaz",
-      "on": "Uključeno",
-      "off": "Isključeno",
-      "low": "Nisko",
-      "ok": "U redu"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -44034,86 +43091,6 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "ok": "OK",
       "to_change": "Do wymiany",
       "to_clean": "Do wyczyszczenia"
-    },
-    "sr": {
-      "name": "Фонтана за љубимце",
-      "state_flowing": "Тече",
-      "state_drinking": "Пије",
-      "state_low": "Мало воде",
-      "state_empty": "Празно",
-      "state_off": "Искључено",
-      "state_unavailable": "Недоступно",
-      "alert_empty": "Резервоар је празан: допуните фонтану",
-      "alert_low": "Низак ниво воде",
-      "alert_filter": "Замените филтер",
-      "alert_clean": "Потребно чишћење",
-      "battery_low": "Слаба батерија",
-      "btn_turn_on": "Укључи",
-      "btn_turn_off": "Искључи",
-      "btn_light": "Светло",
-      "btn_filter_reset": "Ресетуј филтер",
-      "btn_clean_reset": "Очишћено",
-      "btn_confirm": "Потврди?",
-      "mode_continuous": "Непрекидно",
-      "mode_intermittent": "Повремено",
-      "mode_sensor": "Сензор",
-      "mode_smart": "Паметни",
-      "mode_normal": "Нормално",
-      "mode_flowing": "Проток",
-      "mode_night": "Ноћни",
-      "mode_eco": "Еко",
-      "level": "Вода",
-      "filter": "Филтер",
-      "today": "Данас",
-      "drink": "Последње пијење",
-      "clean": "Чишћење",
-      "power": "Снага",
-      "battery": "Батерија",
-      "days": "д",
-      "low": "Ниско",
-      "ok": "У реду",
-      "to_change": "За замену",
-      "to_clean": "За чишћење"
-    },
-    "sr-Latn": {
-      "name": "Fontana za ljubimce",
-      "state_flowing": "Teče",
-      "state_drinking": "Pije",
-      "state_low": "Malo vode",
-      "state_empty": "Prazno",
-      "state_off": "Isključeno",
-      "state_unavailable": "Nedostupno",
-      "alert_empty": "Rezervoar je prazan: dopunite fontanu",
-      "alert_low": "Nizak nivo vode",
-      "alert_filter": "Zamenite filter",
-      "alert_clean": "Potrebno čišćenje",
-      "battery_low": "Slaba baterija",
-      "btn_turn_on": "Uključi",
-      "btn_turn_off": "Isključi",
-      "btn_light": "Svetlo",
-      "btn_filter_reset": "Resetuj filter",
-      "btn_clean_reset": "Očišćeno",
-      "btn_confirm": "Potvrdi?",
-      "mode_continuous": "Neprekidno",
-      "mode_intermittent": "Povremeno",
-      "mode_sensor": "Senzor",
-      "mode_smart": "Pametni",
-      "mode_normal": "Normalno",
-      "mode_flowing": "Protok",
-      "mode_night": "Noćni",
-      "mode_eco": "Eko",
-      "level": "Voda",
-      "filter": "Filter",
-      "today": "Danas",
-      "drink": "Poslednje pijenje",
-      "clean": "Čišćenje",
-      "power": "Snaga",
-      "battery": "Baterija",
-      "days": "d",
-      "low": "Nisko",
-      "ok": "U redu",
-      "to_change": "Za zamenu",
-      "to_clean": "Za čišćenje"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr
@@ -44860,7 +43837,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "freeze": "Ризик од смрзавања",
       "low_battery": "Слаба батерија",
       "unavailable": "Недоступно",
-      "leak_at": "Вода детектована у {t}",
+      "leak_at": "Вода откривена у {t}",
       "leak_where": "Цурење: {names}",
       "water_off": "довод воде искључен",
       "freeze_alert": "Ризик од смрзавања: заштитите цеви",
@@ -44871,10 +43848,10 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "leak_tile": "Цурење",
       "probes": "Сонде",
       "battery": "Батерија",
-      "battery_min": "Најнижа батерија",
+      "battery_min": "Најслабија батерија",
       "temperature": "Температура",
       "humidity": "Влажност",
-      "low": "Ниско",
+      "low": "Слаба",
       "ok": "У реду"
     },
     "sr-Latn": {
@@ -44885,7 +43862,7 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "freeze": "Rizik od smrzavanja",
       "low_battery": "Slaba baterija",
       "unavailable": "Nedostupno",
-      "leak_at": "Voda detektovana u {t}",
+      "leak_at": "Voda otkrivena u {t}",
       "leak_where": "Curenje: {names}",
       "water_off": "dovod vode isključen",
       "freeze_alert": "Rizik od smrzavanja: zaštitite cevi",
@@ -44896,10 +43873,10 @@ svg{display:block;width:100%;max-width:calc(230px * var(--illus-scale,1));height
       "leak_tile": "Curenje",
       "probes": "Sonde",
       "battery": "Baterija",
-      "battery_min": "Najniža baterija",
+      "battery_min": "Najslabija baterija",
       "temperature": "Temperatura",
       "humidity": "Vlažnost",
-      "low": "Nisko",
+      "low": "Slaba",
       "ok": "U redu"
     }
   };
@@ -45214,8 +44191,6 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "uptime": "Uptime",
       "model_minisforum_x1": "Minisforum X1 (mini PC)",
       "model_mac_mini": "Mac mini",
-      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
-      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
       "model_bmax_b9": "BMAX B9 Max (mini PC)",
       "model_home_assistant_green": "Home Assistant Green",
       "power": "Power",
@@ -45263,8 +44238,6 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "uptime": "Oppetid",
       "model_minisforum_x1": "Minisforum X1 (mini-PC)",
       "model_mac_mini": "Mac mini",
-      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
-      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
       "model_bmax_b9": "BMAX B9 Max (mini-PC)",
       "model_home_assistant_green": "Home Assistant Green",
       "power": "Effekt",
@@ -45312,8 +44285,6 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "uptime": "Tiempo en marcha",
       "model_minisforum_x1": "Minisforum X1 (mini PC)",
       "model_mac_mini": "Mac mini",
-      "model_lenovo_m720s": "Lenovo ThinkCentre M720s SFF",
-      "model_lenovo_m920q": "Lenovo ThinkCentre M920q Tiny",
       "model_bmax_b9": "BMAX B9 Max (mini PC)",
       "model_home_assistant_green": "Home Assistant Green",
       "power": "Potencia",
@@ -45496,37 +44467,32 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "d": "д"
     },
     "sr": {
-      "name": "Мини PC",
-      "off": "Искључено",
-      "idle": "У мировању",
-      "running": "У раду",
-      "busy": "Заузето",
+      "name": "Мини рачунар",
+      "off": "Искључен",
+      "idle": "Мирује",
+      "running": "Ради",
+      "busy": "Оптерећен",
       "hot": "Прегревање",
       "unavailable": "Недоступно",
-      "cpu": "CPU",
-      "temp": "Темп. CPU",
-      "ram": "RAM",
+      "cpu": "ЦПУ",
+      "temp": "Темп. ЦПУ",
+      "ram": "РАМ",
       "disk": "Диск",
       "down": "Преузимање",
-      "up": "Слање",
+      "up": "Отпремање",
       "uptime": "Време рада",
-      "model_minisforum_x1": "Minisforum X1 (мини PC)",
-      "model_mac_mini": "Mac mini",
-      "model_bmax_b9": "BMAX B9 Max (мини PC)",
-      "model_home_assistant_green": "Home Assistant Green",
       "power": "Снага",
-      "energy": "Енергија",
       "overheating": "Прегревање",
       "disk_full": "Диск је скоро пун",
       "ram_full": "Меморија је пуна",
       "d": "д"
     },
     "sr-Latn": {
-      "name": "Mini PC",
-      "off": "Isključeno",
-      "idle": "U mirovanju",
-      "running": "U radu",
-      "busy": "Zauzeto",
+      "name": "Mini računar",
+      "off": "Isključen",
+      "idle": "Miruje",
+      "running": "Radi",
+      "busy": "Opterećen",
       "hot": "Pregrevanje",
       "unavailable": "Nedostupno",
       "cpu": "CPU",
@@ -45534,14 +44500,9 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       "ram": "RAM",
       "disk": "Disk",
       "down": "Preuzimanje",
-      "up": "Slanje",
+      "up": "Otpremanje",
       "uptime": "Vreme rada",
-      "model_minisforum_x1": "Minisforum X1 (mini PC)",
-      "model_mac_mini": "Mac mini",
-      "model_bmax_b9": "BMAX B9 Max (mini PC)",
-      "model_home_assistant_green": "Home Assistant Green",
       "power": "Snaga",
-      "energy": "Energija",
       "overheating": "Pregrevanje",
       "disk_full": "Disk je skoro pun",
       "ram_full": "Memorija je puna",
@@ -45577,18 +44538,6 @@ svg{display:block;width:100%;max-width:calc(220px * var(--illus-scale,1));height
       heat: ['M110 58 q-4 -6 0 -12 t0 -12', 'M150 56 q-4 -6 0 -12 t0 -12', 'M190 58 q-4 -6 0 -12 t0 -12'],
       air: ['M44 96 C 34 94 24 98 14 94', 'M44 108 C 34 106 24 110 14 106', 'M44 120 C 34 118 24 122 14 118'],
       pwr: null, led: [224, 106] },
-    // lenovo_m720s : photo détourée du ThinkCentre M720s SFF (tour fine, vue de trois quarts), bouton rond en haut de la façade, voyant juste dessous
-    lenovo_m720s: { img: 'data:image/webp;base64,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', x: 100, y: 14, w: 80.7, h: 152, aura: [140, 90, 70, 85], shadow: [140, 168, 50, 6],
-      cable: 'M178 44 C 204 44 214 34 214 20', cableRev: 'M214 20 C 214 34 204 44 178 44',
-      heat: ['M122 14 q-3 -4 0 -7 t0 -7', 'M140 14 q-3 -4 0 -7 t0 -7', 'M158 14 q-3 -4 0 -7 t0 -7'],
-      air: ['M98 110 C 88 108 78 112 68 108', 'M98 122 C 88 120 78 124 68 120', 'M98 134 C 88 132 78 136 68 132', 'M98 146 C 88 144 78 148 68 144'],
-      pwr: [127.6, 24.6, 3.2], led: [126.5, 30.1] },
-    // lenovo_m920q : photo détourée du ThinkCentre M920q Tiny (1 litre, vue de face debout), gros bouton rond en haut, voyant dessous
-    lenovo_m920q: { img: 'data:image/webp;base64,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', x: 135, y: 15, w: 30.3, h: 150, aura: [150, 90, 50, 80], shadow: [150, 168, 30, 5],
-      cable: 'M166 50 C 196 50 214 40 214 20', cableRev: 'M214 20 C 214 40 196 50 166 50',
-      heat: ['M142 16 q-3 -4 0 -7 t0 -7', 'M150 16 q-3 -4 0 -7 t0 -7', 'M158 16 q-3 -4 0 -7 t0 -7'],
-      air: ['M133 100 C 123 98 113 102 103 98', 'M133 112 C 123 110 113 114 103 110', 'M133 124 C 123 122 113 126 103 122', 'M133 136 C 123 134 113 138 103 134'],
-      pwr: [146.1, 27.5, 4.7], led: [146.1, 37.2] },
     // home_assistant_green : photo détourée (capot transparent sur radiateur à ailettes), pas de bouton : voyant à l'angle avant
     home_assistant_green: { img: 'data:image/webp;base64,UklGRsZrAABXRUJQVlA4WAoAAAAQAAAAQgIARgEAQUxQSOUXAAANFMZtGzmi+y9702y4e0fEBKjNgY3YF4Fd3SR2lMIm/ezu/fdsHrDDOKiCjKEC6Zqfg1RaTnUnSZOd+tlexLdtS5IkSZKEgBOJLvv/X3UVwgnWIrgAiDwICzP6FBGwaNuK2jgFEV9JlvLgDRfopyzJtuO2wdO0//16gO2QwBMJvntuviICEttGjqS9nGryarqqVjv3dW/HSuSISXLAzDfkjTADkrHh9sPKcsY3540ZyF3HvbCStVt58UTT3LHjwWzkkZxxiffAJnyTjDCFGLwnP7ufeIzeWzeedyNEn/22dn+ENQQ/PzD31lqvdUhGWZOjz59vzupdPsSYYsrXsnDqrqW3eq1yq+akswpZd/2VTL4ZU4oRQt7RUiUfAtexXJQ0J8U44g87ZNK178cVaEBZtyptGHKpTTipwUrd5yYwToxhqa+Pwbyw+wDPNQ9FtvU2+ion9ZybOSSoeEnpJtWs0Xlhj0Eeb3i6e28Q0XvpQ70AI5Lazk2JYe6jtWvHmOnmPVbSQgjCSUG20ISb1i6s9HtEUuO5qWtXfEPmfUh2TY0ZImrFiCRJrebmGL0IS+w359+HjAKHELE+NlovUCHLkdRrbvYOMXxjqUXG7ZqTeoIIKDVzJHWdm8y3Bw1OGiBCMu/6HTip1dwkyeVquYXWARYnDUG9AgFK0ARJY7fM/96c5ub74GPH1qXgI2piQJUXCZIyG+ToA+abh+5mVu2cSFhpSkG9DW+QdGaS4i4334LdNIP2Ey5fRr5UgqS1jZUvZS83D7lfXeSkFK5AiqS9V1HRTDip79xcr9SrXBOoXcYk3WY7O9bHel/kpJ8v3zz0jtCtc9LRhvwlsGziBU768fLNg0nqeJ2TOtMkpX1NSfp5881bG4c3cVLnhnpl3iHpB8g3z19odrTESXd5qhiIiLv64p8fU5JiRe6T45vr3PnewkljDLr4XeWkjj5NvrkgSYMczJcoRdKJAq8byM3VSJpdFTOSqp3Vbh031yapo4gF8jInNVlpGMfNhUmKzrl0g1kviM2NV4vHJLWLmyuTlPg2TnpttYHVN885qVHcvAJJsVC7xcVJ+w20NuOkfnPzoJaUGUlntrq1AS8dM06qeemHxTfXHhtGT5IU1MCt9gJVsm5xUhOu5JPkmw9W4CVJOnFhUmsfNid19AnwzZoOPSKAvlFuA6DAo3VOalfosHOzlhU456SwyyuYxPtkkZNCPg1OagE3y2CpWTG7whFd4XwgWuKk1g/5CfDNwkjqg2WTQjNO2gzyM5sU7NysjKRQIUtwzEucdKns7Li5WRtJrWyEYBhZ2py0y3Ewm0V7mMvNB7oNOKI1TmpA3rTOi5wUKTcrXsfkeJmTBoS27ao+VhdBki3gZh35Tl7kpN45xNhuiyDJeLlZMkpXOal37AxIyc80SVtHys2SUTrlpDHBn/FRlfsNoLa/UiRtHSY31ZAUlC/466NJykeOpC1QclMPSX1IIZiQklmSjntSOj9uKiJpuz2eI6XkkKRZ7T86bkoiaVIpeW9JkhqNQ3DclEfSiST5QO0/LW4KI2lWknyM9h8UNxWStE9Jepz23xRuvgK/gdtZ2n8s3FR7R7gb6p2k/cfCTdkkPUn7D4Wb2kl6svafBDe1k/Rc7b9sbqL4bAHtv93cXF37bzI3F9f+28vNa2j/zeXm9bT/lnLzctp/M7l5Ve2/ldysQPtvIDcr0P47x80itP/ecbMm7b9d3CxJ+28UNyvT/tvEzSq1/+Zws0jtvy3crFX7bwo31Wv/ZxjExk0M2v/eWgfGzfK1/+uC8/Yv5QqJmxC0/9FbzHj8eN5BcVOM9n8VcMbWkkKImxS0/7RS8YLvKd/07eGbmrT/9BhmRjN/Xqh25WsJEupsuClJ+/8okmxqnNGFXLnbOZHMQ+GmNO0/P7rlJ+nlTKw43xq+KU37/2jRpc8xp4QQFtf9vco63hO+qUz7X+t4fMsPau4O0btrbe8H31So/UevXH4E44wx5os2SA54YL2rvSF8U6P2H8n2Mfjuokuhk0X07YQjl1raeEv4pj7tv5BtvZZaSkW7JuK7MM4QLMZJjIyzdX43+KZU7b8bo5Xz+6xtLGd+WXQJfFgxzqEZ5/vAN6Vq/4Po0EY9//49y2KUmv3KmuhSYnqxW370RvBNodr/kLIUhNSv5W+t2IBcM39cE12O3utFu7Ot2Fmjay1JYZTrwAq5fV+nq4lvEV1KjME4mdxqyGCSEgkA1xVVb4heEV2CWXgtddryW+WbxpLUXmP2brQxxvy2+4kurZbfh7zPqlZMpP2YeDU1UdAtv0hrosv1GJdRakXQDYzTp5yOnK/0tCS6nFtIef/P0pDTD/L8rvz1lXMIblV0+eHP2GhGlhbs3QgezZC//vzJgbgvii5pH0x9jggv2AuxbBTzn3++Eo1ernUuutwFM1djxr9HNHgMlIHz5HB85cDQLxvfLLr0HqWBsMejsfi3UnRjLIgut8PqyfvlhdAKaVl0uQ2uwykeeK1oBENvMEchMmvuG+JDkoxloSYj49wbMVqsxLxcOirGiS0/2hmbWw6pdt/GeGKnDm+rOcIsbZ2VLNMU2jqB/4+/7g3VyuaJQQOkoZS5vGkWTyzr1jkE7LhoyyyklLbeYy8LQyxKtsw5LHDgsXVOPG2daO1NBA7ZvIPs2XbQ+n//l/9cWfaOpzUZaWn3WNyizTbvnQV6Ztw/dkoO/i1qOyfovTba/g+dRUE4aovbsYGSMG8eN9p9Q2ja5dAGUqvwfzYhgv7f+GXzmG5vG3o45g81ToedY/1P1wooj5vHTgmGpTd2jnEA+eD8AItbdrSFDnsnmofbPJuja+f/3OnDyh7T4KK8ap8coAG4ZvnPtF2A95dHEbJPbrR8IGm39OhADK7YPgTneu/TahftFLyjaw9+9NbwMC8UN8lJitGP1q4PJm1xAmUiM3ckwbtDEEUppcC9lcZm28+H6Gn0XaJvoZBToF5bsblliCm43uFx3iIXcpLTWjGxKhJzCtyKZIV3R3fDUO2K8tFaLWw8pv5aiGvdJ4LNkFIkVvNYwCVKVnorG8XaLccY3HXoSkjlQorJOznfIZJxYjnFsq7KKdKCmv1olffJwYVr8+5aulLIxRyD663ukkTwdKaUhXBpYLktn5EYPjdIANVvhM/qkMTwIZRdr3Wz4KbHGD1fhAczUhYBlUrNu+RiDIHESmAo4cK1VDln55m2ibWkGnUKXImiVLmW7TI61Cut7hKNQoj+untskycWP9AWwAePFko4ge6NUuohZHrrjSnEYHLMjbIQWNYOEUVRTKR4KaO15BYZ5bn1gJbS2KeIEqoxuhNuuksWxv27wqd3Tv5i72OIwa3fIrT1M/z93WXPDhaRS+2ORWlwSd06Wi21Xns+sspYH32w9yFqJ+0tsbMjRbu3Ws+zDJeOrz9BSTjlVKRSfoPQhhnfVgl3isefr4Oc8ulvskjCjeCLPZEvkRGCabOXIs9pvMJH1LlTF3zQXHY30DFoFpy3dJWCLuXj6yuSsYCM/DoRjsrbgk4X2jBRV1HFpWuJtvRpjMYuhGv3YpK7BcjwjDb3ViVce79iYswpTaWX3Np1GmI2D7QJaDiC0NmK7H0MH2LOR6IFZV1vwlhDzsHRBkDwm6UX6RO0/VpnSCGejkuPeZPqGfsklrd+1j1IuF6As0KtXKtUvchLTCSdMbaLOO71/PvdOOacr0uo83UEgCM9nI/tOqQvpYE9SU5H9tPsWTfW8/vv2ZxU0HLK0RuDefjc236q6tVKbbVLCmn85WBWzKYLt3L+67s0QKw5JKDI8EdNmmeNv9aq0BHhgccZ3Bus1bzLPO3f51+wGxASxxFzJosh93C6hQTdPkat7UTaDE9ikvRmzcqRW9nKWc7aunNQW4PHneijtqQkg8fxaOcVK7SHI6RNtgPk8rM/GoitagOOm2KSKr2u9vd9GIsLcDyq0K4VhAchxZz8Cu31iNrqt2o4guTqioiT0YGzBTi9cZOQ0O5EQRp1SXPAewkFhlTdTviPJVwByXfM0Qvpz7ZdSCbtqhRwA2ZlL+InI3Ps+E5Q/GKHUlCLB5WxJGSizrwi85Eq4LQRmxRcaHKUYkLhwb0ESxP5ZmnKloDZX9uRDvUd+PMkI406SwFXWjul+tTZB0kP4sv7P2+qojZQGAqvAX4LALExxJyfqRVkq61U3YiLKWPI4Hp3b04ya7vKAt8kyDc5LjI0I/NR2pC0Vk6lgEPxJT5jRt37/h626n2QBsFZmnydmBIkT/5DbBZOH54BFSYop1QxFeZ6uge8FIbCroJ9JSQI8F/bOHSzkD9HGxLuRf3T4Ds7UcAdSnypG/8P5MzKP7sXYM2ta+loVvIt4xKZV4BzDUqn0iTGx3StZGSMH1dCTfN7BU4RUcl3iylDsxACrMbDF5bd2BBfAh1orkWxMAqW+BIr+Q83dlIZaK0gh2bCZqFIOYOSs3944ssCtJtq788VcM/EpidkGGy+c0KtHU2kFX6lL0s9a4GqEaEdv0X7eQolnmjtalVmly6GdEhE1jYHHoVh0IsY8oFW2ykVI0nvI9Ssdf4GPePrwgu2uyEkkHLGoLsBbd2pwR/3XjVtVhpYT6YC7mm/seCJipQTAoNIkwmKzTrThcJz+XcvaEKirCBNBdyzFkKzjvTFgK6KmNPxlUBSxeO+ySt401TJJkQDQ9vvhEZZEOPqaIgvf0jtTxKABLVVMKOLQPq5f5CAJ2ESbdjQIOsdFHBpqoD7IW3Q78Tii0Fc/FSMKnkSMoodkE+bdvwXaULbwnmDx/mdMAjCxNPkA9Ha2c/BpPLDDis/kaYKuCu19TJWBadau5jDZ2FUaaS3xZd2EwyqXgbPuuDKYLYbpI7QMCqluVHl5+BM3Rqo6ZslCHJ2469fMi3mnCkWq03k8mLJBF6Wbz/pJZ4InErhyYA4Ohk1IZxEe1xzjagsdK21g4D6L6KRskL5EBRwoBSDFRVw0ZB/q/Q/+ZfRpMcVWWtpjZW3N9jDTeSrgd0qPLM0G0o172fiy59vqKB/HdAT9uZcCDEfoOgxtTwB3Sps27uK2CeEeKAdv2Ug9CL8LllDJxXVyvAhSiQYVQKffd9pT6zuPTAmSwEn22tpq7KQLhNPk5y1xpDMdgluq7D1JIC0J8xov472xoJRZRVIEiMQ8cnerdIehAtwPEcVZkb9SdQKuJcl9OCp0ENZ/4LWjt5in7clI7Y68YMO9NQKuLWaKrXo1fRByCn66bg1YFuFU75RAfeSyLgmbQ/DE+oAW6ZbG3ah8C3AlbqCKjwRM7+2t48X/DFFtiCIJP9Oxm67M3q2sYX7lDpDFb5BAffaSFte4aycBF7PjGKLaAGuoyuajSo8of0yTfIsx8xaZhBbRzDJOHpLUYVLAQ1FH1iFJzt4j2IbgxkRcmyILWUXY0BGvp8KOI2LP9wCqnCvdzMrWThLoFhN2pSATHgXybAhvpxoJTrTEqpwr/hBUhZpdBMvrWPgkEvBJvMuogqjM3WDITPkFVThaL3u0wIW8T42biGgnARyIIPMG4gqbFtoIIjZMXOmrv7swIbY0pWxnNeMKtlZhS07MYQDmSjg6m91MCG26nleEQz/G9RDAQHgLwvw7fiswspa1VbASUgds03GGRDcWmuH/0t2NKp8D1GFw+2owgpCj9EV/onS2onhcJr1txbYrMLKc8f/WPHlz/J5A63jWYu8rdBBTZpDbHGzCuf8XAq46rpQKmySQN5YgNgKusM1ilbhhfR6QnMvWnir1I855fCvC2Uy0KESx+xec4YqPGv8/XaFv1Yh1bO2KgjIIUPD8LnP3m7CoKnAsXIEmaMK21Li3+795QVFtqlwiX0ZCUwPiYJJbLWPe6AKqwvjuIFJcavgaYKtwsd9ugkCilW4lDbugyqsMIxrpWgJVdg9Z99rothiYhVGyGgOd0EVlhfGxNgxgHKhXWhDbL0rqMLL3WtKPqUgVhBbDbV2N0FsvRmowqp7zblVWLFv0O5wrYLWromN+iLE1i+OKky8hCqM+L4xsgrrr3Gz2X9oH+5dgNiapei91gmq8FQBh2CIzOx6L1M1Zc6/dv+hvCL/vheqsHZG4FrnxhJHTr81xBaTaVpRQJe5hirMI9OrPD9NiC00qvQaYuuXFl+2WkF+2cZtqMIgxsvsphBb6GmS4i8KscULIdC/tc63ogqTyNqxDbHVtANWyumXhNiaVBVmzuzeI6rwy7MhqUmxxditkg2x9fuiCmtTnNtQhVmEuQ1iK4IEmMymkkirsCNQwN2GKszjz00rlHPSxaSQnXljhT6rcBuE+pPknx1VWFhTZSvTjm5TDsEoAH5LVGFQVt4BVRhLQw6z7m57CrE11WaGmALcqArQyoBavQ1VGFDoWaf/VwLlJIA3KJ83MQW4Ab/yqVGF8/GcqMKiu1DOUiyjyhRhpBn+VygNZilGB0SrZ0MVhlC1s10kNBBAloCW671qMrwQQlTqtowqXNFb2YqtjhYWOSdzWMbCWn6L7jVrh87JXgiqsJLTW7bcRYG5JEH0/wUgtkj9rLN+LZ8HVRhJ1W7uaZLBCMVPjSpfsQLO6l23M76Vywo4dJOZQmxhBzUqIL7rZJJ51Qo4tKxhR/HeztS08gqqLjs6ImwZEHQ5TiC2Xm7bb+J+RWKG/Ryowniqdq4Pq8V9A8TWS0YVDiEZFgD+hdEWotgqVfcfSiEdeQVi6wUq4Cau6IyjLjEVcPgZWC9SglXXcGq0mUsQW68YVRi717wJVRhpaDCqnGjtcn51EFusRr29gCrswqR7zcfSJla1q1oRakBs5TSD2HpN3WtOUIXVL5b8M6IKE+pC0ZLAUyMgKwDk6DXE1quiDYi7JqpwSs+BKoyuajeF2ErgfTuH2KJX1L3m3VCFEYe22lMWjHbKNsQWMCP6+SJZ42VD2oYR2/EDFHCEmionUh3LvDmbEFv8OujYfaAsoQpPA+80GRtiS1fGZhBbbJD+2Qq4eU9MMf8wVGFKDxI4lasXk7cgtowniOkniy+X+oNLX8+ugOPWVFmhgS4BsiC2fqjWbpre7pXyVXavqVyxVZsUMu3G0WT98MmzhBBBB/TyGn/aFVsDbQ4Bhf4nD5Wf55NnKdXsoXuqgGthwGcTCdUcYuunDpWf7MmzPAmqMO00p90jzy1D5f+Bk2fxS+JLVy521K7RoxMPbPOh8j89qvBs8iwLqMKsxFSVvDJRbI26DLH15IyL7jN5lldFG4tiyxgs0DrE1jOLL8vi5FkcvS7aSBRbsyFLOReDDbGl1HX0VKPMWUEVrlXMsPMDUIV9GBhOh8o/gdh6SsRIciuowneZPItBYRyzAngpzYTYysaU9RWZJ6G9gCq8NnmWR+0WVO3ECAUgtvRQ+WOKz2NUyU47U89QhdXQof3va0Mi7flDDYitEBOsBsTW42mvowrnF4gqDE6xRcpJYKn/0KWswi9xoDnkFFtNOU6K29tkqPwPpQNm2C8WVZijYiuJ1s4YKv8DxZe9VmHRbY4qXNjvk1NsTSa968P6UPnviSo8reBNUYULS1/yU2ydrYrGbHQXfBYx5wOGys8OJaJkDRcB7fgNVOEJlz38bFKj10MELK2vDpX/rrTH6LPJsyxiFXaoasfQI0KtN0NsIS+9VXxZ4f5qTp6lvPQlS8WWq+AjYMkeJxBbVgFGN6IKqwH82JNnGWZKHf1MPZLmUPknGhADYktnku+CKmwOmPMpUIUNq9ot6GGz2X+o3nlR/j061uJav0/3mqaGAQHVgjVIOtCo0qKn2SDjw0wWqvB5HXvDGRUf6RV2r8lVsTW1SbMRIx3RQkpanTxLopengMOs2CrN0trJJU/Te38qqrBHTZXOWfb5tTaAKxcjlBiCJz/PbDvrfVCFzQ7jphBbCgE5Jth98AAbaXav+WJRhakrtgp423sv13wwKJGGRGsrqMLEbzvtsi6Vv4qWTSLIUyAIQXI3elOTZ1lFFX6r9yovlf8KSMEIq3yQ4967OXmWd98TrcBL5YdtDOu/KkukJN0e5N83oQr/LwjjqgT6FdnHlXSwEoJC+nRMOoh+TlRhF5sqe+tt9D7kOCRe2GkIGVLcSwHn/7AQWemQiIGUZIlPPuptH1sqFxA+GCMF3MYbbT9tKrknNjOBnR0ewy4ipym2xU1QujHGmAZOSOfd2R0AVlA4ILpTAABwfAGdASpDAkcBPkkijkWioiEkI7Rq8IAJCWNu9KbUFABxJIOvwtkkfEtQq2uz/ifbN7hvp3FDXr/X9UuThInxn4gfafxXsW43HjGbf7d9z/vI+LXrQ/W3/l9w39SP9d/fPbd/0f2W+JP9k/2v6+f6X4lfyL+1/87/Ae7r/uf2193H9f/x/6+/435AP5l/ZP/V7TX/J9hv+3f6r/2+4B/Mv7B/3PZu/4H/l/037//RP+1n/q/0/76fQP/Mf7N/2fz/+QD0AP+j7FX8A/evurv8x+HH6pfLHzZ/a/kV+7Xrb53vnPt98UeEP4DwW/of6a/kfm78Gv8r/z/6ryt/Hv6j/x/5n2Dvyf+b/4b+8/u5+Y3z5zrOT0n3+B/1n5qf5z1Wv7X20/Ov3N9zX+af1L/Z/3r2v/z3e/f4P/Y+4F/HP6d/x/7x/hf25+jX+1/6n+f/Mr3r/ln+e/53+g/Kn7Bf5L/Rv9h/iP89/9f8z/////9yv//9t37P//n3J/1e/5v5/lGJgDfx+ZWO5VGn0596/gDvhqVf6Qxc0EV00Ws5G3FbsFlYtcSGd9jMMqw1nPwjH1rTuH+srFO0KEjCOIcTJYgca55/j8yspyQ+xS+MZJlsr/nwi934/d7kX5t9kMEl1ZS27+Mz+xevHfbnd/B4xV/iw7orNbUUxIcUmI15RaGmZZJ5inNIGF7DWUBtP9wXdgU41dlsNKjUfucxkmW/j8yspyIfNqkD90Hka7M4Dx+9Y6ojmYiQv64rssEd+IOxnf3+/tGmnz/LM9RJZTUDmk+LdOrSg9J++S6HXnNvacug2UrTBnK3fpDVMFRj4DNez/kAFJ+9uvRs2Fmd5nIRQAuDIl1RvAE53CoHzKynJD7ELC0C75KAk4Ey5FMBZSF0glD/zykoOADssV3sfL/DXz4xGOa49CGOmhP3iDbPhm/XNbWZ3r2ocoy6Db5EyJ8/0zWF/zDhM3dBVhWW1a54vTSeRkODr2+oH3wZJ3iHwqAETGFIIV6oveaDPRZVL4TXjXA/8kPrG182ORIijSnd2+3iUnQs8LkxjH6IieS0wOF7aiekfKBsskkBJxPcxy76ShioqPDlP4xTs/VQsuATVW+nokDFrG0vsd1C/fh6YtA1xWgjKnrehACOf4oM96TgzHqHakthZlcpLejEB6LSxbph3fpDm+tYdVEpnjB2qVwen8UVBmISFEEVDsrxQPevgXUxqtPHxnCwTT8vVH5oYCKhCkYEWUCbMnHx8Ix1Erpvyx3w1TRb5z5f0f3/5gZSFzoFj4Itz7B9Jbarkc1EK1DdHrhhlnEBa+LpzaymVIxTcKyib7BoKOTpNbk3t8nowKvRKWLwEacQWE4IGIFup3V/TJKS0POS+r7t3kyvUqZNK3sGDrv3fTtwCvQIyJV2aWcq7uham5XhFoXzsrL1IzMPoZqyUhCi0f56FOTmr0TM4XRVpzd5Dbc+Vif3qd3QgHlrxuruq1prrX+QCMf3bJ+dmyuDLQpFgTcl6Htkz5lbdKNWKIO+szHkYLQn8fpGNzBHhPuOpil1162xBujfGzdfr/tL20G172Z5OotX8/DS3U/OBGNHCcv99tLStMcp56I9Tjy+I6SKVWL3uLhBx8AMqtMBep/u+RiHyD4XdtYoQRuBjTIKWUkciP1hbCASq6MBUdLi/Y34TG7ojL4UWo9zYlvg74C1knnU/gZ3z651bX/qwKFMOR8R5gO4Tf4kqHYsurhME/Q1faRowzEbrMWMBxtcV3bREwVr4FHbcFo2FM5lAqO3EKXruJkPtoe+7omhzvVWST8xY10GTHDqh+5trPWD3/+8lehFBt9KEb/032PoZHmhChX/Ynor4jQltrirXPtrfcB41+CtyW3ML8bmKyPO0Bgow0VHRZTcIr3ObxS9ZuS+ish/giFypJNDlikXbJl0yp9bDnofbkOhwxyNwVcSeOROhwqRpHn339X5pPGv1jH0i+BkXoLuQXnAU/Rq0cRzOlvOsVsZ75YEl/4Oa+QLfkFU3Qu1/cei/2906bR62OIpQ4tWyf2ZMMgv7Vhtl//TdQsrkLH6nRxCHk/GUEQu/p84qeuysJD/ipVlDfoyJLO4MNRbbDJMHv95uxLmJ0/Hij7VIW3EVkSdj8EnaJ1dN6aWHdOgSXe9d8xQY63h9hBBQvAToxbwUB6fQxEOvv2yoVaI6r2dwSRKHsd8dQsaiJ/Nfa94DuEGYRCrkTm/mA/lw2hI32NzwAeosGRBaijGVMvFEzigYuA01m8ZqD8Tg1k23g0Ye7foWRc9NTFxNkwQ16SzlDGN5SF91AMB5LqDZczFFjlJQWg9h3MsKUVXijFyy/XiH0fdhPtVyCAfNfI9PMwLMGFFg1soO7WacDkwd27mqmPAt1vQsEyT/eyhIlsPpiCt5fZ061lzLGJegzdwS7X/0SCJjTdI5dtt4iDduVV+JT/+h0Gd+YpNuT6rNTHxCG/X0mxBJnwV0GKaaFm0+SActVtSrzS0iohTwq3tr5ZHQHHBss0biy51Fg2dYQoPd/BigKQcaYSLvAvW4MDantmMPZbnofpkY4GenCvHCWIsAO1OsaY0dtCQ+ORPN6iSvv+HoS57oDB8yn+Cv30KGf/tp+2/q6gz3lgGytfPThvbP8YvVQy/yQBt1bB9bp+dJ4R2t6+/lG78f5udsvRRcNMh0XJ+UsezIVM7FZqcBMpN6ylEFhTaSUWVIudhFMb8W5DqTckoWNbrpppltSBf2+L5nHjfHAi5hrDrYbFbJ3vujwbbfh8Sld3rJfFdZqYoitmRzuDJrf/TZ6kG8SP9iRZ+/iD/pajL36d1H2QNW2k8vCFXveUQpt3Bz/A/1nd/1WYkxEc5S2/5zBUnVJSqx6+aiZdSiTK3deqfv3QVzMXMKT9GBVROwvhN35wBs6XVn39BQEL0boJSBEceOiWhbXTYR6vvBBhjWYdAkmpEQobf4NqsiQ8I479eBqbLpSY8LmPDLpGnPoJ3/+EsElCd0c2IOjoz+BxYLKslaaDa0EA+Tz/iay0yjev8fZ9n0cdTez56HV0vQCLXutAaWAGKnQKfXen7uddyM4hxli5ERCzyjdNujKGhtse/42VLIrxIhr+bUHMKy0ReyWH5ejxp5ransJk4ZaW81hSARGQtQk1h0aVBq33mYE6B/5F9I/yLnOYYvnDFLR73nwtWDPAzdm+dSFsIU87fWgExrVVVFWAKXrdn2a+QguK54MZ6r0WuO9/Rzx4oGKZ+cxdhCmUbBDBUg2kQHDH//0of//Verx5fg9HSXdwQkIDgcorKctodWL3fxbBPnFOlMFLlTA2HolgsvT5041kZ6T7SNHWdW48lGc/HwHgUouUHAOBa7lAG+IQy38SXXyk78IKcJk/TqOkyS12RHFOsZC0F6UfWwIBEyjBKz9nrRTawtj9FCB9n8jQ/c5/4vX1cuXFPqqr1oFgEPetpI3/5MU7UodfcCism7c5IfYpfbogx1KgzieIun/dzD87zFcRZxYNSGrNOKjubx8eCsMIdpHSCQjcURnjEZIzyqNGcV1rCjml/FMXj88Cmwu/Ae5Dh/+1QGexFHq5BX0BJb0LhlZbV/a/TDf1z/stVkvVVO97USWsn//jmv+m/Pyd9QSuMTIxurDUEWoRDiyFkwN/H5lZTkhO29cDPtxtwP2T+GVQMf+IZ6TibZ/DoTiDrjHyjqFsw1DQcrd1n0Zzm2BoRJr3jmeV50xY1Npafb+kwnGGVE3laoZuE/Oy5kjljF/Iz06eezoZR/8+cFBm2IPA17yA3F5Iz+hsE0wBv4/MrKckPsRaQcVZzB0pan/RD/hXmbJ6tkXmVzAhPk7nJLloPRXtAN3icteIstVUvWyD9b5N+i5AWh2ezIG98voeHFZlUnOOvLMm0kB8carsUDfiKcrKckPsUvjGSZb+PyKbGujCQNwOOHTTYP3qQIHGlETeUJuADrxvU3yz1RL7fNG7c/51YkIf0aS+Jyx8kKYJFxYj/WCDxi07sf7vjGSZb+PzKynJD64MUIbMCucr0W7AJMsuvWSBCZY+onrnac3z9lKyRS+MZJlv4/MQAAP74rmAABj/riZIfh09M1HaaxN3d6+TG3iik0oTa0eNr/rQ+88D3mlP28DgY8TfygGCGtzSaoCoxWfYoA03oYVvdjW1igkvngn8UkOhPlgXEIFEDZDMlU3lkDz5qWrl59ZOH+mTf/JKVQ71jomxH3iSeQGAw3iFjbGl+LgNZ7dYd3Vn7216UlMSMY+/dNI6kVgWKViTEkM1bEc4lYYAlv61O2r47AwT0nnaZfINm+Xh9tuPSSJmOXABe40Hz3ZsuFC2eQpt9kw9PfG+OdNeS3xwfRDLPioTKKNYsEW50pCOizQRtTVhnzDXhmCvf2OlNkd+e+qV6/odOJB0AWeugL3vPlhGvDeClzwhmBmcxVejfuIgfYYclbpXfszItothfLYLXPDDouNxInnyU4+uMv6XxIIfd6kNO82bELG9ZvNnhrncJ13Q/30Z9Rw9hHjX9QJK739i+Jd4MibtV/fHE9aOPEFUA0Xak9A7tTeUCwpfd+2RQYeZ9VwB35ixWRE91mS1U1Gp0LddrjS35tZn9ANc8hYX1egOBUMYAR44vXuLRDxdJTrxHkLYH2QC0AcQc5qUBv3M+vU1NbSm7xtHHim/7mccpRxYw7WjDvjC1CvvG3uZ5NxLsm2B6soH8NBxFuaU0lCGmJxdxBA7uWDtqmCTYjC5rO+Dh90+kxtnp03Vt+01P/Azpa0XxC5NeXAH0vQm8/GGtxyhXBUyNUz+xHwSHSENnQgQuaa/wEzAENkQ+yroQzfwvjfXS5E1efJl/QnQwOeq2APV/PIMO9XUTiwu2kQtSFaeHBbZe/adnoBegF/ad212/6ucjVeKIZuirCfKgfPqGJZYF3qTp7ouMFq4rhP3QhTCZ7M1cuRpMxn2r9nowJ8RKrZr2iPULeWCtlgAccTOZcY+MT/4OWp7ak1RUcfgmBKN0ImKVEMSoggM/kV+S4pAqttNM6Bmc1iOk+je1HSCtCV1dNte56ffJYuDAtRsNffYvIGnSSpI9ic5y06F85grs70ZxXJe9S2oEOhgXeLfGwgjn87ZSjdhYHzu9TYhTuX4PtnyQQfaZIPgyWPIeUu6H/yOgStGE5ryK+e9P2dyGc75wynqVANqGqMeHyva04vaKeHV0wUvvpQAAAAACr/ealdeDWXYfJA7rFMQXPWgPP/NOC4zUMf+VB9q8bUEDl6bvE1LOHkaoxF5p29+ShVl+Aoz6agdiXWDypeJcYzr9WyCnEifRYfH8YM/e+DL/+JdylnscjrcHJoIFaMWnlM5oZY6PnOlBwtQAjcIqPqr4xLhXpCA1pA8d6xTZyGC0MBHsCrZDngBV8g+UmXPGcAieFLMfDHRY+eXTfJtxVMocsWBSLATe+CSPcoBKpgMuJ3Sc6ciaI8Zsmqnoqnw2B7gJI4OQ6lZCQZZtB4fwEDNbxhTEgTtIwg4fdQKKS+oGSiz0wu90LB6k62NDAeAdEAHuLk5tA/Wwz0EAFeRn9XulmADNDf+W2abNBEyQxmiCbcI/8n/nHKwc5nXCl7TUDIyg1M9dH+l/AFJXRuaY7q1iU+HVJG0T8Vr+eLDWP9lVb2ntLk9cWDOsRO1Z8dOKnHJi5Hu/QqMja+nB62Id7MfaqiwMNed4MBe2DHw0MIKf0tNAMiBllplIVcVDPqcZdSm2dxkHRderkngmaYJbRh+8D5+eh1V59WQlxTGIwl8u7J6ErCX/CzwB9Ddymo1sglsHq/nwXwoMZzeHfU5UVNoXXZjhrrAIE+wlRD7h7Pk3y7TI+gdqATkob1+hlQRhJi38k4hsur8aRfMdjshP16BWlG0mB0kWEEpxlv9fUCygDR2ftTOitC3F94tV88IuViQjbCD0W9rsUv+IxcF+wyFnv0XnrOaXHoaY7ttQln93AzT+UnL5guFIBY4RXPir+oa4OaeDUWYWisKgLjzRMN2n5b8/i6riDIhJMicUouu/4WnGRcdH97jpia+ULEqn7EhT/nYoG0J6c1HBfyCQ+OOZA6arUt4Vnxt52qFRI81gvMiYPlbukwnB59yBpE52wg7dZ1DHujGIAuP0QXb7YW08w1ySr+WewpRo/8Qq/fqx4cQ94o1OKOSytn4p3ddwzoer1pZKxQflMX/cr+rZ+BB1/laK/j7EhxbuRAh4ArhJirbPwUthFESsNf/8wv983Rx9Jfxnb+6dVN0cSoRze5kDIlHripXbVBHtnrd9HXm9y+4m1HL6XM9CXgAAAGP+mpucWU5rsT6onHXWnkHPxAtSHKaglOE/sq3+fHa/e1e91qB2wFLAV4BNmtGGirOtTqLniauW7d0uSArQG6+RX/PFPHZe1bpLwfjbgFznoRz4EUrl1s31Uq9ubsXJsYlo/xHUThiYqNS1xiA7VDux3a+8mkIq4nlUOX9Oq74YrDfiW6MydpzQdh/ZflLBu2IoRArVL5sHmFK0XCT6k2gcP80cnnDm95Avf1S3GoWTfHrOJs5NatQ8qyW8jk2vfr/oHbcglDMVLf72XrZ+VcD21uFgcPfjXTVTln+JUftAzw/NUlUUt9wlJMEQeb/GVqILhpZFTMj4AULIxw1FuGrHJu29xwMjauv8DPp1zBHw7izzLN9HuPAqZfn6Usl4RF1KoWgQgcrPh5nQh8Zvp5g64nYeHxyl8LDA6DyGBOMbmS1Xxc3Xoy/oCk/6XgZ/B9UHb1SwL/XcMBaNr8+jBS90uaoxuIAwrqb/uDTWZf6BeF/AWg6lUX2u0gyuz9U3PgJ8VX0MvrZeCqabUoXQcKN6w2iS2FD2Oryy/CGN88RzqjO9udiykImtziT5VJd7iPItFhPs4QtwQCjeTSerQM2LQDsEY6WsRSagmXZ+J8Tz1xAy64v/CSTzHexKxIGM9NWQ2tqOlZMrhgmqy4frCq3Qd7Ev9zHLVW9OveWEmIP3GhbeQrAAkelUdhARLQCdjd28lQ964LaManJWIS8DD8loPhwpNExcIFXIVAcYQeLegJVH87vcLfjtUiW+I1cXiGnUTjfpqBMp7LKLLbq45IaD4yJLewTqh3wKQiUvPMC25c6F3yYB7nfzdpfmqBKQHkwPpU8Pxfw4gWnu1s3jn8ZkRJ8iGGhXzYCjOa+7tm0G1r4m5kjjAjV5VzguZ0sf4TiR4Ke9lN7bJRQ15H4o9a7cWciOHKBfycg/aOtC+2XMJnu6Bazz38kbPI4ICpgdfvWHfr061f97bWx9z6gskoADkkqVnHqIY2earAxf72Va7RZXcxD/qL4jRyGatVPWUvA91byirhfxr/+rCaSKK8cGvp1M1QoLSlcMpBiblqWehkfJ2RYYi9AWKUFSeKWns3l+aEyqLHbUPUxp7FEtKk5p397mmPpNxPtWShmAMswApvx4Tu2fHVc2UC1sghEgxcfq0WsSh5tShSQuqIAQIic/auTQ/SRkNh+pZXLd9T6x5TBceqK4npuVxs/CbQNlA6HT1nPivZKXL/Ox3O+pBIBDiTdCMK24YGoPiLcbErvU8WDZLg7rRwGi2gUz+y6Xq8HKESTcNnQctsVt0gsn5WGPAQElujRIddImego/63YyerU5BRkpfqvevONCDvRJgWjh4XizeaOxAAEj/XEm8lg87JYj+zPfozc1t62YGyMlzrOcHsv3byOQsRgKjFaaQ9yybYm4o71AgNeSG1EgMX+vgSJzvpDBuPsXc/gsiMtXZ5aBCiPAUexxYa4TLXU1wp9l2lvJUt4+Flc1IBlYsexsqOFJZGWu5SLhTzugxe82LD3g2xWAJywWPseu7gKTW97S9fsp37yo+P2v5kqp4uDOldphZw77S2jgnUyTU8uGcqcrWTYq3umsCqVntnFF/CPu8fxeJmqk/h4j1/51/XC0vp/Jjtkpnl7vLeh8fg6H5TdkhyJII/JWei2RS3rPz0Sej0dshRDmmb438kckPC0WMQVU3vjBMOrRO+oH+pSwF+UHtxz+m+7DYHEqkif7kXsPH9/WmAFORh/1/0cTklo3WqeaJuaWpICaJkIlKbESTRzn2RiCyhHT/ocBzV7VXaq4eJXygB9ZE0ayu6P/4YHiHVasghWIzuu6Yqf73049DwISxXndrnzIAgauX0p6u44iM3a2NVsXmxS+l59XbT0u5X7fg95PUVq2Hvq9WCU9Gc4+zzHvj9cy3qQ2twWZV3sX90+dwif/ePBaBXQ/8IAEI9ci/+LU2rmbLfBeRTRP42nw1ZPj70eCdsH1RbRkL/1cYKhrg1TImawc9LSC6U8VaYLZf74hBraKiz2rI625v7lFqJ6my7ySBMY+xoKtL6/KXSNUbtHlPjkd0Z2Z2mzsK9A6Dqr9lM00ciIC2pmUtFuZ65jY/9r64uNIpRM1O3es3JyxhkQ0+oZDK6+KPh0yIYuXm6vG77uJP+ZS09BK774PKA8H3lJx3bfo2YCjNPPrAta0ckhIDlaaNuRZuK2j8V5z943YzH0CuqqbO9onPWus/u/rS9gnqrKx5O/eVBIKmNl5qFhp4eqevXj3IRH+PR7OSzu7fxV7T0H5OM1TozbXS/Pg9GKlNNb+iCVpwCxMmIVnb6oXBaSG48tGqKaVC5LzPd/QhIrELnkfrZxiA1ZhFClknCbBVSYMvrSrHWPzX+7G5ff09NYBPCAjxIWfRA2ze7VxOrhk8tpByL80sfSBFmoj+RYrKk16mmXWn6NZ8rrYnO5zHEVRnrgbSaWBpL9zLG4PjSnfw3jTN9IyNKB7GkkrkfJkj7Vs1gmNJLLi9Ew5CPmpbGzGie4LDZWHjli7o1jndr782POLCS3igH3PgUmnDa2kRWmxguQXBY9aKcNIslGWPzZIpb1WcGzakSnOzC+1r2fnBN8XTy8tj0UlPp9WQVoGlmMIWfqWbsYgRyYj08vRtWMAAMf95qU/7FGWR//6oYEVCs7OHLp9wfq92qDLy2+A2/w1p66H1SDJJsIa/8pGPx0BPdNR57qV+d9Z/6OSFlBtcGgofuZ13/iJOyjaVxlT6hj/qFEZJHMckmcEyUEHyt8wWjUE45SNHpvW8AkPVOHQNVQk9t+RZBpOxU7Lbj0tECtJzb5IS77smbWPUE3xOdDBMhiF7PTDcTHXToXZbPeGkEvWZvD0BSo5ixe7cSu2oCHr3BtczpBy7SZSlvOP9wKG4Ige6K9pw+G/M7lgpAQ0sS326Fd90iNzxFpMExkLQcwdod8qCakFCABT2o9TpMNdWFEiaoThQi7yV7Ei6OwapX0aWRBnJNVYr9II/gSvs2uo0AOwaXBmi9h7EPKPC4SZfeAatGdahiC1BC6lTl45MGS3azUQpdYuNdZOz6TtPDohvSEf+qQfXpTRgBUldjs4ZG8HQIjQmkINbQD4itsLY24A13jFAij54JLUiO/6AvGl0gxbX1W4WRsqhwm1CR0wcOfkEKalSkGSZn9d5QXfMnxn8bzbdRWHo0F/071ofYDclTg1nstEHwUskLqcdRw9Tb4uOE5QI8rvOZyiqN1UH50zUjuEr2AqlICRIfDC3izGVVC5Hr9w168Gzfqfn8L9ZS12ZB4+8FVukAp37uK3TN5OQvlR7xp55Nr+AlcByNzhjqtCMUGEjLJjXqVaiA3pmZQrL+ziv9yhJj439DG6duQjItxpqVurwWnX7bDsDUUtffSnz1LJjyZZyhEwJRim2s3/xKlu5CFw2gqmbdb8mJ4FkM4Iqn6K+OlfhAd2EINXTkn4/zvJyhjk+hn90UfVEQOWen4K4M51r3sRVHbrjQJH92If4N1h1AUHELOiJctmecKgUSmcn53CnZEGQmOgsbML+kRgo7SaTVncL/wR7TDoT1jLuW3axGBoryU2XrxoUZSD1BS2kCsXXw0CAc+WCPxeZwVF+D2cCjGZxobxO0N+EWOrp7ZfuHfD8bDhlT9ESlhEHmDxYNOZ5M10bm62wxnhz9IFc1JN9m7YVJLTiBV7uJ/9IxIKsZdTsVjQyP1odaxze6A4UqDkM8A+snUjx8QB3B3kaZkMSknsL48xwcBbpJxGuCBgtIfPf+qcVTaBLKwiBFUd25/MZfUFbI6jCfWi4Dj5ioxvR3CvzP5ktkRQDcFCoAHObB7MZSYC8ZrhnjX2TNyANtKX1UdEqNGSkMyFX83Rs/BFjuAsCcV7LWfLOWNCgu36sXLuPEFmGyGHdr6CPZntcU0mH6uaLGg1B0xsBSAsCQ8uCmI62zyAXFFCpT2bbl/NgllleEwTuIaCDfJdi9qQHw5deVS/6DHAytkBR9u3FSWeUHDmBgwPfF+1KaYaBOcRd64jGR6oBdMGcg2RDyqEZUueeBHJ5awZObha6beOee+3+QSHZuDy5dDhSK4JbmmuItgGQiVR+y3wbfio+2kut5L4S12S4RM0sRRXLW+s+jfKkyxn1UJs279bItWIslVOIc3PiCht3adwIvN/eFVfOB/P8HSKBG7pIlczn+JkUmu06SzLGIsdotwiko++JufPQML9tcScBnK22+3JVS8mfc1bt8/z4CepRem8wG3XcVvosXW1wAAXn7zQj/Beh7jSzCGbmrfmNzXOs9r1A6mEWbkGisbcM6Kfq5NgSGcoA3+Q9vjjlKa3ModuaXjRwp09C5OiP2wZK8fpNTS/31vNhTyPdaPqtwtQJDbCf0PgJmZIdXaG5RzJgbcO4OSBOtYajsg91NA5BDFMZOcrMhSdtKmIaCdxwbdJmCdcQvaowcUdiZSWQg21u+000TubBUSj+ZTmBQySvbhn4uWktuakpDNXqOdxoH2PY4FGgcjSv59bwU46hQXKm3Uq7vdZHsTS7KhJvfnLQ9YCApSWh60Tzy5FllFkqs86kTu0V25Seuc73Td4BiFlu7vWprWBHFSahTKMRTg2I1ycqTuFu3OMAAeM5rm37ODPcPUU+9bTy3QW1q833+tW1ZVgumJcsJQ6jvdzJouQNWdpe8vI3v7fg+iV6csBkIFYDC5iN3ZBsE86MHWmc4lM82K0BPIyk3Qpo5Px+3cc0vYQ4z1XU03IroR+iGoPSScNnd4MW4HtG0910kUTSsJX+9kXS4rQVuowr5q2oOuUQ9giERCfQxATRdo29+PNu4ME/aTH4SdX//xiKVN491EEvXWEpZMmA5GKMavOxyHH5L59ITCjttV8c2U64X2jfJis91LvhIiu/ee0NOXaWhe2pddy7XC+GkHLwddxLNgV/a6+rcki2mfGumvXBjxP7AB1NbB6HblWXWoaS7OiqenA7Egj1BFlZ4yjGrZtrkIkJo2O8P60rhf3NhVHN6J6jyWU4pUQsynwwayG6NIwQjNiomn2eBhcdB9aCx0KfOShkH+QN4wqIYfxw3W/60m/SMrRbNshplm+sMYAEnmU2Ud8174Fd/j7PXz43GEpUTjyifb+tNpirzfT9Y3Ou0YHf2506v3h24HrQu1at/az8PlXRW+KBKRhDgwz33YcJj188LlGzc7eBshgGSePz2yD/HQU5l6SL+DWXFBAhTOqCEDqplUFcheb9HdcqZsT2WDDwgubvFCwbH0p6NKmPH5DrHHUawnFb00fgFDnXK4jYCshX0HOAa/iN/2soBv4B1w8gND+J/sr/zPBlXAdfcr1YFxpPH1YxKWETjBsISj7ydnn4N6pp/RjIwjebHwydTeDlGbXuu4+1SgW/M06ks6KtABvcrrJlZykKdKse0/2dUiJJDc/9iXQAVD9C0/438+QWzSVnah6KWjm+rfu/Sx7PkUBNZxD2t9G5+EkHYqMciC7ljGrtgASIbKsKy3LyTcspJFX/s0JN+oGkOdO93uupI98cyWVGb7kvKP4rVAcLbz/4KwVKK6XbYpq7z2vDiGZyIFpCpH7RPA/WXLBsJ5wfJYyimlYQQsvobUH56qlC1/hXWv4ny6AOBcFMCLJUe73CAENNMftsm5DWKm4NxM0IeqSf34EqMZICdVErNJrN4PrlJ0JDtbVdcZV5glWf2hBV1cw0UitMC8fH4T0dv/ZwIQm44pw9beLFMczq6wZN/mdH2a9LgBgSR+7u5GBZ3I1aHrhqqkx1KVpIQDSydGMEteUM8lT71WZ0T6z6fk3AzL901gMzUSzRof/ipLlQFWISk0NAdBtNZf0LP2jCPCGWTIC1zWK361PdFoqX8/7ouxLaXfjvcr4ZPKJv8YOtdDmCeRcLPokFa0wzXHYIJ/VaQlEWhE2AY5A8IfwbIL0H5G1ka/+h+ZU7C/8MgjkybTLHS9ZXYCvbpoH6mQxVX33dHcPBBDSbFTS3tWPFvlae0F3qFWEnSzsEg4MbppyT9GPTVvi7T15KI26n7Lw8lLpzSRFg/0MiKhKQfwzIvvswbxJqCQpGic+VJWdy2vagNWzPSjJfIu1oLzvah0YQ52ftAUByQ9mDo6pItwtqF3/Lhwl/UcthgO/hR7G8+i566mH6D6lv1l1T9x/tbzpE2HvyCtveYVg+aUycucIa2IlLIKIiw53BMIt0u+4fPfZOJ5u+DqBOMFJ+gzryiJDdIfoUZtU/8b6csrIaP95ritt07oWSUIaOG1hAVKsjYkE3NUKkkgs+QeivJfxvcJ0Zqz8PynIpPJ5euf4Uuhtdltgw8FGVNd+WYkTFakFzQ5sv2A5rax33zv42dbP/FssnJS/yuXcqVsiweSHEB/ur1xSD3HECiHCa//yLiU/WiHWbFRTeUe+ugWNZSSMvuDACNzBUGL24jhuGqaBOHeEyYEbNcc6U6ANez/reE57FwITXCpeFqc9BZKHAH+qdBVBTCtJH612622RVu428UKHmQByDHn36FNid0HG5u4Lz4vavBG3WZTO2GG7ENyMwDebmPy8HFXTmZcowNlobGAjn74wDdQwtpxsIEt3v/T+vi8cZAj/twOI4Z7lTbpUMXuRkrUTt0o5iJ+SKnMpHOAA+CcQk8hEuEzAySepEsmvTCV65Qqr4LM2wAI484Y37j7yV2rhn8XQ/rvzWtWy6oRUup5BE0KsBoR7154T5aTeh/Sv9dxwFnpjmA33KDTwLgxsK67PU8MkOxRkrlC6kwkOHWfrv9QROOKIkJfs5tbWXruG1EtwdvKASdfB1cD+FKaPPkUt/N9g1olOrtFbajICzm0gAlUB2u/JGv+czaM1Ofkc6m1jsKo6XhqpSGcFKRZWm/JKJcILkAFe5E2EYIA5rJ/wjLR5+BazDNpXXc2iJ51eQ7DWXnE1F9h7zXMKQuSULh1WZA6NAtliM5BAT1QpUVnVGIfPr8yTz19H9eCdFXgaTEuandWeqc/ygbgv0rfyQHRH2TH8f4txBelFxITdIHcO1RUuPDUI2lUcZkqSrNpeixItnB8Yq0ORelTx+G8FtDPOHQtrDKS3GqtvsipFU8aZPy3dGIHjGDD4ptwqhyZhxyzsRLazfZbm4mp5UAzLK50FVkkFvF5ow3K2RHG2g0oPods9foeNV86iMFOhxfLrb9o8isfWfIl4nNzehtu0Re7CghiAczMIJpke+uegF4hH5zV4laMRfwS0oOKwER5LK+6yI04oG39YIYp4vSkllQ6ikMNPOEuIvIhFSPsWLcFhT647QK8oN8OxIP7VceuLfBUMrQcJM1U1UguvTKdxUUEosDVfG9X8AW/QH207e+J5LKFaf3RTTRtxMx4Uf+TpzAVjP3p4syT9pjJaf6SvKntCweJ4je1MIuFGF4HFRucwT6teEpB0tWnsRriB/dqpSIGYhoYdfvABw9nKyWAH85y+fhcYqUguEc+R2eoU0u/2jVryfr1keNXMC4C/cv1k+k5mPhLVBok7quJwJbDrWk+C5qZ5lOKphYgf0U4kFpyiFypF56Hub7XrtlwTqKVb6oS6Z6vzo7VeEMDtphQTVl7fmW6QkKMKk8WW1wL6XYAYSCma1OfjMIaqvmCzhWi/JBBmNs0sQaxb8atV/0xh9teP/q45hQk93V2GncAjjIU5vgSVYTWgF40uDhl3nDNLb62TEOlg9m9b5NqtzV2loISbYqQYotRpYAe+LtiQvx/FNeMwJ8id24jiGrU6ff5OC2iwnlX1dAeQBSI5TReAc2k1ECsgdScpsk6WvCvyU/sdv/ePcUO/NQcf20WsLHVs1b4H/FnVagXMZLdx03XX3KZPM8gQESWz3JVQCOsktUF78/uiVfpFlqhhHtImrw0Q0hXuzJXXp8gUqEqK++NES2BIAWr7b7qwZF2BHr40NlR1fq6rEv8Nt3L0PKAcIkA34IXSE5c7X/7YBMHBCgNEPaoM/fUX7FoygJbwXmXxRfyuFLN8HEH1UyjDHOvzh/MVTZF2uLLiJQ/+D8HFbDQphb37/R58g/Qtkq+R0tnlfIRdkmgs1PYILAd6wLJCo0fQQuII6J632qCDNSdegl2odNWTJy1hZKNDcJIyKJncJlkwowxFQ5C2lsyLwb/b9RH+DaViK3qIcpxEnvq/o6mzOWwDbfy4bg4kYiIla0goAiMT6SvvqQ3AumTqg2uvhQwX/HBtJXMXZf8zsYtiK+wdDtY+mmBU4unajDyw3Qcq0t+wwefyUT/SnY8Xrnm7Topl9wxV/QVtjjRL15j2oDFR1qciogc1sOYAzQPASyUyrT7mTptM6Q0LAumLvZPg1abQvC/2sdow8MbQwcoFnamAd20XlgR2wrIKASs04U9amcZZUZZ8cZs/MVMQaqAtD7KKZt3eOoMqXZSTpSgQ7k3irnS37fh7egxlj/SIU84pwcaP5llH8lduRIGgiK91aKrasxed/iYUGaFpmmSxf99njrU9arBl/jyJgi3iUWPYLg6dI3A+VfeoixOqTTPsf4lRJQJVZEMrmm9L/4/10O9cvDUDDg/+usxg4WmQwPiHyyRunuVsG0TSxIlHM57tO8obMTFXUsZ/ZpsqUWem27Pt2UdaSQHAL8L5eT9rtt4DuYQBPZpFBnwKOddg9fDnm0GPwvhn0uxmeFUno4NenhToyKJKCtwTRWWIlHIZcRmZ6cam+skDd65BZfirKhTC9jnRec0uKAVtwXMawJdK89K4TLqF4+QwPp36Z2EdNc/A+CdlaZC/TTSgdk2owy3In1b8VdI8uAoc0dfFUVoR1NYwIfRQ13iJSJQHKfWxpvSdhr4hCrk1UGX1onkzBZb2rmMq6/mbvjpcs7bLxojLNZNKvxZeonLzwvvHphBWhzAjJscw/5ccPB6fIt9UUSgKMFhEXo5CaUM7SpXKgSM6c5Cky+RZevXLSffqO9xCbwNk2bywyhqHcR1jaGHJqFdoLXjhtlF3GX4inKbA5t8A/zkqiRAH+dovsge+3DwSavABFOKVRvJVy/+Plo9tN96sM1pFlWhyffyO3dsXeE3EnY+lz/dEd5oOW1FQkDTbIx166wkgDX1kPoqCPQndIXkSfbITcv4259OBNMnhQDCgL/+V5+sPP7GayBWUZudUR1Cirr/Lvybs1NmaQRjWLYhhng+EPHVOSw5SRfN0tsz8+vmm91TPsjiU219ujQIwiGuZTwNedfgBNJJWj23a4HjZX5ImvOKWIBO2Y9W64oALbQpZEGdiL/ICc/on3spd+VxjmRnEWT7Cr8muCv9qXlIKeuWEcsooaXAzrp4lZBX6M0lEhFN7R0FEAOWAbU1khjNTIEzNevfvekqsrBay45X5X0rDJlfThU4g6m4flF9wzUWHxrNn2Kro4/b4bpWzlMWGWGuiQ2X7RoYWxIpf5UHKb9eprG1Vs7uElZQYnan4SEkxgCTX35IdkLlY9Vf5Jmf/O+Mw1BCXFTME30cE/RvQ9HyuaBnTRRvoJXIDmEEiZYz6rQp8cwxF1SyOfXwCsuJdsY9wZ+Ma+5nx7X+rrTQReubohxGE9ftZKRF6WFp4aecLhedMZ7kq5eQffxSC0wZxAIvdUsdLlnAVdlBaTKdXAWZHKNbQ34xQLmoTOcpFlSf4B4cBzknP6HGKc82NjGD8ieWZHnGcy75OhQWPtnx6okE22hbtaoqIILHa+3wLdhupUF4TJ4SX95MotBBNAXeTOX7P7ZETP1Rudm/FJ0Xlx2IbkZu4bInoTceqZ/XF/44xp5oJbChRE+T42t+Nt2cTjT+hkH5fxboFsMWqFtAB4GD04oGN0TIK1cNb43SFe5ZN4xVB0KsDU/iZXZRG9gnZFy+q3yAHiDWiEMCA0SRzYZ9/h5eNVEmH7+lpeDBK5578eQ3PHKeqUbGKXsR7BlMDwUP98wS8Y0VtRFOSoHFiZ89lb9Ddk9gU/mAD5uqHvI3xkHHSlXlHWNqmADHCEBn55na2yt68ngh0ge+LFGRaKCqAbUm68w6nY70Uk4XPpiNYo5If9zgwcN2KZuPyHh1OAZ4kKpCR3eFJL0vuFAPrbuRGRDlkzBMbzLD4Tf01TgniWE5SgJml6UpyjgcGaS+Wo2hoUj4fnAl4USObiSA7vOWZgVt48SuhmyW+PS71kZ6Jn8Y7LE7C0LFcw+TNt01TWzH8zkkVVxw94K2aEmUVr7FSG6wnMJSiwhI+V2Jy3gL/CFTdCO0e8696KEF53La/MIkmv8GqASQw5aCI3H/vVBfms7RVdHDFGjQ+yE0J8vbtPsThusm3G6BZtPiiW7U/LHGzGy6kFBvgfeNyunsPlMUorbB8F5hhI5MRseIPH0HTaEr9VdYu2zdGKH3MEZDc01HswDlAJOyjpJM3N1iaMsdbHepUGo8/j5tRYSvk8OqJLXGDrMEHjvWDSrh5Dj6zaElRxIqRVqAiwAxKRLZljt6A9HsTdYrSkhYv4LNfKLX/O2/+Y6LVEpQEc212JxLlXA+3cGvrEkfM3My7hWGiG60LHpcLU/lH3eeMa+mSEo+uPI7ukUlBxySir2DK8khnZ/wrBjKJEpY9UCSyXJZ/c/+knjzUsWkHAmF4WGSlM+i4WBtWpUe2a2pMmH4VhSlrkoFmd3V14xymVQEGf8xggfzPdWa9W1JdtOqdrc85v/yjv34aO77/CkKSCTkF3sXqHAl24a5EWSxr2w4shf/zcbyZwVagyImr0yqtXXf3oDzA4poWwoHQOD+jerrOIjk2FA9onvib3iActw1jhTVyGxn29OSOKJKcO1anfaAUsfVfgAHOR6tcroQMq1jrrKTp8RAz21qeg76QNiBlBAFjeGd17nTv2hwbkyzcWUd5EnwxepKaYjbAHh4OhrMicdWrmdOIKvBkj1A9nmdUxiBZ1YzbSnOBV2HXv4O2+3KXSBJKHQK93RNBE4hNcNwTpPfAP0mo/DS0CmBGpqps0Z+R5xM4wsQYxHsZdw4cA6fyWOf+NefOtAaVerG0SS5IMR4CjzsvqF1dQyUAsJ+xIm+G5Pb8HtMOEbtCj9/HnqRUIqi1XLA8S09xYVIy1xc0M8fZIK1Yz4CYDlTubn7bXINoPX3dRV8GKIds0EpHnO1lwlS2y3IqxLobDaXb4qn7xckmedcj7M0BnxYQxiM9Ddg/5yHTw258FW1937yp/yXtG4ozm0rS3IoJdYNqy9GYO1b0BBqu+eYiu2s1sIVrz7SWSx94He83A5WWc4rP+IOs4p9KaryFUvkfyUQlbrdPl/ZSJdqhjkcraQdN3C06eh8Y8SOmRpKyfNcp60b/7ROb7gGi9WH7sh8q87LlbhXVk3eJRdMP5gVVAHSyR4FFdnl9isk1SujDycTLuxjdWTUtwD3rpCkSUvIFxJ0uVFovZI5q2U30PHdt0WBs0pFhesb+jWkRCJvGlq/9+rISvj8mgn+O57TPJx58/FGLERqCtD2i6bTQ+BRzsIX8wfxRE1tI5u10qaUURvQ4t8BR0IxI5if47nOhnzLXzEsxz51by6LD4loKEibC3IYcuGEWN/qxtSUv51QZr5+w1I1naWxIoZ6DAYZtYc9z1PU+yXvJSRitf7FQbdv4CzMA+no8E//OeQ6eO9CgGxKAgRVh3/tbfVbZq0ViV2a7JVJWJB5/98n/rsf2WtHcvKJLvB2TxSz//Bp5u+QjEFQ2InRj9peRuUTo6mxeI669o/sVmeqz1MDwJQPBNJsIOpFIVNnO9HWD1TUA/uKKddCFOfO5BwfxeHWSArog+asxLLjLjYpu5zHRE0ak0PTQegMwsgoVqn7RpOZyvABJxD0cVgb8IPdvvWycQJNjNoKN706tyuphNxoCD9lr2ujXzQVpT9W1SJm9T8y8hSAVv8PmPqhT4rxM+tuuR7o6CeQXeGGs9W09vPMtUpv4ix3rc0xArSSR1SsyvKg0X9yTI4TWy+nNfU8iShGmt4g2kaA32mV7m8C8Gs8EYv/RM9zu1g24XtrqmUNZgUeU5mmWhtzH7Yay8eAfB72Ir7j40Ipm/Jd8BTmC9coeGpZHdt+dChLOJfazQw6DjawO06gAmbf/CtGwCfIjw4uKhcWhqI9KoZHGv/m3L6DjfeStviTtkltet+Xha29Nx6uoQMj64PyDnudtE3YHkX9B1PBE7ZTiKyATLNHy8ivbk1bATBLIEKkzKmyq2oMnBFqX7Z6bw84aDR70p3/ZVH+xNcQcKKw1JQFpIVYaOntC8rzK1h7Qvo8sIyu8Dma9niUZexxaTQv9E5+rZZl9o0kY15fMHOJmUzx0+XSOOkzV+ZWIuYflhhPjfoamq7Olrz0woeAFseQ2s/7SPm7nNcoTSpgAwvoXXdBLeSjhIGpbPRk5lvc6DSl2OVPLltLxSw55mLcokGfUiHdqrQ06FZcCPIdusN03+6lSIjSpcrR+MxmtkLGJ+EsPbbEyZKbWNQ4z5ESNIA0KFM8JOndr6UBGjRjToWYABozrU/+yPKeVGP3UD45en/iJRybUq63NYndU9vCOVj2f4BTEKC1lcipT7iwtHCHFJaEgHOHQkQzn3rvyuulBOObbK/0Ws3Uj5ehbmu35OEH0N+5yT5gkU2M1yXAELDYIMTU5fx7+xrw/6yXBtpDjUkIooy5wrn9jM3S0YkMM4uDZFe7pnatGp6XK2vUmT47XGLpr6XAi9KfHaFO3/2DNGEh9wE72HeHxqB2ywvt/RtOlL4f87NsbuL522RKLwkFdDXnVRc7oEeuNI+DzvxL9qydsLTSfUZpWXvQNOMZ+I9qpEVM2TU83jOMLZ/OXvULTDYMsAN63hozy1ofGAB3vhKWfLVTwRhXfprwTha7MF0ufEkJ2k70xD6Pt3UXi2WN8dArpAdAQXqnGKLWCqz3/dcW2r1wuNcMYkXd4K9HJ8CJkkhK7NaJ2H9lMRaA6kqbBZMzCHTWT9KdWcPAt++ak2qQ6mZpK8YznQwuHXY7CEfdKwebqBrsssTS8N+9Q/uiu49dmiPO2WDcd7ZbCcmqz6qDrQWkgNEiaZLwvtQ+5l/28zGO3hpkDYdN5H5CyJRTU3n3ikTOSkZnofGbglzDF0FD3G4tvV3AwbKSP7Z7fRWyo0Hu23D/wPYresHTe0V3Ug9Vk07NOP/qQFb6/eMEn82Htx2bpN71lF/ISLHLprzM+AaaLCopSO6hh6zAoqaK1Jhz8tzmTeFDDXZv+9nvlh+Ci5WbvXuzx0Do/MlYVhUQ0mtdO4XrYPMCzpNJlTUR/CJZDgsuwkPCkLJIO6EF47Xh0MCFLT1D47WcdtPfYjpVuj1gJLdio9oqRTnHFPW7Fgjy1UKYfKiCpGJEIxjNw0/GFtUoJ+08H9ZeE7p/PMPnRwM+jcD0JtaRk6gT6XudKzj2sSbPSpYI8zzSNdqHxQ7XwIQWB+5X9tzmvq/Pu70dmChVsQU+YKXOYUdu+Zxed2ERApv/6gCy81eR8kj7fZrs/rTk1wMJDMX7QSKW5QfUx/WpD6ljHHZdnl6a5P5httLeCDklKqiFVaRLCHx2oVnGAHUNVbgzK7ukHm7H7TTcwLzAOV5jbB/GIFYaGTK+oB4XUodWWVo98h9iGVx4HM56CPcGlC41gq01SeEnrKDh+q858SzZsddJl2YC3nfnmvh+331UgSvxCvAQd61N8ynODP/Mv23vEZjPDLP2+Jj1/j8CZOHGVPcxmnHyFTbIipuk8cgz4AjG8Q+r4MUkvAbvgqIy5t+17B6irE79+CHo6kheQH4ZsswW4DWzYhdMXLcJNJvc7dSi1XaHW+2zEB9GfGN2SwCgV8sEl0wSSqj09FJ+XyCOQzV9edTLdlOjsF4w/ZAnXagfwXfG6WPUsxUVTEuFK73E8/hd0J6lmZmBhop4mYMoaORrUEQtLT//yqmnoJ2SZa17xjqBVQKQWzvclhgjsnWp+tdsxWKIHJBHdPnXgujrDN+1BsaDamyUKVUV39MZQot+KZm4YjSeQYvK+nr+75mVkC7IYpuMqDYQAIv6uIk+OSzSSFitcLjs29r663e0XGpoXjZxrPJWyFTWkD6Vto9uj6cHbJo4exFdlCjx4sM9jUA/8+KdkxC21pH/7zoUT/T73bHu0+JQG7P9wheNwcTrl8ZHpSpPpw07ohQa1xogP6psG73YJg8ZTznshptKiRMFUETcjTqfnZ6654TNTm56lJclT6f9BO4oC1ON0biLDMvBbs7oWyvEVOYx+H8zmfMKs4Wco7V4/lh1CcCDnUIxvEwZInzsUOANzXoe+YsetCjH7YUbP5reNh8amYz4DnxWm3K5ds2ZwVyfQHaiDzbUijweQ1zgjsNtU7HnWKVJjn/2kNGGBAfXdApyWYFmXbDyQAnfgGGcR+bdyuRnL+sA+opTz42NHsWj3in9yO/erpDDCJ96f8lK817hp65HWK8nsKHLIkUYzu3sDysz8FY2PuseGb5MDVJtfsd0mpBnuLDz/S4AJHsYdDfLXk31kKR+Gb0cGLyF3qumSmvYq60d71XMr/b1ZJEzUeyXMnbBrNYovEx7lB9BlG1CnrUk0ExU/Ejnjn/NlpAoCdqkQTYTt9mzzamcnFVRLcGj6GkZeMdASDa5cOZCMhWgfkjI5la0fXRa1Zwnx1pCMqe3iEfMKrtZaYWuZAOD/4nfYGtDPiW9EZ9xOyUHEGh7d5kvc4W34H8mSEMEteY/rQACwCsp7rrqre+l72T0jqVuQIhL9dVkhllkZn466cemHUe6r5g25h1hRffWtDMRLgOGIZlCGqW2Yyed4JMdQGGFUSZoisGIn9oy+GbAzwgOKvHoOEH+a/lw/BtDjvAcrd9/FQ0pxZFvEfGcZaR6oKsmP+Aft3CpoPuwAzTAAFvX5cIj4PGScwrn9odGaB4LbqDEg4iMK0wWhnmRz1eLbBO8Q/LHp+N5wjc8ieodeATyntSQIDza08dn2IZ49sBLZGSC4/9tekP2Cyavf12pcG1Q59L8MozZjnYSfCzKtm5161xNV+Pl9q+HahzX8Kny1k10YrQUwjSKpvSaIjiGCumkcWowqDE4l25EDRrUfTltznUduzxqjxtSu9lJmV3DSQcMJOWkNLF9XKwaQdnxGiChx1RVjRH71L0Mb56SIz6HoCoJ+e/j0QCNNBCHidaYOTMdBgz6xcUmIANVe+QO0iOC1s+7S5Pd2FxopbCso1wxbmR8RNvCPwz/fISxgbb1IgN+wDYYcB+hJOVOPz7CHFeZEvSlyMZK1IGMej6LvOCKmQjjNM2tUJCpTs1ydG/c0P1YQ+PEMxa2Ztfqy63oIJn+s3uLk/U7ec/KpIrlf3HyVSfDWmB+iHPqv/NCE/Erk0glmwvi/xy00WihfXG4TQuatiBZHq6Y0qkF66b7sihiON2XLYFKOw2UkwViGnrC5XiC/ybTac5jM7WZ8Q3BQmURsDCXvJBDZBxHnnXTbhoPCSw2HkxlH/SwKrIv4mLZQq7YmxXHBWkt0Wdw0kQ6N9uJYBiAJ+gSgy9vH0DnEpzSKbqiouAO/d8dVkVRWEul6Zhe8srl9LJsg2dhjD9sGhRN2k/V/nLhaUEGdmwyQtk9ze+PReaOySW0emZN6PAlxniWKU9t8gMp/I9yET9VXWacXqApG4DNj8/0S/mZPM9wXb3hSZrjzerFeIxVfRwpqAJRB0nZdY/IGb2jaMnpRuxGTzRjVDT99o7fvAIHtDKpmxxCZ1G1jCOccTaFV0xj4lms2nfpWjcex2RvYknwmNUvkwG3999agVE1cBM3LYkEwuMmzBxBsxFnXUjWh9X4rnGk1oYK5fBprw0nM8Be/Z/BXbVXzwgq/7ootEbLygjkGr1t3aUug+uQIxYkhmuadXnEenMV7SPdFKssgUnUNmlD/wEmOk5pJ1DtKysvzMZvCI7O8zsnIbB4ob/QJlL2zoCZ7JA2m++RqDVTECD72vzC+rtEJZ4mdQBxVsjAk8e9eh3S04YBL+14kLSMOm8+ym9C8OBybtftagDpJXP+PK0GkVd/eCuu9cxKhXgvFVChQXdgAAAzgJg2Y1PIe9jmyeNfdL2I+NqB0OroeWunr/T95O2OORj0hXLIrVk4iCeZd3D+R7msmnF04U5U+oFWQZxnitzvt+e1xiETl2WQuYlRM8SaXb8euwPNu21p8S8eIw4oCcAUXUelNt2UP/89OciV+5AnwHPI54tx8ufc97VgnhGtUAA8HKslhj6u3XY4n7JZvQknFc/iXuj1xZWC4//8UMGs6pAPNsy3Ke5nIBkXUyd/yWughYnk+ece5y+tWuDlMNxr8pLueSwFDu5GmIfLEwgJc8ynRxBnBpg+UKz11tNQkisg9eWupXUZ8pzP8CeShjsa+AbzyEnoa1LhrcnuUjsy3MvuB5XD2orlqE/G9+9UoqC5PaE86mEIE9rzALmVNii6BHpcPM5YhU3G2AhMA7RcjRP2JheL4hWMvAzxkwBugiEZ/ZIaRxChq/Xp0Fm8x95WGkza/2nHU0Sa8USrwIhIWA2P1d6nK/zQxb3tuU7CWPGo++mqMErUHyx9CU0RP1kDdtmDU7xHeOx9xTV5b3d37I4iSEiuBzjdnLESD7A3OTxiGMHd3AE+WwJwLWlkfRLB0S6KnTrkKPIHYdBo4JOCnpH019IaLJwY6U2wp2I/mwFKhT/sJYVxfPMHVaMgSucf78VIt0NxbKpgA9JuGxSAibkui06pVfZK4Dj63rY3Sk6Bg3IcWLhyfY0ZDrkLvOvtaikFZk7/R37J0I4axkQmmJNlCfmSlPeIMP0qRlIXujTLJsTd2Who3ccnbzmm1j4pcndF84Tl7YO3vuQHOwCXQ2nGOGQKhZu++6hAWjA7lxUP7PJsLN+9an5a+SP5f8SXjmtH/JklYFysRIJIZGr9S2zgyGCeM4iH7BmkNiydh+jxzfz3DsDmplhxYtRJcYWDfwGu43u2gjMx8pq/f4NInQnaAQDAyPVWiT1QFggqU3NCqbmXweMccQ9Y5HXQhJHPJFH5DFDcFZOBCGtWjd/upzM58iUgQnhWizeF6VuT1Jgm9fGUAQCufjfpDOuNxqgO/xOYG2vH8PbBxPySsjm3VmrJK8oxaClYTvpmbYQd3bxUmSNiQ68zjb8bBF1d5h3289LmArAHG3kswyU6B+Qj6t84e2t34cLqiS7//114jOv1YyROTgueIxwyT1MJLhNUGNPAOAHcH6ij8znN+s5VnfMZqK2+SewgVekvDQOE1mm8ZZR+TwEPXY8izzBJnJdsaoxImgdGhwrFZRQKr3JFhwELVScm1wwuh7UMN3MiPorWZLs4MHLQ2Rd/wwj2MF0lui/qD62YpqB8xMpPA5R7fa6Fc6zT1+nICFG3p2ATQAAAABzsk/npB+XkNtUzx7YIEjEA53O6Ykvxyf2OnrxKOmEPChiy6H0AfJt762MGdVDWFpgE7qhrR4hufkFocyQAd4kry6q7ZzTEoXy3vMmYLWLQOVcgmsPUvXlx/vtnlSrbe85NMA66VxwIjVF8O5ddjSfOUK/5eNHuxjXPLu8AQvBQvkDd/cFbIw9Av41fmf/DZD4DBYbcdJzT8nwjIEFaPy5TN7DZbacu1/1LuNvePlurRfki+ydofVgh+JWGQX7bSfewAti8heMDZ3fe64hyeksBMIvKimcRor/d7s00t3xYp5ciGR2J1U9vYaDiQNaW5P5pAv+aRZb9MBSEGT61wwuDbBnsGbMMPguzPzQp5E2HirCFauNW479ecQqRpaNCEXor0eFSyaJY4iy/P0955mDGsUMO5pTyYm632ysRQxP49PFxuElkXJ60JuiRKNU/2O2Gvr1wNCcVL5CarHi99R0ZRgzDER6MUWKL5YWUUu50U+TXdv8iudh9WxFRI52CwarFBDtwRHhu4A4sk9kCp2FPvQIvBy+Yh7W73Hf3fpq+2BJAiIi7ezpRLr/QmRLiWowpzC8x6PnQHFTU8zkNARZgv3kdHZADjsLs8pMut7SeZ53FhXs4taEIFvtMxgr3y7gQap29/pRFAMGXLrsod9Y36iuwJ9uFvST+0P3LYUb9aaxj3xPuoHnMij8zkBF8X5GUsEEXjKY4By6/CJn6JRleK+n1pJSjRms9uvieKRdVPxBGPYXMxJ1Cy+T1a+kvC3NbFieg6laskjVgsc2NmUSXyixejD6oXZtdrbsCHdIGpPKnsGyShRT6UD3uLxXNFN++0BV3fquSaZcp58bpebiBNaueBO+736yBecJH3UXdhOuCpeMPldQ78b43VCxLj+zZq8DdQcLi0dg26IO9Q03vbC7vkYcvS0AL6sUxRy3crilGyxB8eZHrGtqVkBJ9nA08Zzf45taCo1ZmA3nw7zgsyOXUoIfE++Jem+XXUE+c/5ivpu4c/H37BnVTUzP5K6EHzZSDv+fG1G1Ha0Hn6LPahG6QPsWNWTHYdSZNdMM1jMVIiLWLDZJ970RBQSTiaUXv2ND90vXMHj6Kb0ho10YMgn546uTk2MxWEyMpBMQNQOXvPdir4AAcVF+TOYnm4oz2hUCMFhXgSiRnfXctBfofKvtEkTS7x7TyskumXveAvbgMHt1BfwRqtEv57Pol71Fseebsr7DauIXrRVrre14MqcqlEGMxS7d3bhzLisApWsWQigrvCE0ds03pHWw4VA/3LchFpvqp+rzjuJqVjDb8DHTLgEdYtuKp5vqCLdpHp7mgUoB2KatWUXYAAAAAi0d53B0K9QuI/v32xKcYdz9+ctzZ8mw6NXCgsTrrurdO5ybFS8FOlO/n24Ji7CRdKyd812LrxfJMZSMUigPjmMUM92k9QfCM/ihK0ml1DIDwo7tlAaioYC49/kr2foJHCcgxrlSupxSyqq1UQSAQQ7krl07GMufCSxP4uM5NbKy3UNTmFkaNjvARp/JnTtQV9NVgKYBsTz2fRkF9YhO1UZRX1VBv/UHR9bCEYqOHXZMLn0AQLrpM0Y0Qzl81T2bsa896jpxI0KLDqYujnmmJ7DSpwpSSRAbxh9+8Y1m9Frh1O/8f2S+lK1yN25k4Puo/wTTTU4MLciHf67X9h1F/rhpn+6Hy988YoiOmNv6+Uf/CNxClZ3ajIn7pBspEJB7wPNqMHS81Bek8XrFyXSSo1klYi3+QIELfuHD5lkjcGiPWpWLh7rnmBoCFsET3HaT3EeVKl+9BpvnDc0OCxyP6DziNaqqd3na9rEjIV3ItVeEh9nxcEoNg5BTeHqVvEOH53EHaDIheKhPORkOvkOuKCGywwal/iA66U33h9ePubMtYiQpt1usPOyws5HkAcOxEtQHZab9HDpnp+0ozRx7pJx5LT31a04FqbQndsLTZ7w+Bu+4/AJrVRsxeM4cG2cLrY7vVjFSlMtLEqQkmJgvuBohoZjjRHDTKWTCGKmwM+0qL/5sDeIsVzu/xdU5f79Ss1+4gJO0x9SGbzyTOCVZ0JKwKLZ68E8WkmlzNvHJ7CqISDBWcAJr1zUcU6NGmVjtNUBqsgTj+09ii/UQg0hqzFjn6ITPGEw091LSKHt5Ny0aZjWzCxzDr/VeyQrIOzzhrNZp0I3IbD8NgCN5YnqcIUjsHIhE9+dwS0LUOCHZqDC4TmZiNqQpfpghuCSc8QefiU8WOSaQ523f//0aKEPHNT4gSx/nMp7o9HKlkwW8xtP/nMzj5F5jf4DfUoStGkG1lOobb4745d3fXnhjDfuFOEZ9sDrNDRfkrD3IKGuxCr5NIKmBaHOBCAeNPLqQJFgpnGAOH/9RsyMX3OPp6hX7HmzT9E73kpGxqY8oK1lb4qTPTs10PL2caeoHF1PLipOJ7VdSS/b+jvvWPVhqFDMwF3/z6wVUqtK+PgBeaw5U3fTP5DgVQWu8yeKZzfNtcVfqQInP//I1se9lZQV7i2ie3lr5NgAAAAAAKCyq1MgqPdgXhVQcHGas02TsTiQ3Jj+2ce5HN1Rg637hB6DigTC6qh44nXfW6XXVuMJpFpxVjN1PSdswjDBZxpiILijTAnKj51Z0E//5JTRKDQXOgxmFRYC+LWpoMcoeVZ3yvMhksxMmf13heVQcX6GVL49DVihaq7RaavccYrjrgRGdu1PbyBO1cM3mYBz0x86TstNz6561LkGFA9Q5UDdb11UkK3efePEHMoY3N/7MXv5p3GqxiOfPBZuE2UAt2get50tHT1PjiTzD1mgrzTLBkCRKvRrouZBFm3oBYHj2SY4FunimXr3UGLLK2L7VD+1AWdxoHkKdcusZIS53kEm9bIt91fybGsUm+6lxAr4VZx3//vtNx3sE7lRTLraExGZ07WeD/meTj405TkSCMQhXMmRz+rL/PNhPXPTJCQyQPLqqIFoEKu9AIZPAvTcWzgy0s08mnyJcUYjlzf55/dVw+Unlw9WqwJt8agGo/SnzsmpzfcOGjmrjfd5xZ5b4uKbfekjpKN6/b1iH5zGxkW/ZZc0JsMMjLsfhSd865Bm/QLIywL8fTtg1akev07cZ8xBQgq3cdy/U3pdEjkVeVxZCQuNxiQDoeavbyx2NWwejBLYIh5wxj+ChtltnYaLHySN1T+xLfe4D6PLaCSQUlO3CaX04jEF0MncITe+QFBM0S3kZVZ5Ic8a6OXzbZuVpGftg36+ckWqAeoaawqCHx8En+1drhWgWLtL+eZFfhllTmkdBa8P7KKODMISOMkWwG0kiN+I+zYiGFrzLBUdnaSP2PIZ+S/vhXEPLRKAGo7gbaaJI/yv7RRS1R9qca5A2D7ARUL7DLCKfYqcK/AsipN1wHFZcv5YG8DYUpUZ8TRzB6u58F2rLvMdIQQFfjUnK/g/N7whIoPp0E1+Vs/OrccXTmggPvyGzpoUR/MVzzddbakLn5wD1fQW8V5ArCA9XbbVbNmARKGlzOBrVKKLrPBGz7SJjUBOyhnwf7xd70+a7mN7RezyvJlm9L4ly1eJwCRImJ6elm9+N2fBVJZ4VW0LmXwM+TVJQXCBk+KYNZigAAAAAAN5piTklMQBmxdqZn3ZKvvUdOPdk1YYTdObx09UPSHWZ12s80OTT4quTW4O8G55JUXpB2bCtrmeWSgagONrytL6U3UStm2Xpg10fXgbwQsvktsT2Pe0DRAaGi6Ua51JrjAisMRNZ7k//t0eZTdAXbeTxQbMKcd/6X8Ah3i7ZXRyIo2VRM76+10HLO2lSiK7jzqCXFLrYlLiM0N1KDWZiNQZ5eO0BA75aM4fU1fWzomClWsYCOFbtLmGWTXidnJt58yBduKh8kUHQ+h44ptqqvUpdePSVlaAEmnIrydaPwu6JJ/1h++fdeWL5QjTKLCojR1oU51vHqIzt31pYkqS7dOTKKN86rmRI4Wu8H+COOhmKwIl3cITec72jcNKPjl/cVavCycqMk5OkBJLHqVoc/hwll5SoNPu17tzohXQtyrpeGLEHXDKF5rO9lVqlxzH3x3ZC5X/YSOgM9dh4UbXRSmSUtJ3hTIo6JbkxWe2t2H1AWpOls1l9iP+hj0fSKhYE78wpubIo5phMGWMDoCaIMZhg5934sgUm+dSiC05wyLcM3yBzfY+ovQfvJzIddzbXxKsB/MiDX3LKDe6VcJGMjwOAP4H/9O4ZyDnQcJRo8Rn+klMSKN3LMDdV58wrbZM/yvfrmBvNy4+GBP78mhcdsmoW7ROuukl4SdZcj7m1Jhpg0p7Bd/+TmUtrAVfyrQ/3pSKjAqNi4wkL++a/+OOEB4ll2yzNeVvYQOdQxq41cpYQna5E88ahJEFaLM0/4x2lsy4Cq/Z/E1LZF9YWYMMSP8reNEqIREKvzmXK0BPPpt14r4GYpWpjShDPoPX7cuBVzB5CDhrnQuQEQX1876zBfHl6dfxXNQc5UcYcmuAhcACP4haQrg1QNN3ly2+3X5cuDXcAAAAAAAAAPF57JY11PHW5FU+eGjaXHvqWu/kHlnGAXoS3+OElIwg3uds+rNn3VWFtnMoG5eNx4262l9UVceIvrGV2VkZGodPQEt31CmIIzqJ1fnOEowlYDgrf8dvwMbEEZjRH6KrAqf1BT7CLDU7Xl0Dfjj4qOSLFr2muI6ZaNGmNZPu4oZpOI3d1k0h0eqBcHa6dbgzINdDtBS+nVt2L0yfnRZj0uzF7Nyyi1841N4z1N2C6zMw0oSUWrO1YU+4OhC7N5QI7CfTqSGpD+aPUg0B8li3/sPSwSKD0A6YFkLBr/smOVuRbE/AHSjZz1JetEdzMHN1cWqK5J/J37XuAC+wYOF+GB1pO+8VsuY3LDU4kF+0kh9zMYTq+QIMnYVSKl5Cmf7GnoEPQ2/7wz1Q8osmNOiT/eEMr+Knw2PMvFokMea0ZgSBOSwgVdR/zbY097/fXoLlM17SenkAY09IuYaLVkdv4WRps4ScQkfM593/lSLLqAAAAAAAA==', x: 24, y: 40, w: 200, h: 113, aura: [124, 100, 118, 62], shadow: [124, 154, 100, 6],
       cable: 'M220 72 C 240 58 238 26 222 16', cableRev: 'M222 16 C 238 26 240 58 220 72',
@@ -46413,58 +45362,41 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     },
     "sr": {
       "name": "NAS",
-      "off": "Искључено",
-      "idle": "У мировању",
-      "running": "У раду",
+      "off": "Искључен",
+      "idle": "Мирује",
+      "running": "Ради",
       "busy": "Активан",
       "warning": "Упозорење",
       "unavailable": "Недоступно",
       "volume": "Волумен",
       "free": "Слободан простор",
-      "go": "GB",
-      "to": "TB",
       "uptime": "Време рада",
       "d": "д",
-      "cpu": "CPU",
-      "ram": "RAM",
+      "cpu": "ЦПУ",
+      "ram": "РАМ",
       "temp": "Температура",
       "disks": "Дискови",
       "disk": "Диск",
       "down": "Преузимање",
-      "up": "Слање",
+      "up": "Отпремање",
       "power": "Снага",
       "volume_alert": "Волумен је деградиран",
       "drive_alert": "Диск {n}: проблем",
       "hot": "Прегревање",
       "volume_full": "Волумен је скоро пун",
       "security": "Безбедносно упозорење",
-      "update": "⬆ Доступно ажурирање за DSM",
-      "model_synology_ds423": "Synology DS423+ (4 лежишта)",
-      "model_synology_ds925": "Synology DS925+ (4 лежишта)",
-      "model_terramaster_f4_423": "TerraMaster F4-423 (4 лежишта)",
-      "model_terramaster_f4_425": "TerraMaster F4-425 (4 лежишта)",
-      "model_terramaster_f6_424": "TerraMaster F6-424 (6 лежишта)",
-      "model_qnap_ts251": "QNAP TS-251+ (2 лежишта)",
-      "model_qnap_ts253": "QNAP TS-253 (2 лежишта)",
-      "model_synology_ds224": "Synology DS224+ (2 лежишта)",
-      "model_ugreen_dxp4800_plus": "UGREEN DXP4800 Plus (4 лежишта)",
-      "model_ugreen_idx6011_pro": "UGREEN iDX6011 Pro (6 лежишта)",
-      "parity_alert": "Паритет није исправан",
-      "flash_alert": "USB флеш: проблем",
-      "nvme_alert": "SSD {n}: проблем"
+      "update": "⬆ Доступно ажурирање DSM"
     },
     "sr-Latn": {
       "name": "NAS",
-      "off": "Isključeno",
-      "idle": "U mirovanju",
-      "running": "U radu",
+      "off": "Isključen",
+      "idle": "Miruje",
+      "running": "Radi",
       "busy": "Aktivan",
       "warning": "Upozorenje",
       "unavailable": "Nedostupno",
       "volume": "Volumen",
       "free": "Slobodan prostor",
-      "go": "GB",
-      "to": "TB",
       "uptime": "Vreme rada",
       "d": "d",
       "cpu": "CPU",
@@ -46473,27 +45405,14 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "disks": "Diskovi",
       "disk": "Disk",
       "down": "Preuzimanje",
-      "up": "Slanje",
+      "up": "Otpremanje",
       "power": "Snaga",
       "volume_alert": "Volumen je degradiran",
       "drive_alert": "Disk {n}: problem",
       "hot": "Pregrevanje",
       "volume_full": "Volumen je skoro pun",
       "security": "Bezbednosno upozorenje",
-      "update": "⬆ Dostupno ažuriranje za DSM",
-      "model_synology_ds423": "Synology DS423+ (4 ležišta)",
-      "model_synology_ds925": "Synology DS925+ (4 ležišta)",
-      "model_terramaster_f4_423": "TerraMaster F4-423 (4 ležišta)",
-      "model_terramaster_f4_425": "TerraMaster F4-425 (4 ležišta)",
-      "model_terramaster_f6_424": "TerraMaster F6-424 (6 ležišta)",
-      "model_qnap_ts251": "QNAP TS-251+ (2 ležišta)",
-      "model_qnap_ts253": "QNAP TS-253 (2 ležišta)",
-      "model_synology_ds224": "Synology DS224+ (2 ležišta)",
-      "model_ugreen_dxp4800_plus": "UGREEN DXP4800 Plus (4 ležišta)",
-      "model_ugreen_idx6011_pro": "UGREEN iDX6011 Pro (6 ležišta)",
-      "parity_alert": "Paritet nije ispravan",
-      "flash_alert": "USB fleš: problem",
-      "nvme_alert": "SSD {n}: problem"
+      "update": "⬆ Dostupno ažuriranje DSM"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -46770,6 +45689,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     }
     _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
     _more(id) { if (window.applianceMore) window.applianceMore(this, id); }
+    _reboot() { const id = this._c.entity_reboot; if (!id || !this._hass) return; if (!window.confirm(this._c.reboot_confirm_text || 'Redémarrer le NAS ?')) return; this._hass.callService('button', 'press', { entity_id: id }); }
     _temp(id) {
       const s = this._st(id), v = this._num(id);
       if (!window.applianceTemp) return { v, unit: '°C' };
@@ -46783,7 +45703,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         <div class="head"><div class="title" id="nstitle"></div><div class="badge" id="nsbadge"></div></div>
         ${SVG(this._c.name || this._t('name'), modelOf(this._c))}
         <div class="alert" id="nsalert"></div><div class="info" id="nsinfo"></div>
-        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${esc(k)}"><div class="l"><ha-icon icon="${esc(ic)}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div>
+        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${esc(k)}"><div class="l"><ha-icon icon="${esc(ic)}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div><div class="tile hide" id="reboot-btn"><div class="l"><ha-icon icon="mdi:restart"></ha-icon><span class="lbl">Redémarrer</span></div></div>
       </ha-card>`;
       const svg = root.querySelector('svg');
       // clic sur une baie : fiche du disque ; ailleurs : action de l'illustration
@@ -46793,8 +45713,9 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       }, true);
       window.applianceBindIllus(this, svg, () => this._more(this._c.entity || asList(this._c.entity_volume)[0] || asList(this._c.entity_volume_used)[0] || this._c.entity_cpu));
       root.getElementById('nsinfo').addEventListener('click', () => this._more(this._c.entity_update));
+      root.getElementById('reboot-btn')?.addEventListener('click', () => this._reboot());
       root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => {
-        const t = TILES.find((x) => x[0] === el.dataset.k);
+        const t = TILES.find((x) => x[0] === el.dataset.k); if (!t) return;
         this._more(t[3] === '_disks' ? this._drives().map((d) => d.id).find(Boolean) : asList(this._c[t[3]])[0]);
       }));
       this._root = root; this._card = root.querySelector('ha-card'); this._built = true;
@@ -46908,6 +45829,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         const small = document.createElement('small'); small.textContent = unit ?? '';
         el.querySelector('.v').replaceChildren(String(val ?? ''), small);
       });
+      const rb = r.getElementById('reboot-btn'); if (rb) rb.classList.toggle('hide', !c.entity_reboot);
     }
   }
   customElements.define(TAG, ApplianceNasCard);
@@ -47000,7 +45922,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "play": "Play",
       "pause": "Pause",
       "previous": "Previous",
-      "source": "Next source",
       "next": "Next",
       "vol_down": "Volume down",
       "vol_up": "Volume up",
@@ -47116,7 +46037,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "play": "Lecture",
       "pause": "Pause",
       "previous": "Précédent",
-      "source": "Source suivante",
       "next": "Suivant",
       "vol_down": "Volume −",
       "vol_up": "Volume +",
@@ -47376,7 +46296,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       led: '',
     },
   };
-  const BTN_KEYS = ['power', 'home', 'prev', 'play_pause', 'next', 'source', 'vol_down', 'mute', 'vol_up'];
+  const BTN_KEYS = ['power', 'home', 'prev', 'play_pause', 'next', 'vol_down', 'mute', 'vol_up'];
   const ALIAS = { firetvstickgen1: 'fire_tv_stick_gen1', firetvgen1: 'fire_tv_stick_gen1', firetv: 'fire_tv_stick', firetvstick: 'fire_tv_stick', amazonfiretv: 'fire_tv_stick', orange: 'orange_tv', orangetv: 'orange_tv', kaon: 'orange_tv', shield: 'shield_tv_pro', shieldtvpro: 'shield_tv_pro', xiaomi: 'xiaomi_tv_box_s', xiaomitvboxs: 'xiaomi_tv_box_s', mibox: 'xiaomi_tv_box_s', freebox: 'freebox_pop', freeboxpop: 'freebox_pop', playerpop: 'freebox_pop', googletv: 'google_tv', chromecast: 'google_tv', googletvstreamer: 'google_tv_streamer', tvstreamer: 'google_tv_streamer' };
   const modelKey = (m) => { const k = String(m || '').toLowerCase(); if (MODELS[k]) return k; const n = k.replace(/[^a-z0-9]/g, ''); return ALIAS[n] || 'shield_tv_pro'; };
 
@@ -47659,11 +46579,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       } else if (k === 'play_pause') call('media_play_pause');
       else if (k === 'prev') call('media_previous_track');
       else if (k === 'next') call('media_next_track');
-      else if (k === 'source') {
-        // source suivante dans source_list (HDMI 1 → HDMI 2 → …) ; select_source doit être géré par l'intégration
-        const list = Array.isArray(a.source_list) ? a.source_list : [];
-        if (list.length) call('select_source', { source: list[(list.indexOf(a.source) + 1) % list.length] });
-      }
       else if (k === 'mute') call('volume_mute', { is_volume_muted: !a.is_volume_muted });
       else if (k === 'home' && c.entity_remote) hass.callService('remote', 'send_command', { entity_id: c.entity_remote, command: 'HOME' });
       else if (k === 'vol_up' || k === 'vol_down') {
@@ -47712,7 +46627,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         ['prev', 'mdi:skip-previous', 'previous', null, has(16)],
         ['play_pause', play ? 'mdi:pause' : 'mdi:play', play ? 'pause' : 'play', null, has(1) || has(16384), 'main'],
         ['next', 'mdi:skip-next', 'next', null, has(32)],
-        ['source', 'mdi:import', 'source', null, Array.isArray(a.source_list) && a.source_list.length > 1 && has(2048)],
         ['vol_down', 'mdi:volume-minus', 'vol_down', null, volOk],
         ['mute', muted ? 'mdi:volume-off' : 'mdi:volume-high', 'mute', muted, has(8)],
         ['vol_up', 'mdi:volume-plus', 'vol_up', null, volOk],
@@ -48141,7 +47055,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     "sr": {
       "name": "Паметна вага",
       "weight": "Тежина",
-      "fat": "Телесна маст",
+      "fat": "Масти",
       "fat_mass": "Масна маса",
       "muscle": "Мишићи",
       "bone": "Кости",
@@ -48151,23 +47065,23 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "goal": "Циљ",
       "battery": "Батерија",
       "bmi": "БМИ",
-      "goal_reached": "Циљ достигнут",
-      "last": "Измерено",
-      "just_now": "управо сада",
+      "goal_reached": "Циљ је достигнут",
+      "last": "Мерено",
+      "just_now": "управо",
       "min_ago": "пре {n} мин",
-      "h_ago": "пре {n} х",
+      "h_ago": "пре {n} ч",
       "d_ago": "пре {n} д",
       "unavailable": "Недоступно",
       "trend": "{n} дана",
-      "under": "Потхрањеност",
+      "under": "Мање",
       "normal": "Нормално",
-      "over": "Прекомерно",
+      "over": "Вишак",
       "obese": "Гојазност"
     },
     "sr-Latn": {
       "name": "Pametna vaga",
       "weight": "Težina",
-      "fat": "Telesna mast",
+      "fat": "Masti",
       "fat_mass": "Masna masa",
       "muscle": "Mišići",
       "bone": "Kosti",
@@ -48177,17 +47091,17 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "goal": "Cilj",
       "battery": "Baterija",
       "bmi": "BMI",
-      "goal_reached": "Cilj dostignut",
-      "last": "Izmereno",
-      "just_now": "upravo sada",
+      "goal_reached": "Cilj je dostignut",
+      "last": "Mereno",
+      "just_now": "upravo",
       "min_ago": "pre {n} min",
       "h_ago": "pre {n} h",
       "d_ago": "pre {n} d",
       "unavailable": "Nedostupno",
       "trend": "{n} dana",
-      "under": "Pothranjenost",
+      "under": "Manje",
       "normal": "Normalno",
-      "over": "Prekomerno",
+      "over": "Višak",
       "obese": "Gojaznost"
     }
   };
@@ -48725,36 +47639,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "target": "Cel",
       "bottom": "Dół",
       "reserve": "Ciepła woda"
-    },
-    "sr": {
-      "name": "Термодинамички бојлер",
-      "mode_off": "Искључено",
-      "mode_pause": "Пауза",
-      "mode_green": "Зелени",
-      "mode_boost": "Појачано",
-      "mode_unavailable": "Недоступно",
-      "energy": "Енергија",
-      "power": "Снага",
-      "mode": "Режим",
-      "temp": "Температура",
-      "target": "Циљна",
-      "bottom": "Дно",
-      "reserve": "Топла вода"
-    },
-    "sr-Latn": {
-      "name": "Termodinamički bojler",
-      "mode_off": "Isključeno",
-      "mode_pause": "Pauza",
-      "mode_green": "Zeleni",
-      "mode_boost": "Pojačano",
-      "mode_unavailable": "Nedostupno",
-      "energy": "Energija",
-      "power": "Snaga",
-      "mode": "Režim",
-      "temp": "Temperatura",
-      "target": "Ciljna",
-      "bottom": "Dno",
-      "reserve": "Topla voda"
     }
   };
   const asList = (v) => (Array.isArray(v) ? v : v ? [v] : []);
@@ -49290,72 +48174,6 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "pressure": "Druk",
       "cost": "Kosten",
       "low": "Laag"
-    },
-    "sr": {
-      "name": "Паметна славина",
-      "watering": "Заливање",
-      "closed": "Затворено",
-      "rain": "Паузирано (киша)",
-      "fault": "Квар",
-      "low_battery": "Слаба батерија",
-      "freeze": "Ризик од смрзавања",
-      "leak": "Цурење!",
-      "unavailable": "Недоступно",
-      "fault_alert": "Квар: проверите довод воде",
-      "leak_alert": "Откривено цурење",
-      "freeze_alert": "Ризик од смрзавања: испустите воду из славине",
-      "rain_alert": "Откривена киша: заливање паузирано",
-      "open_tap": "Отвори славину",
-      "close_tap": "Затвори славину",
-      "minutes": "{n} мин",
-      "schedule": "Распоред",
-      "flow": "Проток",
-      "volume": "Запремина",
-      "remaining": "Преостало",
-      "today": "Данас",
-      "total": "Укупно",
-      "next": "Следеће покретање",
-      "moisture": "Влажност земљишта",
-      "mode": "Режим",
-      "battery": "Батерија",
-      "signal": "Сигнал",
-      "temperature": "Температура",
-      "pressure": "Притисак",
-      "cost": "Трошак",
-      "low": "Ниско"
-    },
-    "sr-Latn": {
-      "name": "Pametna slavina",
-      "watering": "Zalivanje",
-      "closed": "Zatvoreno",
-      "rain": "Pauzirano (kiša)",
-      "fault": "Kvar",
-      "low_battery": "Slaba baterija",
-      "freeze": "Rizik od smrzavanja",
-      "leak": "Curenje!",
-      "unavailable": "Nedostupno",
-      "fault_alert": "Kvar: proverite dovod vode",
-      "leak_alert": "Otkriveno curenje",
-      "freeze_alert": "Rizik od smrzavanja: ispustite vodu iz slavine",
-      "rain_alert": "Otkrivena kiša: zalivanje pauzirano",
-      "open_tap": "Otvori slavinu",
-      "close_tap": "Zatvori slavinu",
-      "minutes": "{n} min",
-      "schedule": "Raspored",
-      "flow": "Protok",
-      "volume": "Zapremina",
-      "remaining": "Preostalo",
-      "today": "Danas",
-      "total": "Ukupno",
-      "next": "Sledeće pokretanje",
-      "moisture": "Vlažnost zemljišta",
-      "mode": "Režim",
-      "battery": "Baterija",
-      "signal": "Signal",
-      "temperature": "Temperatura",
-      "pressure": "Pritisak",
-      "cost": "Trošak",
-      "low": "Nisko"
     }
   };
   const TV = {
@@ -49673,76 +48491,6 @@ svg{display:block;flex:0 1 calc(130px * var(--illus-scale,1));width:calc(130px *
       "signal": "Signaal",
       "cost": "Kosten",
       "low": "Laag"
-    },
-    "sr": {
-      "name": "Вентил за воду",
-      "open": "Отворен",
-      "closed": "Затворен",
-      "opening": "Отварање",
-      "closing": "Затварање",
-      "leak": "Цурење!",
-      "fault": "Квар",
-      "freeze": "Ризик од смрзавања",
-      "low_battery": "Слаба батерија",
-      "unavailable": "Недоступно",
-      "leak_alert": "Откривено цурење: затворите вентил",
-      "fault_alert": "Квар вентила",
-      "freeze_alert": "Ризик од смрзавања: заштитите цеви",
-      "open_valve": "Отвори",
-      "close_valve": "Затвори",
-      "minutes": "{n} мин",
-      "schedule": "Распоред",
-      "position": "Положај",
-      "flow": "Проток",
-      "volume": "Запремина",
-      "remaining": "Преостало",
-      "closes_in": "Затвара се за",
-      "today": "Данас",
-      "total": "Укупно",
-      "next": "Следеће покретање",
-      "mode": "Режим",
-      "pressure": "Притисак",
-      "temperature": "Температура",
-      "power": "Снага",
-      "battery": "Батерија",
-      "signal": "Сигнал",
-      "cost": "Трошак",
-      "low": "Ниско"
-    },
-    "sr-Latn": {
-      "name": "Ventil za vodu",
-      "open": "Otvoren",
-      "closed": "Zatvoren",
-      "opening": "Otvaranje",
-      "closing": "Zatvaranje",
-      "leak": "Curenje!",
-      "fault": "Kvar",
-      "freeze": "Rizik od smrzavanja",
-      "low_battery": "Slaba baterija",
-      "unavailable": "Nedostupno",
-      "leak_alert": "Otkriveno curenje: zatvorite ventil",
-      "fault_alert": "Kvar ventila",
-      "freeze_alert": "Rizik od smrzavanja: zaštitite cevi",
-      "open_valve": "Otvori",
-      "close_valve": "Zatvori",
-      "minutes": "{n} min",
-      "schedule": "Raspored",
-      "position": "Položaj",
-      "flow": "Protok",
-      "volume": "Zapremina",
-      "remaining": "Preostalo",
-      "closes_in": "Zatvara se za",
-      "today": "Danas",
-      "total": "Ukupno",
-      "next": "Sledeće pokretanje",
-      "mode": "Režim",
-      "pressure": "Pritisak",
-      "temperature": "Temperatura",
-      "power": "Snaga",
-      "battery": "Baterija",
-      "signal": "Signal",
-      "cost": "Trošak",
-      "low": "Nisko"
     }
   };
 
@@ -50190,7 +48938,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
 
 /* Carte « Adoucisseur d'eau » — custom:appliance-water-softener-card 
  * Adoucisseur à résine (type Culligan) : cuve à résine avec tête de commande (écran LCD, boutons) et bac à sel.
- * Phases : service (eau adoucie), contre-lavage, aspiration de saumure, rinçage, renvoi d'eau (remplissage du bac à sel) ; alerte sel bas.
+ * Phases : service (eau adoucie), contre-lavage, aspiration de saumure, rinçage ; alerte sel bas.
  * Tuiles : débit, capacité restante, sel, dureté (entrée → sortie), consommation du jour, prochaine régénération, puissance.
  */
 (() => {
@@ -50204,7 +48952,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "backwash": "Backwash",
       "brine": "Brine draw",
       "rinse": "Rinse",
-      "refill": "Water return",
       "idle": "Standby",
       "lowsalt": "Low salt",
       "off": "Off",
@@ -50213,7 +48960,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "lcd_backwash": "BACKWASH",
       "lcd_brine": "BRINE",
       "lcd_rinse": "RINSE",
-      "lcd_refill": "RETURN",
       "lcd_idle": "READY",
       "lcd_lowsalt": "ADD SALT",
       "lcd_off": "OFF",
@@ -50314,7 +49060,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "backwash": "Contre-lavage",
       "brine": "Aspiration saumure",
       "rinse": "Rinçage",
-      "refill": "Renvoi d'eau",
       "idle": "Veille",
       "lowsalt": "Sel bas",
       "off": "Arrêt",
@@ -50323,7 +49068,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "lcd_backwash": "CONTRE-LAV",
       "lcd_brine": "SAUMURE",
       "lcd_rinse": "RINCAGE",
-      "lcd_refill": "RENVOI",
       "lcd_idle": "PRET",
       "lcd_lowsalt": "AJOUTER SEL",
       "lcd_off": "ARRET",
@@ -50444,60 +49188,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "regen": "Volgende regen.",
       "power": "Vermogen",
       "days": "d"
-    },
-    "sr": {
-      "name": "Омекшивач воде",
-      "service": "У раду",
-      "backwash": "Повратно испирање",
-      "brine": "Усисавање слане воде",
-      "rinse": "Испирање",
-      "idle": "Приправност",
-      "lowsalt": "Мало соли",
-      "off": "Искључено",
-      "unavailable": "Недоступно",
-      "lcd_service": "У РАДУ",
-      "lcd_backwash": "ПОВ. ИСПИРАЊЕ",
-      "lcd_brine": "СОЛАНА",
-      "lcd_rinse": "ИСПИРАЊЕ",
-      "lcd_idle": "СПРЕМНО",
-      "lcd_lowsalt": "ДОДАЈ СО",
-      "lcd_off": "ИСКЉ.",
-      "lcd_unavailable": "- - -",
-      "flow": "Проток",
-      "capacity": "Преостали капацитет",
-      "salt": "Со",
-      "hardness": "Тврдоћа",
-      "today": "Данас",
-      "regen": "Следећа реген.",
-      "power": "Снага",
-      "days": "д"
-    },
-    "sr-Latn": {
-      "name": "Omekšivač vode",
-      "service": "U radu",
-      "backwash": "Povratno ispiranje",
-      "brine": "Usisavanje slane vode",
-      "rinse": "Ispiranje",
-      "idle": "Pripravnost",
-      "lowsalt": "Malo soli",
-      "off": "Isključeno",
-      "unavailable": "Nedostupno",
-      "lcd_service": "U RADU",
-      "lcd_backwash": "POV. ISPIRANJE",
-      "lcd_brine": "SOLANA",
-      "lcd_rinse": "ISPIRANJE",
-      "lcd_idle": "SPREMNO",
-      "lcd_lowsalt": "DODAJ SO",
-      "lcd_off": "ISKLJ.",
-      "lcd_unavailable": "- - -",
-      "flow": "Protok",
-      "capacity": "Preostali kapacitet",
-      "salt": "So",
-      "hardness": "Tvrdoća",
-      "today": "Danas",
-      "regen": "Sledeća regen.",
-      "power": "Snaga",
-      "days": "d"
     }
   };
 
@@ -50509,7 +49199,7 @@ ha-card{display:block;padding:10px 12px 12px;overflow:hidden;--ws-ok:var(--appli
 .title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap}
 .service .badge{background:color-mix(in srgb,var(--ws-cold) 22%,transparent);color:var(--ws-cold)}
-.backwash .badge,.brine .badge,.rinse .badge,.refill .badge{background:color-mix(in srgb,var(--ws-warn) 24%,transparent);color:var(--ws-warn)}
+.backwash .badge,.brine .badge,.rinse .badge{background:color-mix(in srgb,var(--ws-warn) 24%,transparent);color:var(--ws-warn)}
 .lowsalt .badge{background:color-mix(in srgb,var(--ws-alert) 22%,transparent);color:var(--ws-alert)}
 .body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
 svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
@@ -50531,7 +49221,6 @@ svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px *
 .backwash .pin .pflow,.backwash .pdr .pflow{opacity:1;animation:wsd var(--spd) linear infinite}
 .rinse .pin .pflow,.rinse .pdr .pflow{opacity:1;animation:wsd calc(var(--spd) * .6) linear infinite}
 .brine .pbr .pflow,.brine .pdr .pflow{opacity:1;animation:wsd calc(var(--spd) * 1.4) linear infinite}
-.refill .pin .pflow,.refill .pbr .pflow{opacity:1;animation:wsd var(--spd) linear infinite}.refill .pbr .pflow{stroke:#6f8cff;animation-direction:reverse}
 .pbr .pflow{animation-direction:normal}
 @keyframes wsd{to{stroke-dashoffset:-16}}
 .drop{fill:#7fdcff;opacity:0}
@@ -50550,15 +49239,13 @@ svg{display:block;flex:0 1 calc(190px * var(--illus-scale,1));width:calc(190px *
 .muddy{fill:#b08a5a;opacity:0;transition:opacity .6s}.backwash .muddy{opacity:.32}
 .brinew{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--lvl));transition:transform 1.4s ease}
 .brine .brinew{animation:wsbrine 5s ease-in-out infinite alternate}
-.refill .brinew{animation:wsrefill 5s ease-in-out infinite alternate}
-@keyframes wsrefill{from{transform:scaleY(.55)}to{transform:scaleY(.9)}}
 @keyframes wsbrine{from{transform:scaleY(.9)}to{transform:scaleY(.55)}}
 .salt{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--salt));transition:transform 1.2s ease}
 .alertw{opacity:0}.lowsalt .alertw{opacity:1;animation:wsblink 1s ease-in-out infinite}
 .lowsalt .lid{animation:wsblink 1.6s ease-in-out infinite}
 @keyframes wsblink{50%{opacity:.35}}
 .lcdt{font:700 6.6px/1 ui-monospace,Consolas,monospace;fill:#2c3a10;text-anchor:middle;letter-spacing:.2px}
-.led{fill:#43d17a}.backwash .led,.brine .led,.rinse .led,.refill .led{fill:#ffa000;animation:wsblink .8s steps(2) infinite}.lowsalt .led{fill:#e53935}
+.led{fill:#43d17a}.backwash .led,.brine .led,.rinse .led{fill:#ffa000;animation:wsblink .8s steps(2) infinite}.lowsalt .led{fill:#e53935}
 .off svg,.unavailable svg{filter:grayscale(.85) opacity(.65)}
 .noanim *{animation:none!important}
 /* ---- compact : petits emplacements fixes ; l'illustration prend la hauteur restante, tuiles en colonne ---- */
@@ -50616,8 +49303,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
   const RE = {
     backwash: /backwash|back.?wash|contre.?lavage|d[ée]tassage|gegenstrom/i,
     brine: /brine|saumure|aspir|draw|slow|regener|r[ée]g[ée]n[ée]ration|recharge|regen/i,
-    rinse: /rins|rin[cç]|fast|spül|spuel/i,
-    refill: /refill|remplissage|renvoi|water.?return|return/i,
+    rinse: /rins|rin[cç]|fast|spül|spuel|refill|remplissage|renvoi/i,
   };
 
   class ApplianceWaterSoftenerCard extends HTMLElement {
@@ -50666,21 +49352,18 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       const c = this._c, e = this._st(c.entity);
       const flow = this._num(c.entity_flow), salt = this._num(c.entity_salt);
       const raw = e ? String(e.state) : '';
-      const known = [c.entity, c.entity_flow, c.entity_capacity, c.entity_salt, c.entity_backwash, c.entity_brine, c.entity_rinse, c.entity_refill, c.entity_service].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
+      const known = [c.entity, c.entity_flow, c.entity_capacity, c.entity_salt, c.entity_backwash, c.entity_brine, c.entity_rinse].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
       let phase = 'idle';
       if (!known) phase = 'unavailable';
       else if (e && /^(off)$/i.test(raw)) phase = 'off';
       else if (RE.backwash.test(raw)) phase = 'backwash';
-      else if (RE.refill.test(raw)) phase = 'refill';
       else if (RE.rinse.test(raw)) phase = 'rinse';
       else if (RE.brine.test(raw) || (e && /^on$/i.test(raw) && /regen/i.test(String(e.entity_id) + JSON.stringify(e.attributes || {})))) phase = 'brine';
       // une entité par phase (interrupteur / binary_sensor), prises en compte si `entity` ne donne pas déjà la phase
       else if (this._on(c.entity_backwash)) phase = 'backwash';
       else if (this._on(c.entity_brine)) phase = 'brine';
       else if (this._on(c.entity_rinse)) phase = 'rinse';
-      else if (this._on(c.entity_refill)) phase = 'refill';
-      // « service » : entité dédiée, texte « service », ou `entity` allumée dont le nom contient « service » (ex. « Cycle Service »)
-      else if (this._on(c.entity_service) || /^(service|en.?service)$/i.test(raw.trim()) || (e && /^on$/i.test(raw) && /service/i.test(String(e.entity_id) + ' ' + ((e.attributes && e.attributes.friendly_name) || ''))) || (!isNaN(flow) && flow > 0.05)) phase = 'service';
+      else if (/^(service|en.?service)$/i.test(raw.trim()) || (!isNaN(flow) && flow > 0.05)) phase = 'service';
       const low = !isNaN(salt) && salt <= Number(c.salt_low);
       return { phase, flow, salt, low };
     }
@@ -50693,7 +49376,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       card.style.setProperty('--spd', `${(isNaN(flow) ? 1.2 : Math.max(.5, Math.min(2.4, 2.4 - flow / 12))).toFixed(2)}s`);
       card.style.setProperty('--salt', String(isNaN(salt) ? .6 : Math.max(.03, Math.min(1, salt / 100)).toFixed(3)));
       r.getElementById('wstitle').textContent = c.name || this._t('name');
-      const state = low && !/^(backwash|brine|rinse|refill)$/.test(phase) ? 'lowsalt' : phase;
+      const state = low && phase !== 'backwash' && phase !== 'brine' && phase !== 'rinse' ? 'lowsalt' : phase;
       r.getElementById('wsbadge').textContent = this._t(state);
       r.getElementById('wslcd').textContent = this._t(`lcd_${state}`);
       const fu = this._unit(c.entity_flow, 'L/min'), tu = this._unit(c.entity_today, 'L');
@@ -50742,7 +49425,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         { name: 'transparent', selector: { boolean: {} } },
         ...window.applianceTileFields(this._hass),
         ent('entity', ['sensor', 'binary_sensor', 'switch', 'input_boolean', 'select']),
-        ent('entity_backwash', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_brine', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_rinse', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_refill', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_service', ['binary_sensor', 'switch', 'input_boolean', 'sensor']),
+        ent('entity_backwash', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_brine', ['binary_sensor', 'switch', 'input_boolean', 'sensor']), ent('entity_rinse', ['binary_sensor', 'switch', 'input_boolean', 'sensor']),
         ent('entity_flow', 'sensor'), ent('entity_capacity', 'sensor'), ent('entity_salt', 'sensor'),
         ent('entity_hardness_in', 'sensor'), ent('entity_hardness_out', 'sensor'),
         ent('entity_today', 'sensor'), ent('entity_regen_days', 'sensor'), ent('entity_power', 'sensor'),
@@ -50761,642 +49444,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
     type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
     description: "Adoucisseur d'eau animé : service, contre-lavage, saumure, rinçage, sel, capacité, dureté.", preview: true,
     documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/water-softener.md',
-  });
-})();
-
-/* Carte « Arrosage » — custom:appliance-irrigation-card
- * Arrosage automatique du jardin : de 1 à 8 zones (électrovannes `valve`, `switch` ou `input_boolean`), pompe de puits,
- * détecteur de pluie, humidité du sol. Un bouton par zone (clic = marche / arrêt), arrêt général, arrosage auto (interrupteur maître).
- * Tout est facultatif : les entités sont génériques (aucune marque), la carte lit simplement l'état on / off des zones.
- */
-(() => {
-  const TAG = 'appliance-irrigation-card';
-  if (customElements.get(TAG)) return;
-
-  const T = {
-    "en": {
-      "name": "Irrigation",
-      "idle": "Idle",
-      "watering": "Watering",
-      "rain": "Rain",
-      "dry": "Dry",
-      "unavailable": "Unavailable",
-      "zones": "zones",
-      "stop": "Stop all",
-      "auto": "Auto",
-      "blocked": "Blocked: rain",
-      "on": "On",
-      "off": "Off",
-      "flow": "Flow",
-      "soil": "Soil moisture",
-      "today": "Today",
-      "next": "Next run",
-      "pressure": "Pressure",
-      "pump": "Well pump",
-      "power": "Power"
-    },
-    "fr": {
-      "name": "Arrosage",
-      "idle": "Arrêt",
-      "watering": "Arrosage",
-      "rain": "Pluie",
-      "dry": "Sec",
-      "unavailable": "Indisponible",
-      "zones": "zones",
-      "stop": "Tout arrêter",
-      "auto": "Auto",
-      "blocked": "Bloqué : pluie",
-      "on": "Marche",
-      "off": "Arrêt",
-      "flow": "Débit",
-      "soil": "Humidité sol",
-      "today": "Aujourd'hui",
-      "next": "Prochain",
-      "pressure": "Pression",
-      "pump": "Pompe de puits",
-      "power": "Puissance"
-    }
-  };
-
-  const ON_RE = /^(on|open|opening|true|yes|1|running|watering|irrigating|active)$/i;
-  const RAIN_RE = /^(on|true|yes|1|rain|raining|wet|detected|pluie)$/i;
-
-  const CSS = `
-:host{display:block;height:100%} ha-card{display:block;height:100%;box-sizing:border-box;padding:10px 12px 12px;overflow:hidden;
-  --ir-ok:var(--appliance-ok-color,#43a047);--ir-warn:var(--appliance-warn-color,#ffa000);--ir-alert:var(--appliance-alert-color,#db4437);--ir-cold:var(--appliance-cold-color,#2b9af9)}
-.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap;max-width:60%;overflow:hidden;text-overflow:ellipsis}
-.watering .badge{background:color-mix(in srgb,var(--ir-cold) 22%,transparent);color:var(--ir-cold)}
-.rain .badge{background:color-mix(in srgb,var(--ir-warn) 24%,transparent);color:var(--ir-warn)}
-.body{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:4px}
-svg{display:block;flex:0 1 calc(250px * var(--illus-scale,1));width:calc(250px * var(--illus-scale,1));max-width:100%;height:auto;margin:0 auto;cursor:pointer;overflow:visible}
-.tiles{flex:1 1 130px;display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px;min-width:0}
-.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
-:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
-.tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
-.tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
-.tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tile .v small{font-size:10px;font-weight:400;color:var(--secondary-text-color);margin-left:2px}
-.tile.hide{display:none}.tile.bad .v{color:var(--ir-warn)}
-.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(86px,1fr));gap:6px;margin-top:8px}
-.zones:empty{display:none}
-.zb{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;padding:7px 6px;border:0;border-radius:12px;cursor:pointer;font:inherit;font-size:12px;font-weight:500;
-  background:var(--ac-tile-bg,rgba(127,127,127,.12));color:var(--primary-text-color)}
-.zb span{min-width:0;overflow:hidden;text-align:center;line-height:1.15;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.zb ha-icon{--mdc-icon-size:17px;flex:none}
-.zb.on{background:color-mix(in srgb,var(--ir-cold) 28%,transparent);color:var(--ir-cold)}
-.zb.stop.on{background:color-mix(in srgb,var(--ir-alert) 24%,transparent);color:var(--ir-alert)}
-.zb:disabled{opacity:.4;cursor:default}
-/* ---- image perso (option image) : la photo ou le plan remplace le dessin, les vannes sont posées dessus (x / y en %) ---- */
-.map{position:relative;flex:1 1 100%;width:calc(100% * min(1,var(--illus-scale,1)));max-width:100%;margin:0 auto;border-radius:12px;overflow:hidden;cursor:pointer;line-height:0}
-.map img{display:block;width:100%;height:auto}
-.zb.mk{position:absolute;transform:translate(-50%,-50%);flex-direction:column;gap:1px;padding:5px;min-width:32px;min-height:32px;border-radius:50%;line-height:1.1;
-  background:rgba(20,24,30,.62);color:#fff;backdrop-filter:blur(2px);box-shadow:0 1px 4px rgba(0,0,0,.45)}
-.zb.mk.lbl{border-radius:12px;padding:4px 7px}
-.zb.mk span{font-size:10px;max-width:84px}.zb.mk:not(.lbl) span{display:none}
-.zb.mk ha-icon{--mdc-icon-size:20px;display:inline-flex;width:20px;height:20px}
-.zb.mk.on{background:color-mix(in srgb,var(--ir-cold) 78%,#000);color:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--ir-cold) 40%,transparent),0 0 12px var(--ir-cold)}
-.noanim .zb.mk.on{box-shadow:0 0 0 3px color-mix(in srgb,var(--ir-cold) 40%,transparent)}
-.zb.mk.on ha-icon{animation:irpulse 1.4s ease-in-out infinite}@keyframes irpulse{50%{transform:scale(1.18)}}
-.compact .map{flex:1 1 0;min-width:0}
-/* ---- illustration ---- */
-.spr{opacity:0}.spr.on{opacity:1}
-.arc{fill:none;stroke:#5fb8ff;stroke-width:2;stroke-linecap:round;stroke-dasharray:3 6}
-.on .arc,.spr.on .arc{animation:irsp 1s linear infinite}
-.arc.b{animation-duration:1.4s!important;opacity:.75}
-@keyframes irsp{to{stroke-dashoffset:-18}}
-.lawn.wet{filter:saturate(1.25) brightness(.95)}
-.cloud{opacity:0;transition:opacity .6s}.rain .cloud{opacity:1}
-.rd{fill:#7fb6ff;opacity:0}.rain .rd{opacity:.9;animation:irfall 1.1s linear infinite}
-.rd:nth-child(2){animation-delay:-.3s!important}.rd:nth-child(3){animation-delay:-.6s!important}.rd:nth-child(4){animation-delay:-.9s!important}
-@keyframes irfall{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(32px);opacity:0}}
-.pled{fill:#9aa3ad}.pump-on .pled{fill:#43d17a;animation:irblink 1s steps(2) infinite}
-@keyframes irblink{50%{opacity:.35}}
-.sun{opacity:.95;transition:opacity .6s}.rain .sun,.watering .sun{opacity:.2}
-.unavailable svg{filter:grayscale(.85) opacity(.65)}
-.noanim *{animation:none!important}
-/* ---- compact ---- */
-ha-card.compact{display:flex;flex-direction:column;padding:6px}
-.compact .head{flex:none;gap:4px}.compact .title{font-size:12px;line-height:16px}.compact .badge{font-size:10px;padding:0 6px}
-.compact .body{flex:1 1 auto;min-height:0;flex-wrap:nowrap;gap:6px;margin-top:3px;align-items:stretch}
-.compact svg{flex:1 1 0;min-width:0;width:auto;height:100%;max-width:none;margin:0}
-.compact .tiles{flex:0 0 42%;grid-template-columns:1fr;gap:3px;align-content:center}
-.compact .tile{padding:2px 5px;border-radius:8px}.compact .tile .l ha-icon{--mdc-icon-size:12px}.compact .tile .v{font-size:12px;line-height:15px;margin-top:0}
-.compact .zones{margin-top:4px;gap:4px}.compact .zb{padding:4px;font-size:11px}
-`;
-
-  const TILES = [['flow', 'mdi:water-pump', 'show_flow'], ['soil', 'mdi:water-percent', 'show_soil'], ['today', 'mdi:calendar-today', 'show_today'],
-    ['next', 'mdi:calendar-clock', 'show_next'], ['pressure', 'mdi:gauge', 'show_pressure'], ['pump', 'mdi:pump', 'show_pump'], ['power', 'mdi:flash', 'show_power'], ['rain', 'mdi:weather-rainy', 'show_rain']];
-
-  // Liste de zones : ['valve.x', {entity, name, icon, x, y}, …] ou « a, b, c » → [{id, name}]
-  const parseZones = (v) => (Array.isArray(v) ? v : v == null || v === '' ? [] : String(v).split(',')).map((z) => {
-    const o = typeof z === 'string' ? { entity: z.trim() } : z || {};
-    const pct = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); return isFinite(n) ? Math.max(0, Math.min(100, n)) : null; };
-    const x = pct(o.x), y = pct(o.y); // position sur l'image perso, en % depuis le coin haut-gauche
-    return o.entity ? { id: String(o.entity), name: o.name || '', icon: o.icon || '', x: x != null && y != null ? x : null, y: x != null && y != null ? y : null } : null;
-  }).filter(Boolean).slice(0, 8);
-
-  class ApplianceIrrigationCard extends HTMLElement {
-    static getConfigElement() { return document.createElement(TAG + '-editor'); }
-    static getStubConfig(hass) {
-      const ids = Object.keys((hass && hass.states) || {});
-      return { zones: ids.filter((i) => /^valve\./.test(i)).slice(0, 4) };
-    }
-    setConfig(c) {
-      if (window.applianceSize) window.applianceSize(this, c);
-      if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
-      this._c = { show_flow: true, show_soil: true, show_today: true, show_next: true, show_pressure: true, show_pump: true, show_power: true, show_rain: true, show_buttons: true, ...c };
-      this._zones = parseZones(this._c.zones);
-      this._built = false;
-      if (this._hass) this._render();
-    }
-    set hass(h) { const ch = this._c && window.applianceChanged(this, h, this._c); this._hass = h; if (ch) this._render(); }
-    getCardSize() { return 5; }
-    getGridOptions() { return { columns: 6, min_columns: 3, rows: 'auto', min_rows: 1 }; }
-
-    _lang() { return window.applianceLang(T, this._c, this._hass); }
-    _t(k) { return T[this._lang()][k] ?? T.en[k] ?? k; }
-    _l(k) { const L = this._c && this._c.labels; return L && L[k] != null && L[k] !== '' ? String(L[k]) : this._t(k); }
-    _st(id) { return id && this._hass.states[id]; }
-    _num(id) { const s = this._st(id); if (!s) return NaN; const v = parseFloat(String(s.state).replace(',', '.')); return isFinite(v) ? v : NaN; }
-    _unit(id, d) { const s = this._st(id); return String((s && s.attributes && s.attributes.unit_of_measurement) || d).trim(); }
-    _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
-    _on(id) { const s = this._st(id); return !!s && ON_RE.test(String(s.state)); }
-    _dom(id) { return String(id).split('.')[0]; }
-    _name(z) { const s = this._st(z.id); return z.name || (s && s.attributes && s.attributes.friendly_name) || z.id; }
-    _more(id) { if (id) this.dispatchEvent(new CustomEvent('hass-more-info', { detail: { entityId: id }, bubbles: true, composed: true })); }
-    // marche / arrêt d'une entité : valve (open_valve / close_valve), switch / input_boolean / autre (turn_on / turn_off)
-    _set(id, on) {
-      const d = this._dom(id);
-      if (d === 'valve') this._hass.callService('valve', on ? 'open_valve' : 'close_valve', { entity_id: id });
-      else this._hass.callService(['switch', 'input_boolean', 'light', 'fan'].includes(d) ? d : 'homeassistant', on ? 'turn_on' : 'turn_off', { entity_id: id });
-    }
-
-    // Repères : 250 × 150. Une tête d'arrosage par zone, régulièrement espacées sur la pelouse.
-    _svg(label) {
-      const n = Math.max(1, this._zones.length), heads = [];
-      for (let i = 0; i < n; i++) {
-        const x = n === 1 ? 125 : 52 + (i * (196 - 52)) / (n - 1);
-        heads.push(`<g class="spr" data-z="${i}"><path class="arc" d="M${x} 106 Q${x - 16} 80 ${x - 30} 112"/><path class="arc" d="M${x} 106 Q${x + 16} 80 ${x + 30} 112"/>
-          <path class="arc b" d="M${x} 106 Q${x - 7} 84 ${x - 14} 112"/><path class="arc b" d="M${x} 106 Q${x + 7} 84 ${x + 14} 112"/></g>
-          <rect x="${x - 2}" y="104" width="4" height="12" rx="1.5" fill="#6b7480"/><rect x="${x - 4}" y="102" width="8" height="4" rx="2" fill="#2b2f36"/>`);
-      }
-      return `<svg viewBox="0 0 250 150" role="img" aria-label="${label}"><defs>
-        <linearGradient id="irg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec850"/><stop offset="1" stop-color="#4f9a34"/></linearGradient>
-        <linearGradient id="irs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset="1" stop-color="#eaf6ff"/></linearGradient></defs>
-        <rect x="0" y="0" width="250" height="108" rx="10" fill="url(#irs)" opacity=".55"/>
-        <g class="sun"><circle cx="214" cy="26" r="13" fill="#ffd54f"/><g stroke="#ffd54f" stroke-width="2" stroke-linecap="round"><path d="M214 5v5M214 42v5M193 26h5M230 26h5M199 11l3 3M226 38l3 3M229 11l-3 3M202 38l-3 3"/></g></g>
-        <path class="lawn" d="M0 100 Q60 90 125 98 T250 96 V140 a10 10 0 0 1-10 10 H10 a10 10 0 0 1-10-10Z" fill="url(#irg)"/>
-        <g class="cloud"><ellipse cx="96" cy="30" rx="30" ry="14" fill="#8e9aa8"/><ellipse cx="120" cy="24" rx="24" ry="14" fill="#9fabb8"/><ellipse cx="74" cy="34" rx="18" ry="10" fill="#8e9aa8"/>
-          <g><circle class="rd" cx="84" cy="52" r="2"/><circle class="rd" cx="100" cy="50" r="2"/><circle class="rd" cx="116" cy="52" r="2"/><circle class="rd" cx="130" cy="50" r="2"/></g></g>
-        ${heads.join('')}
-        <g class="pump"><rect x="6" y="116" width="30" height="24" rx="5" fill="#cfd6dd" stroke="#9aa3ad"/><circle cx="21" cy="128" r="6" fill="#5b6672"/><circle class="pled" cx="31" cy="120" r="2"/></g>
-      </svg>`;
-    }
-
-    // Image perso : <img> en fond, une pastille cliquable par zone qui a x / y (en % de l'image). Les autres zones restent en boutons dessous.
-    _map(label) {
-      const e = (v) => String(v).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
-      const mk = this._zones.map((z, i) => (z.x == null ? '' : `<button class="zb mk${this._c.marker_names === true ? ' lbl' : ''}" data-b="z${i}" data-id="${e(z.id)}" style="left:${z.x}%;top:${z.y}%"><ha-icon icon="${e(z.icon || (this._dom(z.id) === 'valve' ? 'mdi:valve' : 'mdi:sprinkler-variant'))}"></ha-icon><span></span></button>`)).join('');
-      return `<div class="map" role="img" aria-label="${e(label)}"><img src="${e(this._c.image)}" alt="" loading="lazy">${mk}</div>`;
-    }
-
-    _build() {
-      const root = this.shadowRoot || this.attachShadow({ mode: 'open' });
-      root.innerHTML = `<style>${CSS}</style><ha-card>
-        <div class="head"><div class="title" id="irtitle"></div><div class="badge" id="irbadge"></div></div>
-        <div class="body">${this._c.image ? this._map((this._c.name || this._t('name')).replace(/"/g, '')) : this._svg((this._c.name || this._t('name')).replace(/"/g, ''))}
-          <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${k}"><div class="l"><ha-icon icon="${ic}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div>
-        </div><div class="zones" id="irzones"></div></ha-card>`;
-      window.applianceBindIllus(this, root.querySelector('svg, .map'), () => this._more((this._zones[0] || {}).id || this._c.entity_pump));
-      root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => {
-        const c = this._c; this._more({ flow: c.entity_flow, soil: c.entity_soil, today: c.entity_today, next: c.entity_next, pressure: c.entity_pressure, pump: c.entity_pump, power: c.entity_power, rain: c.entity_rain }[el.dataset.k]);
-      }));
-      // boutons : un par zone, arrêt général, arrosage auto (interrupteur maître) — reconstruits seulement quand la config change
-      const zb = root.getElementById('irzones');
-      const btn = (key, icon, id) => `<button class="zb" data-b="${key}"${id ? ` data-id="${id}"` : ''}><ha-icon icon="${icon}"></ha-icon><span></span></button>`;
-      zb.innerHTML = this._c.show_buttons === false ? '' :
-        this._zones.map((z, i) => (this._c.image && z.x != null ? '' : btn('z' + i, z.icon || (this._dom(z.id) === 'valve' ? 'mdi:valve' : 'mdi:sprinkler-variant'), z.id))).join('')
-        + (this._zones.length > 1 ? btn('stop', 'mdi:stop', '').replace('class="zb"', 'class="zb stop"') : '')
-        + (this._c.entity_master ? btn('master', 'mdi:calendar-check', this._c.entity_master) : '');
-      // boutons du bas et pastilles de l'image : même comportement (stopPropagation : pas d'action tap_action de l'image)
-      root.querySelectorAll('.zb').forEach((b) => b.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const k = b.dataset.b;
-        if (k === 'stop') { this._zones.forEach((z) => this._on(z.id) && this._set(z.id, false)); return; }
-        if (k === 'master') { this._set(this._c.entity_master, !this._on(this._c.entity_master)); return; }
-        const z = this._zones[Number(k.slice(1))]; if (z) this._set(z.id, !this._on(z.id));
-      }));
-      root.querySelectorAll('.zb.mk').forEach((b) => b.addEventListener('pointerdown', (ev) => ev.stopPropagation()));
-      this._root = root; this._card = root.querySelector('ha-card'); this._built = true;
-    }
-
-    _compute() {
-      const c = this._c, zs = this._zones;
-      const rainSt = this._st(c.entity_rain), rainRaw = rainSt ? String(rainSt.state) : '';
-      const rain = !!rainSt && (RAIN_RE.test(rainRaw) || (isFinite(parseFloat(rainRaw)) && parseFloat(rainRaw) > 0 && /^sensor\./.test(c.entity_rain) && !/%|lx|°|°c/i.test(this._unit(c.entity_rain, ''))));
-      const known = [...zs.map((z) => z.id), c.entity_pump, c.entity_flow, c.entity_soil, c.entity_rain].some((i) => { const s = this._st(i); return s && !/^(unavailable|unknown)$/i.test(String(s.state)); });
-      const active = zs.filter((z) => this._on(z.id));
-      const flow = this._num(c.entity_flow);
-      const pump = this._on(c.entity_pump);
-      const watering = active.length > 0 || (!zs.length && (pump || (!isNaN(flow) && flow > 0.05)));
-      const phase = !known ? 'unavailable' : watering ? 'watering' : rain ? 'rain' : 'idle';
-      return { phase, active, rain, pump, flow };
-    }
-
-    _render() {
-      if (!this._built) this._build();
-      const c = this._c, r = this._root, card = this._card;
-      const { phase, active, rain, pump, flow } = this._compute();
-      card.className = `${phase}${rain ? ' rain' : ''}${pump ? ' pump-on' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
-      r.getElementById('irtitle').textContent = c.name || this._t('name');
-      r.getElementById('irbadge').textContent = phase === 'watering'
-        ? (active.length === 1 ? this._name(active[0]) : active.length > 1 ? `${active.length} ${this._t('zones')}` : this._t('watering'))
-        : this._t(rain && phase !== 'unavailable' ? 'rain' : phase);
-      // têtes d'arrosage : celles des zones ouvertes projettent l'eau
-      r.querySelectorAll('.spr').forEach((el) => el.classList.toggle('on', this._zones[Number(el.dataset.z)] ? this._on(this._zones[Number(el.dataset.z)].id) : false));
-      const lawn = r.querySelector('.lawn'); if (lawn) lawn.classList.toggle('wet', phase === 'watering');
-      // boutons
-      const blocked = c.block_on_rain === true && rain;
-      r.querySelectorAll('.zb').forEach((b) => {
-        const k = b.dataset.b, span = b.querySelector('span'), st = this._st(b.dataset.id);
-        if (k === 'stop') { span.textContent = this._t('stop'); b.classList.toggle('on', active.length > 0); b.disabled = !active.length; return; }
-        if (k === 'master') { const on = this._on(c.entity_master); span.textContent = this._t('auto'); b.classList.toggle('on', on); b.disabled = !st || st.state === 'unavailable'; return; }
-        const z = this._zones[Number(k.slice(1))], on = this._on(z.id);
-        span.textContent = this._name(z); b.title = this._name(z); b.classList.toggle('on', on);
-        b.disabled = !st || st.state === 'unavailable' || (blocked && !on);
-        if (blocked && !on) b.title = this._t('blocked');
-      });
-      // tuiles
-      const fu = this._unit(c.entity_flow, 'L/min'), tu = this._unit(c.entity_today, 'L');
-      let next = null;
-      const ns = this._st(c.entity_next);
-      if (ns && !/^(unavailable|unknown|none)$/i.test(ns.state)) {
-        const d = new Date(ns.state);
-        next = ns.attributes && ns.attributes.device_class === 'timestamp' || (!isNaN(d) && /\d{4}-\d{2}-\d{2}|T\d/.test(ns.state))
-          ? d.toLocaleString(window.applianceLocale(c, this._hass, true), { weekday: 'short', hour: '2-digit', minute: '2-digit' }) : String(ns.state);
-      }
-      const ps = this._st(c.entity_pump);
-      const V = {
-        flow: [c.entity_flow, this._fmt(flow, 1), fu],
-        soil: [c.entity_soil, this._fmt(this._num(c.entity_soil), 0), this._unit(c.entity_soil, '%')],
-        today: [c.entity_today, this._fmt(this._num(c.entity_today), 0), tu],
-        next: [next != null && c.entity_next, next, ''],
-        pressure: [c.entity_pressure, this._fmt(this._num(c.entity_pressure), 1), this._unit(c.entity_pressure, 'bar')],
-        pump: [ps && c.entity_pump, this._t(pump ? 'on' : 'off'), ''],
-        power: [c.entity_power, this._fmt(this._num(c.entity_power), 0), this._unit(c.entity_power, 'W')],
-        rain: [c.entity_rain, this._t(rain ? 'rain' : 'dry'), ''],
-      };
-      TILES.forEach(([k, , opt]) => {
-        const el = r.querySelector(`.tile[data-k="${k}"]`); const [show, val, unit] = V[k];
-        el.classList.toggle('hide', !show || c[opt] === false);
-        el.classList.toggle('bad', k === 'rain' && rain);
-        el.querySelector('.lbl').textContent = this._l(k);
-        const small = document.createElement('small'); small.textContent = unit ?? '';
-        el.querySelector('.v').replaceChildren(String(val ?? ''), small);
-      });
-    }
-  }
-  customElements.define(TAG, ApplianceIrrigationCard);
-
-  /* ---- éditeur visuel ---- */
-  class ApplianceIrrigationCardEditor extends HTMLElement {
-    setConfig(c) { this._c = c; this._draw(); }
-    set hass(h) { this._hass = h; if (this._form) this._form.hass = h; }
-    _draw() {
-      if (!this._form) {
-        this._form = document.createElement('ha-form');
-        this._form.addEventListener('value-changed', (e) => {
-          this._c = e.detail.value;
-          this.dispatchEvent(new CustomEvent('config-changed', { detail: { config: this._c }, bubbles: true, composed: true }));
-        });
-        this.appendChild(this._form);
-      }
-      const ent = (name, domain) => ({ name, selector: { entity: domain ? { domain } : {} } });
-      const bool = (name, def = true) => ({ name, selector: { boolean: {} }, default: def });
-      this._form.hass = this._hass; this._form.data = { ...this._c };
-      this._form.schema = [
-        { name: 'name', selector: { text: {} } },
-        { name: 'labels', selector: { object: {} } },
-        { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
-        { name: 'transparent', selector: { boolean: {} } },
-        ...window.applianceTileFields(this._hass),
-        // zones : liste d'objets {entity, name, icon, x, y} (HA ≥ 2024.12) ; une ancienne version de HA affiche le YAML. x / y : position sur l'image perso, en %
-        { name: 'zones', selector: { object: { multiple: true, label_field: 'entity', fields: {
-          entity: { label: window.applianceEditorLabel('zone_entity', this._hass), required: true, selector: { entity: { domain: ['valve', 'switch', 'input_boolean'] } } },
-          name: { label: window.applianceEditorLabel('zone_name', this._hass), selector: { text: {} } },
-          icon: { label: window.applianceEditorLabel('zone_icon', this._hass), selector: { icon: {} } },
-          x: { label: window.applianceEditorLabel('zone_x', this._hass), selector: { number: { min: 0, max: 100, step: 1, mode: 'box', unit_of_measurement: '%' } } },
-          y: { label: window.applianceEditorLabel('zone_y', this._hass), selector: { number: { min: 0, max: 100, step: 1, mode: 'box', unit_of_measurement: '%' } } },
-        } } } },
-        { name: 'image', selector: { text: {} } }, bool('marker_names', false),
-        ent('entity_pump', ['switch', 'input_boolean', 'binary_sensor']), ent('entity_master', ['switch', 'input_boolean']),
-        ent('entity_rain', ['binary_sensor', 'sensor', 'input_boolean']), bool('block_on_rain', false),
-        ent('entity_flow', 'sensor'), ent('entity_soil', 'sensor'), ent('entity_today', 'sensor'), ent('entity_next', ['sensor', 'input_datetime']),
-        ent('entity_pressure', 'sensor'), ent('entity_power', 'sensor'),
-        ...window.applianceActionFields,
-        { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
-        { type: 'grid', name: '', schema: [bool('compact', false), bool('show_buttons'), ...TILES.map(([, , o]) => bool(o)), bool('animations')] },
-      ];
-      this._form.computeLabel = (s) => window.applianceEditorLabel(s.name, this._hass);
-    }
-  }
-  customElements.define(TAG + '-editor', ApplianceIrrigationCardEditor);
-
-  window.customCards = window.customCards || [];
-  window.customCards.push({
-    type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
-    description: "Arrosage du jardin : zones (électrovannes), pompe de puits, pluie, humidité du sol, arrêt général.", preview: true,
-    documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/irrigation.md',
-  });
-})();
-
-/* Carte « Ruban LED » — custom:appliance-led-strip-card
- * Ruban LED piloté par une entité `light` (couleur, luminosité, effet) ou un simple `switch` / `input_boolean` (module on / off).
- * `shape: bars` : deux barres verticales (type Govee DreamView) de part et d'autre d'un téléviseur, même entité.
- * Dessin : le ruban seul (pastilles LED sur une bande souple) avec sa lueur, sans décor.
- * La lueur prend la couleur réelle de l'ampoule (rgb_color, hs_color, color_temp_kelvin), à défaut un blanc chaud, et suit la luminosité.
- * Commandes : marche / arrêt, curseur de luminosité (si l'entité sait varier), effet suivant (si l'entité a des effets).
- */
-(() => {
-  const TAG = 'appliance-led-strip-card';
-  if (customElements.get(TAG)) return;
-
-  const T = {
-    "en": {
-      "name": "LED strip",
-      "on": "On",
-      "off": "Off",
-      "unavailable": "Unavailable",
-      "turn_on": "Turn on",
-      "turn_off": "Turn off",
-      "brightness": "Brightness",
-      "effect": "Effect",
-      "none": "None",
-      "next_effect": "Next effect",
-      "power": "Power",
-      "energy": "Energy"
-    },
-    "fr": {
-      "name": "Ruban LED",
-      "on": "Allumé",
-      "off": "Éteint",
-      "unavailable": "Indisponible",
-      "turn_on": "Allumer",
-      "turn_off": "Éteindre",
-      "brightness": "Luminosité",
-      "effect": "Effet",
-      "none": "Aucun",
-      "next_effect": "Effet suivant",
-      "power": "Puissance",
-      "energy": "Énergie"
-    }
-  };
-  const ON_RE = /^(on|true|1)$/i;
-  const BAD_RE = /^(unavailable|unknown)$/i;
-
-  const CSS = `
-:host{display:block;height:100%} ha-card{display:block;height:100%;box-sizing:border-box;padding:10px 12px 12px;overflow:hidden;--ls-c:255,214,153;--ls-c2:255,214,153;--ls-b:.8;--ls-ok:var(--appliance-ok-color,#43a047)}
-.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.title{font-size:14px;font-weight:500;color:var(--primary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--secondary-background-color);color:var(--secondary-text-color);white-space:nowrap}
-.on .badge{background:rgba(var(--ls-c),.28);color:var(--primary-text-color)}
-svg{display:block;width:100%;max-width:calc(270px * var(--illus-scale,1));height:var(--appliance-illustration-height,auto);margin:2px auto 0;overflow:visible;cursor:pointer}
-.ctl{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
-.ctl.hide{display:none}
-.ctl button{display:flex;align-items:center;justify-content:center;gap:4px;border:0;border-radius:18px;height:34px;min-width:34px;padding:0 10px;cursor:pointer;background:var(--secondary-background-color,rgba(127,127,127,.18));color:var(--primary-text-color);font:600 12px var(--paper-font-body1_-_font-family,Roboto,sans-serif);--mdc-icon-size:18px}
-.ctl button.on{background:rgb(var(--ls-c));color:#1b1b1b;box-shadow:0 0 12px rgba(var(--ls-c),.55)}
-.ctl button.hide{display:none}.ctl button:disabled{opacity:.4;cursor:default}
-.ctl input[type=range]{flex:1 1 auto;min-width:60px;max-width:160px;accent-color:rgb(var(--ls-c));cursor:pointer}
-.ctl input.hide{display:none}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:6px;margin-top:6px}
-.tile{box-sizing:border-box;display:flex;flex-direction:column;background:var(--ac-tile-bg,rgba(127,127,127,.09));border-radius:10px;padding:5px 7px;min-width:0;overflow:hidden;text-align:center;cursor:pointer}
-:host([tile-order="value"]) .tile{flex-direction:column-reverse}:host([tile-order="value"]) .tile .v{margin:0 0 2px}
-.tile .l{display:flex;align-items:center;justify-content:center;gap:3px;font-size:10px;line-height:14px;color:var(--secondary-text-color);min-width:0}
-.tile .l span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tile .l ha-icon{--mdc-icon-size:13px;flex:none}
-.tile .v{font-size:14px;line-height:18px;font-weight:600;color:var(--primary-text-color);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tile .v small{font-size:10px;font-weight:400;color:var(--secondary-text-color);margin-left:2px}
-.tile.hide{display:none}
-/* ---- illustration : la lueur suit la couleur (--ls-c) et la luminosité (--ls-b) ---- */
-.sbase{fill:none;stroke:#d9dee3;stroke-width:12;stroke-linecap:round}
-.sglow{fill:none;stroke:rgb(var(--ls-c));stroke-width:34;stroke-linecap:round;filter:blur(9px);opacity:0;transition:opacity .6s}
-.on .sglow{opacity:calc(.25 + var(--ls-b) * .65)}
-.sled{fill:none;stroke:#aab2ba;stroke-width:6;stroke-dasharray:2.4 8.6;transition:stroke .5s}
-.on .sled{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c)))}
-.on .sbase{stroke:rgb(var(--ls-c));stroke-opacity:.55}
-.on.fx .sled{animation:lsmove 1s linear infinite}
-@keyframes lsmove{to{stroke-dashoffset:-22}}
-.wall{fill:#171a22}.on .wall{fill:#10121a}
-.wl,.wr{filter:blur(16px);opacity:0;transition:opacity .6s}.wl{fill:rgb(var(--ls-c))}.wr{fill:rgb(var(--ls-c2))}
-.on .wl,.on .wr{opacity:calc(.2 + var(--ls-b) * .6)}
-.tvscr{fill:#242831;stroke:#07080b;stroke-width:1.5}
-.tvpic{opacity:0;transition:opacity .6s}.on .tvpic{opacity:calc(.35 + var(--ls-b) * .6)}
-.cam{fill:#1b1d22}
-.board{fill:#2c303a}.boardl{stroke:#171a22;stroke-width:1}
-.table{fill:#3a3f4b}.tleg{fill:#1b1d22}.spk{fill:#8b93a1}
-.bbase{fill:none;stroke:#3b414d;stroke-width:5;stroke-linecap:round}
-.bfoot{fill:#3b414d}
-.bglow{fill:none;stroke-width:26;stroke-linecap:round;filter:blur(8px);opacity:0;transition:opacity .6s}
-.bgl{stroke:rgb(var(--ls-c))}.bgr{stroke:rgb(var(--ls-c2))}
-.on .bglow{opacity:calc(.25 + var(--ls-b) * .65)}
-.bled{fill:none;stroke:#59606d;stroke-width:3;stroke-dasharray:2 4;stroke-linecap:round;transition:stroke .5s}
-.on .bledl{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c)))}.on .bledr{stroke:#fff;filter:drop-shadow(0 0 2px rgb(var(--ls-c2)))}
-.on.fx .bled{animation:lsmove 1s linear infinite}
-.unavailable svg{filter:grayscale(.85) opacity(.65)}
-.noanim *{animation:none!important}
-ha-card.compact{display:flex;flex-direction:column;padding:6px}
-.compact .head{flex:none}.compact .title{font-size:12px;line-height:16px}.compact .badge{font-size:10px;padding:0 6px}
-.compact svg{flex:1 1 0;min-height:40px;width:calc(100% * min(1,var(--illus-scale,1)));max-width:none;height:auto;margin-top:3px}
-.compact .ctl{margin-top:4px}.compact .ctl button{height:24px;font-size:10px;--mdc-icon-size:14px}
-.compact .tiles{margin-top:4px;gap:4px}.compact .tile{padding:2px 5px;border-radius:8px}.compact .tile .v{font-size:12px;line-height:15px}
-`;
-
-  // Dessin : repères 270 × 100, bande souple ondulée ; la lueur est le même tracé flouté, teinté de la couleur de l'ampoule.
-  const STRIP = 'M16 62 C58 22 100 22 135 50 S212 78 254 38';
-  const SVG_STRIP = (label) => `<svg viewBox="0 0 270 100" role="img" aria-label="${label}"><path class="sglow" d="${STRIP}"/><path class="sbase" d="${STRIP}"/><path class="sled" d="${STRIP}"/></svg>`;
-  // Barres TV (d'après la photo des Govee DreamView) : salon de nuit, mur éclairé de deux couleurs (gauche / droite), téléviseur
-  // avec caméra, meuble bas, deux barres posées de chaque côté, table basse. Barre gauche = couleur de l'ampoule, droite = couleur 2.
-  const BARL = 'M32 112 L32 150', BARR = 'M238 112 L238 150';
-  const SVG_BARS = (label) => `<svg viewBox="0 0 270 200" role="img" aria-label="${label}"><defs><linearGradient id="lspic" x1="0" x2="1" y1="0.2" y2="0.8"><stop offset="0" style="stop-color:rgb(var(--ls-c))"/><stop offset="1" style="stop-color:rgb(var(--ls-c2))"/></linearGradient></defs><rect class="wall" width="270" height="168" rx="8"/><rect class="wl" x="6" y="14" width="140" height="140"/><rect class="wr" x="124" y="14" width="140" height="140"/><path class="bglow bgl" d="${BARL}"/><path class="bglow bgr" d="${BARR}"/><rect class="tvscr" x="58" y="30" width="154" height="90" rx="2"/><rect class="tvpic" x="60" y="32" width="150" height="86" fill="url(#lspic)"/><rect class="cam" x="130" y="24" width="10" height="6" rx="3"/><rect class="board" x="10" y="150" width="250" height="20" rx="2"/><path class="boardl" d="M95 150V170M175 150V170"/><path class="bbase" d="${BARL}"/><path class="bled bledl" d="${BARL}"/><path class="bbase" d="${BARR}"/><path class="bled bledr" d="${BARR}"/><rect class="bfoot" x="26" y="148" width="12" height="3" rx="1.5"/><rect class="bfoot" x="232" y="148" width="12" height="3" rx="1.5"/><ellipse class="table" cx="135" cy="182" rx="56" ry="7"/><rect class="tleg" x="125" y="184" width="20" height="14" rx="2"/><ellipse class="spk" cx="118" cy="180" rx="6" ry="2.5"/></svg>`;
-  const SVG = (label, shape) => (shape === 'bars' ? SVG_BARS : SVG_STRIP)(label);
-
-  const TILES = [['brightness', 'mdi:brightness-6', 'show_brightness'], ['effect', 'mdi:palette-swatch-variant', 'show_effect'],
-    ['power', 'mdi:flash', 'show_power'], ['energy', 'mdi:lightning-bolt-circle', 'show_energy']];
-
-  // température de couleur (kelvins) → RGB approximatif (formule de Tanner Helland)
-  const kelvinRgb = (k) => {
-    const t = Math.max(1000, Math.min(40000, k)) / 100, cl = (v) => Math.max(0, Math.min(255, Math.round(v)));
-    const r = t <= 66 ? 255 : 329.698727446 * Math.pow(t - 60, -0.1332047592);
-    const g = t <= 66 ? 99.4708025861 * Math.log(t) - 161.1195681661 : 288.1221695283 * Math.pow(t - 60, -0.0755148492);
-    const b = t >= 66 ? 255 : t <= 19 ? 0 : 138.5177312231 * Math.log(t - 10) - 305.0447927307;
-    return [cl(r), cl(g), cl(b)];
-  };
-  const hsRgb = (h, s) => { // teinte 0-360, saturation 0-100 → RGB (luminosité maximale)
-    s /= 100; const f = (n) => { const k = (n + h / 60) % 6; return Math.round(255 * (1 - s * Math.max(0, Math.min(k, 4 - k, 1)))); };
-    return [f(5), f(3), f(1)];
-  };
-
-  // teinte décalée : RGB → HSL, +deg, retour RGB (pour la 2e couleur du mur par défaut)
-  const shiftHue = ([r, g, b], deg) => {
-    r /= 255; g /= 255; b /= 255;
-    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
-    let h = 0, sa = 0;
-    if (d) { sa = d / (1 - Math.abs(2 * l - 1)); h = mx === r ? ((g - b) / d + 6) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h *= 60; }
-    const k = (n) => { const q = (n + (h + deg) / 30) % 12; return Math.round(255 * (l - sa * Math.min(l, 1 - l) * Math.max(-1, Math.min(q - 3, 9 - q, 1)))); };
-    return [k(0), k(8), k(4)];
-  };
-
-  class ApplianceLedStripCard extends HTMLElement {
-    static getConfigElement() { return document.createElement(TAG + '-editor'); }
-    static getStubConfig(hass) {
-      const ids = Object.keys((hass && hass.states) || {});
-      return { entity: ids.find((i) => /^light\./.test(i) && /(ruban|strip|led)/i.test(i)) || ids.find((i) => /^light\./.test(i)) || '' };
-    }
-    setConfig(c) {
-      if (window.applianceSize) window.applianceSize(this, c);
-      if (!c || typeof c !== 'object') throw new Error('Invalid configuration');
-      this._c = { show_status: true, show_controls: true, show_brightness: true, show_effect: true, show_power: true, show_energy: true, ...c };
-      this._built = false; // reconstruit aussi le dessin quand `shape` change
-      if (this._hass) this._render();
-    }
-    set hass(h) { const ch = this._c && window.applianceChanged(this, h, this._c); this._hass = h; if (ch && !this._dragging) this._render(); }
-    getCardSize() { return 4; }
-    getGridOptions() { return { columns: 6, min_columns: 3, rows: 'auto', min_rows: 1 }; }
-
-    _lang() { return window.applianceLang(T, this._c, this._hass); }
-    _t(k) { return T[this._lang()][k] ?? T.en[k] ?? k; }
-    _l(k) { const L = this._c && this._c.labels; return L && L[k] != null && L[k] !== '' ? String(L[k]) : this._t(k); }
-    _st(id) { return id && this._hass.states[id]; }
-    _num(id) { const s = this._st(id); if (!s) return NaN; const v = parseFloat(String(s.state).replace(',', '.')); return isFinite(v) ? v : NaN; }
-    _unit(id, d) { const s = this._st(id); return (s && s.attributes && s.attributes.unit_of_measurement) || d; }
-    _fmt(v, d = 0) { return isNaN(v) ? '--' : v.toLocaleString(window.applianceLocale(this._c, this._hass), { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
-    _more(id) { if (id) this.dispatchEvent(new CustomEvent('hass-more-info', { detail: { entityId: id }, bubbles: true, composed: true })); }
-    _dom() { return String(this._c.entity || '').split('.')[0]; }
-
-    _build() {
-      const root = this.shadowRoot || this.attachShadow({ mode: 'open' }), c = this._c;
-      root.innerHTML = `<style>${CSS}</style><ha-card>
-        <div class="head"><div class="title" id="lstitle"></div><div class="badge" id="lsbadge"></div></div>
-        ${SVG((c.name || this._t('name')).replace(/"/g, ''), c.shape)}
-        <div class="ctl" id="lsctl"><button id="lspw" aria-pressed="false"><ha-icon icon="mdi:power"></ha-icon></button><input id="lsbr" class="hide" type="range" min="1" max="100" step="1" aria-label="${this._t('brightness')}"><button id="lsfx" class="hide"><ha-icon icon="mdi:palette-swatch-variant"></ha-icon></button></div>
-        <div class="tiles">${TILES.map(([k, ic]) => `<div class="tile hide" data-k="${k}"><div class="l"><ha-icon icon="${ic}"></ha-icon><span class="lbl"></span></div><div class="v"></div></div>`).join('')}</div>
-      </ha-card>`;
-      window.applianceBindIllus(this, root.querySelector('svg'), () => this._more(c.entity));
-      root.getElementById('lspw').addEventListener('click', () => {
-        const d = this._dom(); this._hass.callService(['light', 'switch', 'input_boolean'].includes(d) ? d : 'homeassistant', 'toggle', { entity_id: c.entity });
-      });
-      const br = root.getElementById('lsbr');
-      br.addEventListener('input', () => { this._dragging = true; });
-      br.addEventListener('change', () => { this._dragging = false; this._hass.callService('light', 'turn_on', { entity_id: c.entity, brightness_pct: Number(br.value) }); });
-      root.getElementById('lsfx').addEventListener('click', () => {
-        const s = this._st(c.entity), list = (s && s.attributes && s.attributes.effect_list) || [];
-        if (list.length) this._hass.callService('light', 'turn_on', { entity_id: c.entity, effect: list[(list.indexOf(s.attributes.effect) + 1) % list.length] });
-      });
-      const tgt = { brightness: c.entity, effect: c.entity, power: c.entity_power, energy: c.entity_energy };
-      root.querySelectorAll('.tile').forEach((el) => el.addEventListener('click', () => this._more(tgt[el.dataset.k])));
-      this._root = root; this._card = root.querySelector('ha-card'); this._built = true;
-    }
-
-    // couleur imposée : #rrggbb, rgb(…) ou nom CSS, résolue par le navigateur (null si absente ou invalide)
-    _css(v) {
-      if (!v) return null;
-      const el = document.createElement('canvas').getContext('2d'); el.fillStyle = '#ffd699'; el.fillStyle = String(v);
-      const m = /^#([0-9a-f]{6})$/i.exec(el.fillStyle); return m ? [0, 2, 4].map((i) => parseInt(m[1].substr(i, 2), 16)) : null;
-    }
-    _color(a) {
-      const c = this._c, forced = this._css(c.color);
-      if (forced) return forced;
-      if (Array.isArray(a.rgb_color) && a.rgb_color.length >= 3) return a.rgb_color.slice(0, 3);
-      if (Array.isArray(a.hs_color) && a.hs_color.length >= 2 && Number(a.hs_color[1]) > 4) return hsRgb(Number(a.hs_color[0]), Number(a.hs_color[1]));
-      const k = Number(a.color_temp_kelvin) || (Number(a.color_temp) > 0 ? 1e6 / Number(a.color_temp) : NaN);
-      return isNaN(k) ? [255, 214, 153] : kelvinRgb(k);
-    }
-
-    _render() {
-      if (!this._built) this._build();
-      const c = this._c, r = this._root, card = this._card, s = this._st(c.entity);
-      const raw = s ? String(s.state) : '', a = (s && s.attributes) || {};
-      const st = !s || BAD_RE.test(raw) ? 'unavailable' : ON_RE.test(raw) ? 'on' : 'off';
-      const dimmable = this._dom() === 'light' && Array.isArray(a.supported_color_modes) ? a.supported_color_modes.some((m) => m !== 'onoff') : this._dom() === 'light' && a.brightness != null;
-      const bri = a.brightness != null ? Math.max(0, Math.min(1, Number(a.brightness) / 255)) : 1;
-      const fx = st === 'on' && !!a.effect && !/^(none|off)$/i.test(String(a.effect));
-      card.className = `${st}${fx ? ' fx' : ''}${c.animations === false ? ' noanim' : ''}${c.compact === true ? ' compact' : ''}`;
-      const col = this._color(a);
-      card.style.setProperty('--ls-c', col.join(','));
-      card.style.setProperty('--ls-c2', (this._css(c.color2) || shiftHue(col, 150)).join(',')); // barres TV : 2e couleur du mur
-      card.style.setProperty('--ls-b', (st === 'on' ? Math.max(0.15, bri) : 0).toFixed(2));
-      r.getElementById('lstitle').textContent = c.name || (s && s.attributes && s.attributes.friendly_name) || this._t('name');
-      const badge = r.getElementById('lsbadge'); badge.textContent = this._t(st); badge.style.display = c.show_status === false ? 'none' : '';
-
-      // commandes
-      const ctl = r.getElementById('lsctl'), pw = r.getElementById('lspw'), br = r.getElementById('lsbr'), fxb = r.getElementById('lsfx');
-      ctl.classList.toggle('hide', c.show_controls === false || !s);
-      pw.classList.toggle('on', st === 'on'); pw.setAttribute('aria-pressed', String(st === 'on')); pw.disabled = st === 'unavailable'; pw.title = this._t(st === 'on' ? 'turn_off' : 'turn_on');
-      br.classList.toggle('hide', !dimmable || st === 'unavailable'); br.disabled = st !== 'on';
-      if (!this._dragging) br.value = String(Math.round(bri * 100));
-      const hasFx = Array.isArray(a.effect_list) && a.effect_list.length > 1;
-      fxb.classList.toggle('hide', !hasFx || st === 'unavailable'); fxb.title = this._t('next_effect');
-
-      // tuiles
-      const V = {
-        brightness: [dimmable && st === 'on', this._fmt(bri * 100, 0), '%'],
-        effect: [hasFx || fx, a.effect ? String(a.effect) : this._t('none'), ''],
-        power: [c.entity_power, this._fmt(this._num(c.entity_power), 0), this._unit(c.entity_power, 'W')],
-        energy: [c.entity_energy, this._fmt(this._num(c.entity_energy), 2), this._unit(c.entity_energy, 'kWh')],
-      };
-      TILES.forEach(([k, , opt]) => {
-        const el = r.querySelector(`.tile[data-k="${k}"]`), [show, val, unit] = V[k];
-        el.classList.toggle('hide', !show || c[opt] === false);
-        el.querySelector('.lbl').textContent = this._l(k);
-        const small = document.createElement('small'); small.textContent = unit ?? '';
-        el.querySelector('.v').replaceChildren(String(val ?? ''), small);
-      });
-    }
-  }
-  customElements.define(TAG, ApplianceLedStripCard);
-
-  /* ---- éditeur visuel ---- */
-  class ApplianceLedStripCardEditor extends HTMLElement {
-    setConfig(c) { this._c = c; this._draw(); }
-    set hass(h) { this._hass = h; if (this._form) this._form.hass = h; }
-    _draw() {
-      if (!this._form) {
-        this._form = document.createElement('ha-form');
-        this._form.addEventListener('value-changed', (e) => {
-          this._c = e.detail.value;
-          this.dispatchEvent(new CustomEvent('config-changed', { detail: { config: this._c }, bubbles: true, composed: true }));
-        });
-        this.appendChild(this._form);
-      }
-      const ent = (name, domain) => ({ name, selector: { entity: domain ? { domain } : {} } });
-      const bool = (name, def = true) => ({ name, selector: { boolean: {} }, default: def });
-      this._form.hass = this._hass; this._form.data = { ...this._c };
-      this._form.schema = [
-        { name: 'name', selector: { text: {} } },
-        { name: 'labels', selector: { object: {} } },
-        { name: 'illustration_size', selector: { number: { min: 30, max: 300, step: 5, mode: 'slider', unit_of_measurement: '%' } } },
-        { name: 'transparent', selector: { boolean: {} } },
-        ...window.applianceTileFields(this._hass),
-        { name: 'shape', selector: { select: { mode: 'dropdown', options: [{ value: 'strip', label: window.applianceEditorLabel('shape_strip', this._hass) }, { value: 'bars', label: window.applianceEditorLabel('shape_bars', this._hass) }] } } },
-        ent('entity', ['light', 'switch', 'input_boolean']), { name: 'color', selector: { text: {} } }, { name: 'color2', selector: { text: {} } },
-        ent('entity_power', 'sensor'), ent('entity_energy', 'sensor'),
-        ...window.applianceActionFields,
-        { name: 'language', selector: { select: { options: Object.keys(T).map((value) => ({ value, label: { fr: 'Français', en: 'English', de: 'Deutsch', it: 'Italiano', es: 'Español', nb: 'Norsk bokmål', ro: 'Română', nl: 'Nederlands', pl: 'Polski', ru: 'Русский', sr: 'Српски', 'sr-Latn': 'Srpski (latinica)' }[value] || value })) } } },
-        { type: 'grid', name: '', schema: [bool('compact', false), bool('show_status'), bool('show_controls'), ...TILES.map(([, , o]) => bool(o)), bool('animations')] },
-      ];
-      this._form.computeLabel = (s) => window.applianceEditorLabel(s.name, this._hass);
-    }
-  }
-  customElements.define(TAG + '-editor', ApplianceLedStripCardEditor);
-
-  window.customCards = window.customCards || [];
-  window.customCards.push({
-    type: TAG, name: `Appliance – ${T.en.name} / ${T.fr.name}`, names: Object.fromEntries(Object.keys(T).map((l) => [l, T[l].name])),
-    description: 'Ruban LED animé ou barres lumineuses TV : plafond, toiture ou terrasse, couleur et luminosité réelles, marche / arrêt, effet.', preview: true,
-    documentationURL: 'https://github.com/skyrotter/ha-appliance-electromenager-cards/blob/main/docs/cards/led-strip.md',
   });
 })();
 
@@ -51563,44 +49610,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "last": "Laatste regen",
       "battery": "Batterij",
       "signal": "Signaal"
-    },
-    "sr": {
-      "name": "Кишомер",
-      "dry": "Суво",
-      "light": "Слаба киша",
-      "moderate": "Киша",
-      "heavy": "Јака киша",
-      "violent": "Пљусак",
-      "unavailable": "Недоступно",
-      "low_battery": "Слаба батерија",
-      "rate": "Интензитет",
-      "hour": "Последњи сат",
-      "day": "Данас",
-      "week": "Ове недеље",
-      "month": "Овог месеца",
-      "year": "Ове године",
-      "last": "Последња киша",
-      "battery": "Батерија",
-      "signal": "Сигнал"
-    },
-    "sr-Latn": {
-      "name": "Kišomer",
-      "dry": "Suvo",
-      "light": "Slaba kiša",
-      "moderate": "Kiša",
-      "heavy": "Jaka kiša",
-      "violent": "Pljusak",
-      "unavailable": "Nedostupno",
-      "low_battery": "Slaba baterija",
-      "rate": "Intenzitet",
-      "hour": "Poslednji sat",
-      "day": "Danas",
-      "week": "Ove nedelje",
-      "month": "Ovog meseca",
-      "year": "Ove godine",
-      "last": "Poslednja kiša",
-      "battery": "Baterija",
-      "signal": "Signal"
     }
   };
 
@@ -52031,46 +50040,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_sensor": "Sensor (SVG)",
       "style_plant_photo": "Plant (foto)",
       "style_sensor_photo": "Sensor (foto)"
-    },
-    "sr": {
-      "name": "Монитор за биљке",
-      "ok": "Здрава",
-      "dry": "Потребна вода",
-      "cold": "Прехладно",
-      "dark": "Недовољно светла",
-      "hungry": "Потребно ђубриво",
-      "low_battery": "Слаба батерија",
-      "unavailable": "Недоступно",
-      "moisture": "Влажност земљишта",
-      "temperature": "Температура",
-      "conductivity": "Плодност",
-      "brightness": "Светлост",
-      "battery": "Батерија",
-      "rssi": "Сигнал",
-      "style_plant": "Биљка (SVG)",
-      "style_sensor": "Сензор (SVG)",
-      "style_plant_photo": "Биљка (фотографија)",
-      "style_sensor_photo": "Сензор (фотографија)"
-    },
-    "sr-Latn": {
-      "name": "Monitor za biljke",
-      "ok": "Zdrava",
-      "dry": "Potrebna voda",
-      "cold": "Prehladno",
-      "dark": "Nedovoljno svetla",
-      "hungry": "Potrebno đubrivo",
-      "low_battery": "Slaba baterija",
-      "unavailable": "Nedostupno",
-      "moisture": "Vlažnost zemljišta",
-      "temperature": "Temperatura",
-      "conductivity": "Plodnost",
-      "brightness": "Svetlost",
-      "battery": "Baterija",
-      "rssi": "Signal",
-      "style_plant": "Biljka (SVG)",
-      "style_sensor": "Senzor (SVG)",
-      "style_plant_photo": "Biljka (fotografija)",
-      "style_sensor_photo": "Senzor (fotografija)"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -52493,52 +50462,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "style_svg": "Tekening (SVG)",
       "style_smartmi": "Smartmi Evaporative Humidifier 2 (foto)",
       "target_tile": "Doel"
-    },
-    "sr": {
-      "name": "Овлаживач ваздуха",
-      "off": "Искључено",
-      "humidifying": "Овлаживање",
-      "target": "Циљ достигнут",
-      "dry": "Режим сушења",
-      "clean": "Чишћење",
-      "unavailable": "Недоступно",
-      "low_water": "Мало воде",
-      "low_water_alert": "Резервоар за воду је скоро празан",
-      "turn_on": "Укључи",
-      "turn_off": "Искључи",
-      "humidity": "Влажност",
-      "temperature": "Температура",
-      "tank": "Резервоар за воду",
-      "fan": "Вентилатор",
-      "mode": "Режим",
-      "low": "Ниско",
-      "ok": "У реду",
-      "style_svg": "Цртеж (SVG)",
-      "style_smartmi": "Smartmi Evaporative Humidifier 2 (фотографија)",
-      "target_tile": "Циљна"
-    },
-    "sr-Latn": {
-      "name": "Ovlaživač vazduha",
-      "off": "Isključeno",
-      "humidifying": "Ovlaživanje",
-      "target": "Cilj dostignut",
-      "dry": "Režim sušenja",
-      "clean": "Čišćenje",
-      "unavailable": "Nedostupno",
-      "low_water": "Malo vode",
-      "low_water_alert": "Rezervoar za vodu je skoro prazan",
-      "turn_on": "Uključi",
-      "turn_off": "Isključi",
-      "humidity": "Vlažnost",
-      "temperature": "Temperatura",
-      "tank": "Rezervoar za vodu",
-      "fan": "Ventilator",
-      "mode": "Režim",
-      "low": "Nisko",
-      "ok": "U redu",
-      "style_svg": "Crtež (SVG)",
-      "style_smartmi": "Smartmi Evaporative Humidifier 2 (fotografija)",
-      "target_tile": "Ciljna"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -53065,52 +50988,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "mode_low": "Laag",
       "mode_high": "Hoog",
       "alarm_alert": "Kantel- of oververhittingsbeveiliging geactiveerd"
-    },
-    "sr": {
-      "name": "Калорифер",
-      "off": "Искључено",
-      "standby": "Приправност",
-      "fan": "Само вентилатор",
-      "low": "Грејање · слабо",
-      "high": "Грејање · јако",
-      "alarm": "Квар",
-      "unavailable": "Недоступно",
-      "power": "Снага",
-      "energy": "Ел. енергија",
-      "cost": "Трошак",
-      "temp": "Просторија",
-      "target": "Циљна",
-      "mode": "Подешавање",
-      "timer": "Тајмер",
-      "btn_on": "Укључи",
-      "btn_off": "Искључи",
-      "mode_fan": "Само вентилатор",
-      "mode_low": "Слабо",
-      "mode_high": "Јако",
-      "alarm_alert": "Активирана заштита од превртања или прегревања"
-    },
-    "sr-Latn": {
-      "name": "Kalorifer",
-      "off": "Isključeno",
-      "standby": "Pripravnost",
-      "fan": "Samo ventilator",
-      "low": "Grejanje · slabo",
-      "high": "Grejanje · jako",
-      "alarm": "Kvar",
-      "unavailable": "Nedostupno",
-      "power": "Snaga",
-      "energy": "El. energija",
-      "cost": "Trošak",
-      "temp": "Prostorija",
-      "target": "Ciljna",
-      "mode": "Podešavanje",
-      "timer": "Tajmer",
-      "btn_on": "Uključi",
-      "btn_off": "Isključi",
-      "mode_fan": "Samo ventilator",
-      "mode_low": "Slabo",
-      "mode_high": "Jako",
-      "alarm_alert": "Aktivirana zaštita od prevrtanja ili pregrevanja"
     }
   };
   const ALARM_RE = /(alarm|alarme|error|erreur|fault|d[ée]faut|tip|overheat|surchauffe|renvers|kipp|ribalt)/i;
@@ -53660,70 +51537,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "hot": "Water te heet",
       "alarm_alert": "Storing {e}",
       "alarm_short": "Storing: controleer de spa"
-    },
-    "sr": {
-      "name": "Ђакузи на надувавање",
-      "off": "Искључено",
-      "standby": "Приправност",
-      "filtering": "Филтрирање",
-      "heating": "Грејање",
-      "bubbles": "Мехурићи",
-      "jets": "Млазнице",
-      "alarm": "Квар",
-      "unavailable": "Недоступно",
-      "temp": "Вода",
-      "target": "Циљна",
-      "power": "Снага",
-      "energy": "Ел. енергија",
-      "cost": "Трошак",
-      "ph": "pH",
-      "chlorine": "Хлор",
-      "timer": "Тајмер",
-      "cover": "Покривач",
-      "cover_closed": "Затворен",
-      "cover_open": "Отворен",
-      "btn_heater": "Грејач",
-      "btn_filter": "Филтер",
-      "btn_bubbles": "Мехурићи",
-      "btn_jets": "Млазнице",
-      "btn_light": "Светло",
-      "lowph": "pH је пренизак",
-      "highph": "pH је превисок",
-      "hot": "Вода је преврућа",
-      "alarm_alert": "Квар {e}",
-      "alarm_short": "Квар: проверите ђакузи"
-    },
-    "sr-Latn": {
-      "name": "Đakuzi na naduvavanje",
-      "off": "Isključeno",
-      "standby": "Pripravnost",
-      "filtering": "Filtriranje",
-      "heating": "Grejanje",
-      "bubbles": "Mehurići",
-      "jets": "Mlaznice",
-      "alarm": "Kvar",
-      "unavailable": "Nedostupno",
-      "temp": "Voda",
-      "target": "Ciljna",
-      "power": "Snaga",
-      "energy": "El. energija",
-      "cost": "Trošak",
-      "ph": "pH",
-      "chlorine": "Hlor",
-      "timer": "Tajmer",
-      "cover": "Pokrivač",
-      "cover_closed": "Zatvoren",
-      "cover_open": "Otvoren",
-      "btn_heater": "Grejač",
-      "btn_filter": "Filter",
-      "btn_bubbles": "Mehurići",
-      "btn_jets": "Mlaznice",
-      "btn_light": "Svetlo",
-      "lowph": "pH je prenizak",
-      "highph": "pH je previsok",
-      "hot": "Voda je prevruća",
-      "alarm_alert": "Kvar {e}",
-      "alarm_short": "Kvar: proverite đakuzi"
     }
   };
   const NO_ERR = /^(|0|none|no|ok|off|false|normal|no_error|aucune?|kein|unknown|unavailable)$/i;
@@ -54103,34 +51916,6 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
       "energy": "Énergie",
       "volume": "Volume",
       "room": "Pièce"
-    },
-    "sr": {
-      "name": "Калориметар",
-      "idle": "Нема грејања",
-      "heating": "Грејање",
-      "unavailable": "Недоступно",
-      "supply": "Полазни вод (Tv)",
-      "return": "Повратни вод (Tr)",
-      "delta": "ΔT",
-      "power": "Снага",
-      "flow": "Проток",
-      "energy": "Енергија",
-      "volume": "Запремина",
-      "room": "Просторија"
-    },
-    "sr-Latn": {
-      "name": "Kalorimetar",
-      "idle": "Nema grejanja",
-      "heating": "Grejanje",
-      "unavailable": "Nedostupno",
-      "supply": "Polazni vod (Tv)",
-      "return": "Povratni vod (Tr)",
-      "delta": "ΔT",
-      "power": "Snaga",
-      "flow": "Protok",
-      "energy": "Energija",
-      "volume": "Zapremina",
-      "room": "Prostorija"
     }
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); // texte → HTML sûr

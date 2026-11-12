@@ -45829,7 +45829,7 @@ ha-card.compact{display:flex;flex-direction:column;padding:6px}
         const small = document.createElement('small'); small.textContent = unit ?? '';
         el.querySelector('.v').replaceChildren(String(val ?? ''), small);
       });
-      const rb = r.getElementById('reboot-btn'); if (rb) rb.classList.toggle('hide', !c.entity_reboot);
+      const rb = r.getElementById('reboot-btn'); if (rb) { rb.classList.toggle('hide', !c.entity_reboot); const til = r.querySelector('.tiles'); if (til && rb.parentElement !== til) til.appendChild(rb); }
     }
   }
   customElements.define(TAG, ApplianceNasCard);
